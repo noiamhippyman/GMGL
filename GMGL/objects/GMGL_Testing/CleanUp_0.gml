@@ -1,0 +1,1 @@
+gmgl_free();
