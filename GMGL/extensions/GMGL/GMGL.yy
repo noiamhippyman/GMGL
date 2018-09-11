@@ -542,6 +542,22 @@
                     "kind": 1,
                     "name": "gmgl_shader_use",
                     "returnType": 2
+                },
+                {
+                    "id": "02c293bc-fb74-4127-ac4d-d8f2a5f7f507",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        1,
+                        2
+                    ],
+                    "externalName": "read_buffer_as_float",
+                    "help": "read_buffer_as_float(buffer,size);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "read_buffer_as_float",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -564,7 +580,8 @@
                 "e47bab15-074a-4364-b156-b8f9988f8996",
                 "f2a541bc-e382-4884-855f-e5b7a74c0b21",
                 "b13d100f-1df4-4471-8a07-c0efce2af219",
-                "0f9398fc-55a5-44ec-8db9-9b327f47fbbc"
+                "0f9398fc-55a5-44ec-8db9-9b327f47fbbc",
+                "02c293bc-fb74-4127-ac4d-d8f2a5f7f507"
             ],
             "origname": "",
             "uncompress": false

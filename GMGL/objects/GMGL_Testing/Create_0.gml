@@ -52,15 +52,17 @@ var vertices = [
 	 0.5, -0.5, 0.0, // right 
 	 0.0,  0.5, 0.0  // top   
 ];
-var vbuff = buffer_create(9 * buffer_sizeof(buffer_f32),buffer_fixed,4);
-for (var i = 0; i < 9; ++i) buffer_write(vbuff,buffer_f32,vertices[i]);
+var vcount = array_length_1d(vertices);
+var vbuffsize = vcount * buffer_sizeof(buffer_f32);
+var vbuff = buffer_create(vbuffsize,buffer_fixed,4);
+for (var i = 0; i < vcount; ++i) buffer_write(vbuff,buffer_f32,vertices[i]);
 
 vao = gmgl_vao_create();
 vbo = gmgl_vbo_create();
 
 gmgl_vao_bind(vao);
 gmgl_vbo_bind(GMGL_ARRAY_BUFFER,vbo);
-gmgl_vbo_data(GMGL_ARRAY_BUFFER,buffer_get_address(vbuff),buffer_get_size(vbuff),GMGL_STATIC_DRAW);
+gmgl_vbo_data(GMGL_ARRAY_BUFFER,buffer_get_address(vbuff),vbuffsize,GMGL_STATIC_DRAW);
 
 //Setup vertex attributes used by shaders
 gmgl_vertex_attrib_pointer(0,3,GMGL_FLOAT,GMGL_FALSE,3 * buffer_sizeof(buffer_f32),0);

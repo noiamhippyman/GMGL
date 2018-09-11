@@ -1,72 +1,14 @@
-#define GMS_DLL extern "C" __declspec(dllexport)
-
-#define GMS_SUCCESS 1
-#define GMS_FAIL -1
-#define GMS_NOONE -4
-
-#define GLEW_STATIC
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <iostream>
-#include <vector>
-
-GLFWwindow* _gmgl_window = nullptr;
-std::vector<unsigned int*> _gmgl_objects;
-std::vector<unsigned int> _gmgl_objects_open_spots;
+#include "GMGL.hpp"
 
 
 #pragma region Testing Shit out
-
-#pragma endregion
-
-
-GMS_DLL void gmgl_free();
-
-#pragma region Internals
-void gmgl_set_window(GLFWwindow* window) {
-	_gmgl_window = window;
-}
-
-GLFWwindow* gmgl_get_window() {
-	return _gmgl_window;
-}
-
-void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
-}
-
-void gmgl_callback_window_close(GLFWwindow* window) {
-	if (glfwWindowShouldClose(window)) gmgl_free();
-}
-
-
-double gmgl_new_object() {
-	int index;
-
-	if (!_gmgl_objects_open_spots.empty()) {
-	index = _gmgl_objects_open_spots.back();
-	_gmgl_objects_open_spots.pop_back();
-	_gmgl_objects[index] = new unsigned int;
-	} else {
-	index = _gmgl_objects.size();
-	_gmgl_objects.push_back(new unsigned int);
+GMS_DLL void read_buffer_as_float(void* buffer, double size) {
+	float* buff = (float*)buffer;
+	for (int i = 0; i < size; ++i) {
+		std::cout << buff[i] << " ";
 	}
-
-	return index;
+	std::cout << std::endl;
 }
-
-unsigned int* gmgl_get_object(double index) {
-	return _gmgl_objects[index];
-}
-
-void gmgl_delete_object(double index) {
-	if (_gmgl_objects.size() > index && _gmgl_objects[index] != nullptr) {
-		delete _gmgl_objects[index];
-		_gmgl_objects[index] = nullptr;
-		_gmgl_objects_open_spots.push_back(index);
-	}
-}
-
 #pragma endregion
 
 #pragma region GMGL Functions
@@ -136,20 +78,131 @@ GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
+/*
 GMS_DLL double gmgl_vbo_create() {
-	double vboIndex = gmgl_new_object();
-	unsigned int* VBO = gmgl_get_object(vboIndex);
-	glGenBuffers(1, VBO);
-	return vboIndex;
+double vboIndex = gmgl_new_object();
+unsigned int* VBO = gmgl_get_object(vboIndex);
+glGenBuffers(1, VBO);
+return vboIndex;
 }
 
 GMS_DLL void gmgl_vbo_bind(double target, double vboIndex) {
-	glBindBuffer(target,*gmgl_get_object(vboIndex));
+glBindBuffer(target,*gmgl_get_object(vboIndex));
 }
 
 GMS_DLL void gmgl_vbo_data(double target, void* buffer, double size, double usage) {
-	glBufferData(target, size, buffer, usage);
+glBufferData(target, size, (float*)buffer, usage);
 }
+*/
+
+//TODO: Make vertex format class to input to vertex buffer
+/*
+GMS_DLL double gmgl_vertex_buffer_bind(double target, double vboIndex) {
+GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+glBindBuffer(target, vbuff->vbo);
+}
+*/
+
+GMS_DLL double gmgl_vertex_buffer_create() {
+	double vboIndex = gmgl_new_vertex_buffer();
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	glGenBuffers(1, &vbuff->vbo);
+	return vboIndex;
+}
+
+GMS_DLL void gmgl_vertex_buffer_write_real(double vboIndex, double value) {
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	vbuff->vertices.push_back(value);
+}
+
+GMS_DLL void gmgl_vertex_buffer_write_vec2(double vboIndex, double x, double y) {
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	vbuff->vertices.push_back(x);
+	vbuff->vertices.push_back(y);
+}
+
+GMS_DLL void gmgl_vertex_buffer_write_vec3(double vboIndex, double x, double y, double z) {
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	vbuff->vertices.push_back(x);
+	vbuff->vertices.push_back(y);
+	vbuff->vertices.push_back(z);
+}
+
+GMS_DLL void gmgl_vertex_buffer_update(double target, double vboIndex, double usage) {
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	float* data = vbuff->vertices.data();
+	
+	//bind this vbo to this target
+	glBindBuffer(target, vbuff->vbo);
+	
+	//copy data to vbo
+	glBufferData(target, sizeof(data), data, usage);
+
+	//unbind vbo from this target
+	glBindBuffer(target, 0);
+}
+
+GMS_DLL void gmgl_vertex_buffer_destroy(double vboIndex) {
+	GMGLvertexBuffer* vbuff = gmgl_get_vertex_buffer(vboIndex);
+	glDeleteBuffers(1, &vbuff->vbo);
+	gmgl_delete_vertex_buffer(vboIndex);
+}
+
+GMS_DLL void gmgl_vertex_format_begin() {
+	if (_gmgl_vao_setup.is_setting_up) return;
+	
+	_gmgl_vao_setup.is_setting_up = true;
+	
+	double vaoIndex = gmgl_new_vertex_array();
+	_gmgl_vao_setup.varray = gmgl_get_vertex_array(vaoIndex);
+	glGenVertexArrays(1, &_gmgl_vao_setup.varray->vao);
+	glBindVertexArray(_gmgl_vao_setup.varray->vao);
+}
+
+GMS_DLL void gmgl_vertex_format_add(double type) {
+	if (!_gmgl_vao_setup.is_setting_up) return;
+	GLsizei stride;
+	eGMGL_VAO_TYPE _type = (eGMGL_VAO_TYPE)type;
+	switch (_type) {
+	case REAL:
+		stride = 1;
+		break;
+	case VEC2:
+		stride = 2;
+		break;
+	case VEC3:
+		stride = 3;
+		break;
+	case VEC4:
+		stride = 4;
+		break;
+	}
+
+	_gmgl_vao_setup.attribTypes.push_back(_type);
+	_gmgl_vao_setup.attribStride.push_back(stride);
+	_gmgl_vao_setup.attribCount++;
+	_gmgl_vao_setup.stride += stride;
+}
+
+GMS_DLL double gmgl_vertex_format_end() {
+	if (!_gmgl_vao_setup.is_setting_up) return 0;
+
+	eGMGL_VAO_TYPE type;
+	for (int i = 0; i < _gmgl_vao_setup.attribCount; ++i) {
+		type = _gmgl_vao_setup.attribTypes[i];
+		switch (type) {
+		case REAL:
+			break;
+		case VEC2:
+			break;
+		case VEC3:
+			break;
+		case VEC4:
+			break;
+		}
+	}
+}
+
 
 GMS_DLL double gmgl_shader_create() {
 	double programIndex = gmgl_new_object();
@@ -220,12 +273,14 @@ GMS_DLL void gmgl_enable_vertex_attrib_array(double index) {
 	glEnableVertexAttribArray(index);
 }
 
+/*
 GMS_DLL double gmgl_vao_create() {
-	double vaoIndex = gmgl_new_object();
-	unsigned int* VAO = gmgl_get_object(vaoIndex);
-	glGenVertexArrays(1, VAO);
-	return vaoIndex;
+double vaoIndex = gmgl_new_object();
+unsigned int* VAO = gmgl_get_object(vaoIndex);
+glGenVertexArrays(1, VAO);
+return vaoIndex;
 }
+*/
 
 GMS_DLL void gmgl_vao_bind(double vaoIndex) {
 	unsigned int vao = *gmgl_get_object(vaoIndex);
