@@ -13,10 +13,12 @@ gmgl_uniform_mat4fv(uProj,1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
 gmgl_bind_vertex_array(vao);
 
+var t = (current_time / 500);
 var count = array_length_1d(modelPositions);
 for (var i = 0; i < count; ++i) {
 	var p = modelPositions[i];
-	var a = i * 20;
+	var a = (i * 20);
+	a += t;
 	var model = gmgl_matrix_build(p[0],p[1],p[2], a, a*0.5, a*0.3, 1,1,1);
 	buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
 	for (var j = 0; j < 16; ++j) {
