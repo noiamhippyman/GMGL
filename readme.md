@@ -1,3 +1,3 @@
-#GMGL
+# GMGL
 
-##OpenGL wrapper for Gamemaker Studio 2
+## OpenGL wrapper for Gamemaker Studio 2
