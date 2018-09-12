@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClInclude Include="GMGL.h" />
     <ClInclude Include="GMS_Extension.hpp" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

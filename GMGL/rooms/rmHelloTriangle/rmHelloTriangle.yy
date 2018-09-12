@@ -1,6 +1,6 @@
 
 {
-    "name": "room0",
+    "name": "rmHelloTriangle",
     "id": "80f40242-c848-4432-a68f-0468dd209d73",
     "creationCodeFile": "",
     "inheritCode": false,

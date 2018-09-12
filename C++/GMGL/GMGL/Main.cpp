@@ -1,59 +1,10 @@
-/*
-#include "GMGL.h"
-
-GMGL* gmgl = nullptr;
-
-GMS_DLL double gmgl_is_active() {
-if (!gmgl) return GMS_FAIL;
-if (gmgl && !gmgl->isInit()) {
-gmgl->free();
-gmgl = nullptr;
-return GMS_FAIL;
-}
-
-return GMS_SUCCESS;
-}
-
-GMS_DLL double gmgl_init() {
-if (gmgl) return GMS_FAIL;
-
-gmgl = new GMGL;
-if (!gmgl->init()) {
-
-delete gmgl;
-gmgl = nullptr;
-
-return GMS_FAIL;
-}
-
-return GMS_SUCCESS;
-}
-
-GMS_DLL void gmgl_update() {
-gmgl->update();
-}
-
-GMS_DLL void gmgl_free() {
-gmgl->free();
-gmgl = nullptr;
-}
-
-GMS_DLL void gmgl_setGLversion(double major, double minor) {
-gmgl->setGLversion(major, minor);
-}
-
-GMS_DLL double gmgl_createWindow(double width, double height, const char* title) {
-return gmgl->createWindow(width, height, title);
-}
-
-GMS_DLL void gmgl_clearColor(double r, double g, double b, double a) {
-gmgl->clearColor(r, g, b, a);
-}
-*/
-
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 #include <vector>
 #include <iostream>
 #include "GMS_Extension.hpp"
@@ -62,42 +13,45 @@ gmgl->clearColor(r, g, b, a);
 //Forward Declarations
 GMS_DLL void gmgl_terminate();
 //Data structures
-struct GMGLobject {
-	GLuint object;
+struct GMGLimage {
+	GLsizei width;
+	GLsizei height;
+	GLsizei nrChannels;
+	unsigned char* data;
 };
 
 //Global variables
-std::vector<GMGLobject*> __gmgl_objects;
-std::vector<GLuint> __gmgl_object_slots;
+std::vector<GMGLimage*> __gmgl_images;
+std::vector<GLuint> __gmgl_image_slots;
 GLFWwindow* __gmgl_window = nullptr;
 
 //Helper functions
-double gmgl_new_object() {
+double gmgl_new_image() {
 	double index;
-	GMGLobject* object = new GMGLobject;
+	GMGLimage* object = new GMGLimage;
 
-	if (!__gmgl_object_slots.empty()) {
-		index = __gmgl_object_slots.back();
-		__gmgl_object_slots.pop_back();
-		__gmgl_objects[index] = object;
+	if (!__gmgl_image_slots.empty()) {
+		index = __gmgl_image_slots.back();
+		__gmgl_image_slots.pop_back();
+		__gmgl_images[index] = object;
 	}
 	else {
-		index = __gmgl_objects.size();
-		__gmgl_objects.push_back(object);
+		index = __gmgl_images.size();
+		__gmgl_images.push_back(object);
 	}
 
 	return index;
 }
 
-GMGLobject* gmgl_get_object(double id) {
-	return __gmgl_objects[id];
+GMGLimage* gmgl_get_image(double id) {
+	return __gmgl_images[id];
 }
 
-void gmgl_delete_object(double id) {
-	if (__gmgl_objects.size() > id && __gmgl_objects[id] != nullptr) {
-		delete __gmgl_objects[id];
-		__gmgl_objects[id] = nullptr;
-		__gmgl_object_slots.push_back(id);
+void gmgl_delete_image(double id) {
+	if (__gmgl_images.size() > id && __gmgl_images[id] != nullptr) {
+		delete __gmgl_images[id];
+		__gmgl_images[id] = nullptr;
+		__gmgl_image_slots.push_back(id);
 	}
 }
 
@@ -175,7 +129,13 @@ GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-#pragma region Shaders
+GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {
+	glDrawArrays(mode, first, count);
+}
+
+GMS_DLL void gmgl_draw_elements(double mode, double count) {
+	glDrawElements(mode, count, GL_UNSIGNED_INT, 0);
+}
 
 GMS_DLL double gmgl_create_shader(double type, char* source) {
 	GLuint shader = glCreateShader(type);
@@ -211,7 +171,7 @@ GMS_DLL void gmgl_link_program(double program) {
 
 	int success;
 	char infoLog[512];
-	glGetProgramiv(program, GL_COMPILE_STATUS, &success);
+	glGetProgramiv(program, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(program, 512, nullptr, infoLog);
 		std::cout << "Program linking failed:" << infoLog << std::endl;
@@ -222,18 +182,23 @@ GMS_DLL void gmgl_use_program(double program) {
 	glUseProgram(program);
 }
 
-GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {
-	glDrawArrays(mode, first, count);
+GMS_DLL double gmgl_get_uniform_location(double program, const char* name) {
+	return glGetUniformLocation(program, name);
 }
 
-#pragma endregion
+//TODO: Finish creating other uniform wrappers
+GMS_DLL void gmgl_uniform1i(double location, double value) {
+	glUniform1i(location, value);
+}
 
-#pragma region VBO
+GMS_DLL void gmgl_uniform4f(double location, double x, double y, double z, double w) {
+	glUniform4f(location, x, y, z, w);
+}
 
 GMS_DLL double gmgl_gen_buffer() {
-	unsigned int VBO;
-	glGenBuffers(1, &VBO);
-	return VBO;
+	unsigned int buffer;
+	glGenBuffers(1, &buffer);
+	return buffer;
 }
 
 GMS_DLL void gmgl_bind_buffer(double target, double buffer) {
@@ -243,10 +208,6 @@ GMS_DLL void gmgl_bind_buffer(double target, double buffer) {
 GMS_DLL void gmgl_buffer_data(double target, double size, void* vertices, double usage) {
 	glBufferData(target, size, vertices, usage);
 }
-
-#pragma endregion
-
-#pragma region VAO
 
 GMS_DLL double gmgl_gen_vertex_array() {
 	unsigned int VAO;
@@ -259,7 +220,7 @@ GMS_DLL void gmgl_bind_vertex_array(double varray) {
 }
 
 GMS_DLL void gmgl_vertex_attrib_pointer(double index, double size, double normalized, double stride, double offset) {
-	int _offset = (int)offset;
+	int _offset = (int)offset * sizeof(float);
 	glVertexAttribPointer(index, size, GL_FLOAT, normalized, stride * sizeof(float), (void*)_offset);
 }
 
@@ -267,4 +228,58 @@ GMS_DLL void gmgl_enable_vertex_attrib_array(double index) {
 	glEnableVertexAttribArray(index);
 }
 
-#pragma endregion
+GMS_DLL double gmgl_gen_texture() {
+	GLuint texture;
+	glGenTextures(1, &texture);
+	return texture;
+}
+
+GMS_DLL void gmgl_bind_texture(double target, double texture) {
+	glBindTexture(target, texture);
+}
+
+GMS_DLL void gmgl_active_texture(double unit) {
+	glActiveTexture(unit);
+}
+
+//TODO: Finish creating other tex_parameter wrappers
+GMS_DLL void gmgl_tex_parameteri(double target, double pname, double param) {
+	glTexParameteri(target, pname, param);
+}
+
+GMS_DLL double gmgl_load_image(const char* path) {
+	double imageIndex = gmgl_new_image();
+	GMGLimage* image = gmgl_get_image(imageIndex);
+
+	stbi_set_flip_vertically_on_load(true);
+
+	image->data = stbi_load(path, &image->width, &image->height, &image->nrChannels, 0);
+
+	if (!image->data) {
+		std::cout << "Failed to load texture" << std::endl;
+		stbi_image_free(image->data);
+		gmgl_delete_image(imageIndex);
+		return GMS_FAIL;
+	}
+	else {
+		std::cout << "Image Properties:\nSize: " << image->width << "," << image->height << "\nChannels: " << image->nrChannels << std::endl;
+	}
+
+	return imageIndex;
+}
+
+GMS_DLL void gmgl_texImage2D(double target, double level, double internalformat, double border, double format, double imageIndex) {
+	GMGLimage* image = gmgl_get_image(imageIndex);
+
+	glTexImage2D(target, level, internalformat, image->width, image->height, border, format, GL_UNSIGNED_BYTE, image->data);
+}
+
+GMS_DLL void gmgl_generate_mipmap(double target) {
+	glGenerateMipmap(target);
+}
+
+GMS_DLL void gmgl_free_image(double imageIndex) {
+	GMGLimage* image = gmgl_get_image(imageIndex);
+	stbi_image_free(image->data);
+	gmgl_delete_image(imageIndex);
+}
