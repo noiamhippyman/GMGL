@@ -1119,6 +1119,51 @@
                     "kind": 1,
                     "name": "gmgl_uniform_mat4x3fv",
                     "returnType": 2
+                },
+                {
+                    "id": "b25b9cd1-f69d-4766-bbe5-458ffc3c5bd7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_clear",
+                    "help": "gmgl_clear(mask);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "3fe15ec6-2e56-4937-8ba7-4cde44211b03",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_enable",
+                    "help": "gmgl_enable(cap);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_enable",
+                    "returnType": 2
+                },
+                {
+                    "id": "b130b337-72b6-42a7-bc30-de1bb9757545",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_disable",
+                    "help": "gmgl_disable(cap);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_disable",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1132,6 +1177,9 @@
                 "0e2d95cd-18b1-41fa-8b35-7286c0d0a10e",
                 "6dd096ad-0a9b-4b8c-9ee6-bcc8c60226ef",
                 "67e6aed5-23f7-42ab-a3ec-7e62a417446a",
+                "b25b9cd1-f69d-4766-bbe5-458ffc3c5bd7",
+                "3fe15ec6-2e56-4937-8ba7-4cde44211b03",
+                "b130b337-72b6-42a7-bc30-de1bb9757545",
                 "0f153cb0-2f37-45ff-854e-2e01643acc2e",
                 "3c09164e-3401-4f2c-b4f7-6dac450364f4",
                 "be55a9ab-598c-4118-802a-2223eca63504",

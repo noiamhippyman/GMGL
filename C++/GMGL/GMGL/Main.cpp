@@ -190,7 +190,18 @@ GMS_DLL double gmgl_create_window(double width, double height, const char* title
 
 GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
 	glClearColor(r, g, b, a);
-	glClear(GL_COLOR_BUFFER_BIT);
+}
+
+GMS_DLL void gmgl_clear(double mask) {
+	glClear(mask);
+}
+
+GMS_DLL void gmgl_enable(double cap) {
+	glEnable(cap);
+}
+
+GMS_DLL void gmgl_disable(double cap) {
+	glDisable(cap);
 }
 
 GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {

@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0e9d5dd5-eac4-4fd2-8098-a3a86fb4e853",
+            "Value": {
+                "id": "44c374f3-9fd4-40af-a205-ed39281a58f8",
+                "resourcePath": "scripts\\fragment_shader_cube\\fragment_shader_cube.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1c5018a7-55d9-4f11-a7f3-cdf4eaf89243",
             "Value": {
                 "id": "fa6f645f-5d3b-4439-95fc-ff99a5c595d7",
@@ -95,11 +103,27 @@
             }
         },
         {
+            "Key": "319edf59-11e0-485a-965b-5e953bc8584d",
+            "Value": {
+                "id": "fd71a30a-d8e6-40e5-a9c8-9f0c820d675e",
+                "resourcePath": "rooms\\rmHelloCoordinates\\rmHelloCoordinates.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "385edee8-0599-4701-9185-2e71f346736c",
             "Value": {
                 "id": "f54f0063-4384-426d-aee3-8b391f226e8d",
                 "resourcePath": "scripts\\vertex_shader\\vertex_shader.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "38c48f24-5d1d-4368-b817-54b9b9ccdc22",
+            "Value": {
+                "id": "93b6afe0-49e7-4646-a7d2-3e4323cadd02",
+                "resourcePath": "objects\\GMGL_HelloCoordinateSystems\\GMGL_HelloCoordinateSystems.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -159,11 +183,27 @@
             }
         },
         {
+            "Key": "656ed7b0-7c1f-45cb-a875-fb8b42c985e3",
+            "Value": {
+                "id": "35eeb7f4-4504-479b-acd7-1b91762d4fd0",
+                "resourcePath": "scripts\\gmgl_matrix_build\\gmgl_matrix_build.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6aed0ea6-42ca-43df-ad9d-70f0cc64368f",
             "Value": {
                 "id": "d4dec5f1-8a1b-412f-888c-a77e1063f859",
                 "resourcePath": "rooms\\rmHelloTextures\\rmHelloTextures.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "73f7069f-c976-4bf9-8e7f-53260426a5f1",
+            "Value": {
+                "id": "04cc9d22-895e-4209-bef7-30593737f381",
+                "resourcePath": "objects\\GMGL_HelloCube\\GMGL_HelloCube.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -199,11 +239,27 @@
             }
         },
         {
+            "Key": "89b1cfe9-2d30-496d-9760-0f2c3aed57cc",
+            "Value": {
+                "id": "cb288fbe-85af-4773-b38e-caefac13cc69",
+                "resourcePath": "scripts\\fragment_shader_coordinates\\fragment_shader_coordinates.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8bc87849-64c4-4c80-b26c-f556626ff3a6",
             "Value": {
                 "id": "e39b568d-4dcb-40b5-9c31-8a48ab67673d",
                 "resourcePath": "views\\8bc87849-64c4-4c80-b26c-f556626ff3a6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8c680c1a-caa3-4f47-96b5-2a0aedea6313",
+            "Value": {
+                "id": "3236030a-0d48-45bd-beca-c678b60a5764",
+                "resourcePath": "scripts\\vertex_shader_cube\\vertex_shader_cube.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -271,6 +327,14 @@
             }
         },
         {
+            "Key": "bbddaf93-cb6a-490c-91af-a939f9db7f28",
+            "Value": {
+                "id": "29d87f1d-72d1-43ea-bbd7-1b24f4954594",
+                "resourcePath": "rooms\\rmHelloCube\\rmHelloCube.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "c7495f98-a1d2-4806-b17d-ef0989b4e229",
             "Value": {
                 "id": "c9f8013a-936c-4424-a43f-7c712fb59139",
@@ -332,6 +396,14 @@
                 "id": "1badcc29-7299-488f-aa10-64599b4ec7be",
                 "resourcePath": "views\\d65778c9-3056-4129-a944-d58e5f73bdc5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d8b70f7b-c193-4085-a141-8b1b69ed7db8",
+            "Value": {
+                "id": "4e9f6e23-ccee-43c5-9a13-cf55ebc47cdc",
+                "resourcePath": "scripts\\vertex_shader_coordinates\\vertex_shader_coordinates.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -402,7 +474,12 @@
         "d14b0d17-3c00-4c1e-ad8f-934911d13644",
         "9c586338-e4b9-485f-a8a4-f6529adfc977",
         "1da24b73-9db4-49b1-a980-ca28ededdee0",
-        "5b9ebf14-dbc4-4354-b5df-e0b1dba91f0b"
+        "5b9ebf14-dbc4-4354-b5df-e0b1dba91f0b",
+        "d8b70f7b-c193-4085-a141-8b1b69ed7db8",
+        "89b1cfe9-2d30-496d-9760-0f2c3aed57cc",
+        "8c680c1a-caa3-4f47-96b5-2a0aedea6313",
+        "0e9d5dd5-eac4-4fd2-8098-a3a86fb4e853",
+        "656ed7b0-7c1f-45cb-a875-fb8b42c985e3"
     ],
     "tutorial": ""
 }

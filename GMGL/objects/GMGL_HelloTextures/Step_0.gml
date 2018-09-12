@@ -1,4 +1,5 @@
 gmgl_clear_color(0.2,0.3,0.3,1.0);
+gmgl_clear(GMGL_COLOR_BUFFER_BIT);
 
 gmgl_active_texture(GMGL_TEXTURE0);
 gmgl_bind_texture(GMGL_TEXTURE_2D, texture1);
