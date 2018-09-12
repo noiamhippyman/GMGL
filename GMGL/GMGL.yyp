@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "1da24b73-9db4-49b1-a980-ca28ededdee0",
+            "Value": {
+                "id": "f845555f-88fe-4ceb-b74c-d11344a5e4e1",
+                "resourcePath": "scripts\\vertex_shader_transforms\\vertex_shader_transforms.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1e0d1883-bc2b-42a4-a15f-b3ca05ccba40",
             "Value": {
                 "id": "b6a73dda-512c-4b39-bfa2-4d6f40bb759c",
@@ -135,6 +143,14 @@
             }
         },
         {
+            "Key": "5b9ebf14-dbc4-4354-b5df-e0b1dba91f0b",
+            "Value": {
+                "id": "c9cc9578-63b1-4545-8d28-d90a88eb3638",
+                "resourcePath": "scripts\\fragment_shader_transforms\\fragment_shader_transforms.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "61edad94-892b-4051-95b7-80c448fe61e3",
             "Value": {
                 "id": "b88368ac-1ed6-4370-b5f8-71ad3213c904",
@@ -218,7 +234,7 @@
             "Key": "9c586338-e4b9-485f-a8a4-f6529adfc977",
             "Value": {
                 "id": "6cf08614-0ec9-4ce7-be24-a1586859de5f",
-                "resourcePath": "scripts\\fragment_shader_more_attributes1\\fragment_shader_more_attributes1.yy",
+                "resourcePath": "scripts\\fragment_shader_textures\\fragment_shader_textures.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -263,6 +279,14 @@
             }
         },
         {
+            "Key": "c9536d47-3faf-48a6-bd12-99d7733ff1e6",
+            "Value": {
+                "id": "72162d43-7ed1-4141-81d4-49bdf1857006",
+                "resourcePath": "rooms\\rmHelloTransforms\\rmHelloTransforms.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "ca637637-a70f-4332-b398-98455462ce07",
             "Value": {
                 "id": "2a1c6886-e901-480a-addd-15e0f105c0ba",
@@ -298,7 +322,7 @@
             "Key": "d14b0d17-3c00-4c1e-ad8f-934911d13644",
             "Value": {
                 "id": "2aca7854-611c-4448-9acb-ae1db1b0b70c",
-                "resourcePath": "scripts\\vertex_shader_more_attributes1\\vertex_shader_more_attributes1.yy",
+                "resourcePath": "scripts\\vertex_shader_textures\\vertex_shader_textures.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -357,6 +381,14 @@
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
             }
+        },
+        {
+            "Key": "f8bcc5f7-6ab0-4103-8fa1-cdc99e35b2fb",
+            "Value": {
+                "id": "0dabe7a6-28b3-4419-8558-2faf468a72ad",
+                "resourcePath": "objects\\GMGL_HelloTransforms\\GMGL_HelloTransforms.yy",
+                "resourceType": "GMObject"
+            }
         }
     ],
     "script_order": [
@@ -368,7 +400,9 @@
         "1e5c2c3e-1709-404e-9bd6-d93950caa300",
         "1c5018a7-55d9-4f11-a7f3-cdf4eaf89243",
         "d14b0d17-3c00-4c1e-ad8f-934911d13644",
-        "9c586338-e4b9-485f-a8a4-f6529adfc977"
+        "9c586338-e4b9-485f-a8a4-f6529adfc977",
+        "1da24b73-9db4-49b1-a980-ca28ededdee0",
+        "5b9ebf14-dbc4-4354-b5df-e0b1dba91f0b"
     ],
     "tutorial": ""
 }

@@ -9,5 +9,3 @@ gmgl_uniform4f(colorUniform,dcos(t) / 2 + 0.5,dsin(t) / 2 + 0.5,0,1);
 gmgl_draw_elements(GMGL_TRIANGLES,6);
 
 gmgl_update();
-
-show_debug_message(fps_real);

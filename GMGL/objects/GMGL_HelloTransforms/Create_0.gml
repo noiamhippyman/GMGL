@@ -7,10 +7,10 @@ gmgl_init();
 gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
 gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
 
-gmgl_create_window(800,600,"Demo - Using Textures");
+gmgl_create_window(800,600,"Demo - Using Transforms");
 
-var vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER,vertex_shader_textures());
-var fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER,fragment_shader_textures());
+var vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER,vertex_shader_transforms());
+var fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER,fragment_shader_transforms());
 program = gmgl_create_program();
 gmgl_attach_shader(program,vertexShader);
 gmgl_attach_shader(program,fragmentShader);
@@ -95,5 +95,5 @@ gmgl_uniform1i(gmgl_get_uniform_location(program,"texture1"), 0);
 gmgl_uniform1i(gmgl_get_uniform_location(program,"texture2"), 1);
 
 
-
+matrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 

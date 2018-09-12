@@ -1,8 +1,8 @@
 {
-    "id": "d14b0d17-3c00-4c1e-ad8f-934911d13644",
+    "id": "9c586338-e4b9-485f-a8a4-f6529adfc977",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "vertex_shader_more_attributes1",
+    "name": "fragment_shader_textures",
     "IsCompatibility": false,
     "IsDnD": false
 }
