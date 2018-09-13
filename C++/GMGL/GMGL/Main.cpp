@@ -18,7 +18,6 @@
 //Forward Declarations
 GMS_DLL void gmgl_terminate();
 
-
 //Data structures
 struct GMGLimage {
 	GLsizei width;
@@ -27,63 +26,17 @@ struct GMGLimage {
 	unsigned char* data;
 };
 
-/*
-struct GMGLglmData {
-glm::bvec2 bvec2;
-glm::bvec3 bvec3;
-glm::bvec4 bvec4;
-
-glm::dmat2x2 dmat2x2;
-glm::dmat2x3 dmat2x3;
-glm::dmat2x4 dmat2x4;
-
-glm::dmat3 dmat3;
-glm::dmat3x2 dmat3x2;
-glm::dmat3x3 dmat3x3;
-glm::dmat3x4 dmat3x4;
-
-glm::dmat4 dmat4;
-glm::dmat4x2 dmat4x2;
-glm::dmat4x3 dmat4x3;
-glm::dmat4x4 dmat4x4;
-
-glm::dvec2 dvec2;
-glm::dvec3 dvec3;
-glm::dvec4 dvec4;
-
-glm::ivec2 ivec2;
-glm::ivec3 ivec3;
-glm::ivec4 ivec4;
-
-glm::mat2 mat2;
-glm::mat2x2 mat2x2;
-glm::mat2x3 mat2x3;
-glm::mat2x4 mat2x4;
-
-glm::mat3 mat3;
-glm::mat3x2 mat3x2;
-glm::mat3x3 mat3x3;
-glm::mat3x4 mat3x4;
-
-glm::mat4 mat4;
-glm::mat4x2 mat4x2;
-glm::mat4x3 mat4x3;
-glm::mat4x4 mat4x4;
-
-glm::uvec2 uvec2;
-glm::uvec3 uvec3;
-glm::uvec4 uvec4;
-
-glm::vec2 vec2;
-glm::vec3 vec3;
-glm::vec4 vec4;
+struct GMGLmouse {
+	double x;
+	double y;
+	double scrollX;
+	double scrollY;
 };
-*/
-
 
 //Global variables
 std::vector<GMGLimage*> __gmgl_images;
 std::vector<GLuint> __gmgl_image_slots;
+GMGLmouse __gmgl_mouse;
 
 GLFWwindow* __gmgl_window = nullptr;
 
@@ -118,7 +71,6 @@ void gmgl_delete_image(double id) {
 	}
 }
 
-
 //Callbacks
 void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
@@ -127,7 +79,45 @@ void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
 void gmgl_callback_window_close(GLFWwindow* window) {
 	if (glfwWindowShouldClose(window)) gmgl_terminate();
 }
+
+void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
+	__gmgl_mouse.x = xpos;
+	__gmgl_mouse.y = ypos;
+}
+
 #pragma endregion
+
+GMS_DLL double gmgl_key_press(double key) {
+	if (glfwGetKey(__gmgl_window, key) == GLFW_PRESS) return GMS_TRUE;
+
+	return GMS_FALSE;
+}
+
+GMS_DLL double gmgl_mouse_x() {
+	return __gmgl_mouse.x;
+}
+
+GMS_DLL double gmgl_mouse_y() {
+	return __gmgl_mouse.y;
+}
+
+GMS_DLL double gmgl_mouse_press(double button) {
+	if (glfwGetMouseButton(__gmgl_window, button) == GLFW_PRESS) return GMS_TRUE;
+
+	return GMS_FALSE;
+}
+
+GMS_DLL void gmgl_mouse_lock() {
+	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+}
+
+GMS_DLL void gmgl_mouse_hide() {
+	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+}
+
+GMS_DLL void gmgl_mouse_normal() {
+	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+}
 
 GMS_DLL double gmgl_is_active() {
 	if (!__gmgl_window) return GMS_FAIL;
@@ -136,6 +126,16 @@ GMS_DLL double gmgl_is_active() {
 }
 
 GMS_DLL double gmgl_init() {
+	//Initialize key states
+	/*
+	for (int i = 0; i < __gmgl_keystates.keycount; ++i) {
+		__gmgl_keystates.keypress[i] = GMS_FALSE;
+		__gmgl_keystates.keydown[i] = GMS_FALSE;
+		__gmgl_keystates.keyrelease[i] = GMS_FALSE;
+	}
+	*/
+
+	//Initialize GLFW
 	if (glfwInit() == GLFW_FALSE) {
 		std::cout << "GLFW initialization failed" << std::endl;
 		return GMS_FAIL;
@@ -178,6 +178,7 @@ GMS_DLL double gmgl_create_window(double width, double height, const char* title
 	glfwMakeContextCurrent(__gmgl_window);
 	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
 	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
+	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_mouse_pos);
 
 	if (glewInit() != GLEW_OK) {
 		std::cout << "GLEW initialization failed" << std::endl;
@@ -202,6 +203,22 @@ GMS_DLL void gmgl_enable(double cap) {
 
 GMS_DLL void gmgl_disable(double cap) {
 	glDisable(cap);
+}
+
+GMS_DLL void gmgl_swap_buffers() {
+	glfwSwapBuffers(__gmgl_window);
+}
+
+GMS_DLL void gmgl_poll_events() {
+	glfwPollEvents();
+}
+
+GMS_DLL void gmgl_wait_events() {
+	glfwWaitEvents();
+}
+
+GMS_DLL void gmgl_wait_events_timeout(double timeout) {
+	glfwWaitEventsTimeout(timeout);
 }
 
 GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {

@@ -137,10 +137,157 @@
 #macro GMGL_VERTEX_PROGRAM_POINT_SIZE 0x8642
 #macro GMGL_VERTEX_PROGRAM_TWO_SIDE 0x8643
 
+#region Keycodes
 
-/*
-glTexParameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_S, GMGL_REPEAT);
-glTexParameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_T, GMGL_REPEAT);
-glTexParameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MIN_FILTER, GMGL_LINEAR);
-glTexParameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MAG_FILTER, GMGL_LINEAR);
-*/
+/* The unknown key */
+#macro GMGL_KEY_UNKNOWN            -1
+
+/* Printable keys */
+#macro GMGL_KEY_SPACE              32
+#macro GMGL_KEY_APOSTROPHE         39  /* ' */
+#macro GMGL_KEY_COMMA              44  /* , */
+#macro GMGL_KEY_MINUS              45  /* - */
+#macro GMGL_KEY_PERIOD             46  /* . */
+#macro GMGL_KEY_SLASH              47  /* / */
+#macro GMGL_KEY_0                  48
+#macro GMGL_KEY_1                  49
+#macro GMGL_KEY_2                  50
+#macro GMGL_KEY_3                  51
+#macro GMGL_KEY_4                  52
+#macro GMGL_KEY_5                  53
+#macro GMGL_KEY_6                  54
+#macro GMGL_KEY_7                  55
+#macro GMGL_KEY_8                  56
+#macro GMGL_KEY_9                  57
+#macro GMGL_KEY_SEMICOLON          59  /* ; */
+#macro GMGL_KEY_EQUAL              61  /* = */
+#macro GMGL_KEY_A                  65
+#macro GMGL_KEY_B                  66
+#macro GMGL_KEY_C                  67
+#macro GMGL_KEY_D                  68
+#macro GMGL_KEY_E                  69
+#macro GMGL_KEY_F                  70
+#macro GMGL_KEY_G                  71
+#macro GMGL_KEY_H                  72
+#macro GMGL_KEY_I                  73
+#macro GMGL_KEY_J                  74
+#macro GMGL_KEY_K                  75
+#macro GMGL_KEY_L                  76
+#macro GMGL_KEY_M                  77
+#macro GMGL_KEY_N                  78
+#macro GMGL_KEY_O                  79
+#macro GMGL_KEY_P                  80
+#macro GMGL_KEY_Q                  81
+#macro GMGL_KEY_R                  82
+#macro GMGL_KEY_S                  83
+#macro GMGL_KEY_T                  84
+#macro GMGL_KEY_U                  85
+#macro GMGL_KEY_V                  86
+#macro GMGL_KEY_W                  87
+#macro GMGL_KEY_X                  88
+#macro GMGL_KEY_Y                  89
+#macro GMGL_KEY_Z                  90
+#macro GMGL_KEY_LEFT_BRACKET       91  /* [ */
+#macro GMGL_KEY_BACKSLASH          92  /* \ */
+#macro GMGL_KEY_RIGHT_BRACKET      93  /* ] */
+#macro GMGL_KEY_GRAVE_ACCENT       96  /* ` */
+#macro GMGL_KEY_WORLD_1            161 /* non-US #1 */
+#macro GMGL_KEY_WORLD_2            162 /* non-US #2 */
+
+/* Function keys */
+#macro GMGL_KEY_ESCAPE             256
+#macro GMGL_KEY_ENTER              257
+#macro GMGL_KEY_TAB                258
+#macro GMGL_KEY_BACKSPACE          259
+#macro GMGL_KEY_INSERT             260
+#macro GMGL_KEY_DELETE             261
+#macro GMGL_KEY_RIGHT              262
+#macro GMGL_KEY_LEFT               263
+#macro GMGL_KEY_DOWN               264
+#macro GMGL_KEY_UP                 265
+#macro GMGL_KEY_PAGE_UP            266
+#macro GMGL_KEY_PAGE_DOWN          267
+#macro GMGL_KEY_HOME               268
+#macro GMGL_KEY_END                269
+#macro GMGL_KEY_CAPS_LOCK          280
+#macro GMGL_KEY_SCROLL_LOCK        281
+#macro GMGL_KEY_NUM_LOCK           282
+#macro GMGL_KEY_PRINT_SCREEN       283
+#macro GMGL_KEY_PAUSE              284
+#macro GMGL_KEY_F1                 290
+#macro GMGL_KEY_F2                 291
+#macro GMGL_KEY_F3                 292
+#macro GMGL_KEY_F4                 293
+#macro GMGL_KEY_F5                 294
+#macro GMGL_KEY_F6                 295
+#macro GMGL_KEY_F7                 296
+#macro GMGL_KEY_F8                 297
+#macro GMGL_KEY_F9                 298
+#macro GMGL_KEY_F10                299
+#macro GMGL_KEY_F11                300
+#macro GMGL_KEY_F12                301
+#macro GMGL_KEY_F13                302
+#macro GMGL_KEY_F14                303
+#macro GMGL_KEY_F15                304
+#macro GMGL_KEY_F16                305
+#macro GMGL_KEY_F17                306
+#macro GMGL_KEY_F18                307
+#macro GMGL_KEY_F19                308
+#macro GMGL_KEY_F20                309
+#macro GMGL_KEY_F21                310
+#macro GMGL_KEY_F22                311
+#macro GMGL_KEY_F23                312
+#macro GMGL_KEY_F24                313
+#macro GMGL_KEY_F25                314
+#macro GMGL_KEY_KP_0               320
+#macro GMGL_KEY_KP_1               321
+#macro GMGL_KEY_KP_2               322
+#macro GMGL_KEY_KP_3               323
+#macro GMGL_KEY_KP_4               324
+#macro GMGL_KEY_KP_5               325
+#macro GMGL_KEY_KP_6               326
+#macro GMGL_KEY_KP_7               327
+#macro GMGL_KEY_KP_8               328
+#macro GMGL_KEY_KP_9               329
+#macro GMGL_KEY_KP_DECIMAL         330
+#macro GMGL_KEY_KP_DIVIDE          331
+#macro GMGL_KEY_KP_MULTIPLY        332
+#macro GMGL_KEY_KP_SUBTRACT        333
+#macro GMGL_KEY_KP_ADD             334
+#macro GMGL_KEY_KP_ENTER           335
+#macro GMGL_KEY_KP_EQUAL           336
+#macro GMGL_KEY_LEFT_SHIFT         340
+#macro GMGL_KEY_LEFT_CONTROL       341
+#macro GMGL_KEY_LEFT_ALT           342
+#macro GMGL_KEY_LEFT_SUPER         343
+#macro GMGL_KEY_RIGHT_SHIFT        344
+#macro GMGL_KEY_RIGHT_CONTROL      345
+#macro GMGL_KEY_RIGHT_ALT          346
+#macro GMGL_KEY_RIGHT_SUPER        347
+#macro GMGL_KEY_MENU               348
+
+#endregion
+
+#region Mouse buttons
+
+#macro GMGL_MOUSE_BUTTON_1   0
+#macro GMGL_MOUSE_BUTTON_2   1
+#macro GMGL_MOUSE_BUTTON_3   2
+#macro GMGL_MOUSE_BUTTON_4   3
+#macro GMGL_MOUSE_BUTTON_5   4
+#macro GMGL_MOUSE_BUTTON_6   5
+#macro GMGL_MOUSE_BUTTON_7   6
+#macro GMGL_MOUSE_BUTTON_8   7
+#macro GMGL_MOUSE_BUTTON_LEFT   GMGL_MOUSE_BUTTON_1
+#macro GMGL_MOUSE_BUTTON_RIGHT   GMGL_MOUSE_BUTTON_2
+#macro GMGL_MOUSE_BUTTON_MIDDLE   GMGL_MOUSE_BUTTON_3
+
+#endregion
+
+#macro GMGL_CURSOR                 0x00033001
+#macro GMGL_STICKY_KEYS            0x00033002
+#macro GMGL_STICKY_MOUSE_BUTTONS   0x00033003
+
+#macro GMGL_CURSOR_NORMAL          0x00034001
+#macro GMGL_CURSOR_HIDDEN          0x00034002
+#macro GMGL_CURSOR_DISABLED        0x00034003

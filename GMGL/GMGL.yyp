@@ -31,11 +31,35 @@
     },
     "resources": [
         {
+            "Key": "01e3e791-6d2a-4bc5-8929-c04d956a9ca4",
+            "Value": {
+                "id": "09c2d2e6-ccbb-4212-8d51-6e0bedd5ca5a",
+                "resourcePath": "scripts\\vector_cross\\vector_cross.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "056792dc-1822-49cf-81dc-002d27e80e4b",
             "Value": {
                 "id": "2629daa3-648c-4937-b052-41771e61a90e",
                 "resourcePath": "rooms\\rmHelloUniforms\\rmHelloUniforms.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "08657c6e-3b49-4254-86c3-2050739338ff",
+            "Value": {
+                "id": "45f6d2b8-59ed-4671-9439-7294a8941043",
+                "resourcePath": "scripts\\vector_add\\vector_add.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "09c5066e-bccb-4bc8-ba50-06e1c7732189",
+            "Value": {
+                "id": "c088329d-70ba-4f44-a01c-f677f675b4f4",
+                "resourcePath": "objects\\GMGL_HelloUserInput\\GMGL_HelloUserInput.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -108,6 +132,14 @@
                 "id": "fd71a30a-d8e6-40e5-a9c8-9f0c820d675e",
                 "resourcePath": "rooms\\rmHelloCoordinates\\rmHelloCoordinates.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "3458ba60-7451-40fe-8f52-a4a7494528de",
+            "Value": {
+                "id": "3ffea710-954d-44ac-8e49-99ce47998c7d",
+                "resourcePath": "views\\3458ba60-7451-40fe-8f52-a4a7494528de.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -187,6 +219,14 @@
             "Value": {
                 "id": "35eeb7f4-4504-479b-acd7-1b91762d4fd0",
                 "resourcePath": "scripts\\gmgl_matrix_build\\gmgl_matrix_build.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6a380071-99f2-40c6-9be9-1ee33d79d28d",
+            "Value": {
+                "id": "790d291c-26bf-4e0d-9fbc-a7af48401434",
+                "resourcePath": "scripts\\vector_multiply\\vector_multiply.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -287,6 +327,22 @@
             }
         },
         {
+            "Key": "8f8bdc94-5de5-4585-b5b6-1184a49c6a5b",
+            "Value": {
+                "id": "dedf57ec-4b46-4215-b040-b3bfe666ae8c",
+                "resourcePath": "scripts\\vector_subtract\\vector_subtract.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
+            "Value": {
+                "id": "19c445a2-1ce3-4bfe-9b37-6e294fa4459a",
+                "resourcePath": "scripts\\gmgl_matrix_build_lookat\\gmgl_matrix_build_lookat.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9c586338-e4b9-485f-a8a4-f6529adfc977",
             "Value": {
                 "id": "6cf08614-0ec9-4ce7-be24-a1586859de5f",
@@ -319,6 +375,14 @@
             }
         },
         {
+            "Key": "b031822b-7c22-4e9d-9a2a-964fd0ce420f",
+            "Value": {
+                "id": "19480f9c-793b-4b41-812a-298eca2da662",
+                "resourcePath": "scripts\\vector_normalize\\vector_normalize.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b46964ba-511a-4ab2-b27f-73ef612bdef0",
             "Value": {
                 "id": "7726264d-7e5f-4c61-9efe-6fc1102ca43a",
@@ -332,6 +396,14 @@
                 "id": "29d87f1d-72d1-43ea-bbd7-1b24f4954594",
                 "resourcePath": "rooms\\rmHelloCube\\rmHelloCube.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bbf7bc06-c8ca-4754-b353-5b25304c50ba",
+            "Value": {
+                "id": "99171f70-08e9-4f82-be5a-4d3e20c898d7",
+                "resourcePath": "scripts\\vector_divide\\vector_divide.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -388,6 +460,14 @@
                 "id": "2aca7854-611c-4448-9acb-ae1db1b0b70c",
                 "resourcePath": "scripts\\vertex_shader_textures\\vertex_shader_textures.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d4d003c0-e351-4032-b34b-f76ebf337074",
+            "Value": {
+                "id": "44a49cad-2a07-494f-87b2-73244f3c7cc7",
+                "resourcePath": "rooms\\rmHelloUserInput\\rmHelloUserInput.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -465,6 +545,8 @@
     ],
     "script_order": [
         "a3516a97-3d6c-46a6-899a-02a2a72f276c",
+        "656ed7b0-7c1f-45cb-a875-fb8b42c985e3",
+        "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
         "385edee8-0599-4701-9185-2e71f346736c",
         "eeff96aa-76fd-4079-8e4c-5a6dd0ab5bf8",
         "2849e4c0-e81e-4daa-8720-71d90248461e",
@@ -479,7 +561,12 @@
         "89b1cfe9-2d30-496d-9760-0f2c3aed57cc",
         "8c680c1a-caa3-4f47-96b5-2a0aedea6313",
         "0e9d5dd5-eac4-4fd2-8098-a3a86fb4e853",
-        "656ed7b0-7c1f-45cb-a875-fb8b42c985e3"
+        "08657c6e-3b49-4254-86c3-2050739338ff",
+        "01e3e791-6d2a-4bc5-8929-c04d956a9ca4",
+        "bbf7bc06-c8ca-4754-b353-5b25304c50ba",
+        "6a380071-99f2-40c6-9be9-1ee33d79d28d",
+        "b031822b-7c22-4e9d-9a2a-964fd0ce420f",
+        "8f8bdc94-5de5-4585-b5b6-1184a49c6a5b"
     ],
     "tutorial": ""
 }

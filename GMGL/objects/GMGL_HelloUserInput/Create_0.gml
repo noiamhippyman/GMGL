@@ -10,7 +10,7 @@ gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
 var scr_width = 1600;
 var scr_height = 900;
 
-gmgl_create_window(scr_width,scr_height,"Demo - Hello cube!");
+gmgl_create_window(scr_width,scr_height,"Demo - Using Inputs (keyboard, mouse, joystick)");
 
 gmgl_enable(GMGL_DEPTH_TEST);
 
@@ -151,3 +151,15 @@ modelPositions = [
 	[1.5,0.2,-1.5],
 	[-1.3,1,-1.5]
 ];
+
+
+cameraPos = [0,0,3];
+cameraFront = [0,0,-1];
+cameraUp = [0,1,0];
+cameraSpeed = 2.5;
+cameraYaw = -90;
+cameraPitch = 0;
+cameraRoll = 0;
+cameraLastX = scr_width / 2;
+cameraLastY = scr_height / 2;
+cameraFirstMouse = true;
