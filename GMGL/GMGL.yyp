@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "0860ac4f-d909-4944-98d5-f83d78ac11f6",
+            "Value": {
+                "id": "f2932d81-023f-4876-9708-93f7fc636484",
+                "resourcePath": "views\\0860ac4f-d909-4944-98d5-f83d78ac11f6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "08657c6e-3b49-4254-86c3-2050739338ff",
             "Value": {
                 "id": "45f6d2b8-59ed-4671-9439-7294a8941043",
@@ -175,6 +183,22 @@
             }
         },
         {
+            "Key": "4a283568-98ed-4014-b290-90ec9d8def1e",
+            "Value": {
+                "id": "146bbabb-0a89-4291-adad-972b89063de1",
+                "resourcePath": "scripts\\fragment_shader_basic_lighting\\fragment_shader_basic_lighting.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4c7be06f-6ce5-45d3-88e5-a9c98bfe21cb",
+            "Value": {
+                "id": "01fdd0d4-d611-4100-9655-844ad0cf9ca6",
+                "resourcePath": "scripts\\vertex_shader_basic_lighting\\vertex_shader_basic_lighting.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4d70c2d7-3e13-40d4-9d4f-b60006cd9429",
             "Value": {
                 "id": "b473d273-a434-483f-8006-aeecc9b4a2d7",
@@ -239,11 +263,27 @@
             }
         },
         {
+            "Key": "6b43805e-96f5-47ea-8c8f-ed5982016c6f",
+            "Value": {
+                "id": "00b4ed2e-89ed-4eab-9d34-d3a6b962433c",
+                "resourcePath": "rooms\\rmHelloLights1\\rmHelloLights1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "73f7069f-c976-4bf9-8e7f-53260426a5f1",
             "Value": {
                 "id": "04cc9d22-895e-4209-bef7-30593737f381",
                 "resourcePath": "objects\\GMGL_HelloCube\\GMGL_HelloCube.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "77100ab2-e36b-457a-a130-18d3789e08a7",
+            "Value": {
+                "id": "c23681d5-b675-4ea4-9d8b-c35778c47d77",
+                "resourcePath": "scripts\\fragment_shader_basic_lamp\\fragment_shader_basic_lamp.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -335,6 +375,14 @@
             }
         },
         {
+            "Key": "90a29d23-555b-492b-80f4-f2cceed0c7af",
+            "Value": {
+                "id": "96574d84-2374-4ab8-990c-c9f95133f104",
+                "resourcePath": "objects\\GMGL_HelloBasicLighting\\GMGL_HelloBasicLighting.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
             "Value": {
                 "id": "19c445a2-1ce3-4bfe-9b37-6e294fa4459a",
@@ -383,6 +431,14 @@
             }
         },
         {
+            "Key": "b43facf7-c31d-4ec9-8dae-a23072b2d146",
+            "Value": {
+                "id": "411e5ab0-4a50-477d-85b1-b0e41a787aaa",
+                "resourcePath": "scripts\\vertex_shader_basic_lamp\\vertex_shader_basic_lamp.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b46964ba-511a-4ab2-b27f-73ef612bdef0",
             "Value": {
                 "id": "7726264d-7e5f-4c61-9efe-6fc1102ca43a",
@@ -407,6 +463,14 @@
             }
         },
         {
+            "Key": "bd9ad041-f5e9-4f7a-a9a4-8cbc1e595e04",
+            "Value": {
+                "id": "086592d6-77a6-40e5-bf1b-6a22a99d2691",
+                "resourcePath": "views\\bd9ad041-f5e9-4f7a-a9a4-8cbc1e595e04.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c7495f98-a1d2-4806-b17d-ef0989b4e229",
             "Value": {
                 "id": "c9f8013a-936c-4424-a43f-7c712fb59139",
@@ -428,6 +492,14 @@
                 "id": "2a1c6886-e901-480a-addd-15e0f105c0ba",
                 "resourcePath": "scripts\\fragment_shader_uniforms\\fragment_shader_uniforms.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cae61ba8-8df7-42c2-8aa4-3d4b44547a97",
+            "Value": {
+                "id": "b4668786-8bdc-4242-8641-03e94f76fd10",
+                "resourcePath": "views\\cae61ba8-8df7-42c2-8aa4-3d4b44547a97.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -519,6 +591,14 @@
             }
         },
         {
+            "Key": "f32e72e2-1b69-4895-88bb-ed6ef6610a1e",
+            "Value": {
+                "id": "a8c22409-37a7-4f9c-a94e-2b55ef8b2240",
+                "resourcePath": "objects\\RoomTraveler\\RoomTraveler.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f3a4096c-a305-4223-9e95-039a28f0d60a",
             "Value": {
                 "id": "5f122fd7-d8eb-4a3a-9f88-3a477dd04fb5",
@@ -547,6 +627,12 @@
         "a3516a97-3d6c-46a6-899a-02a2a72f276c",
         "656ed7b0-7c1f-45cb-a875-fb8b42c985e3",
         "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
+        "08657c6e-3b49-4254-86c3-2050739338ff",
+        "01e3e791-6d2a-4bc5-8929-c04d956a9ca4",
+        "bbf7bc06-c8ca-4754-b353-5b25304c50ba",
+        "6a380071-99f2-40c6-9be9-1ee33d79d28d",
+        "b031822b-7c22-4e9d-9a2a-964fd0ce420f",
+        "8f8bdc94-5de5-4585-b5b6-1184a49c6a5b",
         "385edee8-0599-4701-9185-2e71f346736c",
         "eeff96aa-76fd-4079-8e4c-5a6dd0ab5bf8",
         "2849e4c0-e81e-4daa-8720-71d90248461e",
@@ -561,12 +647,10 @@
         "89b1cfe9-2d30-496d-9760-0f2c3aed57cc",
         "8c680c1a-caa3-4f47-96b5-2a0aedea6313",
         "0e9d5dd5-eac4-4fd2-8098-a3a86fb4e853",
-        "08657c6e-3b49-4254-86c3-2050739338ff",
-        "01e3e791-6d2a-4bc5-8929-c04d956a9ca4",
-        "bbf7bc06-c8ca-4754-b353-5b25304c50ba",
-        "6a380071-99f2-40c6-9be9-1ee33d79d28d",
-        "b031822b-7c22-4e9d-9a2a-964fd0ce420f",
-        "8f8bdc94-5de5-4585-b5b6-1184a49c6a5b"
+        "4c7be06f-6ce5-45d3-88e5-a9c98bfe21cb",
+        "4a283568-98ed-4014-b290-90ec9d8def1e",
+        "b43facf7-c31d-4ec9-8dae-a23072b2d146",
+        "77100ab2-e36b-457a-a130-18d3789e08a7"
     ],
     "tutorial": ""
 }

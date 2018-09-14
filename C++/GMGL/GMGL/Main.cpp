@@ -87,6 +87,8 @@ void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
 
 #pragma endregion
 
+#pragma region User Input
+
 GMS_DLL double gmgl_key_press(double key) {
 	if (glfwGetKey(__gmgl_window, key) == GLFW_PRESS) return GMS_TRUE;
 
@@ -118,6 +120,8 @@ GMS_DLL void gmgl_mouse_hide() {
 GMS_DLL void gmgl_mouse_normal() {
 	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 }
+
+#pragma endregion
 
 GMS_DLL double gmgl_is_active() {
 	if (!__gmgl_window) return GMS_FAIL;
@@ -154,13 +158,27 @@ GMS_DLL void gmgl_terminate() {
 	__gmgl_window = nullptr;
 }
 
-GMS_DLL void gmgl_default_window_hints() {
-	glfwDefaultWindowHints();
+GMS_DLL void gmgl_enable(double cap) {
+	glEnable(cap);
 }
 
-GMS_DLL void gmgl_window_hint(double hint, double value) {
-	glfwWindowHint(hint, value);
+GMS_DLL void gmgl_disable(double cap) {
+	glDisable(cap);
 }
+
+GMS_DLL void gmgl_poll_events() {
+	glfwPollEvents();
+}
+
+GMS_DLL void gmgl_wait_events() {
+	glfwWaitEvents();
+}
+
+GMS_DLL void gmgl_wait_events_timeout(double timeout) {
+	glfwWaitEventsTimeout(timeout);
+}
+
+#pragma region Window Functions
 
 GMS_DLL double gmgl_create_window(double width, double height, const char* title) {
 	if (__gmgl_window) {
@@ -189,6 +207,16 @@ GMS_DLL double gmgl_create_window(double width, double height, const char* title
 	return GMS_SUCCESS;
 }
 
+GMS_DLL void gmgl_default_window_hints() {
+	glfwDefaultWindowHints();
+}
+
+GMS_DLL void gmgl_window_hint(double hint, double value) {
+	glfwWindowHint(hint, value);
+}
+
+#pragma endregion
+
 GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
 	glClearColor(r, g, b, a);
 }
@@ -197,28 +225,8 @@ GMS_DLL void gmgl_clear(double mask) {
 	glClear(mask);
 }
 
-GMS_DLL void gmgl_enable(double cap) {
-	glEnable(cap);
-}
-
-GMS_DLL void gmgl_disable(double cap) {
-	glDisable(cap);
-}
-
 GMS_DLL void gmgl_swap_buffers() {
 	glfwSwapBuffers(__gmgl_window);
-}
-
-GMS_DLL void gmgl_poll_events() {
-	glfwPollEvents();
-}
-
-GMS_DLL void gmgl_wait_events() {
-	glfwWaitEvents();
-}
-
-GMS_DLL void gmgl_wait_events_timeout(double timeout) {
-	glfwWaitEventsTimeout(timeout);
 }
 
 GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {
@@ -228,6 +236,8 @@ GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {
 GMS_DLL void gmgl_draw_elements(double mode, double count) {
 	glDrawElements(mode, count, GL_UNSIGNED_INT, 0);
 }
+
+#pragma region Shaders
 
 GMS_DLL double gmgl_create_shader(double type, char* source) {
 	GLuint shader = glCreateShader(type);
@@ -408,6 +418,7 @@ GMS_DLL void gmgl_uniform_mat4x3fv(double location, double count, double transpo
 	glUniformMatrix4x3fv(location, count, transpose, fval);
 }
 
+#pragma endregion
 
 GMS_DLL double gmgl_gen_buffer() {
 	unsigned int buffer;

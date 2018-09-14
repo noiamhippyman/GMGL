@@ -18,7 +18,7 @@ I don't know much about OpenGL or 3D really in general.
 any of the callback event systems that GLFW provides with GML.
 If you're comfortable with C/C++ though, you could make your own
 callback functions in the source code and recompile.
-* The keyboard_* and mouse_* functions don't work since you're using
+* The GML keyboard_* and mouse_* functions don't work since you're using
 a different window than the actual GM window which is only hidden
 when you disable the draw event. This is demonstrated in the demos.
 * You have to run an alarm and check if the extension is still active 

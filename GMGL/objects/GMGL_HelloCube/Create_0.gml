@@ -2,6 +2,14 @@ alarm_set(0,GMGL_ACTIVE_CHECK_TIME * game_get_speed(gamespeed_fps));
 
 draw_enable_drawevent(false);
 
+cameraPos = [0,0,-3];
+cameraFront = [0,0,-1];
+cameraUp = [0,1,0];
+cameraSpeed = 2.5;
+cameraYaw = 0;
+cameraPitch = 0;
+cameraRoll = 0;
+
 gmgl_init();
 
 gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
@@ -124,14 +132,15 @@ uProj = gmgl_get_uniform_location(program,"projection");
 
 modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 
-var view = gmgl_matrix_build(0,0,-3,0,0,0,1,1,1);
+//view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
+view = gmgl_matrix_build(0,0,-3,0,0,0,1,1,1);
 viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 buffer_seek(viewMatrixBuffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {
 	buffer_write(viewMatrixBuffer,buffer_f32,view[i]);
 }
 
-var proj = matrix_build_projection_perspective_fov(45,scr_width/scr_height,0.1,1000.0);
+proj = matrix_build_projection_perspective_fov(45,scr_width/scr_height,0.1,1000.0);
 projMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 buffer_seek(projMatrixBuffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {

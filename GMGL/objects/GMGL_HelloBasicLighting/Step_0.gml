@@ -34,7 +34,7 @@ if (gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
 		cameraLastX = mx;
 		cameraLastY = my;
 
-		var sensitivity = 0.1;
+		var sensitivity = 0.5;
 		xoff *= sensitivity;
 		yoff *= sensitivity;
 
@@ -53,6 +53,7 @@ if (gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
 		}
 	}
 }
+
 //update view matrix buffer
 view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
 buffer_seek(viewMatrixBuffer,buffer_seek_start,0);
@@ -61,35 +62,51 @@ for (var i = 0; i < 16; ++i) {
 }
 
 //Rendering
-gmgl_clear_color(0.2,0.3,0.3,1.0);
-gmgl_clear(GMGL_COLOR_BUFFER_BIT|GMGL_DEPTH_BUFFER_BIT);
+gmgl_clear_color(0.1,0.1,0.1,1.0);
+gmgl_clear(GMGL_COLOR_BUFFER_BIT | GMGL_DEPTH_BUFFER_BIT);
 
-gmgl_active_texture(GMGL_TEXTURE0);
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture1);
-gmgl_active_texture(GMGL_TEXTURE1);
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture2);
 
-gmgl_use_program(program);
-gmgl_uniform_mat4fv(uView,1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
-gmgl_uniform_mat4fv(uProj,1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+//Render cube
+gmgl_use_program(shaderLighting);
+gmgl_uniform3f(u_objectColor,1,0.5,0.31);
+gmgl_uniform3f(u_lightColor,1,1,1);
+gmgl_uniform3f(u_lightPos, lightPos[0], lightPos[1], lightPos[2]);
+gmgl_uniform3f(u_viewPos, cameraPos[0], cameraPos[1], cameraPos[2]);
 
-gmgl_bind_vertex_array(vao);
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
-var t = (current_time / 500);
-var count = array_length_1d(modelPositions);
-for (var i = 0; i < count; ++i) {
-	var p = modelPositions[i];
-	var a = (i * 20);
-	a += t;
-	var model = gmgl_matrix_build(p[0],p[1],p[2], a, a*0.5, a*0.3, 1,1,1);
-	buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
-	for (var j = 0; j < 16; ++j) {
-		buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
-	}
-	gmgl_uniform_mat4fv(uModel,1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
-	
-	gmgl_draw_arrays(GMGL_TRIANGLES, 0, 36);
+var p = cubePos;
+var t = current_time / 10;
+
+var model = gmgl_matrix_build(p[0],p[1],p[2], dcos(t mod 360) * 50,0,0, 1,1,1);
+buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
+for (var j = 0; j < 16; ++j) {
+	buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 }
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+
+gmgl_bind_vertex_array(cubevao);
+gmgl_draw_arrays(GMGL_TRIANGLES,0,36);
+
+//Render lamp
+gmgl_use_program(shaderLamp);
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+
+p = lightPos;
+
+model = gmgl_matrix_build(p[0],p[1],-p[2], 0,0,0, 0.2,0.2,0.2);//why do I have to make z value negative for lighting to work?
+buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
+for (var j = 0; j < 16; ++j) {
+	buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
+}
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+
+gmgl_bind_vertex_array(lightvao);
+gmgl_draw_arrays(GMGL_TRIANGLES,0,36);
+
+
 
 gmgl_update();
 

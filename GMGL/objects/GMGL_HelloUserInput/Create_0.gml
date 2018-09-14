@@ -2,13 +2,28 @@ alarm_set(0,GMGL_ACTIVE_CHECK_TIME * game_get_speed(gamespeed_fps));
 
 draw_enable_drawevent(false);
 
+var scr_width = 1600;
+var scr_height = 900;
+
+cameraPos = [0,0,-3];
+cameraYaw = 90;
+cameraPitch = 0;
+cameraRoll = 0;
+cameraFront = vector_normalize([
+	dcos(cameraYaw) * dcos(cameraPitch),
+	dsin(cameraPitch),
+	dsin(cameraYaw) * dcos(cameraPitch)
+]);
+cameraUp = [0,1,0];
+cameraSpeed = 2.5;
+cameraLastX = scr_width / 2;
+cameraLastY = scr_height / 2;
+cameraFirstMouse = true;
+
 gmgl_init();
 
 gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
 gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
-
-var scr_width = 1600;
-var scr_height = 900;
 
 gmgl_create_window(scr_width,scr_height,"Demo - Using Inputs (keyboard, mouse, joystick)");
 
@@ -124,14 +139,15 @@ uProj = gmgl_get_uniform_location(program,"projection");
 
 modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 
-var view = gmgl_matrix_build(0,0,-3,0,0,0,1,1,1);
+//view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
+view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
 viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 buffer_seek(viewMatrixBuffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {
 	buffer_write(viewMatrixBuffer,buffer_f32,view[i]);
 }
 
-var proj = matrix_build_projection_perspective_fov(45,scr_width/scr_height,0.1,1000.0);
+proj = matrix_build_projection_perspective_fov(45,scr_width/scr_height,0.1,1000.0);
 projMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 buffer_seek(projMatrixBuffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {
@@ -151,15 +167,3 @@ modelPositions = [
 	[1.5,0.2,-1.5],
 	[-1.3,1,-1.5]
 ];
-
-
-cameraPos = [0,0,3];
-cameraFront = [0,0,-1];
-cameraUp = [0,1,0];
-cameraSpeed = 2.5;
-cameraYaw = -90;
-cameraPitch = 0;
-cameraRoll = 0;
-cameraLastX = scr_width / 2;
-cameraLastY = scr_height / 2;
-cameraFirstMouse = true;
