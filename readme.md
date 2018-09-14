@@ -26,8 +26,9 @@ to actually end the game's process. This is demonstrated in the demos.
 
 ---
 
-### Current State
+### Screenshots & GIFs
 ![alt text](https://i.imgur.com/TTkER49.png,"")
+![alt text](https://i.imgur.com/Tev0xST.gif,"")
 
 ### Program directly with OpenGL using GML
-![alt text](https://i.imgur.com/86lTGtw.png,"");
+![alt text](https://i.imgur.com/86lTGtw.png,"")
