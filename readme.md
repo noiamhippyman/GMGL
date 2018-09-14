@@ -25,10 +25,9 @@ when you disable the draw event. This is demonstrated in the demos.
 to actually end the game's process. This is demonstrated in the demos.
 
 ---
-
+### Program directly with OpenGL using GML
+![alt text](https://i.imgur.com/86lTGtw.png,"")
+---
 ### Screenshots & GIFs
 ![alt text](https://i.imgur.com/esI2D2H.gif,"")
 ![alt text](https://i.imgur.com/NtrpRoR.gif,"")
-
-### Program directly with OpenGL using GML
-![alt text](https://i.imgur.com/86lTGtw.png,"")
