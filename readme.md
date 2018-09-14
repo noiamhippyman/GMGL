@@ -28,7 +28,7 @@ to actually end the game's process. This is demonstrated in the demos.
 
 ### Screenshots & GIFs
 ![alt text](https://i.imgur.com/esI2D2H.gif,"")
-![alt text](https://i.imgur.com/ceua2Rb.gif,"")
+![alt text](https://i.imgur.com/hYZoqhG.gif,"")
 
 ### Program directly with OpenGL using GML
 ![alt text](https://i.imgur.com/86lTGtw.png,"")
