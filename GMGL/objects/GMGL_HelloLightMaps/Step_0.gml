@@ -62,14 +62,25 @@ gmgl_clear(GMGL_COLOR_BUFFER_BIT | GMGL_DEPTH_BUFFER_BIT);
 
 
 //Render cube
-gmgl_use_program(shaderLighting);
-gmgl_uniform3f(u_objectColor,1,0.5,0.31);
-gmgl_uniform3f(u_lightColor,1,1,1);
-gmgl_uniform3f(u_lightPos, lightPos[0], lightPos[1], lightPos[2]);
-gmgl_uniform3f(u_viewPos, cameraPos[0], cameraPos[1], cameraPos[2]);
+gmgl_use_program(shaderMaterial);
 
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+var diffuseColor = vector_multiply(lightColor,0.5);
+var ambientColor = vector_multiply(diffuseColor,0.5);
+
+gmgl_uniform3f(u_viewPos,cameraPos[0],cameraPos[1],cameraPos[2]);
+
+gmgl_uniform3f(u_lightPos, lightPos[0],lightPos[1],lightPos[2]);
+gmgl_uniform3f(u_lightAmbient, ambientColor[0],ambientColor[1],ambientColor[2]);
+gmgl_uniform3f(u_lightDiffuse, diffuseColor[0],diffuseColor[1],diffuseColor[2]);
+gmgl_uniform3f(u_lightSpecular, lightSpecular,lightSpecular,lightSpecular);
+
+//gmgl_uniform3f(u_matAmbient, matAmbient[0],matAmbient[1],matAmbient[2]);
+//gmgl_uniform3f(u_matDiffuse, matAmbient[0],matAmbient[1],matAmbient[2]);
+//gmgl_uniform3f(u_matSpecular, matSpecular,matSpecular,matSpecular);
+gmgl_uniform1f(u_matShininess, matShininess);
+
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
 var p = cubePos;
 var t = current_time / 10;
@@ -79,7 +90,12 @@ buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
 for (var j = 0; j < 16; ++j) {
 	buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 }
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLighting,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+
+gmgl_active_texture(GMGL_TEXTURE0);
+gmgl_bind_texture(GMGL_TEXTURE_2D, diffuseMap);
+gmgl_active_texture(GMGL_TEXTURE1);
+gmgl_bind_texture(GMGL_TEXTURE_2D, specularMap);
 
 gmgl_bind_vertex_array(cubevao);
 gmgl_draw_arrays(GMGL_TRIANGLES,0,36);

@@ -493,6 +493,21 @@ GMS_DLL double gmgl_load_image(const char* path) {
 	return imageIndex;
 }
 
+GMS_DLL double gmgl_get_image_width(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->width;
+}
+
+GMS_DLL double gmgl_get_image_height(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->height;
+}
+
+GMS_DLL double gmgl_get_image_channel_num(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->nrChannels;
+}
+
 GMS_DLL void gmgl_texImage2D(double target, double level, double internalformat, double border, double format, double imageIndex) {
 	GMGLimage* image = gmgl_get_image(imageIndex);
 

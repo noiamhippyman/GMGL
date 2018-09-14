@@ -1,6 +1,6 @@
 
 {
-    "name": "rmHelloLights1",
+    "name": "rmHelloBasicLighting",
     "id": "6b43805e-96f5-47ea-8c8f-ed5982016c6f",
     "creationCodeFile": "",
     "inheritCode": false,

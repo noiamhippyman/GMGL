@@ -1,9 +1,4 @@
 //user input
-if (gmgl_key_press(GMGL_KEY_ESCAPE)) game_end();
-show_debug_message(string(gmgl_mouse_x()) + "," + string(gmgl_mouse_y()));
-var xaxis = gmgl_key_press(GMGL_KEY_D) - gmgl_key_press(GMGL_KEY_A);
-var yaxis = gmgl_key_press(GMGL_KEY_W) - gmgl_key_press(GMGL_KEY_S);
-var zaxis = gmgl_key_press(GMGL_KEY_E) - gmgl_key_press(GMGL_KEY_Q);
 var dt = delta_time / 1000000;
 
 if (gmgl_key_press(GMGL_KEY_W)) {

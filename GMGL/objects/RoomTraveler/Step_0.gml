@@ -1,5 +1,6 @@
 if (!gmgl_is_active()) exit;
 
+if (gmgl_key_press(GMGL_KEY_ESCAPE)) game_end();
 
 if (gmgl_key_press(GMGL_KEY_PAGE_DOWN)) {
 	if (room == room_last) 

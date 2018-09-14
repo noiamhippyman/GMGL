@@ -1329,6 +1329,51 @@
                     "kind": 1,
                     "name": "gmgl_mouse_normal",
                     "returnType": 2
+                },
+                {
+                    "id": "0c1929c1-e910-444a-a7d0-31a55f79f1d2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_get_image_width",
+                    "help": "gmgl_get_image_width(image);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_get_image_width",
+                    "returnType": 2
+                },
+                {
+                    "id": "869a6a67-44e2-4160-bab2-3771c431bc75",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_get_image_height",
+                    "help": "gmgl_get_image_height(image);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_get_image_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "85a6675f-5055-4136-af07-ec13aabc7575",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gmgl_get_image_channel_num",
+                    "help": "gmgl_get_image_channel_num(image);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_get_image_channel_num",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1412,7 +1457,10 @@
                 "778b82bb-6ea7-4a74-a46f-c3a2d9e111eb",
                 "f45decb6-f6e7-4a1e-921c-409bc6b497b0",
                 "4fbab8a8-9fa6-46c9-a294-23d67a741686",
-                "99101edc-b4bf-4231-8c29-1b8294caecad"
+                "99101edc-b4bf-4231-8c29-1b8294caecad",
+                "0c1929c1-e910-444a-a7d0-31a55f79f1d2",
+                "869a6a67-44e2-4160-bab2-3771c431bc75",
+                "85a6675f-5055-4136-af07-ec13aabc7575"
             ],
             "origname": "",
             "uncompress": false
