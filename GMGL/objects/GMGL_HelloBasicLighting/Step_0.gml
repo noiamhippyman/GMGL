@@ -50,7 +50,7 @@ if (gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
 }
 
 //update view matrix buffer
-view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
+var view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);
 buffer_seek(viewMatrixBuffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {
 	buffer_write(viewMatrixBuffer,buffer_f32,view[i]);

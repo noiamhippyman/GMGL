@@ -29,5 +29,6 @@ to actually end the game's process. This is demonstrated in the demos.
 ![alt text](https://i.imgur.com/86lTGtw.png,"")
 ---
 ### Screenshots & GIFs
+![alt text](https://i.imgur.com/K4kS50U.png,"");
 ![alt text](https://i.imgur.com/esI2D2H.gif,"")
 ![alt text](https://i.imgur.com/NtrpRoR.gif,"")
