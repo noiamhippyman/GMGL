@@ -109,7 +109,7 @@ gmgl_bind_texture(GMGL_TEXTURE_2D,diffuseMap);
 gmgl_active_texture(GMGL_TEXTURE1);
 gmgl_bind_texture(GMGL_TEXTURE_2D,specularMap);
 
-var t = current_time / 500;
+var t = current_time / 100;
 gmgl_bind_vertex_array(cubevao);
 for (var i = 0; i < array_length_1d(cubePositions); ++i) {
 	var p = cubePositions[i];
