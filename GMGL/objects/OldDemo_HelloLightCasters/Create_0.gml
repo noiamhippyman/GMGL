@@ -26,15 +26,15 @@ projMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 
 gmgl_init();
 
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MAJOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MINOR,3);
 
 gmgl_create_window_centered(scr_width,scr_height,"Demo - Different Light Casters");
 
-gmgl_enable(GMGL_DEPTH_TEST);
+gmgl_enable(GL_DEPTH_TEST);
 
-var vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER, vertex_shader_light_casters());
-var fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER, fragment_shader_light_casters());
+var vertexShader = gmgl_create_shader(GL_VERTEX_SHADER, vertex_shader_light_casters());
+var fragmentShader = gmgl_create_shader(GL_FRAGMENT_SHADER, fragment_shader_light_casters());
 shaderMaterial = gmgl_create_program();
 gmgl_attach_shader(shaderMaterial,vertexShader);
 gmgl_attach_shader(shaderMaterial,fragmentShader);
@@ -42,8 +42,8 @@ gmgl_link_program(shaderMaterial);
 gmgl_delete_shader(vertexShader);
 gmgl_delete_shader(fragmentShader);
 
-vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER, vertex_shader_basic_lamp_2());
-fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER, fragment_shader_basic_lamp_2());
+vertexShader = gmgl_create_shader(GL_VERTEX_SHADER, vertex_shader_basic_lamp_2());
+fragmentShader = gmgl_create_shader(GL_FRAGMENT_SHADER, fragment_shader_basic_lamp_2());
 shaderLamp = gmgl_create_program();
 gmgl_attach_shader(shaderLamp,vertexShader);
 gmgl_attach_shader(shaderLamp,fragmentShader);
@@ -130,8 +130,8 @@ for (var i = 0; i < vcount; ++i) {
 }
 
 vbo = gmgl_gen_buffer();
-gmgl_bind_buffer(GMGL_ARRAY_BUFFER,vbo);
-gmgl_buffer_data(GMGL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GMGL_STATIC_DRAW);
+gmgl_bind_buffer(GL_ARRAY_BUFFER,vbo);
+gmgl_buffer_data(GL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GL_STATIC_DRAW);
 
 cubevao = gmgl_gen_vertex_array();
 gmgl_bind_vertex_array(cubevao);

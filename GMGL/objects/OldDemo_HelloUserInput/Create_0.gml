@@ -22,15 +22,15 @@ cameraFirstMouse = true;
 
 gmgl_init();
 
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MAJOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MINOR,3);
 
 gmgl_create_window_centered(scr_width,scr_height,"Demo - Using Inputs ( keyboard, mouse and joystick(not implemented yet) )");
 
-gmgl_enable(GMGL_DEPTH_TEST);
+gmgl_enable(GL_DEPTH_TEST);
 
-var vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER,vertex_shader_cube());
-var fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER,fragment_shader_cube());
+var vertexShader = gmgl_create_shader(GL_VERTEX_SHADER,vertex_shader_cube());
+var fragmentShader = gmgl_create_shader(GL_FRAGMENT_SHADER,fragment_shader_cube());
 program = gmgl_create_program();
 gmgl_attach_shader(program,vertexShader);
 gmgl_attach_shader(program,fragmentShader);
@@ -94,8 +94,8 @@ vbo = gmgl_gen_buffer();
 
 gmgl_bind_vertex_array(vao);
 
-gmgl_bind_buffer(GMGL_ARRAY_BUFFER,vbo);
-gmgl_buffer_data(GMGL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GMGL_STATIC_DRAW);
+gmgl_bind_buffer(GL_ARRAY_BUFFER,vbo);
+gmgl_buffer_data(GL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GL_STATIC_DRAW);
 
 gmgl_vertex_attrib_pointer(0,3,GMGL_FALSE,5,0);
 gmgl_enable_vertex_attrib_array(0);
@@ -103,30 +103,30 @@ gmgl_vertex_attrib_pointer(1,2,GMGL_FALSE,5,3);
 gmgl_enable_vertex_attrib_array(1);
 
 texture1 = gmgl_gen_texture();
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture1);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_S, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_T, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MIN_FILTER, GMGL_LINEAR);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MAG_FILTER, GMGL_LINEAR);
+gmgl_bind_texture(GL_TEXTURE_2D, texture1);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 var image = gmgl_load_image("container.jpg");
-gmgl_texImage2D(GMGL_TEXTURE_2D, 0, GMGL_RGB,0,GMGL_RGB,image);
-gmgl_generate_mipmap(GMGL_TEXTURE_2D);
+gmgl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB,0,GL_RGB,image);
+gmgl_generate_mipmap(GL_TEXTURE_2D);
 gmgl_free_image(image);
 
 texture2 = gmgl_gen_texture();
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture2);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_S, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_T, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MIN_FILTER, GMGL_LINEAR);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MAG_FILTER, GMGL_LINEAR);
+gmgl_bind_texture(GL_TEXTURE_2D, texture2);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 image = gmgl_load_image("awesomeface.png");
-gmgl_texImage2D(GMGL_TEXTURE_2D, 0, GMGL_RGB,0,GMGL_RGBA,image);
-gmgl_generate_mipmap(GMGL_TEXTURE_2D);
+gmgl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB,0,GL_RGBA,image);
+gmgl_generate_mipmap(GL_TEXTURE_2D);
 gmgl_free_image(image);
 
-gmgl_bind_buffer(GMGL_ARRAY_BUFFER,0);
+gmgl_bind_buffer(GL_ARRAY_BUFFER,0);
 gmgl_bind_vertex_array(0);
 
 

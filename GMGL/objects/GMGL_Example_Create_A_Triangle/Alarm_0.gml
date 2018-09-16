@@ -13,7 +13,7 @@
 	
 	You could equally just check it in the step event but it's
 	unecessary to waste it on every step. You can change the check
-	time in the GMGL_defines script
+	time in the GLFW_defines script
 
 */
 

@@ -12,17 +12,17 @@ if (img == GMGL_FAIL) {
 var width = gmgl_get_image_width(img);
 var height = gmgl_get_image_height(img);
 var channelNums = gmgl_get_image_channel_num(img);
-var format = GMGL_RGB;
-if (channelNums == 4) format = GMGL_RGBA;
+var format = GL_RGB;
+if (channelNums == 4) format = GL_RGBA;
 
-gmgl_bind_texture(GMGL_TEXTURE_2D,texID);
-gmgl_texImage2D(GMGL_TEXTURE_2D,0,format,0,format,img);
-gmgl_generate_mipmap(GMGL_TEXTURE_2D);
+gmgl_bind_texture(GL_TEXTURE_2D,texID);
+gmgl_texImage2D(GL_TEXTURE_2D,0,format,0,format,img);
+gmgl_generate_mipmap(GL_TEXTURE_2D);
 
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_S, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_WRAP_T, GMGL_REPEAT);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MIN_FILTER, GMGL_LINEAR_MIPMAP_LINEAR);
-gmgl_tex_parameteri(GMGL_TEXTURE_2D, GMGL_TEXTURE_MAG_FILTER, GMGL_LINEAR);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 gmgl_free_image(img);
 

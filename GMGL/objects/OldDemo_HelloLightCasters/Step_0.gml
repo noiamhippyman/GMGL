@@ -1,23 +1,23 @@
 //user input
 var dt = delta_time / 1000000;
 
-if (gmgl_key_press(GMGL_KEY_W)) {
+if (gmgl_key_press(GLFW_KEY_W)) {
 	cameraPos = vector_add(cameraPos, vector_multiply(cameraFront,cameraSpeed * dt));
 }
-if (gmgl_key_press(GMGL_KEY_S)) {
+if (gmgl_key_press(GLFW_KEY_S)) {
 	cameraPos = vector_subtract(cameraPos, vector_multiply(cameraFront,cameraSpeed * dt));
 }
-if (gmgl_key_press(GMGL_KEY_D)) {
+if (gmgl_key_press(GLFW_KEY_D)) {
 	cameraPos = vector_subtract(cameraPos, vector_multiply(vector_cross(cameraFront,cameraUp),cameraSpeed * dt));
 }
-if (gmgl_key_press(GMGL_KEY_A)) {
+if (gmgl_key_press(GLFW_KEY_A)) {
 	cameraPos = vector_add(cameraPos, vector_multiply(vector_cross(cameraFront,cameraUp),cameraSpeed * dt));
 }
 
 var mx = gmgl_mouse_x();
 var my = gmgl_mouse_y();
 
-if (gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
+if (gmgl_mouse_press(GLFW_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
 	cameraLastX = mx;
 	cameraLastY = my;
 	cameraFirstMouse = false;
@@ -42,7 +42,7 @@ if (gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT) && cameraFirstMouse) {
 			dsin(cameraYaw) * dcos(cameraPitch)
 		]);
 
-		if (!gmgl_mouse_press(GMGL_MOUSE_BUTTON_LEFT)) {
+		if (!gmgl_mouse_press(GLFW_MOUSE_BUTTON_LEFT)) {
 			cameraFirstMouse = true;
 			gmgl_mouse_normal();
 		}
@@ -65,7 +65,7 @@ for (var i = 0; i < 16; ++i) {
 
 
 gmgl_clear_color(0.1,0.1,0.1,1.0);
-gmgl_clear(GMGL_COLOR_BUFFER_BIT | GMGL_DEPTH_BUFFER_BIT);
+gmgl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 gmgl_use_program(shaderMaterial);
@@ -103,11 +103,11 @@ gmgl_shader_set_mat4(shaderMaterial,"projection",projMatrixBuffer);
 gmgl_shader_set_mat4(shaderMaterial,"view",viewMatrixBuffer);
 gmgl_shader_set_mat4(shaderMaterial,"model",modelMatrixBuffer);
 
-gmgl_active_texture(GMGL_TEXTURE0);
-gmgl_bind_texture(GMGL_TEXTURE_2D,diffuseMap);
+gmgl_active_texture(GL_TEXTURE0);
+gmgl_bind_texture(GL_TEXTURE_2D,diffuseMap);
 
-gmgl_active_texture(GMGL_TEXTURE1);
-gmgl_bind_texture(GMGL_TEXTURE_2D,specularMap);
+gmgl_active_texture(GL_TEXTURE1);
+gmgl_bind_texture(GL_TEXTURE_2D,specularMap);
 
 var t = current_time / 100;
 gmgl_bind_vertex_array(cubevao);
@@ -121,7 +121,7 @@ for (var i = 0; i < array_length_1d(cubePositions); ++i) {
 		buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 	}
 	gmgl_shader_set_mat4(shaderMaterial,"model",modelMatrixBuffer);
-	gmgl_draw_arrays(GMGL_TRIANGLES,0,36);
+	gmgl_draw_arrays(GL_TRIANGLES,0,36);
 }
 
 gmgl_use_program(shaderLamp);
@@ -139,7 +139,7 @@ for (var i = 0; i < array_length_1d(pointLightPositions); ++i) {
 	}
 	gmgl_shader_set_vec3(shaderLamp,"LightColor",c);
 	gmgl_shader_set_mat4(shaderLamp,"model",modelMatrixBuffer);
-	gmgl_draw_arrays(GMGL_TRIANGLES,0,36);
+	gmgl_draw_arrays(GL_TRIANGLES,0,36);
 }
 
 gmgl_update();

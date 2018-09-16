@@ -130,15 +130,6 @@ GMS_DLL double gmgl_is_active() {
 }
 
 GMS_DLL double gmgl_init() {
-	//Initialize key states
-	/*
-	for (int i = 0; i < __gmgl_keystates.keycount; ++i) {
-		__gmgl_keystates.keypress[i] = GMS_FALSE;
-		__gmgl_keystates.keydown[i] = GMS_FALSE;
-		__gmgl_keystates.keyrelease[i] = GMS_FALSE;
-	}
-	*/
-
 	//Initialize GLFW
 	if (glfwInit() == GLFW_FALSE) {
 		std::cout << "GLFW initialization failed" << std::endl;

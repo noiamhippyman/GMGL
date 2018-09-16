@@ -23,20 +23,20 @@ gmgl_init();
 	when you ask for a version 1.0 context, which is the default 
 	for these hints.
 */
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR, 3);
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR, 3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
 //Set GL profile
 /*
-	GMGL_OPENGL_PROFILE specifies which OpenGL profile to 
+	GLFW_OPENGL_PROFILE specifies which OpenGL profile to 
 	create the context for. Possible values are one of 
-	GMGL_OPENGL_CORE_PROFILE or GMGL_OPENGL_COMPAT_PROFILE, 
-	or GMGL_OPENGL_ANY_PROFILE to not request a specific profile. 
+	GLFW_OPENGL_CORE_PROFILE or GLFW_OPENGL_COMPAT_PROFILE, 
+	or GLFW_OPENGL_ANY_PROFILE to not request a specific profile. 
 	
-	If requesting an OpenGL version below 3.2, GMGL_OPENGL_ANY_PROFILE 
+	If requesting an OpenGL version below 3.2, GLFW_OPENGL_ANY_PROFILE 
 	must be used.
 */
-gmgl_window_hint(GMGL_OPENGL_PROFILE, GMGL_OPENGL_CORE_PROFILE);
+gmgl_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 //Create the actual window
 gmgl_create_window_centered(800,600,"Example - Creating a Window");

@@ -1,15 +1,14 @@
 gmgl_clear_color(0.2,0.3,0.3,1.0);
-gmgl_clear(GMGL_COLOR_BUFFER_BIT|GMGL_DEPTH_BUFFER_BIT);
+gmgl_clear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
-gmgl_active_texture(GMGL_TEXTURE0);
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture1);
-gmgl_active_texture(GMGL_TEXTURE1);
-gmgl_bind_texture(GMGL_TEXTURE_2D, texture2);
+gmgl_active_texture(GL_TEXTURE0);
+gmgl_bind_texture(GL_TEXTURE_2D, texture1);
+gmgl_active_texture(GL_TEXTURE1);
+gmgl_bind_texture(GL_TEXTURE_2D, texture2);
 
 gmgl_use_program(program);
 gmgl_uniform_mat4fv(uView,1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
 gmgl_uniform_mat4fv(uProj,1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
-
 
 gmgl_bind_vertex_array(vao);
 
@@ -26,7 +25,7 @@ for (var i = 0; i < count; ++i) {
 	}
 	gmgl_uniform_mat4fv(uModel,1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
 	
-	gmgl_draw_arrays(GMGL_TRIANGLES, 0, 36);
+	gmgl_draw_arrays(GL_TRIANGLES, 0, 36);
 }
 
 gmgl_update();

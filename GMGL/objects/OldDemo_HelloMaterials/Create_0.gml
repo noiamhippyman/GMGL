@@ -44,15 +44,15 @@ for (var i = 0; i < 16; ++i) {
 
 gmgl_init();
 
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MAJOR,3);
-gmgl_window_hint(GMGL_CONTEXT_VERSION_MINOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MAJOR,3);
+gmgl_window_hint(GLFW_CONTEXT_VERSION_MINOR,3);
 
 gmgl_create_window_centered(scr_width,scr_height,"Demo - Basic Materials");
 
-gmgl_enable(GMGL_DEPTH_TEST);
+gmgl_enable(GL_DEPTH_TEST);
 
-var vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER, vertex_shader_materials());
-var fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER, fragment_shader_materials());
+var vertexShader = gmgl_create_shader(GL_VERTEX_SHADER, vertex_shader_materials());
+var fragmentShader = gmgl_create_shader(GL_FRAGMENT_SHADER, fragment_shader_materials());
 shaderMaterial = gmgl_create_program();
 gmgl_attach_shader(shaderMaterial,vertexShader);
 gmgl_attach_shader(shaderMaterial,fragmentShader);
@@ -60,8 +60,8 @@ gmgl_link_program(shaderMaterial);
 gmgl_delete_shader(vertexShader);
 gmgl_delete_shader(fragmentShader);
 
-vertexShader = gmgl_create_shader(GMGL_VERTEX_SHADER, vertex_shader_basic_lamp());
-fragmentShader = gmgl_create_shader(GMGL_FRAGMENT_SHADER, fragment_shader_basic_lamp());
+vertexShader = gmgl_create_shader(GL_VERTEX_SHADER, vertex_shader_basic_lamp());
+fragmentShader = gmgl_create_shader(GL_FRAGMENT_SHADER, fragment_shader_basic_lamp());
 shaderLamp = gmgl_create_program();
 gmgl_attach_shader(shaderLamp,vertexShader);
 gmgl_attach_shader(shaderLamp,fragmentShader);
@@ -122,8 +122,8 @@ for (var i = 0; i < vcount; ++i) {
 cubevao = gmgl_gen_vertex_array();
 vbo = gmgl_gen_buffer();
 
-gmgl_bind_buffer(GMGL_ARRAY_BUFFER,vbo);
-gmgl_buffer_data(GMGL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GMGL_STATIC_DRAW);
+gmgl_bind_buffer(GL_ARRAY_BUFFER,vbo);
+gmgl_buffer_data(GL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GL_STATIC_DRAW);
 
 gmgl_bind_vertex_array(cubevao);
 
@@ -137,7 +137,7 @@ gmgl_enable_vertex_attrib_array(1);
 lightvao = gmgl_gen_vertex_array();
 gmgl_bind_vertex_array(lightvao);
 
-gmgl_bind_buffer(GMGL_ARRAY_BUFFER, vbo);
+gmgl_bind_buffer(GL_ARRAY_BUFFER, vbo);
 
 gmgl_vertex_attrib_pointer(0,3,GMGL_FALSE,6,0);
 gmgl_enable_vertex_attrib_array(0);
