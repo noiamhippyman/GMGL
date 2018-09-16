@@ -1,2 +1,2 @@
 //Update GMGL
-gmgl_update();
+glfw_update();

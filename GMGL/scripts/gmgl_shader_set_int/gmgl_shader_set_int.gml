@@ -4,4 +4,4 @@ var program = argument0;
 var uniform = argument1;
 var v = argument2;
 
-gmgl_uniform1i(gmgl_get_uniform_location(program,uniform),v);
+gl_uniform1i(gl_get_uniform_location(program,uniform),v);

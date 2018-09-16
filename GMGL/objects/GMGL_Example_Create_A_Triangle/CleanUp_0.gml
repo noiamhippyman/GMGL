@@ -1,2 +1,2 @@
 //This function shuts down GMGL
-gmgl_terminate();
+glfw_terminate();

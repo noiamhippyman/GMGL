@@ -44,11 +44,11 @@
                     "args": [
                         
                     ],
-                    "externalName": "gmgl_init",
-                    "help": "gmgl_init();",
+                    "externalName": "glfw_init",
+                    "help": "glfw_init();",
                     "hidden": false,
                     "kind": 1,
-                    "name": "gmgl_init",
+                    "name": "glfw_init",
                     "returnType": 2
                 },
                 {
@@ -67,408 +67,6 @@
                     "returnType": 2
                 },
                 {
-                    "id": "8034266c-b3a1-43fe-9603-941ca9e78f4b",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_terminate",
-                    "help": "gmgl_terminate();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_terminate",
-                    "returnType": 2
-                },
-                {
-                    "id": "c5c49ea4-821c-4a37-a674-8cc608e6af83",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_default_window_hints",
-                    "help": "gmgl_default_window_hints();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_default_window_hints",
-                    "returnType": 2
-                },
-                {
-                    "id": "0e2d95cd-18b1-41fa-8b35-7286c0d0a10e",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_window_hint",
-                    "help": "gmgl_window_hint(hint,value);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_window_hint",
-                    "returnType": 2
-                },
-                {
-                    "id": "6dd096ad-0a9b-4b8c-9ee6-bcc8c60226ef",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_create_window",
-                    "help": "gmgl_create_window(width,height,title);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_create_window",
-                    "returnType": 2
-                },
-                {
-                    "id": "67e6aed5-23f7-42ab-a3ec-7e62a417446a",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_clear_color",
-                    "help": "gmgl_clear_color(r,g,b,a);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_clear_color",
-                    "returnType": 2
-                },
-                {
-                    "id": "87b2899f-ce18-4019-8b51-5191fb3ad9c3",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_gen_buffer",
-                    "help": "gmgl_gen_buffer();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_gen_buffer",
-                    "returnType": 2
-                },
-                {
-                    "id": "4fea30ab-440b-4730-9e4b-a8d6f8b29541",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_bind_buffer",
-                    "help": "gmgl_bind_buffer(target,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_bind_buffer",
-                    "returnType": 2
-                },
-                {
-                    "id": "aadc4aeb-3338-41ef-890f-b5c3ed2ed58e",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1,
-                        2
-                    ],
-                    "externalName": "gmgl_buffer_data",
-                    "help": "gmgl_buffer_data(target,size,vertices,usage);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_buffer_data",
-                    "returnType": 2
-                },
-                {
-                    "id": "be55a9ab-598c-4118-802a-2223eca63504",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_create_shader",
-                    "help": "gmgl_create_shader(type,source);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_create_shader",
-                    "returnType": 2
-                },
-                {
-                    "id": "1cfff8a6-3964-41f5-b7fb-86956034d820",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_delete_shader",
-                    "help": "gmgl_delete_shader(shader);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_delete_shader",
-                    "returnType": 2
-                },
-                {
-                    "id": "f9a9c6a5-1fff-4851-8b58-5b506e2a8669",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_create_program",
-                    "help": "gmgl_create_program();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_create_program",
-                    "returnType": 2
-                },
-                {
-                    "id": "c8da6b00-37fd-4e3e-90bd-811938641c8d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_attach_shader",
-                    "help": "gmgl_attach_shader(program,shader);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_attach_shader",
-                    "returnType": 2
-                },
-                {
-                    "id": "be0741ee-52a6-4a79-a258-42b96424ad1c",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_link_program",
-                    "help": "gmgl_link_program(program);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_link_program",
-                    "returnType": 2
-                },
-                {
-                    "id": "9fb83c98-c456-42cb-a868-db81458e89fb",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_use_program",
-                    "help": "gmgl_use_program(program);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_use_program",
-                    "returnType": 2
-                },
-                {
-                    "id": "0f153cb0-2f37-45ff-854e-2e01643acc2e",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_draw_arrays",
-                    "help": "gmgl_draw_arrays(mode,first,count);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_draw_arrays",
-                    "returnType": 2
-                },
-                {
-                    "id": "667b42fe-2b1c-45f4-ab3a-45fe22dbc78c",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_gen_vertex_array",
-                    "help": "gmgl_gen_vertex_array();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_gen_vertex_array",
-                    "returnType": 2
-                },
-                {
-                    "id": "9d59587b-036b-47ab-a0f6-2ada7c337102",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_bind_vertex_array",
-                    "help": "gmgl_bind_vertex_array(varray);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_bind_vertex_array",
-                    "returnType": 2
-                },
-                {
-                    "id": "a325f738-5e95-4c6d-abd3-4eeec059ec6d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_vertex_attrib_pointer",
-                    "help": "gmgl_vertex_attrib_pointer(index,size,normalized,stride,offset);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_vertex_attrib_pointer",
-                    "returnType": 2
-                },
-                {
-                    "id": "99065a11-41e2-4c8e-8df7-ca581571684a",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_enable_vertex_attrib_array",
-                    "help": "gmgl_enable_vertex_attrib_array(index);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_enable_vertex_attrib_array",
-                    "returnType": 2
-                },
-                {
-                    "id": "3c09164e-3401-4f2c-b4f7-6dac450364f4",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_draw_elements",
-                    "help": "gmgl_draw_elements(mode,count);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_draw_elements",
-                    "returnType": 2
-                },
-                {
-                    "id": "b99e09f4-5bcd-43b9-8976-70beef63e344",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_get_uniform_location",
-                    "help": "gmgl_get_uniform_location(program,name);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_get_uniform_location",
-                    "returnType": 2
-                },
-                {
-                    "id": "77365e37-de4a-4b00-8041-9c1ad40ca087",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform4f",
-                    "help": "gmgl_uniform4f(location,x,y,z,w);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4f",
-                    "returnType": 2
-                },
-                {
-                    "id": "f4895f2b-48c0-4edc-92e3-91df21c1b0a1",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_gen_texture",
-                    "help": "gmgl_gen_texture();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_gen_texture",
-                    "returnType": 2
-                },
-                {
-                    "id": "0d251964-f966-4f03-bcbf-b65fdffe5a50",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_bind_texture",
-                    "help": "gmgl_bind_texture(target,texture);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_bind_texture",
-                    "returnType": 2
-                },
-                {
-                    "id": "87273b47-df11-4855-b209-e2b880fc5388",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_tex_parameteri",
-                    "help": "gmgl_tex_parameteri(target,pname,param);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_tex_parameteri",
-                    "returnType": 2
-                },
-                {
                     "id": "f2773f76-720d-4d99-8395-17236b181d74",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -481,41 +79,6 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gmgl_load_image",
-                    "returnType": 2
-                },
-                {
-                    "id": "53bb034c-827b-412d-99f5-2d190345ed50",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_texImage2D",
-                    "help": "gmgl_texImage2D(target,level,internalformat,border,format,image);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_texImage2D",
-                    "returnType": 2
-                },
-                {
-                    "id": "98eb0ff6-cb5a-40f7-874a-ee6a8539b512",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_generate_mipmap",
-                    "help": "gmgl_generate_mipmap(target);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_generate_mipmap",
                     "returnType": 2
                 },
                 {
@@ -534,623 +97,6 @@
                     "returnType": 2
                 },
                 {
-                    "id": "066486a1-7769-44b5-bc33-85f3b5e49977",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform1i",
-                    "help": "gmgl_uniform1i(location,value);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1i",
-                    "returnType": 2
-                },
-                {
-                    "id": "04b6e18a-ceb2-43f5-8703-6bbede32ed44",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_active_texture",
-                    "help": "gmgl_active_texture(unit)",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_active_texture",
-                    "returnType": 2
-                },
-                {
-                    "id": "d4876c08-67a8-4c35-b650-9059007a05ee",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform1f",
-                    "help": "gmgl_uniform1f(location,x);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1f",
-                    "returnType": 2
-                },
-                {
-                    "id": "1d92468c-42ac-4ef8-8bca-30c7566a63ca",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform2f",
-                    "help": "gmgl_uniform2f(location,x,y);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2f",
-                    "returnType": 2
-                },
-                {
-                    "id": "bd45d7a6-c7fa-4908-8faa-628e2440cbce",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform3f",
-                    "help": "gmgl_uniform3f(location,x,y,z);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3f",
-                    "returnType": 2
-                },
-                {
-                    "id": "3a29eb9a-1ef6-4128-aa1e-efc9e859f124",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform2i",
-                    "help": "gmgl_uniform2i(location,x,y);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2i",
-                    "returnType": 2
-                },
-                {
-                    "id": "bf6f6dc5-c043-4ec9-8a60-db8fe70b0470",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform3i",
-                    "help": "gmgl_uniform3i(location,x,y,z);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3i",
-                    "returnType": 2
-                },
-                {
-                    "id": "800388e6-5d04-4a26-a565-f941517e5dc8",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform4i",
-                    "help": "gmgl_uniform4i(location,x,y,z,w);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4i",
-                    "returnType": 2
-                },
-                {
-                    "id": "bcf66de0-a405-46db-8c86-56edc2141ae8",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform4ui",
-                    "help": "gmgl_uniform4ui(location,x,y,z,w);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4ui",
-                    "returnType": 2
-                },
-                {
-                    "id": "4f502932-7da3-43ef-b25d-c8507d60fd7b",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform1ui",
-                    "help": "gmgl_uniform1ui(location,x);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1ui",
-                    "returnType": 2
-                },
-                {
-                    "id": "97bc457b-1868-49f2-b4c8-d02bf045d13d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform2ui",
-                    "help": "gmgl_uniform2ui(location,x,y);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2ui",
-                    "returnType": 2
-                },
-                {
-                    "id": "b3b1d371-13b1-446a-b63d-c13fef1abaf8",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "externalName": "gmgl_uniform3ui",
-                    "help": "gmgl_uniform3ui(location,x,y,z);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3ui",
-                    "returnType": 2
-                },
-                {
-                    "id": "c9070a65-50ca-4504-be7f-5fcfad873aa0",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform1fv",
-                    "help": "gmgl_uniform1fv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "fb6791c8-56c4-4e9f-b8a1-acf693a8a765",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform2fv",
-                    "help": "gmgl_uniform2fv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "b444e634-7c07-42e8-8196-f497cc11fcf7",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform3fv",
-                    "help": "gmgl_uniform3fv(location,size,buffer)",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "7055b0da-32ea-41fe-822a-46a58cdc90c0",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform4fv",
-                    "help": "gmgl_uniform4fv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "e627ff6d-34e5-4330-833e-cdf1c0196ba3",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform1iv",
-                    "help": "gmgl_uniform1iv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1iv",
-                    "returnType": 2
-                },
-                {
-                    "id": "1da0ec47-1b35-4c8d-9c91-12633d34937e",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform2iv",
-                    "help": "gmgl_uniform2iv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2iv",
-                    "returnType": 2
-                },
-                {
-                    "id": "6288f7b5-7234-4643-8e07-2bacc2dc20f3",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform3iv",
-                    "help": "gmgl_uniform3iv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3iv",
-                    "returnType": 2
-                },
-                {
-                    "id": "f46258ad-8fbd-4090-b0c1-dd185a2f7f7c",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform4iv",
-                    "help": "gmgl_uniform4iv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4iv",
-                    "returnType": 2
-                },
-                {
-                    "id": "8510314b-b22c-4a51-a181-7dc7a2e5feb9",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform1uiv",
-                    "help": "gmgl_uniform1uiv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform1uiv",
-                    "returnType": 2
-                },
-                {
-                    "id": "e60d55a7-213f-4ff1-9c35-f284308c70e0",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform2uiv",
-                    "help": "gmgl_uniform2uiv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform2uiv",
-                    "returnType": 2
-                },
-                {
-                    "id": "f92ae367-730a-4c19-956d-cf576d1bb611",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform3uiv",
-                    "help": "gmgl_uniform3uiv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform3uiv",
-                    "returnType": 2
-                },
-                {
-                    "id": "0af6c53b-5af4-4baa-88d0-28ba01d1d55f",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform4uiv",
-                    "help": "gmgl_uniform4uiv(location,size,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform4uiv",
-                    "returnType": 2
-                },
-                {
-                    "id": "34516521-c9e3-4482-9f37-76e4c60244d2",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat2fv",
-                    "help": "gmgl_uniform_mat2fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat2fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "88200368-1cfe-4ade-90fb-0344e5117f67",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat3fv",
-                    "help": "gmgl_uniform_mat3fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat3fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "0201d8b3-6d12-4619-8e65-ea680d7356e1",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat4fv",
-                    "help": "gmgl_uniform_mat4fv(location,size,transpose,buffer)",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat4fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "61b13eba-3172-4e91-a56a-083c732ddf08",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat2x3fv",
-                    "help": "gmgl_uniform_mat2x3fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat2x3fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "e9649bc8-e22a-4bec-a6b7-9a6bf30517a5",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat3x2fv",
-                    "help": "gmgl_uniform_mat3x2fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat3x2fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "778b82bb-6ea7-4a74-a46f-c3a2d9e111eb",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat2x4fv",
-                    "help": "gmgl_uniform_mat2x4fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat2x4fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "f45decb6-f6e7-4a1e-921c-409bc6b497b0",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat4x2fv",
-                    "help": "gmgl_uniform_mat4x2fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat4x2fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "4fbab8a8-9fa6-46c9-a294-23d67a741686",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat3x4fv",
-                    "help": "gmgl_uniform_mat3x4fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat3x4fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "99101edc-b4bf-4231-8c29-1b8294caecad",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2,
-                        2,
-                        2,
-                        1
-                    ],
-                    "externalName": "gmgl_uniform_mat4x3fv",
-                    "help": "gmgl_uniform_mat4x3fv(location,size,transpose,buffer);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_uniform_mat4x3fv",
-                    "returnType": 2
-                },
-                {
-                    "id": "b25b9cd1-f69d-4766-bbe5-458ffc3c5bd7",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_clear",
-                    "help": "gmgl_clear(mask);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_clear",
-                    "returnType": 2
-                },
-                {
-                    "id": "3fe15ec6-2e56-4937-8ba7-4cde44211b03",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_enable",
-                    "help": "gmgl_enable(cap);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_enable",
-                    "returnType": 2
-                },
-                {
-                    "id": "b130b337-72b6-42a7-bc30-de1bb9757545",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_disable",
-                    "help": "gmgl_disable(cap);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_disable",
-                    "returnType": 2
-                },
-                {
                     "id": "ea62e899-1f7e-472a-84cb-17039ec0a8f1",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -1163,81 +109,6 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gmgl_key_press",
-                    "returnType": 2
-                },
-                {
-                    "id": "95d6833f-a7c7-4f5b-8564-16b7abd0f306",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_update",
-                    "help": "gmgl_update();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_update",
-                    "returnType": 2
-                },
-                {
-                    "id": "fc2af31f-5461-464c-9283-bd7a7dccda37",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_swap_buffers",
-                    "help": "gmgl_swap_buffers();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_swap_buffers",
-                    "returnType": 2
-                },
-                {
-                    "id": "929b5a9e-a946-4f31-96f7-cb111b5f465d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_poll_events",
-                    "help": "gmgl_poll_events();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_poll_events",
-                    "returnType": 2
-                },
-                {
-                    "id": "26a63dad-c278-4126-b176-d21686ff51fe",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_wait_events",
-                    "help": "gmgl_wait_events();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_wait_events",
-                    "returnType": 1
-                },
-                {
-                    "id": "ce1fd2e8-8365-496a-b69c-d502bae03af8",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_wait_events_timeout",
-                    "help": "gmgl_wait_events_timeout(timeout);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_wait_events_timeout",
                     "returnType": 2
                 },
                 {
@@ -1376,7 +247,129 @@
                     "returnType": 2
                 },
                 {
-                    "id": "3446e7f0-7051-4f82-bb02-63adfd597524",
+                    "id": "e859faa9-147b-4307-a575-840d0c0a3daa",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_update",
+                    "help": "glfw_update()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_update",
+                    "returnType": 2
+                },
+                {
+                    "id": "39df4c0e-a307-4d46-ab8e-418f526ea065",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_terminate",
+                    "help": "glfw_terminate();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_terminate",
+                    "returnType": 2
+                },
+                {
+                    "id": "bc1dd10f-4fef-4725-8f18-41dc664b07bd",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_poll_events",
+                    "help": "glfw_poll_events();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_poll_events",
+                    "returnType": 2
+                },
+                {
+                    "id": "bada81d2-9e68-4cf2-b5a4-06dfbb7d6f80",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_wait_events",
+                    "help": "glfw_wait_events()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_wait_events",
+                    "returnType": 2
+                },
+                {
+                    "id": "4929c990-85d1-4c11-970f-9e5c0c93d58f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_wait_events_timeout",
+                    "help": "glfw_wait_events_timeout(timeout)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_wait_events_timeout",
+                    "returnType": 2
+                },
+                {
+                    "id": "370af6e2-359c-49aa-8412-a5d4680ee099",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_swap_buffers",
+                    "help": "glfw_swap_buffers();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_swap_buffers",
+                    "returnType": 2
+                },
+                {
+                    "id": "71835f1d-aa8a-4221-af4e-c0c3d73c61fe",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "glfw_create_window",
+                    "help": "glfw_create_window(width,height,title);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_create_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "70232ba1-5523-46f9-84d2-f66dd8542174",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_default_window_hints",
+                    "help": "glfw_default_window_hints();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_default_window_hints",
+                    "returnType": 2
+                },
+                {
+                    "id": "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -1384,11 +377,1206 @@
                         2,
                         2
                     ],
-                    "externalName": "gmgl_set_window_pos",
-                    "help": "gmgl_set_window_pos(x,y);",
+                    "externalName": "glfw_window_hint",
+                    "help": "glfw_window_hint(hint,value);",
                     "hidden": false,
                     "kind": 1,
-                    "name": "gmgl_set_window_pos",
+                    "name": "glfw_window_hint",
+                    "returnType": 2
+                },
+                {
+                    "id": "aea95dec-a2cd-45be-9223-25456cb5b2a6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_window_pos",
+                    "help": "glfw_set_window_pos(x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_pos",
+                    "returnType": 2
+                },
+                {
+                    "id": "00b4708e-dcdf-40a1-af7b-66a5728094eb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_enable",
+                    "help": "gl_enable(cap);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_enable",
+                    "returnType": 2
+                },
+                {
+                    "id": "49b9da98-b884-47eb-b236-13d75a96c9de",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_disable",
+                    "help": "gl_disable(cap)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_disable",
+                    "returnType": 2
+                },
+                {
+                    "id": "99e0b78c-3d11-4e63-a617-8e8c98dc5011",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_clear_color",
+                    "help": "gl_clear_color(r,g,b,a);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_clear_color",
+                    "returnType": 2
+                },
+                {
+                    "id": "7fbe19d0-1996-48d0-98c1-6ba407ad7705",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_clear",
+                    "help": "gl_clear(mask);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_clear",
+                    "returnType": 2
+                },
+                {
+                    "id": "fb80c6de-1f0e-4758-b488-923a92bb0e7a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_draw_arrays",
+                    "help": "gl_draw_arrays(mode,first,count);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_draw_arrays",
+                    "returnType": 2
+                },
+                {
+                    "id": "8f1982f2-e1b8-43b9-b4da-38720444e03b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_draw_elements",
+                    "help": "gl_draw_elements(mode,count);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_draw_elements",
+                    "returnType": 2
+                },
+                {
+                    "id": "39a618f6-3617-4784-9be9-ce899665b510",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_gen_buffer",
+                    "help": "gl_gen_buffer();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_gen_buffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "af0b8e01-b0db-4c52-be8b-5bfaf777bf76",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_bind_buffer",
+                    "help": "gl_bind_buffer(target,buffer);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_buffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "a4aac722-987b-4509-912f-849c884c5b1c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1,
+                        2
+                    ],
+                    "externalName": "gl_buffer_data",
+                    "help": "gl_buffer_data(target,size,vertices,usage);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_buffer_data",
+                    "returnType": 2
+                },
+                {
+                    "id": "a22ad940-e06c-47f3-a24e-4cad3527fdb2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_gen_vertex_array",
+                    "help": "gl_gen_vertex_array();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_gen_vertex_array",
+                    "returnType": 2
+                },
+                {
+                    "id": "60450512-bebb-492c-9c02-355825db6a85",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_bind_vertex_array",
+                    "help": "gl_bind_vertex_array(varray);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_vertex_array",
+                    "returnType": 2
+                },
+                {
+                    "id": "97c1955e-068e-45d0-968f-8660979c8cbc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_vertex_attrib_pointer",
+                    "help": "gl_vertex_attrib_pointer(index,size,normalized,stride,offset);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_vertex_attrib_pointer",
+                    "returnType": 2
+                },
+                {
+                    "id": "45066c2e-b5fa-4713-824c-2f8680043fad",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_enable_vertex_attrib_array",
+                    "help": "gl_enable_vertex_attrib_array(index);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_enable_vertex_attrib_array",
+                    "returnType": 2
+                },
+                {
+                    "id": "d91dd5e9-62d2-4425-ba33-3c07fb397b4e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_gen_texture",
+                    "help": "gl_gen_texture();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_gen_texture",
+                    "returnType": 2
+                },
+                {
+                    "id": "89a549a2-2324-47a0-9928-52eebd8b0bcc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_bind_texture",
+                    "help": "gl_bind_texture(target,texture);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_texture",
+                    "returnType": 2
+                },
+                {
+                    "id": "351330fc-2520-46b1-b132-100517bbd67c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_active_texture",
+                    "help": "gl_active_texture(unit);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_active_texture",
+                    "returnType": 2
+                },
+                {
+                    "id": "f204a943-8e17-46be-a357-9598e45f130d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_texImage2D",
+                    "help": "gl_texImage2D(target,level,internalFormat,border,format,type,image);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texImage2D",
+                    "returnType": 1
+                },
+                {
+                    "id": "70732e48-3559-46b8-a52d-746a6a438fb0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_generate_mipmap",
+                    "help": "gl_generate_mipmap(target);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_generate_mipmap",
+                    "returnType": 2
+                },
+                {
+                    "id": "9bffbed4-e534-4a6b-ba23-b1748d736eb3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_create_shader",
+                    "help": "gl_create_shader(type,source);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_create_shader",
+                    "returnType": 2
+                },
+                {
+                    "id": "0cec0e31-d5f9-4eac-9caf-c64a1751f072",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_delete_shader",
+                    "help": "gl_delete_shader(shader);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_delete_shader",
+                    "returnType": 2
+                },
+                {
+                    "id": "19d799e3-0e26-4206-ab46-178003548dae",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_create_program",
+                    "help": "gl_create_program();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_create_program",
+                    "returnType": 2
+                },
+                {
+                    "id": "464029d7-0f7f-4a98-8fe2-9d5fbd0ca529",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_attach_shader",
+                    "help": "gl_attach_shader(program,shader);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_attach_shader",
+                    "returnType": 2
+                },
+                {
+                    "id": "30072e85-3d10-474e-8879-15560cb8546f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_link_program",
+                    "help": "gl_link_program(program);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_link_program",
+                    "returnType": 2
+                },
+                {
+                    "id": "8e67961e-ef31-414f-8d64-aa8d71a5dda1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_use_program",
+                    "help": "gl_use_program(program);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_use_program",
+                    "returnType": 2
+                },
+                {
+                    "id": "2b4e7ba2-7217-4151-bd63-aebaa57239c2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_get_uniform_location",
+                    "help": "gl_get_uniform_location(program,name);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_get_uniform_location",
+                    "returnType": 2
+                },
+                {
+                    "id": "6cfa03b7-b3aa-48ce-a367-eb12d4e27a97",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform1f",
+                    "help": "gl_uniform1f(location,x);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1f",
+                    "returnType": 2
+                },
+                {
+                    "id": "deba780c-5750-4ed1-a204-92b3c2024250",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform2f",
+                    "help": "gl_uniform2f(location,x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2f",
+                    "returnType": 2
+                },
+                {
+                    "id": "b01caa89-867a-4f38-9b36-20bf54aa2ac9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform3f",
+                    "help": "gl_uniform3f(location,x,y,z);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3f",
+                    "returnType": 2
+                },
+                {
+                    "id": "7da822a6-9927-4809-9172-2d712c6fa36c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform4f",
+                    "help": "gl_uniform4f(location,x,y,z,w);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4f",
+                    "returnType": 2
+                },
+                {
+                    "id": "a461bb2e-7668-4078-8371-1da360a04b9f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform1i",
+                    "help": "gl_uniform1i(location,x);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1i",
+                    "returnType": 2
+                },
+                {
+                    "id": "8c59e9fa-8062-42c1-b8d3-c0a7f44ab9e0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform2i",
+                    "help": "gl_uniform2i(location,x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2i",
+                    "returnType": 2
+                },
+                {
+                    "id": "1ead08d0-66a1-4908-8c47-2b98d969ea5e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform3i",
+                    "help": "gl_uniform3i(location,x,y,z);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3i",
+                    "returnType": 2
+                },
+                {
+                    "id": "b51a34d1-e608-4898-b8f4-2c7dfe072b21",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform4i",
+                    "help": "gl_uniform4i(location,x,y,z,w);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4i",
+                    "returnType": 2
+                },
+                {
+                    "id": "80ac767a-7061-4055-ba40-0a6636c7fc02",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform1ui",
+                    "help": "gl_uniform1ui(location,x);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1ui",
+                    "returnType": 2
+                },
+                {
+                    "id": "23f503d0-31ed-4a14-92a5-254d302eeea2",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform2ui",
+                    "help": "gl_uniform2ui(location,x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2ui",
+                    "returnType": 2
+                },
+                {
+                    "id": "739eb216-9dc5-4a59-a9c9-d30d2c153346",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform3ui",
+                    "help": "gl_uniform3ui(location,x,y,z);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3ui",
+                    "returnType": 2
+                },
+                {
+                    "id": "3ad704ac-b1a7-4258-8b71-ea28da212e28",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform4ui",
+                    "help": "gl_uniform4ui(location,x,y,z,w);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4ui",
+                    "returnType": 2
+                },
+                {
+                    "id": "7845a070-12b8-4b88-a52c-b9f031d22513",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform1fv",
+                    "help": "gl_uniform1fv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "7a854fde-cf18-4022-9f21-21115e787e43",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform2fv",
+                    "help": "gl_uniform2fv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "f8578999-0ea6-4c3f-95d5-a2fe54b46507",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform3fv",
+                    "help": "gl_uniform3fv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "02b26be4-b8d0-4192-a97c-07a65f575ea1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform4fv",
+                    "help": "gl_uniform4fv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "f2936042-cfc3-43d5-9eb8-ff1b1463e71a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform1iv",
+                    "help": "gl_uniform1iv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1iv",
+                    "returnType": 2
+                },
+                {
+                    "id": "93a17f4a-c64b-4960-a8f9-e5d7d2e3fb9e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform2iv",
+                    "help": "gl_uniform2iv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2iv",
+                    "returnType": 2
+                },
+                {
+                    "id": "d4a9bcc8-8786-4ac0-a2cc-436ef04b6712",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform3iv",
+                    "help": "gl_uniform3iv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3iv",
+                    "returnType": 2
+                },
+                {
+                    "id": "5aedb072-bc4f-4159-98b7-112474945edd",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform4iv",
+                    "help": "gl_uniform4iv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4iv",
+                    "returnType": 2
+                },
+                {
+                    "id": "0853068f-b53b-4133-8339-73ed467210ed",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform1uiv",
+                    "help": "gl_uniform1uiv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform1uiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "25c73a6c-a132-4b50-9f29-d057a0732310",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform2uiv",
+                    "help": "gl_uniform2uiv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform2uiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "359493b1-b3ee-4597-85ed-5c8486482870",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform3uiv",
+                    "help": "gl_uniform3uiv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform3uiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "b311e861-2fc6-4e6b-a357-433c552e9ae4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform4uiv",
+                    "help": "gl_uniform4uiv(location,size,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform4uiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "036586e6-7e83-4434-b96a-86832d96980e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat2fv",
+                    "help": "gl_uniform_mat2fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat2fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "bdf61e09-5714-435e-95cc-26c19c0ecceb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat3fv",
+                    "help": "gl_uniform_mat3fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat3fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "c0f8c585-2a61-433b-b42a-3a6ff92a4854",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat4fv",
+                    "help": "gl_uniform_mat4fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat4fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "385a0a7e-0dc9-4da7-a3ce-24ce40f0944c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat2x3fv",
+                    "help": "gl_uniform_mat2x3fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat2x3fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "003f06a4-9fd5-4034-8d20-c6925ecdb151",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat3x2fv",
+                    "help": "gl_uniform_mat3x2fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat3x2fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "6f0ecd26-7e29-495a-a5c7-199c64c580e5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat2x4fv",
+                    "help": "gl_uniform_mat2x4fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat2x4fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "da589678-94b4-493d-858c-b556bee8ae1d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat4x2fv",
+                    "help": "gl_uniform_mat4x2fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat4x2fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "635f443f-dac1-4e31-9756-db7fcdfd5655",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat3x4fv",
+                    "help": "gl_uniform_mat3x4fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat3x4fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "ce0723a8-d16e-448b-b978-18d30c592c6a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_uniform_mat4x3fv",
+                    "help": "gl_uniform_mat4x3fv(location,count,transpose,value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_mat4x3fv",
+                    "returnType": 2
+                },
+                {
+                    "id": "17805b31-3ad7-4393-8dc6-06598f9f089b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_tex_parameterf",
+                    "help": "gl_tex_parameterf(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameterf",
+                    "returnType": 2
+                },
+                {
+                    "id": "29af104d-488b-4cc4-bbe2-192b05b45b5f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_tex_parameteri",
+                    "help": "gl_tex_parameteri(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameteri",
+                    "returnType": 2
+                },
+                {
+                    "id": "9aa6c185-9654-4f8b-8459-2245e3caec81",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_texture_parameterf",
+                    "help": "gl_texture_parameterf(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameterf",
+                    "returnType": 2
+                },
+                {
+                    "id": "135d08c8-89ee-4da4-860b-9f9e589c9c23",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_texture_parameteri",
+                    "help": "gl_texture_parameteri(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameteri",
+                    "returnType": 2
+                },
+                {
+                    "id": "f01006c7-cef1-49ca-8f3d-a44bc1d07e9c",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_tex_parameterfv",
+                    "help": "gl_tex_parameterfv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameterfv",
+                    "returnType": 2
+                },
+                {
+                    "id": "97fb43bd-d3bd-4d19-956e-8e7f32604144",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_tex_parameteriv",
+                    "help": "gl_tex_parameteriv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameteriv",
+                    "returnType": 2
+                },
+                {
+                    "id": "80d4efd2-0d3b-4e62-b085-2e6685e1de38",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_texture_parameterfv",
+                    "help": "gl_texture_parameterfv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameterfv",
+                    "returnType": 2
+                },
+                {
+                    "id": "4cce2de3-6b03-44d9-8ffd-121721fc3730",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_texture_parameteriv",
+                    "help": "gl_texture_parameteriv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameteriv",
+                    "returnType": 2
+                },
+                {
+                    "id": "0494fe3f-1017-4711-bf9a-3d6c61d6eb36",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_tex_parameterIiv",
+                    "help": "gl_tex_parameterIiv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameterIiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "80cfcb61-45bb-4eb9-bea8-d1b781bc9065",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_tex_parameterIuiv",
+                    "help": "gl_tex_parameterIuiv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_parameterIuiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "3cb94bb5-c5e5-44cd-be37-f5bf8ed1a5fc",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_texture_parameterIiv",
+                    "help": "gl_texture_parameterIiv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameterIiv",
+                    "returnType": 2
+                },
+                {
+                    "id": "5789d87b-b6aa-4247-a358-5a43435c637e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_texture_parameterIuiv",
+                    "help": "gl_texture_parameterIuiv(target,pname,param);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_texture_parameterIuiv",
                     "returnType": 2
                 }
             ],
@@ -1396,88 +1584,99 @@
             "kind": 1,
             "order": [
                 "3b53333b-c647-461d-9e92-194b8cdb5d9e",
-                "6e2269eb-671d-4a66-9ea6-70c2406185ee",
-                "95d6833f-a7c7-4f5b-8564-16b7abd0f306",
-                "8034266c-b3a1-43fe-9603-941ca9e78f4b",
-                "c5c49ea4-821c-4a37-a674-8cc608e6af83",
-                "0e2d95cd-18b1-41fa-8b35-7286c0d0a10e",
-                "6dd096ad-0a9b-4b8c-9ee6-bcc8c60226ef",
-                "3fe15ec6-2e56-4937-8ba7-4cde44211b03",
-                "b130b337-72b6-42a7-bc30-de1bb9757545",
-                "fc2af31f-5461-464c-9283-bd7a7dccda37",
-                "929b5a9e-a946-4f31-96f7-cb111b5f465d",
-                "26a63dad-c278-4126-b176-d21686ff51fe",
-                "ce1fd2e8-8365-496a-b69c-d502bae03af8",
-                "47d906f0-0943-4d23-b9f2-693f6d530742",
-                "fd90642e-5849-4836-ab17-5b5ff2032199",
-                "9407e61a-5921-4ce0-9d0e-b657b1c6265d",
-                "a4c60b14-8122-4417-8d1a-d81e613504a8",
-                "2d5b8295-cd65-4cfc-990c-73191127bf6d",
-                "1a355e46-a395-43b9-bfc5-388aa17170e6",
-                "ea62e899-1f7e-472a-84cb-17039ec0a8f1",
-                "67e6aed5-23f7-42ab-a3ec-7e62a417446a",
-                "b25b9cd1-f69d-4766-bbe5-458ffc3c5bd7",
-                "0f153cb0-2f37-45ff-854e-2e01643acc2e",
-                "3c09164e-3401-4f2c-b4f7-6dac450364f4",
-                "be55a9ab-598c-4118-802a-2223eca63504",
-                "1cfff8a6-3964-41f5-b7fb-86956034d820",
-                "f9a9c6a5-1fff-4851-8b58-5b506e2a8669",
-                "c8da6b00-37fd-4e3e-90bd-811938641c8d",
-                "be0741ee-52a6-4a79-a258-42b96424ad1c",
-                "9fb83c98-c456-42cb-a868-db81458e89fb",
-                "b99e09f4-5bcd-43b9-8976-70beef63e344",
-                "87b2899f-ce18-4019-8b51-5191fb3ad9c3",
-                "4fea30ab-440b-4730-9e4b-a8d6f8b29541",
-                "aadc4aeb-3338-41ef-890f-b5c3ed2ed58e",
-                "667b42fe-2b1c-45f4-ab3a-45fe22dbc78c",
-                "9d59587b-036b-47ab-a0f6-2ada7c337102",
-                "a325f738-5e95-4c6d-abd3-4eeec059ec6d",
-                "99065a11-41e2-4c8e-8df7-ca581571684a",
-                "f4895f2b-48c0-4edc-92e3-91df21c1b0a1",
-                "0d251964-f966-4f03-bcbf-b65fdffe5a50",
-                "04b6e18a-ceb2-43f5-8703-6bbede32ed44",
-                "87273b47-df11-4855-b209-e2b880fc5388",
                 "f2773f76-720d-4d99-8395-17236b181d74",
-                "53bb034c-827b-412d-99f5-2d190345ed50",
-                "98eb0ff6-cb5a-40f7-874a-ee6a8539b512",
                 "14765d7d-99c0-475f-b6cc-345b85d531b6",
-                "d4876c08-67a8-4c35-b650-9059007a05ee",
-                "1d92468c-42ac-4ef8-8bca-30c7566a63ca",
-                "bd45d7a6-c7fa-4908-8faa-628e2440cbce",
-                "77365e37-de4a-4b00-8041-9c1ad40ca087",
-                "066486a1-7769-44b5-bc33-85f3b5e49977",
-                "3a29eb9a-1ef6-4128-aa1e-efc9e859f124",
-                "bf6f6dc5-c043-4ec9-8a60-db8fe70b0470",
-                "800388e6-5d04-4a26-a565-f941517e5dc8",
-                "4f502932-7da3-43ef-b25d-c8507d60fd7b",
-                "97bc457b-1868-49f2-b4c8-d02bf045d13d",
-                "b3b1d371-13b1-446a-b63d-c13fef1abaf8",
-                "bcf66de0-a405-46db-8c86-56edc2141ae8",
-                "c9070a65-50ca-4504-be7f-5fcfad873aa0",
-                "fb6791c8-56c4-4e9f-b8a1-acf693a8a765",
-                "b444e634-7c07-42e8-8196-f497cc11fcf7",
-                "7055b0da-32ea-41fe-822a-46a58cdc90c0",
-                "e627ff6d-34e5-4330-833e-cdf1c0196ba3",
-                "1da0ec47-1b35-4c8d-9c91-12633d34937e",
-                "6288f7b5-7234-4643-8e07-2bacc2dc20f3",
-                "f46258ad-8fbd-4090-b0c1-dd185a2f7f7c",
-                "8510314b-b22c-4a51-a181-7dc7a2e5feb9",
-                "e60d55a7-213f-4ff1-9c35-f284308c70e0",
-                "f92ae367-730a-4c19-956d-cf576d1bb611",
-                "0af6c53b-5af4-4baa-88d0-28ba01d1d55f",
-                "34516521-c9e3-4482-9f37-76e4c60244d2",
-                "88200368-1cfe-4ade-90fb-0344e5117f67",
-                "0201d8b3-6d12-4619-8e65-ea680d7356e1",
-                "61b13eba-3172-4e91-a56a-083c732ddf08",
-                "e9649bc8-e22a-4bec-a6b7-9a6bf30517a5",
-                "778b82bb-6ea7-4a74-a46f-c3a2d9e111eb",
-                "f45decb6-f6e7-4a1e-921c-409bc6b497b0",
-                "4fbab8a8-9fa6-46c9-a294-23d67a741686",
-                "99101edc-b4bf-4231-8c29-1b8294caecad",
                 "0c1929c1-e910-444a-a7d0-31a55f79f1d2",
                 "869a6a67-44e2-4160-bab2-3771c431bc75",
                 "85a6675f-5055-4136-af07-ec13aabc7575",
-                "3446e7f0-7051-4f82-bb02-63adfd597524"
+                "ea62e899-1f7e-472a-84cb-17039ec0a8f1",
+                "1a355e46-a395-43b9-bfc5-388aa17170e6",
+                "a4c60b14-8122-4417-8d1a-d81e613504a8",
+                "2d5b8295-cd65-4cfc-990c-73191127bf6d",
+                "47d906f0-0943-4d23-b9f2-693f6d530742",
+                "fd90642e-5849-4836-ab17-5b5ff2032199",
+                "9407e61a-5921-4ce0-9d0e-b657b1c6265d",
+                "6e2269eb-671d-4a66-9ea6-70c2406185ee",
+                "e859faa9-147b-4307-a575-840d0c0a3daa",
+                "39df4c0e-a307-4d46-ab8e-418f526ea065",
+                "bc1dd10f-4fef-4725-8f18-41dc664b07bd",
+                "bada81d2-9e68-4cf2-b5a4-06dfbb7d6f80",
+                "4929c990-85d1-4c11-970f-9e5c0c93d58f",
+                "370af6e2-359c-49aa-8412-a5d4680ee099",
+                "71835f1d-aa8a-4221-af4e-c0c3d73c61fe",
+                "70232ba1-5523-46f9-84d2-f66dd8542174",
+                "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
+                "aea95dec-a2cd-45be-9223-25456cb5b2a6",
+                "00b4708e-dcdf-40a1-af7b-66a5728094eb",
+                "49b9da98-b884-47eb-b236-13d75a96c9de",
+                "99e0b78c-3d11-4e63-a617-8e8c98dc5011",
+                "7fbe19d0-1996-48d0-98c1-6ba407ad7705",
+                "fb80c6de-1f0e-4758-b488-923a92bb0e7a",
+                "8f1982f2-e1b8-43b9-b4da-38720444e03b",
+                "39a618f6-3617-4784-9be9-ce899665b510",
+                "af0b8e01-b0db-4c52-be8b-5bfaf777bf76",
+                "a4aac722-987b-4509-912f-849c884c5b1c",
+                "a22ad940-e06c-47f3-a24e-4cad3527fdb2",
+                "60450512-bebb-492c-9c02-355825db6a85",
+                "97c1955e-068e-45d0-968f-8660979c8cbc",
+                "45066c2e-b5fa-4713-824c-2f8680043fad",
+                "d91dd5e9-62d2-4425-ba33-3c07fb397b4e",
+                "89a549a2-2324-47a0-9928-52eebd8b0bcc",
+                "351330fc-2520-46b1-b132-100517bbd67c",
+                "f204a943-8e17-46be-a357-9598e45f130d",
+                "70732e48-3559-46b8-a52d-746a6a438fb0",
+                "9bffbed4-e534-4a6b-ba23-b1748d736eb3",
+                "0cec0e31-d5f9-4eac-9caf-c64a1751f072",
+                "19d799e3-0e26-4206-ab46-178003548dae",
+                "464029d7-0f7f-4a98-8fe2-9d5fbd0ca529",
+                "30072e85-3d10-474e-8879-15560cb8546f",
+                "8e67961e-ef31-414f-8d64-aa8d71a5dda1",
+                "2b4e7ba2-7217-4151-bd63-aebaa57239c2",
+                "6cfa03b7-b3aa-48ce-a367-eb12d4e27a97",
+                "deba780c-5750-4ed1-a204-92b3c2024250",
+                "b01caa89-867a-4f38-9b36-20bf54aa2ac9",
+                "7da822a6-9927-4809-9172-2d712c6fa36c",
+                "a461bb2e-7668-4078-8371-1da360a04b9f",
+                "8c59e9fa-8062-42c1-b8d3-c0a7f44ab9e0",
+                "1ead08d0-66a1-4908-8c47-2b98d969ea5e",
+                "b51a34d1-e608-4898-b8f4-2c7dfe072b21",
+                "80ac767a-7061-4055-ba40-0a6636c7fc02",
+                "23f503d0-31ed-4a14-92a5-254d302eeea2",
+                "739eb216-9dc5-4a59-a9c9-d30d2c153346",
+                "3ad704ac-b1a7-4258-8b71-ea28da212e28",
+                "7845a070-12b8-4b88-a52c-b9f031d22513",
+                "7a854fde-cf18-4022-9f21-21115e787e43",
+                "f8578999-0ea6-4c3f-95d5-a2fe54b46507",
+                "02b26be4-b8d0-4192-a97c-07a65f575ea1",
+                "f2936042-cfc3-43d5-9eb8-ff1b1463e71a",
+                "93a17f4a-c64b-4960-a8f9-e5d7d2e3fb9e",
+                "d4a9bcc8-8786-4ac0-a2cc-436ef04b6712",
+                "5aedb072-bc4f-4159-98b7-112474945edd",
+                "0853068f-b53b-4133-8339-73ed467210ed",
+                "25c73a6c-a132-4b50-9f29-d057a0732310",
+                "359493b1-b3ee-4597-85ed-5c8486482870",
+                "b311e861-2fc6-4e6b-a357-433c552e9ae4",
+                "036586e6-7e83-4434-b96a-86832d96980e",
+                "bdf61e09-5714-435e-95cc-26c19c0ecceb",
+                "c0f8c585-2a61-433b-b42a-3a6ff92a4854",
+                "385a0a7e-0dc9-4da7-a3ce-24ce40f0944c",
+                "003f06a4-9fd5-4034-8d20-c6925ecdb151",
+                "6f0ecd26-7e29-495a-a5c7-199c64c580e5",
+                "da589678-94b4-493d-858c-b556bee8ae1d",
+                "635f443f-dac1-4e31-9756-db7fcdfd5655",
+                "ce0723a8-d16e-448b-b978-18d30c592c6a",
+                "17805b31-3ad7-4393-8dc6-06598f9f089b",
+                "29af104d-488b-4cc4-bbe2-192b05b45b5f",
+                "9aa6c185-9654-4f8b-8459-2245e3caec81",
+                "135d08c8-89ee-4da4-860b-9f9e589c9c23",
+                "f01006c7-cef1-49ca-8f3d-a44bc1d07e9c",
+                "97fb43bd-d3bd-4d19-956e-8e7f32604144",
+                "80d4efd2-0d3b-4e62-b085-2e6685e1de38",
+                "4cce2de3-6b03-44d9-8ffd-121721fc3730",
+                "0494fe3f-1017-4711-bf9a-3d6c61d6eb36",
+                "80cfcb61-45bb-4eb9-bea8-d1b781bc9065",
+                "3cb94bb5-c5e5-44cd-be37-f5bf8ed1a5fc",
+                "5789d87b-b6aa-4247-a358-5a43435c637e"
             ],
             "origname": "",
             "uncompress": false

@@ -1,16 +1,16 @@
-gmgl_clear_color(0.2,0.3,0.3,1.0);
-gmgl_clear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+gl_clear_color(0.2,0.3,0.3,1.0);
+gl_clear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
-gmgl_active_texture(GL_TEXTURE0);
-gmgl_bind_texture(GL_TEXTURE_2D, texture1);
-gmgl_active_texture(GL_TEXTURE1);
-gmgl_bind_texture(GL_TEXTURE_2D, texture2);
+gl_active_texture(GL_TEXTURE0);
+gl_bind_texture(GL_TEXTURE_2D, texture1);
+gl_active_texture(GL_TEXTURE1);
+gl_bind_texture(GL_TEXTURE_2D, texture2);
 
-gmgl_use_program(program);
-gmgl_uniform_mat4fv(uView,1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
-gmgl_uniform_mat4fv(uProj,1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+gl_use_program(program);
+gl_uniform_mat4fv(uView,1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gl_uniform_mat4fv(uProj,1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
-gmgl_bind_vertex_array(vao);
+gl_bind_vertex_array(vao);
 
 var t = (current_time / 500);
 var count = array_length_1d(modelPositions);
@@ -23,9 +23,9 @@ for (var i = 0; i < count; ++i) {
 	for (var j = 0; j < 16; ++j) {
 		buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 	}
-	gmgl_uniform_mat4fv(uModel,1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+	gl_uniform_mat4fv(uModel,1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
 	
-	gmgl_draw_arrays(GL_TRIANGLES, 0, 36);
+	gl_draw_arrays(GL_TRIANGLES, 0, 36);
 }
 
-gmgl_update();
+glfw_update();

@@ -1,12 +1,12 @@
 /// @desc gmgl_load_texture(path);
 /// @arg path
 var path = argument0;
-var texID = gmgl_gen_texture();
+var texID = gl_gen_texture();
 
 var img = gmgl_load_image(path);
 if (img == GMGL_FAIL) {
 	show_error("Failed to loaded image: " + string(path),false);
-	exit;
+	return GMGL_FAIL;
 }
 
 var width = gmgl_get_image_width(img);
@@ -15,55 +15,15 @@ var channelNums = gmgl_get_image_channel_num(img);
 var format = GL_RGB;
 if (channelNums == 4) format = GL_RGBA;
 
-gmgl_bind_texture(GL_TEXTURE_2D,texID);
-gmgl_texImage2D(GL_TEXTURE_2D,0,format,0,format,img);
-gmgl_generate_mipmap(GL_TEXTURE_2D);
+gl_bind_texture(GL_TEXTURE_2D,texID);
+gl_texImage2D(GL_TEXTURE_2D,0,format,0,format,GL_UNSIGNED_BYTE,img);
+gl_generate_mipmap(GL_TEXTURE_2D);
 
-gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-gmgl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 gmgl_free_image(img);
 
 return texID;
-
-
-/*
-unsigned int loadTexture(char const * path)
-{
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-
-    int width, height, nrComponents;
-    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
-    if (data)
-    {
-        GLenum format;
-        if (nrComponents == 1)
-            format = GL_RED;
-        else if (nrComponents == 3)
-            format = GL_RGB;
-        else if (nrComponents == 4)
-            format = GL_RGBA;
-
-        glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-        stbi_image_free(data);
-    }
-    else
-    {
-        std::cout << "Texture failed to load at path: " << path << std::endl;
-        stbi_image_free(data);
-    }
-
-    return textureID;
-}
-*/

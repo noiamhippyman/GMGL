@@ -1,1 +1,1 @@
-gmgl_terminate();
+glfw_terminate();

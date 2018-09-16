@@ -64,11 +64,11 @@ for (var i = 0; i < 16; ++i) {
 }
 
 
-gmgl_clear_color(0.1,0.1,0.1,1.0);
-gmgl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+gl_clear_color(0.1,0.1,0.1,1.0);
+gl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-gmgl_use_program(shaderMaterial);
+gl_use_program(shaderMaterial);
 gmgl_shader_set_vec3(shaderMaterial,"viewPos",cameraPos);
 gmgl_shader_set_float(shaderMaterial,"material.shininess",32.0);
 
@@ -103,14 +103,14 @@ gmgl_shader_set_mat4(shaderMaterial,"projection",projMatrixBuffer);
 gmgl_shader_set_mat4(shaderMaterial,"view",viewMatrixBuffer);
 gmgl_shader_set_mat4(shaderMaterial,"model",modelMatrixBuffer);
 
-gmgl_active_texture(GL_TEXTURE0);
-gmgl_bind_texture(GL_TEXTURE_2D,diffuseMap);
+gl_active_texture(GL_TEXTURE0);
+gl_bind_texture(GL_TEXTURE_2D,diffuseMap);
 
-gmgl_active_texture(GL_TEXTURE1);
-gmgl_bind_texture(GL_TEXTURE_2D,specularMap);
+gl_active_texture(GL_TEXTURE1);
+gl_bind_texture(GL_TEXTURE_2D,specularMap);
 
 var t = current_time / 100;
-gmgl_bind_vertex_array(cubevao);
+gl_bind_vertex_array(cubevao);
 for (var i = 0; i < array_length_1d(cubePositions); ++i) {
 	var p = cubePositions[i];
 	var a = i * 20;
@@ -121,14 +121,14 @@ for (var i = 0; i < array_length_1d(cubePositions); ++i) {
 		buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 	}
 	gmgl_shader_set_mat4(shaderMaterial,"model",modelMatrixBuffer);
-	gmgl_draw_arrays(GL_TRIANGLES,0,36);
+	gl_draw_arrays(GL_TRIANGLES,0,36);
 }
 
-gmgl_use_program(shaderLamp);
+gl_use_program(shaderLamp);
 gmgl_shader_set_mat4(shaderLamp,"projection",projMatrixBuffer);
 gmgl_shader_set_mat4(shaderLamp,"view",viewMatrixBuffer);
 
-gmgl_bind_vertex_array(lightvao);
+gl_bind_vertex_array(lightvao);
 for (var i = 0; i < array_length_1d(pointLightPositions); ++i) {
 	var p = pointLightPositions[i];
 	var c = pointLightColors[i];
@@ -139,7 +139,7 @@ for (var i = 0; i < array_length_1d(pointLightPositions); ++i) {
 	}
 	gmgl_shader_set_vec3(shaderLamp,"LightColor",c);
 	gmgl_shader_set_mat4(shaderLamp,"model",modelMatrixBuffer);
-	gmgl_draw_arrays(GL_TRIANGLES,0,36);
+	gl_draw_arrays(GL_TRIANGLES,0,36);
 }
 
-gmgl_update();
+glfw_update();

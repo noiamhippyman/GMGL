@@ -57,29 +57,29 @@ for (var i = 0; i < 16; ++i) {
 }
 
 //Rendering
-gmgl_clear_color(0.1,0.1,0.1,1.0);
-gmgl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+gl_clear_color(0.1,0.1,0.1,1.0);
+gl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 //Render cube
-gmgl_use_program(shaderMaterial);
+gl_use_program(shaderMaterial);
 
 var diffuseColor = vector_multiply(lightColor,0.5);
 var ambientColor = vector_multiply(diffuseColor,0.5);
-gmgl_uniform3f(u_lightPos, lightPos[0],lightPos[1],lightPos[2]);
-gmgl_uniform3f(u_lightAmbient, ambientColor[0],ambientColor[1],ambientColor[2]);
-gmgl_uniform3f(u_lightDiffuse, diffuseColor[0],diffuseColor[1],diffuseColor[2]);
-gmgl_uniform3f(u_lightSpecular, lightSpecular,lightSpecular,lightSpecular);
+gl_uniform3f(u_lightPos, lightPos[0],lightPos[1],lightPos[2]);
+gl_uniform3f(u_lightAmbient, ambientColor[0],ambientColor[1],ambientColor[2]);
+gl_uniform3f(u_lightDiffuse, diffuseColor[0],diffuseColor[1],diffuseColor[2]);
+gl_uniform3f(u_lightSpecular, lightSpecular,lightSpecular,lightSpecular);
 
-gmgl_uniform3f(u_matAmbient, matAmbient[0],matAmbient[1],matAmbient[2]);
-gmgl_uniform3f(u_matDiffuse, matAmbient[0],matAmbient[1],matAmbient[2]);
-gmgl_uniform3f(u_matSpecular, matSpecular,matSpecular,matSpecular);
-gmgl_uniform1f(u_matShininess, matShininess);
+gl_uniform3f(u_matAmbient, matAmbient[0],matAmbient[1],matAmbient[2]);
+gl_uniform3f(u_matDiffuse, matAmbient[0],matAmbient[1],matAmbient[2]);
+gl_uniform3f(u_matSpecular, matSpecular,matSpecular,matSpecular);
+gl_uniform1f(u_matShininess, matShininess);
 
-gmgl_uniform3f(u_viewPos,cameraPos[0],cameraPos[1],cameraPos[2]);
+gl_uniform3f(u_viewPos,cameraPos[0],cameraPos[1],cameraPos[2]);
 
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+gl_uniform_mat4fv(gl_get_uniform_location(shaderMaterial,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gl_uniform_mat4fv(gl_get_uniform_location(shaderMaterial,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
 var p = cubePos;
 var t = current_time / 10;
@@ -89,15 +89,15 @@ buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
 for (var j = 0; j < 16; ++j) {
 	buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 }
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderMaterial,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+gl_uniform_mat4fv(gl_get_uniform_location(shaderMaterial,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
 
-gmgl_bind_vertex_array(cubevao);
-gmgl_draw_arrays(GL_TRIANGLES,0,36);
+gl_bind_vertex_array(cubevao);
+gl_draw_arrays(GL_TRIANGLES,0,36);
 
 //Render lamp
-gmgl_use_program(shaderLamp);
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
+gl_use_program(shaderLamp);
+gl_uniform_mat4fv(gl_get_uniform_location(shaderLamp,"view"),1,GMGL_FALSE,buffer_get_address(viewMatrixBuffer));
+gl_uniform_mat4fv(gl_get_uniform_location(shaderLamp,"projection"),1,GMGL_FALSE,buffer_get_address(projMatrixBuffer));
 
 p = lightPos;
 
@@ -106,12 +106,12 @@ buffer_seek(modelMatrixBuffer,buffer_seek_start,0);
 for (var j = 0; j < 16; ++j) {
 	buffer_write(modelMatrixBuffer,buffer_f32,model[j]);
 }
-gmgl_uniform_mat4fv(gmgl_get_uniform_location(shaderLamp,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
+gl_uniform_mat4fv(gl_get_uniform_location(shaderLamp,"model"),1,GMGL_FALSE,buffer_get_address(modelMatrixBuffer));
 
-gmgl_bind_vertex_array(lightvao);
-gmgl_draw_arrays(GL_TRIANGLES,0,36);
+gl_bind_vertex_array(lightvao);
+gl_draw_arrays(GL_TRIANGLES,0,36);
 
 
 
-gmgl_update();
+glfw_update();
 

@@ -16,7 +16,8 @@
 #pragma region Internal Stuff
 
 //Forward Declarations
-GMS_DLL void gmgl_terminate();
+GMS_DLL void glfw_terminate();
+
 
 //Data structures
 struct GMGLimage {
@@ -41,7 +42,7 @@ GMGLmouse __gmgl_mouse;
 GLFWwindow* __gmgl_window = nullptr;
 
 
-//Helper functions
+//Pointer management functions
 double gmgl_new_image() {
 	double index;
 	GMGLimage* object = new GMGLimage;
@@ -71,13 +72,14 @@ void gmgl_delete_image(double id) {
 	}
 }
 
+
 //Callbacks
 void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
 }
 
 void gmgl_callback_window_close(GLFWwindow* window) {
-	if (glfwWindowShouldClose(window)) gmgl_terminate();
+	if (glfwWindowShouldClose(window)) glfw_terminate();
 }
 
 void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
@@ -86,6 +88,53 @@ void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
 }
 
 #pragma endregion
+
+#pragma region GMGL Functions
+
+GMS_DLL double gmgl_is_active() {
+	if (!__gmgl_window) return GMS_FAIL;
+
+	return GMS_SUCCESS;
+}
+
+GMS_DLL double gmgl_load_image(const char* path) {
+	double imageIndex = gmgl_new_image();
+	GMGLimage* image = gmgl_get_image(imageIndex);
+
+	stbi_set_flip_vertically_on_load(true);
+
+	image->data = stbi_load(path, &image->width, &image->height, &image->nrChannels, 0);
+
+	if (!image->data) {
+		std::cout << "Failed to load texture" << std::endl;
+		stbi_image_free(image->data);
+		gmgl_delete_image(imageIndex);
+		return GMS_FAIL;
+	}
+
+	return imageIndex;
+}
+
+GMS_DLL void gmgl_free_image(double imageIndex) {
+	GMGLimage* image = gmgl_get_image(imageIndex);
+	stbi_image_free(image->data);
+	gmgl_delete_image(imageIndex);
+}
+
+GMS_DLL double gmgl_get_image_width(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->width;
+}
+
+GMS_DLL double gmgl_get_image_height(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->height;
+}
+
+GMS_DLL double gmgl_get_image_channel_num(double image) {
+	GMGLimage* _image = gmgl_get_image(image);
+	return _image->nrChannels;
+}
 
 #pragma region User Input
 
@@ -123,13 +172,11 @@ GMS_DLL void gmgl_mouse_normal() {
 
 #pragma endregion
 
-GMS_DLL double gmgl_is_active() {
-	if (!__gmgl_window) return GMS_FAIL;
+#pragma endregion
 
-	return GMS_SUCCESS;
-}
+#pragma region GLFW Functions
 
-GMS_DLL double gmgl_init() {
+GMS_DLL double glfw_init() {
 	//Initialize GLFW
 	if (glfwInit() == GLFW_FALSE) {
 		std::cout << "GLFW initialization failed" << std::endl;
@@ -139,39 +186,35 @@ GMS_DLL double gmgl_init() {
 	return GMS_SUCCESS;
 }
 
-GMS_DLL void gmgl_update() {
+GMS_DLL void glfw_update() {
 	glfwSwapBuffers(__gmgl_window);
 	glfwPollEvents();
 }
 
-GMS_DLL void gmgl_terminate() {
+GMS_DLL void glfw_terminate() {
 	glfwTerminate();
 	__gmgl_window = nullptr;
 }
 
-GMS_DLL void gmgl_enable(double cap) {
-	glEnable(cap);
-}
-
-GMS_DLL void gmgl_disable(double cap) {
-	glDisable(cap);
-}
-
-GMS_DLL void gmgl_poll_events() {
+GMS_DLL void glfw_poll_events() {
 	glfwPollEvents();
 }
 
-GMS_DLL void gmgl_wait_events() {
+GMS_DLL void glfw_wait_events() {
 	glfwWaitEvents();
 }
 
-GMS_DLL void gmgl_wait_events_timeout(double timeout) {
+GMS_DLL void glfw_wait_events_timeout(double timeout) {
 	glfwWaitEventsTimeout(timeout);
+}
+
+GMS_DLL void glfw_swap_buffers() {
+	glfwSwapBuffers(__gmgl_window);
 }
 
 #pragma region Window Functions
 
-GMS_DLL double gmgl_create_window(double width, double height, const char* title) {
+GMS_DLL double glfw_create_window(double width, double height, const char* title) {
 	if (__gmgl_window) {
 		std::cout << "Window has already been created" << std::endl;
 		return GMS_FAIL;
@@ -191,49 +234,114 @@ GMS_DLL double gmgl_create_window(double width, double height, const char* title
 
 	if (glewInit() != GLEW_OK) {
 		std::cout << "GLEW initialization failed" << std::endl;
-		gmgl_terminate();
+		glfw_terminate();
 		return GMS_FAIL;
 	}
 
 	return GMS_SUCCESS;
 }
 
-GMS_DLL void gmgl_default_window_hints() {
+GMS_DLL void glfw_default_window_hints() {
 	glfwDefaultWindowHints();
 }
 
-GMS_DLL void gmgl_window_hint(double hint, double value) {
+GMS_DLL void glfw_window_hint(double hint, double value) {
 	glfwWindowHint(hint, value);
 }
 
-GMS_DLL void gmgl_set_window_pos(double x, double y) {
+GMS_DLL void glfw_set_window_pos(double x, double y) {
 	glfwSetWindowPos(__gmgl_window, x, y);
 }
 #pragma endregion
 
-GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
+#pragma endregion
+
+#pragma region GL Functions
+
+GMS_DLL void gl_enable(double cap) {
+	glEnable(cap);
+}
+
+GMS_DLL void gl_disable(double cap) {
+	glDisable(cap);
+}
+
+GMS_DLL void gl_clear_color(double r, double g, double b, double a) {
 	glClearColor(r, g, b, a);
 }
 
-GMS_DLL void gmgl_clear(double mask) {
+GMS_DLL void gl_clear(double mask) {
 	glClear(mask);
 }
 
-GMS_DLL void gmgl_swap_buffers() {
-	glfwSwapBuffers(__gmgl_window);
-}
-
-GMS_DLL void gmgl_draw_arrays(double mode, double first, double count) {
+GMS_DLL void gl_draw_arrays(double mode, double first, double count) {
 	glDrawArrays(mode, first, count);
 }
 
-GMS_DLL void gmgl_draw_elements(double mode, double count) {
+GMS_DLL void gl_draw_elements(double mode, double count) {
 	glDrawElements(mode, count, GL_UNSIGNED_INT, 0);
+}
+
+GMS_DLL double gl_gen_buffer() {
+	unsigned int buffer;
+	glGenBuffers(1, &buffer);
+	return buffer;
+}
+
+GMS_DLL void gl_bind_buffer(double target, double buffer) {
+	glBindBuffer(target, buffer);
+}
+
+GMS_DLL void gl_buffer_data(double target, double size, void* vertices, double usage) {
+	glBufferData(target, size, vertices, usage);
+}
+
+GMS_DLL double gl_gen_vertex_array() {
+	unsigned int VAO;
+	glGenVertexArrays(1, &VAO);
+	return VAO;
+}
+
+GMS_DLL void gl_bind_vertex_array(double varray) {
+	glBindVertexArray(varray);
+}
+
+GMS_DLL void gl_vertex_attrib_pointer(double index, double size, double normalized, double stride, double offset) {
+	int _offset = (int)offset * sizeof(float);
+	glVertexAttribPointer(index, size, GL_FLOAT, normalized, stride * sizeof(float), (void*)_offset);
+}
+
+GMS_DLL void gl_enable_vertex_attrib_array(double index) {
+	glEnableVertexAttribArray(index);
+}
+
+GMS_DLL double gl_gen_texture() {
+	GLuint texture;
+	glGenTextures(1, &texture);
+	return texture;
+}
+
+GMS_DLL void gl_bind_texture(double target, double texture) {
+	glBindTexture(target, texture);
+}
+
+GMS_DLL void gl_active_texture(double unit) {
+	glActiveTexture(unit);
+}
+
+GMS_DLL void gl_texImage2D(double target, double level, double internalformat, double border, double format, double type, double imageIndex) {
+	GMGLimage* image = gmgl_get_image(imageIndex);
+
+	glTexImage2D(target, level, internalformat, image->width, image->height, border, format, type, image->data);
+}
+
+GMS_DLL void gl_generate_mipmap(double target) {
+	glGenerateMipmap(target);
 }
 
 #pragma region Shaders
 
-GMS_DLL double gmgl_create_shader(double type, char* source) {
+GMS_DLL double gl_create_shader(double type, char* source) {
 	GLuint shader = glCreateShader(type);
 	glShaderSource(shader, 1, &source, nullptr);
 	glCompileShader(shader);
@@ -250,19 +358,19 @@ GMS_DLL double gmgl_create_shader(double type, char* source) {
 	return shader;
 }
 
-GMS_DLL void gmgl_delete_shader(double shader) {
+GMS_DLL void gl_delete_shader(double shader) {
 	glDeleteShader(shader);
 }
 
-GMS_DLL double gmgl_create_program() {
+GMS_DLL double gl_create_program() {
 	return glCreateProgram();
 }
 
-GMS_DLL void gmgl_attach_shader(double program, double shader) {
+GMS_DLL void gl_attach_shader(double program, double shader) {
 	glAttachShader(program, shader);
 }
 
-GMS_DLL void gmgl_link_program(double program) {
+GMS_DLL void gl_link_program(double program) {
 	glLinkProgram(program);
 
 	int success;
@@ -274,247 +382,199 @@ GMS_DLL void gmgl_link_program(double program) {
 	}
 }
 
-GMS_DLL void gmgl_use_program(double program) {
+GMS_DLL void gl_use_program(double program) {
 	glUseProgram(program);
 }
 
-GMS_DLL double gmgl_get_uniform_location(double program, const char* name) {
+GMS_DLL double gl_get_uniform_location(double program, const char* name) {
 	return glGetUniformLocation(program, name);
 }
 
-//TODO: Finish creating other uniform wrappers
-GMS_DLL void gmgl_uniform1f(double location, double x) {
+#pragma region Uniform Set Functions
+
+GMS_DLL void gl_uniform1f(double location, double x) {
 	glUniform1f(location, x);
 }
-GMS_DLL void gmgl_uniform2f(double location, double x, double y) {
+GMS_DLL void gl_uniform2f(double location, double x, double y) {
 	glUniform2f(location, x, y);
 }
-GMS_DLL void gmgl_uniform3f(double location, double x, double y, double z) {
+GMS_DLL void gl_uniform3f(double location, double x, double y, double z) {
 	glUniform3f(location, x, y, z);
 }
-GMS_DLL void gmgl_uniform4f(double location, double x, double y, double z, double w) {
+GMS_DLL void gl_uniform4f(double location, double x, double y, double z, double w) {
 	glUniform4f(location, x, y, z, w);
 }
 
-GMS_DLL void gmgl_uniform1i(double location, double x) {
+GMS_DLL void gl_uniform1i(double location, double x) {
 	glUniform1i(location, x);
 }
-GMS_DLL void gmgl_uniform2i(double location, double x, double y) {
+GMS_DLL void gl_uniform2i(double location, double x, double y) {
 	glUniform2i(location, x, y);
 }
-GMS_DLL void gmgl_uniform3i(double location, double x, double y, double z) {
+GMS_DLL void gl_uniform3i(double location, double x, double y, double z) {
 	glUniform3i(location, x, y, z);
 }
-GMS_DLL void gmgl_uniform4i(double location, double x, double y, double z, double w) {
+GMS_DLL void gl_uniform4i(double location, double x, double y, double z, double w) {
 	glUniform4i(location, x, y, z, w);
 }
 
-GMS_DLL void gmgl_uniform1ui(double location, double x) {
+GMS_DLL void gl_uniform1ui(double location, double x) {
 	glUniform1ui(location, x);
 }
-GMS_DLL void gmgl_uniform2ui(double location, double x, double y) {
+GMS_DLL void gl_uniform2ui(double location, double x, double y) {
 	glUniform2ui(location, x, y);
 }
-GMS_DLL void gmgl_uniform3ui(double location, double x, double y, double z) {
+GMS_DLL void gl_uniform3ui(double location, double x, double y, double z) {
 	glUniform3ui(location, x, y, z);
 }
-GMS_DLL void gmgl_uniform4ui(double location, double x, double y, double z, double w) {
+GMS_DLL void gl_uniform4ui(double location, double x, double y, double z, double w) {
 	glUniform4ui(location, x, y, z, w);
 }
 
-GMS_DLL void gmgl_uniform1fv(double location, double size, void* value) {
+GMS_DLL void gl_uniform1fv(double location, double size, void* value) {
 	GLfloat* val = (GLfloat*)value;
 	glUniform1fv(location, size, val);
 }
-GMS_DLL void gmgl_uniform2fv(double location, double size, void* value) {
+GMS_DLL void gl_uniform2fv(double location, double size, void* value) {
 	GLfloat* val = (GLfloat*)value;
 	glUniform2fv(location, size, val);
 }
-GMS_DLL void gmgl_uniform3fv(double location, double size, void* value) {
+GMS_DLL void gl_uniform3fv(double location, double size, void* value) {
 	GLfloat* val = (GLfloat*)value;
 	glUniform3fv(location, size, val);
 }
-GMS_DLL void gmgl_uniform4fv(double location, double size, void* value) {
+GMS_DLL void gl_uniform4fv(double location, double size, void* value) {
 	GLfloat* val = (GLfloat*)value;
 	glUniform4fv(location, size, val);
 }
 
-GMS_DLL void gmgl_uniform1iv(double location, double size, void* value) {
+GMS_DLL void gl_uniform1iv(double location, double size, void* value) {
 	GLint* val = (GLint*)value;
 	glUniform1iv(location, size, val);
 }
-GMS_DLL void gmgl_uniform2iv(double location, double size, void* value) {
+GMS_DLL void gl_uniform2iv(double location, double size, void* value) {
 	GLint* val = (GLint*)value;
 	glUniform2iv(location, size, val);
 }
-GMS_DLL void gmgl_uniform3iv(double location, double size, void* value) {
+GMS_DLL void gl_uniform3iv(double location, double size, void* value) {
 	GLint* val = (GLint*)value;
 	glUniform3iv(location, size, val);
 }
-GMS_DLL void gmgl_uniform4iv(double location, double size, void* value) {
+GMS_DLL void gl_uniform4iv(double location, double size, void* value) {
 	GLint* val = (GLint*)value;
 	glUniform4iv(location, size, val);
 }
 
-GMS_DLL void gmgl_uniform1uiv(double location, double size, void* value) {
+GMS_DLL void gl_uniform1uiv(double location, double size, void* value) {
 	GLuint* val = (GLuint*)value;
 	glUniform1uiv(location, size, val);
 }
-GMS_DLL void gmgl_uniform2uiv(double location, double size, void* value) {
+GMS_DLL void gl_uniform2uiv(double location, double size, void* value) {
 	GLuint* val = (GLuint*)value;
 	glUniform2uiv(location, size, val);
 }
-GMS_DLL void gmgl_uniform3uiv(double location, double size, void* value) {
+GMS_DLL void gl_uniform3uiv(double location, double size, void* value) {
 	GLuint* val = (GLuint*)value;
 	glUniform3uiv(location, size, val);
 }
-GMS_DLL void gmgl_uniform4uiv(double location, double size, void* value) {
+GMS_DLL void gl_uniform4uiv(double location, double size, void* value) {
 	GLuint* val = (GLuint*)value;
 	glUniform4uiv(location, size, val);
 }
 
-GMS_DLL void gmgl_uniform_mat2fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat2fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix2fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat3fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat3fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix3fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat4fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat4fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix4fv(location, count, transpose, fval);
 }
 
-GMS_DLL void gmgl_uniform_mat2x3fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat2x3fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix2x3fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat3x2fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat3x2fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix3x2fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat2x4fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat2x4fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix2x4fv(location, count, transpose, fval);
 }
 
-GMS_DLL void gmgl_uniform_mat4x2fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat4x2fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix4x2fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat3x4fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat3x4fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix3x4fv(location, count, transpose, fval);
 }
-GMS_DLL void gmgl_uniform_mat4x3fv(double location, double count, double transpose, void* value) {
+GMS_DLL void gl_uniform_mat4x3fv(double location, double count, double transpose, void* value) {
 	float* fval = (float*)value;
 	glUniformMatrix4x3fv(location, count, transpose, fval);
 }
 
 #pragma endregion
 
-GMS_DLL double gmgl_gen_buffer() {
-	unsigned int buffer;
-	glGenBuffers(1, &buffer);
-	return buffer;
-}
+#pragma endregion
 
-GMS_DLL void gmgl_bind_buffer(double target, double buffer) {
-	glBindBuffer(target, buffer);
-}
+#pragma region Texture Parameters
 
-GMS_DLL void gmgl_buffer_data(double target, double size, void* vertices, double usage) {
-	glBufferData(target, size, vertices, usage);
+GMS_DLL void gl_tex_parameterf(double target, double pname, double param) {
+	glTexParameterf(target, pname, param);
 }
-
-GMS_DLL double gmgl_gen_vertex_array() {
-	unsigned int VAO;
-	glGenVertexArrays(1, &VAO);
-	return VAO;
-}
-
-GMS_DLL void gmgl_bind_vertex_array(double varray) {
-	glBindVertexArray(varray);
-}
-
-GMS_DLL void gmgl_vertex_attrib_pointer(double index, double size, double normalized, double stride, double offset) {
-	int _offset = (int)offset * sizeof(float);
-	glVertexAttribPointer(index, size, GL_FLOAT, normalized, stride * sizeof(float), (void*)_offset);
-}
-
-GMS_DLL void gmgl_enable_vertex_attrib_array(double index) {
-	glEnableVertexAttribArray(index);
-}
-
-GMS_DLL double gmgl_gen_texture() {
-	GLuint texture;
-	glGenTextures(1, &texture);
-	return texture;
-}
-
-GMS_DLL void gmgl_bind_texture(double target, double texture) {
-	glBindTexture(target, texture);
-}
-
-GMS_DLL void gmgl_active_texture(double unit) {
-	glActiveTexture(unit);
-}
-
-//TODO: Finish creating other tex_parameter wrappers
-GMS_DLL void gmgl_tex_parameteri(double target, double pname, double param) {
+GMS_DLL void gl_tex_parameteri(double target, double pname, double param) {
 	glTexParameteri(target, pname, param);
 }
-
-GMS_DLL double gmgl_load_image(const char* path) {
-	double imageIndex = gmgl_new_image();
-	GMGLimage* image = gmgl_get_image(imageIndex);
-
-	stbi_set_flip_vertically_on_load(true);
-
-	image->data = stbi_load(path, &image->width, &image->height, &image->nrChannels, 0);
-
-	if (!image->data) {
-		std::cout << "Failed to load texture" << std::endl;
-		stbi_image_free(image->data);
-		gmgl_delete_image(imageIndex);
-		return GMS_FAIL;
-	}
-	/*else {
-		std::cout << "Image Properties:\nSize: " << image->width << "," << image->height << "\nChannels: " << image->nrChannels << std::endl;
-	}*/
-
-	return imageIndex;
+GMS_DLL void gl_texture_parameterf(double target, double pname, double param) {
+	glTextureParameterf(target, pname, param);
+}
+GMS_DLL void gl_texture_parameteri(double target, double pname, double param) {
+	glTextureParameteri(target, pname, param);
 }
 
-GMS_DLL double gmgl_get_image_width(double image) {
-	GMGLimage* _image = gmgl_get_image(image);
-	return _image->width;
+GMS_DLL void gl_tex_parameterfv(double target, double pname, void* param) {
+	const GLfloat* _param;
+	glTexParameterfv(target, pname, _param);
+}
+GMS_DLL void gl_tex_parameteriv(double target, double pname, void* param) {
+	const GLint* _param;
+	glTexParameteriv(target, pname, _param);
+}
+GMS_DLL void gl_texture_parameterfv(double target, double pname, void* param) {
+	const GLfloat* _param;
+	glTextureParameterfv(target, pname, _param);
+}
+GMS_DLL void gl_texture_parameteriv(double target, double pname, void* param) {
+	const GLint* _param;
+	glTextureParameteriv(target, pname, _param);
 }
 
-GMS_DLL double gmgl_get_image_height(double image) {
-	GMGLimage* _image = gmgl_get_image(image);
-	return _image->height;
+GMS_DLL void gl_tex_parameterIiv(double target, double pname, void* param) {
+	const GLint* _param;
+	glTexParameterIiv(target, pname, _param);
+}
+GMS_DLL void gl_tex_parameterIuiv(double target, double pname, void* param) {
+	const GLuint* _param;
+	glTexParameterIuiv(target, pname, _param);
+}
+GMS_DLL void gl_texture_parameterIiv(double target, double pname, void* param) {
+	const GLint* _param;
+	glTextureParameterIiv(target, pname, _param);
+}
+GMS_DLL void gl_texture_parameterIuiv(double target, double pname, void* param) {
+	const GLuint* _param;
+	glTextureParameterIuiv(target, pname, _param);
 }
 
-GMS_DLL double gmgl_get_image_channel_num(double image) {
-	GMGLimage* _image = gmgl_get_image(image);
-	return _image->nrChannels;
-}
+#pragma endregion
 
-GMS_DLL void gmgl_texImage2D(double target, double level, double internalformat, double border, double format, double imageIndex) {
-	GMGLimage* image = gmgl_get_image(imageIndex);
-
-	glTexImage2D(target, level, internalformat, image->width, image->height, border, format, GL_UNSIGNED_BYTE, image->data);
-}
-
-GMS_DLL void gmgl_generate_mipmap(double target) {
-	glGenerateMipmap(target);
-}
-
-GMS_DLL void gmgl_free_image(double imageIndex) {
-	GMGLimage* image = gmgl_get_image(imageIndex);
-	stbi_image_free(image->data);
-	gmgl_delete_image(imageIndex);
-}
+#pragma endregion
 
