@@ -1374,6 +1374,22 @@
                     "kind": 1,
                     "name": "gmgl_get_image_channel_num",
                     "returnType": 2
+                },
+                {
+                    "id": "3446e7f0-7051-4f82-bb02-63adfd597524",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gmgl_set_window_pos",
+                    "help": "gmgl_set_window_pos(x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_set_window_pos",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1460,7 +1476,8 @@
                 "99101edc-b4bf-4231-8c29-1b8294caecad",
                 "0c1929c1-e910-444a-a7d0-31a55f79f1d2",
                 "869a6a67-44e2-4160-bab2-3771c431bc75",
-                "85a6675f-5055-4136-af07-ec13aabc7575"
+                "85a6675f-5055-4136-af07-ec13aabc7575",
+                "3446e7f0-7051-4f82-bb02-63adfd597524"
             ],
             "origname": "",
             "uncompress": false

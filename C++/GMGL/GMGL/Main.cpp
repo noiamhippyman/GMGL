@@ -215,6 +215,9 @@ GMS_DLL void gmgl_window_hint(double hint, double value) {
 	glfwWindowHint(hint, value);
 }
 
+GMS_DLL void gmgl_set_window_pos(double x, double y) {
+	glfwSetWindowPos(__gmgl_window, x, y);
+}
 #pragma endregion
 
 GMS_DLL void gmgl_clear_color(double r, double g, double b, double a) {
@@ -486,9 +489,9 @@ GMS_DLL double gmgl_load_image(const char* path) {
 		gmgl_delete_image(imageIndex);
 		return GMS_FAIL;
 	}
-	else {
+	/*else {
 		std::cout << "Image Properties:\nSize: " << image->width << "," << image->height << "\nChannels: " << image->nrChannels << std::endl;
-	}
+	}*/
 
 	return imageIndex;
 }

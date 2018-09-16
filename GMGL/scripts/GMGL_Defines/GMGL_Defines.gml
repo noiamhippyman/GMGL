@@ -1,4 +1,4 @@
-#macro GMGL_ACTIVE_CHECK_TIME 3 
+#macro GMGL_ACTIVE_CHECK_TIME 10 //check every ten seconds
 #macro GMGL_TRUE 1
 #macro GMGL_FALSE 0
 #macro GMGL_FAIL -1
