@@ -39,4 +39,8 @@ glfw_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 //Create the actual window
+/*
+	gmgl_create_window_centered is just a script. 
+	Open it to see how to create a window and center it with GLFW functions.
+*/
 gmgl_create_window_centered(800,600,"Example - Creating a Window");

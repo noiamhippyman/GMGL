@@ -42,7 +42,7 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
-gmgl_create_window_centered(800,600,"Example - Creating a Triangle");
+gmgl_create_window_centered(800,600,"Example - Creating a Quad with Element Buffers");
 
 // Create shaders
 /*
@@ -84,36 +84,51 @@ gl_delete_shader(fragShader);
 
 // Create three vertices
 var vertices = [
-	//Position
-	-0.5,-0.5, 0.0,
-	 0.5,-0.5, 0.0,
-	 0.0, 0.5, 0.0
+	 0.5,  0.5, 0.0,  // top right
+	 0.5, -0.5, 0.0,  // bottom right
+	-0.5, -0.5, 0.0,  // bottom left
+	-0.5,  0.5, 0.0   // top left 
 ];
 
-// Store vertices into a gamemaker buffer
+// Create indices for each triangle
+var indices = [
+	0,1,3,//first triangle
+	1,2,3 //second triangle
+];
+
+// Store vertices and indices into their own gamemaker buffers
 /*
 	The reason we have to do this is because you can't pass an array 
 	to an extension. But you can get the address of a buffer with 
 	buffer_get_address which can then be passed to and read by the extension.
 */
 var vcount = array_length_1d(vertices);
-vbuff = buffer_create(vcount*buffer_sizeof(buffer_u32),buffer_fixed,4);
+vbuff = buffer_create(vcount*buffer_sizeof(buffer_f32),buffer_fixed,4);
 for (var i = 0; i < vcount; ++i) {
 	buffer_write(vbuff,buffer_f32,vertices[i]);
 }
 
+var icount = array_length_1d(indices);
+ibuff = buffer_create(icount*buffer_sizeof(buffer_u32),buffer_fixed,4);
+for (var i = 0; i < icount; ++i) {
+	buffer_write(ibuff,buffer_u32,indices[i]);
+}
 
-// Generate vertex array and vertex buffer object
+
+// Generate vertex array, vertex buffer object and element buffer object
 /*
-	A vertex array (VAO) is basically nothing more than a box.
+	A vertex array object (VAO) is basically nothing more than a box.
 	In this box you store it's vertex data, vertex attributes,
 	vertex indices, etc.
 	
 	A vertex buffer object (VBO) is the actual vertex data.
 	Each vertex could be just a position or position, color and texture coordinates, etc.
+	
+	An element buffer object (EBO) is an array of indices that point to which vertex to use in the VBO.
 */
 vao = gl_gen_vertex_array();
 vbo = gl_gen_buffer();
+ebo = gl_gen_buffer();
 
 // Bind the vertex array
 /*
@@ -132,6 +147,11 @@ gl_bind_buffer(GL_ARRAY_BUFFER, vbo);
 */
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(vbuff), buffer_get_address(vbuff), GL_STATIC_DRAW);
 
+//Next you need to do the same thing with the ebo as you did with the vbo
+//except instead of the array buffer you need to bind it to the element array buffer
+gl_bind_buffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+gl_buffer_data(GL_ELEMENT_ARRAY_BUFFER, buffer_get_size(ibuff), buffer_get_address(ibuff), GL_STATIC_DRAW);
+
 // Next we need to setup this vertex array's vertex attributes
 gl_vertex_attrib_pointer(0,3,GMGL_FALSE,3,0);
 
@@ -140,7 +160,7 @@ gl_enable_vertex_attrib_array(0);
 
 
 /* 
-	That all! Your triangle is all setup. It's not a requirement but it's good practice
+	That all! Your quad is all setup. It's not a requirement but it's good practice
 	to unbind your vertex array so you don't accidentally change something down the line
 	and cause a hard to find bug.
 */

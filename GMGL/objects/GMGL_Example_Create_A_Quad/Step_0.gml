@@ -13,9 +13,8 @@ gl_use_program(shaderProgram);
 //Bind the VAO that you want to render
 gl_bind_vertex_array(vao);
 
-//Draw vao vertices
-gl_draw_arrays(GL_TRIANGLES, 0, 3);
-
+//Draw vao vertices with element buffer
+gl_draw_elements(GL_TRIANGLES, 6);
 
 //Swaps buffers and polls events
 glfw_update();

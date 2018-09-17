@@ -32,6 +32,9 @@ I don't know much about OpenGL or 3D really in general.
   probably never happen like passing a GML script as a callback for the 
   DLL to execute. I'm trying to make it as complete as possible but there 
   will inevitably be some abstraction to make things work correctly with GMS.
+* Everything is wrapped around a single window. You can't create more than one.
+  I just don't see a purpose for it since this is for game dev and not software dev.
+  It could be added in the future though.
 
 ---
 ### Program directly with OpenGL using GML
