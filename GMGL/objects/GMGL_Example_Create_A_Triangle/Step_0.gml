@@ -1,7 +1,7 @@
-//Set the background clear color
+// Set the background clear color
 gl_clear_color(0.2,0.3,0.3,1.0);
 
-//Actually clear screen with background color
+// Actually clear screen with background color
 gl_clear(GL_COLOR_BUFFER_BIT);
 
 /* 
@@ -10,12 +10,12 @@ gl_clear(GL_COLOR_BUFFER_BIT);
 */
 gl_use_program(shaderProgram);
 
-//Bind the VAO that you want to render
+// Bind the VAO that you want to render
 gl_bind_vertex_array(vao);
 
-//Draw vao vertices
+// Draw vao vertices
 gl_draw_arrays(GL_TRIANGLES, 0, 3);
 
 
-//Swaps buffers and polls events
+// Swaps buffers and polls events
 glfw_update();

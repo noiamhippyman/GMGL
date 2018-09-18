@@ -1,16 +1,15 @@
-//Set alarm to keep track of when GMGL is running or not
-alarm_set(0,GMGL_ACTIVE_CHECK_TIME * game_get_speed(gamespeed_fps));
-
-//Disabling the draw event basically turns off the GM window
-//If you don't run this you'll have two windows open
+/*
+	Disabling the draw event basically turns off the GM window
+	If you don't run this you'll have two windows open
+*/
 draw_enable_drawevent(false);
 
 //Call this to initialize the GMGL extension
-//Equivalent to glfwInit()
 glfw_init();
 
-//Set GL version to use
 /*
+	Set GL version to use with GLFW window hints
+	
 	GLFW_CONTEXT_VERSION_MAJOR and GLFW_CONTEXT_VERSION_MINOR 
 	are not hard constraints, but creation will fail if the OpenGL 
 	version of the created context is less than the one requested. 
@@ -26,8 +25,9 @@ glfw_init();
 glfw_window_hint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 glfw_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-//Set GL profile
 /*
+	Set GL profile
+	
 	GLFW_OPENGL_PROFILE specifies which OpenGL profile to 
 	create the context for. Possible values are one of 
 	GLFW_OPENGL_CORE_PROFILE or GLFW_OPENGL_COMPAT_PROFILE, 
@@ -38,8 +38,9 @@ glfw_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 */
 glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-//Create the actual window
 /*
+	Create the actual window
+	
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */

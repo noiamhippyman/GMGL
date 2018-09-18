@@ -1,15 +1,15 @@
-//Set alarm to keep track of when GMGL is running or not
-alarm_set(0,GMGL_ACTIVE_CHECK_TIME * game_get_speed(gamespeed_fps));
-
-//Disabling the draw event basically turns off the GM window
-//If you don't run this you'll have two windows open
+/*
+	Disabling the draw event basically turns off the GM window
+	If you don't run this you'll have two windows open
+*/
 draw_enable_drawevent(false);
 
 // Call this to initialize GLFW
 glfw_init();
 
-// Set GL version to use with GLFW window hints
 /*
+	Set GL version to use with GLFW window hints
+	
 	GLFW_CONTEXT_VERSION_MAJOR and GLFW_CONTEXT_VERSION_MINOR 
 	are not hard constraints, but creation will fail if the OpenGL 
 	version of the created context is less than the one requested. 
@@ -25,8 +25,9 @@ glfw_init();
 glfw_window_hint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 glfw_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-// Set GL profile
 /*
+	Set GL profile
+	
 	GLFW_OPENGL_PROFILE specifies which OpenGL profile to 
 	create the context for. Possible values are one of 
 	GLFW_OPENGL_CORE_PROFILE or GLFW_OPENGL_COMPAT_PROFILE, 
@@ -37,15 +38,17 @@ glfw_window_hint(GLFW_CONTEXT_VERSION_MINOR, 3);
 */
 glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-// Create the actual window
 /*
+	Create the actual window
+	
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
 gmgl_create_window_centered(800,600,"Example - Creating a Triangle");
 
-// Create shaders
 /*
+	Create shaders
+	
 	For simplicity I decided to make this function actually do three things behind the scenes
 	When doing this with C/C++ you would create the shader, set the source and then compile the shader.
 	
@@ -63,8 +66,9 @@ gmgl_create_window_centered(800,600,"Example - Creating a Triangle");
 var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_basic_vs());
 var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_basic_fs());
 
-// Create shader program
 /*
+	Create shader program
+	
 	The shaders by themselves are useless. You still need to create a program.
 	Then attach any shaders you want to the program and finally link the program.
 */
@@ -73,8 +77,9 @@ gl_attach_shader(shaderProgram,vertShader);
 gl_attach_shader(shaderProgram,fragShader);
 gl_link_program(shaderProgram);
 
-// Delete shaders
 /*
+	Delete shaders
+	
 	After linking a program you don't need the shaders anymore. 
 	You can delete them when you don't need them anymore.
 */
@@ -90,8 +95,9 @@ var vertices = [
 	 0.0, 0.5, 0.0
 ];
 
-// Store vertices into a gamemaker buffer
 /*
+	Store vertices and indices into their own gamemaker buffers
+	
 	The reason we have to do this is because you can't pass an array 
 	to an extension. But you can get the address of a buffer with 
 	buffer_get_address which can then be passed to and read by the extension.
@@ -103,19 +109,21 @@ for (var i = 0; i < vcount; ++i) {
 }
 
 
-// Generate vertex array and vertex buffer object
 /*
-	A vertex array (VAO) is basically nothing more than a box.
+	Generate vertex array, vertex buffer object and element buffer object
+	
+	A vertex array object (VAO) is basically nothing more than a box.
 	In this box you store it's vertex data, vertex attributes,
 	vertex indices, etc.
 	
 	A vertex buffer object (VBO) is the actual vertex data.
 	Each vertex could be just a position or position, color and texture coordinates, etc.
+	
+	An element buffer object (EBO) is an array of indices that point to which vertex to use in the VBO.
 */
 vao = gl_gen_vertex_array();
 vbo = gl_gen_buffer();
 
-// Bind the vertex array
 /*
 	First you need to bind the vertex array so OpenGL knows which one you're modifying/using.
 	Now when you bind buffers or setup vertex attribute pointers, it will do it for this vao.
@@ -125,15 +133,15 @@ gl_bind_vertex_array(vao);
 // Next you need to bind the vbo to this vao's array buffer
 gl_bind_buffer(GL_ARRAY_BUFFER, vbo);
 
-// Now you need to actually put your vertex data into the array buffer
 /*
+	Now you need to actually put your vertex data into the array buffer
 	Don't forget about the buffer we stored the vertex data into. 
 	This is where you use buffer_get_address
 */
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(vbuff), buffer_get_address(vbuff), GL_STATIC_DRAW);
 
 // Next we need to setup this vertex array's vertex attributes
-gl_vertex_attrib_pointer(0,3,GMGL_FALSE,3,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,3,0);
 
 // Don't forget to enable the attribute also
 gl_enable_vertex_attrib_array(0);

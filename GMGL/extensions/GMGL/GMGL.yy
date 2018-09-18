@@ -585,10 +585,11 @@
                         2,
                         2,
                         2,
+                        2,
                         2
                     ],
                     "externalName": "gl_vertex_attrib_pointer",
-                    "help": "gl_vertex_attrib_pointer(index,size,normalized,stride,offset);",
+                    "help": "gl_vertex_attrib_pointer(index,size,type,normalized,stride,offset);",
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_vertex_attrib_pointer",
@@ -1578,11 +1579,48 @@
                     "kind": 1,
                     "name": "gl_texture_parameterIuiv",
                     "returnType": 2
+                },
+                {
+                    "id": "96fe0dfc-a6e0-476b-aa89-a409fb1c30c6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    "externalName": "RegisterCallbacks",
+                    "help": "DO NOT CALL THIS",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "RegisterCallbacks",
+                    "returnType": 2
+                },
+                {
+                    "id": "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_viewport",
+                    "help": "gl_viewport(x,y,width,height);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_viewport",
+                    "returnType": 2
                 }
             ],
             "init": "",
             "kind": 1,
             "order": [
+                "96fe0dfc-a6e0-476b-aa89-a409fb1c30c6",
                 "3b53333b-c647-461d-9e92-194b8cdb5d9e",
                 "f2773f76-720d-4d99-8395-17236b181d74",
                 "14765d7d-99c0-475f-b6cc-345b85d531b6",
@@ -1607,6 +1645,7 @@
                 "70232ba1-5523-46f9-84d2-f66dd8542174",
                 "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
                 "aea95dec-a2cd-45be-9223-25456cb5b2a6",
+                "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
                 "00b4708e-dcdf-40a1-af7b-66a5728094eb",
                 "49b9da98-b884-47eb-b236-13d75a96c9de",
                 "99e0b78c-3d11-4e63-a617-8e8c98dc5011",
@@ -1677,6 +1716,30 @@
                 "80cfcb61-45bb-4eb9-bea8-d1b781bc9065",
                 "3cb94bb5-c5e5-44cd-be37-f5bf8ed1a5fc",
                 "5789d87b-b6aa-4247-a358-5a43435c637e"
+            ],
+            "origname": "",
+            "uncompress": false
+        },
+        {
+            "id": "54da4f6c-b3cb-4475-b8ad-319c825dd2c6",
+            "modelName": "GMExtensionFile",
+            "mvc": "1.0",
+            "ProxyFiles": [
+                
+            ],
+            "constants": [
+                
+            ],
+            "copyToTargets": -1,
+            "filename": "assimp-vc140-mt.dll",
+            "final": "",
+            "functions": [
+                
+            ],
+            "init": "",
+            "kind": 1,
+            "order": [
+                
             ],
             "origname": "",
             "uncompress": false

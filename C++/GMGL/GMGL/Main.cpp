@@ -5,12 +5,13 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+//#include <glm/glm.hpp>
+//#include <glm/gtc/matrix_transform.hpp>
+//#include <glm/gtc/type_ptr.hpp>
 
 #include <vector>
 #include <iostream>
+#include <string>
 #include "GMS_Extension.hpp"
 
 #pragma region Internal Stuff
@@ -37,8 +38,8 @@ struct GMGLmouse {
 //Global variables
 std::vector<GMGLimage*> __gmgl_images;
 std::vector<GLuint> __gmgl_image_slots;
-GMGLmouse __gmgl_mouse;
 
+GMGLmouse __gmgl_mouse;
 GLFWwindow* __gmgl_window = nullptr;
 
 
@@ -59,11 +60,9 @@ double gmgl_new_image() {
 
 	return index;
 }
-
 GMGLimage* gmgl_get_image(double id) {
 	return __gmgl_images[id];
 }
-
 void gmgl_delete_image(double id) {
 	if (__gmgl_images.size() > id && __gmgl_images[id] != nullptr) {
 		delete __gmgl_images[id];
@@ -72,19 +71,66 @@ void gmgl_delete_image(double id) {
 	}
 }
 
-
 //Callbacks
+enum eGMGLevent {
+	Error,
+	FramebufferSize,
+	WindowClose,
+	MousePos
+};
+
+class GMGLevent {
+public:
+	GMGLevent(eGMGLevent);
+	void add_var(char* name, double value);
+	void add_var(char* name, char* value);
+	void trigger();
+
+private:
+	eGMGLevent type;
+	gml_ds_map map;
+};
+
+GMGLevent::GMGLevent(eGMGLevent type) {
+	map = gml_ds_map_create();
+	add_var("event", type);
+}
+
+void GMGLevent::add_var(char* name, double value) {
+	gml_ds_map_set_double(map, name, value);
+}
+
+void GMGLevent::add_var(char* name, char* value) {
+	gml_ds_map_set_string(map, name, value);
+}
+
+void GMGLevent::trigger() {
+	gml_event_perform_async(map, EVENT_OTHER_SOCIAL);
+}
+
+
+void gmgl_callback_error(int error, const char* description) {
+	GMGLevent e(eGMGLevent::Error);
+	e.add_var("error", error);
+	e.add_var("description", (char*)description);
+	e.trigger();
+}
+
 void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
+	GMGLevent e(eGMGLevent::FramebufferSize);
+	e.add_var("width", width);
+	e.add_var("height", height);
+	e.trigger();
 }
-
 void gmgl_callback_window_close(GLFWwindow* window) {
-	if (glfwWindowShouldClose(window)) glfw_terminate();
+	GMGLevent e(eGMGLevent::WindowClose);
+	e.trigger();
 }
-
 void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
-	__gmgl_mouse.x = xpos;
-	__gmgl_mouse.y = ypos;
+	GMGLevent e(eGMGLevent::MousePos);
+	e.add_var("xpos", xpos);
+	e.add_var("ypos", ypos);
+	e.trigger();
 }
 
 #pragma endregion
@@ -228,10 +274,14 @@ GMS_DLL double glfw_create_window(double width, double height, const char* title
 	}
 
 	glfwMakeContextCurrent(__gmgl_window);
+
+	//Set callbacks
+	glfwSetErrorCallback(gmgl_callback_error);
 	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
 	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
 	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_mouse_pos);
 
+	//Initialize GLEW
 	if (glewInit() != GLEW_OK) {
 		std::cout << "GLEW initialization failed" << std::endl;
 		glfw_terminate();
@@ -252,11 +302,16 @@ GMS_DLL void glfw_window_hint(double hint, double value) {
 GMS_DLL void glfw_set_window_pos(double x, double y) {
 	glfwSetWindowPos(__gmgl_window, x, y);
 }
+
 #pragma endregion
 
 #pragma endregion
 
 #pragma region GL Functions
+
+GMS_DLL void gl_viewport(double x, double y, double width, double height) {
+	glViewport(x, y, width, height);
+}
 
 GMS_DLL void gl_enable(double cap) {
 	glEnable(cap);
@@ -306,9 +361,28 @@ GMS_DLL void gl_bind_vertex_array(double varray) {
 	glBindVertexArray(varray);
 }
 
-GMS_DLL void gl_vertex_attrib_pointer(double index, double size, double normalized, double stride, double offset) {
+GMS_DLL void gl_vertex_attrib_pointer(double index, double size, double type, double normalized, double stride, double offset) {
 	int _offset = (int)offset * sizeof(float);
-	glVertexAttribPointer(index, size, GL_FLOAT, normalized, stride * sizeof(float), (void*)_offset);
+
+	double typesize;
+
+	switch ((int)type) {
+	case GL_FLOAT:
+		typesize = sizeof(float);
+		break;
+	case GL_UNSIGNED_INT:
+		typesize = sizeof(unsigned int);
+		break;
+	case GL_INT:
+		typesize = sizeof(int);
+		break;
+	default:
+		type = GL_FLOAT;
+		typesize = sizeof(float);
+		break;
+	}
+
+	glVertexAttribPointer(index, size, type, normalized, stride * typesize, (void*)_offset);
 }
 
 GMS_DLL void gl_enable_vertex_attrib_array(double index) {
@@ -577,4 +651,3 @@ GMS_DLL void gl_texture_parameterIuiv(double target, double pname, void* param) 
 #pragma endregion
 
 #pragma endregion
-

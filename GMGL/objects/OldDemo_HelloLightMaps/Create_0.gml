@@ -125,13 +125,13 @@ gl_buffer_data(GL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),
 
 gl_bind_vertex_array(cubevao);
 
-gl_vertex_attrib_pointer(0,3,GMGL_FALSE,8,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8,0);
 gl_enable_vertex_attrib_array(0);
 
-gl_vertex_attrib_pointer(1,3,GMGL_FALSE,8,3);
+gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,8,3);
 gl_enable_vertex_attrib_array(1);
 
-gl_vertex_attrib_pointer(2,2,GMGL_FALSE,8,6);
+gl_vertex_attrib_pointer(2,2,GL_FLOAT,GMGL_FALSE,8,6);
 gl_enable_vertex_attrib_array(2);
 
 
@@ -140,7 +140,7 @@ gl_bind_vertex_array(lightvao);
 
 gl_bind_buffer(GL_ARRAY_BUFFER, vbo);
 
-gl_vertex_attrib_pointer(0,3,GMGL_FALSE,8,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8,0);
 gl_enable_vertex_attrib_array(0);
 
 

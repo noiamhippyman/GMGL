@@ -14,7 +14,8 @@
         "d556f32d-bd01-496d-8b28-11a85388535a",
         "686f4d49-a812-4beb-9e4f-008c8ca5b682",
         "15125730-79a2-4605-8c32-c128abee5671",
-        "f97854cd-eeb2-4407-9a1f-a59c4eaa69d0"
+        "f97854cd-eeb2-4407-9a1f-a59c4eaa69d0",
+        "2e9abf16-4310-4ce9-9df3-6f87bd5fec56"
     ],
     "filterType": "GMScript",
     "folderName": "GMGL",

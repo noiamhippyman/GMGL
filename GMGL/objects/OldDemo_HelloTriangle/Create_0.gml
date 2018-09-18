@@ -37,7 +37,7 @@ gl_bind_vertex_array(vao);
 gl_bind_buffer(GL_ARRAY_BUFFER,vbo);
 gl_buffer_data(GL_ARRAY_BUFFER,buffer_get_size(vbuff),buffer_get_address(vbuff),GL_STATIC_DRAW);
 
-gl_vertex_attrib_pointer(0,3,GMGL_FALSE,3,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,3,0);
 gl_enable_vertex_attrib_array(0);
 
 gl_bind_buffer(GL_ARRAY_BUFFER,0);
