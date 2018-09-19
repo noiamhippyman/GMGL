@@ -6,6 +6,9 @@
 	I will note when it's finally complete.
 
 */
+if (!gmgl_is_active()) exit;
+
+
 switch (async_load[?"event"]) {
 	case eGMGLevent.Error:
 		// This event is triggered when an error occurs and returns an error code and a description
@@ -29,11 +32,12 @@ switch (async_load[?"event"]) {
 		glfw_terminate();
 		
 		// The GM process will not actually close when you close the GLFW window. You need to end the game
-		game_end();
+		//game_end();
 		
 		// You can also enable the draw event again to get the GM window back.
 		// Just make sure you don't accidentally make any GLFW or GL calls or you'll get a GMGL error
-		//draw_enable_drawevent(true);
+		draw_enable_drawevent(true);
+		room_goto(rmMainMenu);
 	break;
 	
 	case eGMGLevent.MousePos:

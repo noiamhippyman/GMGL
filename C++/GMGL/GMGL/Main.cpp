@@ -19,8 +19,8 @@
 //Forward Declarations
 GMS_DLL void glfw_terminate();
 
+#pragma region Data structures
 
-//Data structures
 struct GMGLimage {
 	GLsizei width;
 	GLsizei height;
@@ -35,43 +35,6 @@ struct GMGLmouse {
 	double scrollY;
 };
 
-//Global variables
-std::vector<GMGLimage*> __gmgl_images;
-std::vector<GLuint> __gmgl_image_slots;
-
-GMGLmouse __gmgl_mouse;
-GLFWwindow* __gmgl_window = nullptr;
-
-
-//Pointer management functions
-double gmgl_new_image() {
-	double index;
-	GMGLimage* object = new GMGLimage;
-
-	if (!__gmgl_image_slots.empty()) {
-		index = __gmgl_image_slots.back();
-		__gmgl_image_slots.pop_back();
-		__gmgl_images[index] = object;
-	}
-	else {
-		index = __gmgl_images.size();
-		__gmgl_images.push_back(object);
-	}
-
-	return index;
-}
-GMGLimage* gmgl_get_image(double id) {
-	return __gmgl_images[id];
-}
-void gmgl_delete_image(double id) {
-	if (__gmgl_images.size() > id && __gmgl_images[id] != nullptr) {
-		delete __gmgl_images[id];
-		__gmgl_images[id] = nullptr;
-		__gmgl_image_slots.push_back(id);
-	}
-}
-
-//Callbacks
 enum eGMGLevent {
 	Error,
 	FramebufferSize,
@@ -108,6 +71,44 @@ void GMGLevent::trigger() {
 	gml_event_perform_async(map, EVENT_OTHER_SOCIAL);
 }
 
+#pragma endregion
+
+//Global variables
+std::vector<GMGLimage*> __gmgl_images;
+std::vector<GLuint> __gmgl_image_slots;
+
+GMGLmouse __gmgl_mouse;
+GLFWwindow* __gmgl_window = nullptr;
+
+//Pointer management functions
+double gmgl_new_image() {
+	double index;
+	GMGLimage* object = new GMGLimage;
+
+	if (!__gmgl_image_slots.empty()) {
+		index = __gmgl_image_slots.back();
+		__gmgl_image_slots.pop_back();
+		__gmgl_images[index] = object;
+	}
+	else {
+		index = __gmgl_images.size();
+		__gmgl_images.push_back(object);
+	}
+
+	return index;
+}
+GMGLimage* gmgl_get_image(double id) {
+	return __gmgl_images[id];
+}
+void gmgl_delete_image(double id) {
+	if (__gmgl_images.size() > id && __gmgl_images[id] != nullptr) {
+		delete __gmgl_images[id];
+		__gmgl_images[id] = nullptr;
+		__gmgl_image_slots.push_back(id);
+	}
+}
+
+#pragma region Callbacks
 
 void gmgl_callback_error(int error, const char* description) {
 	GMGLevent e(eGMGLevent::Error);
@@ -115,7 +116,6 @@ void gmgl_callback_error(int error, const char* description) {
 	e.add_var("description", (char*)description);
 	e.trigger();
 }
-
 void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
 	GMGLevent e(eGMGLevent::FramebufferSize);
 	e.add_var("width", width);
@@ -132,6 +132,8 @@ void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
 	e.add_var("ypos", ypos);
 	e.trigger();
 }
+
+#pragma endregion
 
 #pragma endregion
 

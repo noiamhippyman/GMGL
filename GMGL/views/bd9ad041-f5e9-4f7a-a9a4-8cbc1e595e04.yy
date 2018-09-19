@@ -32,7 +32,7 @@
         "45f75e89-1976-459a-95b6-7d6a51603f19"
     ],
     "filterType": "GMScript",
-    "folderName": "Shaders",
+    "folderName": "Old Example Shaders",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
