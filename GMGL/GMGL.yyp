@@ -1215,6 +1215,14 @@
             }
         },
         {
+            "Key": "fc1d33be-6617-428e-850f-996f5e6d976c",
+            "Value": {
+                "id": "9c98520b-fb80-4be0-a7da-941689cb7f75",
+                "resourcePath": "datafiles_yy\\testicon.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "fc7924e1-3905-4ac2-bf25-2947f28b1bbd",
             "Value": {
                 "id": "055b13eb-2d7a-4b7d-9cee-f4231dbe8cc0",

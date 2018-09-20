@@ -1691,6 +1691,403 @@
                     "kind": 1,
                     "name": "glfw_get_mouse_button",
                     "returnType": 2
+                },
+                {
+                    "id": "c3257e53-fb91-461c-bb05-544bea21adc9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        1
+                    ],
+                    "externalName": "glfw_set_window_title",
+                    "help": "glfw_set_window_title(title);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_title",
+                    "returnType": 2
+                },
+                {
+                    "id": "6ef722bb-c592-4868-ab96-ee7bdb35a187",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        1
+                    ],
+                    "externalName": "glfw_set_window_icon",
+                    "help": "glfw_set_window_icon(path);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_icon",
+                    "returnType": 2
+                },
+                {
+                    "id": "a8164531-ca5e-4f2e-ba45-2b373d46e4f8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_window_x",
+                    "help": "glfw_get_window_x();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_window_x",
+                    "returnType": 2
+                },
+                {
+                    "id": "c68ab9cc-c79e-46fc-9d79-cd2d65b4dcaf",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_window_y",
+                    "help": "glfw_get_window_y();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_window_y",
+                    "returnType": 2
+                },
+                {
+                    "id": "b6e3c8e0-a485-4412-8121-9eb3f8736843",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_window_width",
+                    "help": "glfw_get_window_width();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_window_width",
+                    "returnType": 2
+                },
+                {
+                    "id": "4ccaa327-5feb-4c95-b09f-29c7707671a3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_window_height",
+                    "help": "glfw_get_window_height();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_window_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "cf7665a2-1897-46e3-ae48-05fa3be40927",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_window_size_limits",
+                    "help": "glfw_set_window_size_limits(minwidth,minheight,maxwidth,maxheight);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_size_limits",
+                    "returnType": 2
+                },
+                {
+                    "id": "c5f9048e-d3ee-485f-98ba-4eeeb37543a6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_window_aspect_ratio",
+                    "help": "glfw_set_window_aspect_ratio(numer,denom);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_aspect_ratio",
+                    "returnType": 2
+                },
+                {
+                    "id": "65ec69f2-c5c6-49de-90a3-394f019ae621",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_window_size",
+                    "help": "glfw_set_window_size(width,height);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_window_size",
+                    "returnType": 2
+                },
+                {
+                    "id": "305637c0-00a2-4fb6-b3df-702b03c94547",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_framebuffer_width",
+                    "help": "glfw_get_framebuffer_width();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_framebuffer_width",
+                    "returnType": 2
+                },
+                {
+                    "id": "684c6b44-27c5-44b2-b21d-0aafa670a7c9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_framebuffer_height",
+                    "help": "glfw_get_framebuffer_height();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_framebuffer_height",
+                    "returnType": 2
+                },
+                {
+                    "id": "9bc998bb-2df5-413e-93e9-904417c6a7b9",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_iconify_window",
+                    "help": "glfw_iconify_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_iconify_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "dd5475c4-8118-4705-9fc2-b0d8fe7b4743",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_restore_window",
+                    "help": "glfw_restore_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_restore_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "88842db8-6029-414c-a17e-6c3cd8f46631",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_maximize_window",
+                    "help": "glfw_maximize_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_maximize_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "e5155ef1-d33c-4a38-b5ee-7eb4d7cade27",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_show_window",
+                    "help": "glfw_show_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_show_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "126ff50e-951e-41e1-a017-78ddd24c3bb0",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_hide_window",
+                    "help": "glfw_hide_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_hide_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "745c04c5-f5c1-40c6-98ee-879d7bfbb808",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_focus_window",
+                    "help": "glfw_focus_window();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_focus_window",
+                    "returnType": 2
+                },
+                {
+                    "id": "7bba0411-6ebc-47c0-b3c3-ec77cb8274e4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_get_window_attrib",
+                    "help": "glfw_get_window_attrib(attrib);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_window_attrib",
+                    "returnType": 2
+                },
+                {
+                    "id": "b14da86f-4d9e-4dae-9fca-0e7ab3c1e626",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_get_key_name",
+                    "help": "glfw_get_key_name(key,scancode);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_key_name",
+                    "returnType": 1
+                },
+                {
+                    "id": "5be86c58-c7ed-414c-a4b9-38d540a70f73",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_mouse_x",
+                    "help": "glfw_get_mouse_x();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_mouse_x",
+                    "returnType": 2
+                },
+                {
+                    "id": "493a11c5-4433-4457-85b8-c49e41f927e8",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_mouse_y",
+                    "help": "glfw_get_mouse_y();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_mouse_y",
+                    "returnType": 2
+                },
+                {
+                    "id": "7dc766d0-2fa4-4838-8454-20366fd29914",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_mouse_pos",
+                    "help": "glfw_set_mouse_pos(x,y);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_mouse_pos",
+                    "returnType": 2
+                },
+                {
+                    "id": "3b49c685-1646-4096-b610-5c38f8b5c35e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        1
+                    ],
+                    "externalName": "glfw_set_clipboard_string",
+                    "help": "glfw_set_clipboard_string(string);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_clipboard_string",
+                    "returnType": 2
+                },
+                {
+                    "id": "ba00ed01-ddea-4b32-8d25-e2d454587035",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_clipboard_string",
+                    "help": "glfw_get_clipboard_string();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_clipboard_string",
+                    "returnType": 1
+                },
+                {
+                    "id": "086b7ea9-f373-4e85-a26f-1ee0b542089b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_get_time",
+                    "help": "glfw_get_time();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_time",
+                    "returnType": 2
+                },
+                {
+                    "id": "87232d5f-e028-4a9d-9deb-f57580843af1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_set_time",
+                    "help": "glfw_set_time(time);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_time",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1713,19 +2110,45 @@
                 "6e2269eb-671d-4a66-9ea6-70c2406185ee",
                 "e859faa9-147b-4307-a575-840d0c0a3daa",
                 "39df4c0e-a307-4d46-ab8e-418f526ea065",
+                "71835f1d-aa8a-4221-af4e-c0c3d73c61fe",
+                "70232ba1-5523-46f9-84d2-f66dd8542174",
+                "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
+                "c3257e53-fb91-461c-bb05-544bea21adc9",
+                "6ef722bb-c592-4868-ab96-ee7bdb35a187",
+                "a8164531-ca5e-4f2e-ba45-2b373d46e4f8",
+                "c68ab9cc-c79e-46fc-9d79-cd2d65b4dcaf",
+                "aea95dec-a2cd-45be-9223-25456cb5b2a6",
+                "b6e3c8e0-a485-4412-8121-9eb3f8736843",
+                "4ccaa327-5feb-4c95-b09f-29c7707671a3",
+                "65ec69f2-c5c6-49de-90a3-394f019ae621",
+                "cf7665a2-1897-46e3-ae48-05fa3be40927",
+                "c5f9048e-d3ee-485f-98ba-4eeeb37543a6",
+                "305637c0-00a2-4fb6-b3df-702b03c94547",
+                "684c6b44-27c5-44b2-b21d-0aafa670a7c9",
+                "9bc998bb-2df5-413e-93e9-904417c6a7b9",
+                "dd5475c4-8118-4705-9fc2-b0d8fe7b4743",
+                "88842db8-6029-414c-a17e-6c3cd8f46631",
+                "e5155ef1-d33c-4a38-b5ee-7eb4d7cade27",
+                "126ff50e-951e-41e1-a017-78ddd24c3bb0",
+                "745c04c5-f5c1-40c6-98ee-879d7bfbb808",
+                "7bba0411-6ebc-47c0-b3c3-ec77cb8274e4",
                 "bc1dd10f-4fef-4725-8f18-41dc664b07bd",
                 "bada81d2-9e68-4cf2-b5a4-06dfbb7d6f80",
                 "4929c990-85d1-4c11-970f-9e5c0c93d58f",
                 "2f935932-0086-44ba-a086-a4f1e46afd07",
                 "370af6e2-359c-49aa-8412-a5d4680ee099",
-                "71835f1d-aa8a-4221-af4e-c0c3d73c61fe",
-                "70232ba1-5523-46f9-84d2-f66dd8542174",
-                "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
-                "aea95dec-a2cd-45be-9223-25456cb5b2a6",
                 "7ff63cef-32b6-4460-ad9f-2734f30f56c7",
                 "8a80f42f-0745-429e-821a-697879e4fccd",
+                "b14da86f-4d9e-4dae-9fca-0e7ab3c1e626",
                 "f95b2714-551b-4d63-9e92-4f1059e90416",
                 "6c60577f-e9e0-4320-8232-8fb555fbee17",
+                "5be86c58-c7ed-414c-a4b9-38d540a70f73",
+                "493a11c5-4433-4457-85b8-c49e41f927e8",
+                "7dc766d0-2fa4-4838-8454-20366fd29914",
+                "3b49c685-1646-4096-b610-5c38f8b5c35e",
+                "ba00ed01-ddea-4b32-8d25-e2d454587035",
+                "086b7ea9-f373-4e85-a26f-1ee0b542089b",
+                "87232d5f-e028-4a9d-9deb-f57580843af1",
                 "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
                 "00b4708e-dcdf-40a1-af7b-66a5728094eb",
                 "49b9da98-b884-47eb-b236-13d75a96c9de",

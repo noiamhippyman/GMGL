@@ -332,6 +332,155 @@ GMS_DLL void glfw_terminate() {
 	__gmgl_window = nullptr;
 }
 
+#pragma region Window Functions
+
+GMS_DLL double glfw_create_window(double width, double height, const char* title) {
+	if (__gmgl_window) {
+		std::cout << "Window has already been created" << std::endl;
+		return GMS_FAIL;
+	}
+
+	__gmgl_window = glfwCreateWindow(width, height, title, nullptr, nullptr);
+
+	if (!__gmgl_window) {
+		std::cout << "Window creation failed" << std::endl;
+		return GMS_FAIL;
+	}
+
+	glfwMakeContextCurrent(__gmgl_window);
+
+	// Set callbacks
+	glfwSetErrorCallback(gmgl_callback_error);
+	
+	glfwSetWindowPosCallback(__gmgl_window, gmgl_callback_window_pos);
+	glfwSetWindowSizeCallback(__gmgl_window, gmgl_callback_window_size);
+	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
+	glfwSetWindowRefreshCallback(__gmgl_window, gmgl_callback_window_refresh);
+	glfwSetWindowFocusCallback(__gmgl_window, gmgl_callback_window_focus);
+	glfwSetWindowIconifyCallback(__gmgl_window, gmgl_callback_window_iconify);
+	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
+
+	glfwSetKeyCallback(__gmgl_window, gmgl_callback_key);
+	glfwSetMouseButtonCallback(__gmgl_window, gmgl_callback_mouse);
+	glfwSetJoystickCallback(gmgl_callback_joystick);
+	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_cursor_pos);
+	glfwSetCursorEnterCallback(__gmgl_window, gmgl_callback_cursor_enter);
+	glfwSetScrollCallback(__gmgl_window, gmgl_callback_scroll);
+
+	glfwSetDropCallback(__gmgl_window, gmgl_callback_drop);
+
+	// Initialize GLEW
+	if (glewInit() != GLEW_OK) {
+		std::cout << "GLEW initialization failed" << std::endl;
+		glfw_terminate();
+		return GMS_FAIL;
+	}
+
+	return GMS_SUCCESS;
+}
+
+GMS_DLL void glfw_default_window_hints() {
+	glfwDefaultWindowHints();
+}
+
+GMS_DLL void glfw_window_hint(double hint, double value) {
+	glfwWindowHint(hint, value);
+}
+
+GMS_DLL void glfw_set_window_title(char* title) {
+	glfwSetWindowTitle(__gmgl_window, title);
+}
+
+GMS_DLL void glfw_set_window_icon(const char* path) {
+	GLFWimage image[1];
+
+	image[0].pixels = stbi_load(path, &image[0].width, &image[0].height, 0, 4);
+
+	glfwSetWindowIcon(__gmgl_window, 1, image);
+
+	stbi_image_free(image[0].pixels);
+}
+
+GMS_DLL double glfw_get_window_x() {
+	int xpos;
+	glfwGetWindowPos(__gmgl_window, &xpos, nullptr);
+	return xpos;
+}
+
+GMS_DLL double glfw_get_window_y() {
+	int ypos;
+	glfwGetWindowPos(__gmgl_window, nullptr, &ypos);
+	return ypos;
+}
+
+GMS_DLL void glfw_set_window_pos(double x, double y) {
+	glfwSetWindowPos(__gmgl_window, x, y);
+}
+
+GMS_DLL double glfw_get_window_width() {
+	int width;
+	glfwGetWindowSize(__gmgl_window, &width, nullptr);
+	return width;
+}
+
+GMS_DLL double glfw_get_window_height() {
+	int height;
+	glfwGetWindowSize(__gmgl_window, nullptr, &height);
+	return height;
+}
+
+GMS_DLL void glfw_set_window_size_limits(double minwidth, double minheight, double maxwidth, double maxheight) {
+	glfwSetWindowSizeLimits(__gmgl_window, minwidth, minheight, maxwidth, maxheight);
+}
+
+GMS_DLL void glfw_set_window_aspect_ratio(double numer, double denom) {
+	glfwSetWindowAspectRatio(__gmgl_window, numer, denom);
+}
+
+GMS_DLL void glfw_set_window_size(double width, double height) {
+	glfwSetWindowSize(__gmgl_window, width, height);
+}
+
+GMS_DLL double glfw_get_framebuffer_width() {
+	int width;
+	glfwGetFramebufferSize(__gmgl_window, &width, nullptr);
+	return width;
+}
+
+GMS_DLL double glfw_get_framebuffer_height() {
+	int height;
+	glfwGetFramebufferSize(__gmgl_window, nullptr, &height);
+	return height;
+}
+
+GMS_DLL void glfw_iconify_window() {
+	glfwIconifyWindow(__gmgl_window);
+}
+
+GMS_DLL void glfw_restore_window() {
+	glfwRestoreWindow(__gmgl_window);
+}
+
+GMS_DLL void glfw_maximize_window() {
+	glfwMaximizeWindow(__gmgl_window);
+}
+
+GMS_DLL void glfw_show_window() {
+	glfwShowWindow(__gmgl_window);
+}
+
+GMS_DLL void glfw_hide_window() {
+	glfwHideWindow(__gmgl_window);
+}
+
+GMS_DLL void glfw_focus_window() {
+	glfwFocusWindow(__gmgl_window);
+}
+
+GMS_DLL double glfw_get_window_attrib(double attrib) {
+	return glfwGetWindowAttrib(__gmgl_window, attrib);
+}
+
 GMS_DLL void glfw_poll_events() {
 	glfwPollEvents();
 }
@@ -352,65 +501,6 @@ GMS_DLL void glfw_swap_buffers() {
 	glfwSwapBuffers(__gmgl_window);
 }
 
-#pragma region Window Functions
-
-GMS_DLL double glfw_create_window(double width, double height, const char* title) {
-	if (__gmgl_window) {
-		std::cout << "Window has already been created" << std::endl;
-		return GMS_FAIL;
-	}
-
-	__gmgl_window = glfwCreateWindow(width, height, title, nullptr, nullptr);
-
-	if (!__gmgl_window) {
-		std::cout << "Window creation failed" << std::endl;
-		return GMS_FAIL;
-	}
-
-	glfwMakeContextCurrent(__gmgl_window);
-
-	//Set callbacks
-	glfwSetErrorCallback(gmgl_callback_error);
-	
-	glfwSetWindowPosCallback(__gmgl_window, gmgl_callback_window_pos);
-	glfwSetWindowSizeCallback(__gmgl_window, gmgl_callback_window_size);
-	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
-	glfwSetWindowRefreshCallback(__gmgl_window, gmgl_callback_window_refresh);
-	glfwSetWindowFocusCallback(__gmgl_window, gmgl_callback_window_focus);
-	glfwSetWindowIconifyCallback(__gmgl_window, gmgl_callback_window_iconify);
-	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
-
-	glfwSetKeyCallback(__gmgl_window, gmgl_callback_key);
-	glfwSetMouseButtonCallback(__gmgl_window, gmgl_callback_mouse);
-	glfwSetJoystickCallback(gmgl_callback_joystick);
-	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_cursor_pos);
-	glfwSetCursorEnterCallback(__gmgl_window, gmgl_callback_cursor_enter);
-	glfwSetScrollCallback(__gmgl_window, gmgl_callback_scroll);
-
-	glfwSetDropCallback(__gmgl_window, gmgl_callback_drop);
-
-	//Initialize GLEW
-	if (glewInit() != GLEW_OK) {
-		std::cout << "GLEW initialization failed" << std::endl;
-		glfw_terminate();
-		return GMS_FAIL;
-	}
-
-	return GMS_SUCCESS;
-}
-
-GMS_DLL void glfw_default_window_hints() {
-	glfwDefaultWindowHints();
-}
-
-GMS_DLL void glfw_window_hint(double hint, double value) {
-	glfwWindowHint(hint, value);
-}
-
-GMS_DLL void glfw_set_window_pos(double x, double y) {
-	glfwSetWindowPos(__gmgl_window, x, y);
-}
-
 #pragma endregion
 
 #pragma region Input Functions
@@ -423,12 +513,48 @@ GMS_DLL double glfw_get_input_mode(double mode) {
 	return glfwGetInputMode(__gmgl_window, mode);
 }
 
+GMS_DLL const char* glfw_get_key_name(double key, double scancode) {
+	return glfwGetKeyName(key, scancode);
+}
+
 GMS_DLL double glfw_get_key(double key) {
 	return glfwGetKey(__gmgl_window, key);
 }
 
 GMS_DLL double glfw_get_mouse_button(double button) {
 	return glfwGetMouseButton(__gmgl_window, button);
+}
+
+GMS_DLL double glfw_get_mouse_x() {
+	double xpos;
+	glfwGetCursorPos(__gmgl_window, &xpos, nullptr);
+	return xpos;
+}
+
+GMS_DLL double glfw_get_mouse_y() {
+	double ypos;
+	glfwGetCursorPos(__gmgl_window, nullptr, &ypos);
+	return ypos;
+}
+
+GMS_DLL void glfw_set_mouse_pos(double x, double y) {
+	glfwSetCursorPos(__gmgl_window, x, y);
+}
+
+GMS_DLL void glfw_set_clipboard_string(const char* string) {
+	glfwSetClipboardString(__gmgl_window, string);
+}
+
+GMS_DLL const char* glfw_get_clipboard_string() {
+	return glfwGetClipboardString(__gmgl_window);
+}
+
+GMS_DLL double glfw_get_time() {
+	return glfwGetTime();
+}
+
+GMS_DLL void glfw_set_time(double time) {
+	glfwSetTime(time);
 }
 
 #pragma endregion
