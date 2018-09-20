@@ -14,6 +14,7 @@
 I don't know much about OpenGL or 3D really in general.
 
 ### Reasons to go away and not use this
+* For starters, it is very much a WIP. I highly recommend you don't use this for anything serious.
 * You're using a different window than the actual GM window which 
   is only hidden when you disable the draw event. This is demonstrated in the demos.
 * The GML keyboard_* and mouse_* functions don't work but there is a whole new event

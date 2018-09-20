@@ -10,7 +10,10 @@
         "79f04771-a129-415c-a889-931f3d6ca8b0",
         "32523329-3e0b-4339-adb0-4c41e87a7110",
         "51aff01f-6ea5-4a8f-b006-228306af51c0",
-        "7cda1373-a604-4dbe-8b63-b19319dcf570"
+        "7cda1373-a604-4dbe-8b63-b19319dcf570",
+        "657f2f0c-20c5-4fb5-8c08-9106ff8c06d7",
+        "e01c2d1a-0414-4f0a-9bb6-e4cfed88a0d2",
+        "f60d66ca-0b7a-4663-9ceb-f3b1d98f806b"
     ],
     "filterType": "GMRoom",
     "folderName": "GMGL Examples",

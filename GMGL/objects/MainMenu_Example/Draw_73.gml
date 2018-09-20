@@ -7,7 +7,7 @@ if (mouseHovering) {
 	
 	draw_set_halign(1);
 	draw_set_valign(1);
-	draw_text((bbox_left+bbox_right)/2, (bbox_top+bbox_bottom)/2, roomName);
+	draw_text_ext((bbox_left+bbox_right)/2, (bbox_top+bbox_bottom)/2, roomName, string_height("|"), bbox_right-bbox_left);
 	draw_set_halign(0);
 	draw_set_valign(0);
 }
