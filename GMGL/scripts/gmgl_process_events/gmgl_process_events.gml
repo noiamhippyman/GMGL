@@ -29,7 +29,7 @@ switch (async_load[?"event"]) {
 		var xpos = async_load[?"xpos"];
 		var ypos = async_load[?"ypos"];
 		
-		show_debug_message("EVENT::WindowPos::pos("+string(xpos)+", "+string(ypos)+")");
+		//show_debug_message("EVENT::WindowPos::pos("+string(xpos)+", "+string(ypos)+")");
 	break;
 	
 	case eGMGLevent.WindowResize:
@@ -40,7 +40,7 @@ switch (async_load[?"event"]) {
 		var width = async_load[?"width"];
 		var height = async_load[?"height"];
 		
-		show_debug_message("EVENT::WindowResize::size("+string(width)+", "+string(height)+")");
+		//show_debug_message("EVENT::WindowResize::size("+string(width)+", "+string(height)+")");
 	break;
 	
 	case eGMGLevent.WindowClose:
@@ -67,7 +67,7 @@ switch (async_load[?"event"]) {
 			I'm honestly not sure what the purpose is for this event
 			It triggers basically when you stop resizing the window
 		*/
-		show_debug_message("EVENT::WindowRefresh");
+		//show_debug_message("EVENT::WindowRefresh");
 	break;
 	
 	case eGMGLevent.WindowFocus:
@@ -76,7 +76,7 @@ switch (async_load[?"event"]) {
 			Returns whether it's focused or not
 		*/
 		var focused = async_load[?"focused"];
-		show_debug_message("EVENT::WindowFocus::" + (focused ? "true" : "false"));
+		//show_debug_message("EVENT::WindowFocus::" + (focused ? "true" : "false"));
 	break;
 	
 	case eGMGLevent.WindowIconify:
@@ -85,7 +85,7 @@ switch (async_load[?"event"]) {
 			Returns the new x,y positions of the client window.
 		*/
 		var iconified = async_load[?"iconified"];
-		show_debug_message("EVENT::WindowIconify::" + (iconified ? "true" : "false"));
+		//show_debug_message("EVENT::WindowIconify::" + (iconified ? "true" : "false"));
 	break;
 	
 	case eGMGLevent.FramebufferSize:
@@ -113,7 +113,7 @@ switch (async_load[?"event"]) {
 		var action = async_load[?"action"];
 		var mods = async_load[?"mods"];
 		
-		show_debug_message("EVENT::Key::key("+string(key)+")::scancode("+string(scancode)+")::action("+string(action)+")::mods("+string(mods)+")");
+		//show_debug_message("EVENT::Key::key("+string(key)+")::scancode("+string(scancode)+")::action("+string(action)+")::mods("+string(mods)+")");
 	break;
 	
 	case eGMGLevent.Mouse:
@@ -128,7 +128,7 @@ switch (async_load[?"event"]) {
 		var action = async_load[?"action"];
 		var mods = async_load[?"mods"];
 		
-		show_debug_message("EVENT::Mouse::button("+string(button)+")::action("+string(action)+")::mods("+string(mods)+")");
+		//show_debug_message("EVENT::Mouse::button("+string(button)+")::action("+string(action)+")::mods("+string(mods)+")");
 	break;
 	
 	case eGMGLevent.Joystick:
@@ -141,7 +141,7 @@ switch (async_load[?"event"]) {
 		var joy = async_load[?"joy"];
 		var joyEvent = async_load[?"joy event"];
 		
-		show_debug_message("EVENT::Joystick::joy("+string(joy)+")::joy event("+string(joyEvent)+")");
+		//show_debug_message("EVENT::Joystick::joy("+string(joy)+")::joy event("+string(joyEvent)+")");
 	break;
 	
 	case eGMGLevent.CursorPos:
@@ -152,7 +152,9 @@ switch (async_load[?"event"]) {
 		var xpos = async_load[?"xpos"];
 		var ypos = async_load[?"ypos"];
 		
-		show_debug_message("EVENT::CursorPos::pos("+string(xpos)+", "+string(ypos)+")");
+		global.gmgl_mouse_pos = [xpos, ypos];
+		
+		//show_debug_message("EVENT::CursorPos::pos("+string(xpos)+", "+string(ypos)+")");
 	break;
 	
 	case eGMGLevent.CursorEnter:
@@ -162,7 +164,7 @@ switch (async_load[?"event"]) {
 		*/
 		var entered = async_load[?"entered"];
 		
-		show_debug_message("EVENT::CursorEnter::"+ (entered ? "true" : "false"));
+		//show_debug_message("EVENT::CursorEnter::"+ (entered ? "true" : "false"));
 	break;
 	
 	case eGMGLevent.Scroll:
@@ -173,7 +175,7 @@ switch (async_load[?"event"]) {
 		var xoffset = async_load[?"xoffset"];
 		var yoffset = async_load[?"yoffset"];
 		
-		show_debug_message("EVENT::Scroll::offset("+string(xoffset)+", "+string(yoffset)+")");
+		//show_debug_message("EVENT::Scroll::offset("+string(xoffset)+", "+string(yoffset)+")");
 	break;
 	
 	case eGMGLevent.Drop:

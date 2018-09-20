@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "35435fd2-a8f9-4ca0-928c-8122113db74a",
+            "Value": {
+                "id": "f4e5f58e-b27d-4857-a9b6-979b7638cf74",
+                "resourcePath": "rooms\\rmGMGL_Example_User_Input\\rmGMGL_Example_User_Input.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "385edee8-0599-4701-9185-2e71f346736c",
             "Value": {
                 "id": "f54f0063-4384-426d-aee3-8b391f226e8d",
@@ -580,6 +588,14 @@
                 "id": "cb288fbe-85af-4773-b38e-caefac13cc69",
                 "resourcePath": "scripts\\fragment_shader_coordinates\\fragment_shader_coordinates.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8b1aa25b-842e-4de4-998c-bc37f1c94831",
+            "Value": {
+                "id": "391209b3-5fb3-49a0-a656-cb0b86262309",
+                "resourcePath": "objects\\GMGL_Example_User_Input\\GMGL_Example_User_Input.yy",
+                "resourceType": "GMObject"
             }
         },
         {

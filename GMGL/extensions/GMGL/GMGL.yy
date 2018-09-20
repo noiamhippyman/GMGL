@@ -1630,6 +1630,67 @@
                     "kind": 1,
                     "name": "glfw_post_empty_event",
                     "returnType": 2
+                },
+                {
+                    "id": "7ff63cef-32b6-4460-ad9f-2734f30f56c7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "glfw_set_input_mode",
+                    "help": "glfw_set_input_mode(mode, value);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_set_input_mode",
+                    "returnType": 2
+                },
+                {
+                    "id": "8a80f42f-0745-429e-821a-697879e4fccd",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_get_input_mode",
+                    "help": "glfw_get_input_mode(mode);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_input_mode",
+                    "returnType": 2
+                },
+                {
+                    "id": "f95b2714-551b-4d63-9e92-4f1059e90416",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_get_key",
+                    "help": "glfw_get_key(key);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_key",
+                    "returnType": 2
+                },
+                {
+                    "id": "6c60577f-e9e0-4320-8232-8fb555fbee17",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "glfw_get_mouse_button",
+                    "help": "glfw_get_mouse_button(button);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_get_mouse_button",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1661,6 +1722,10 @@
                 "70232ba1-5523-46f9-84d2-f66dd8542174",
                 "549cb2ee-6ee5-439e-aa3e-3976c62d3286",
                 "aea95dec-a2cd-45be-9223-25456cb5b2a6",
+                "7ff63cef-32b6-4460-ad9f-2734f30f56c7",
+                "8a80f42f-0745-429e-821a-697879e4fccd",
+                "f95b2714-551b-4d63-9e92-4f1059e90416",
+                "6c60577f-e9e0-4320-8232-8fb555fbee17",
                 "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
                 "00b4708e-dcdf-40a1-af7b-66a5728094eb",
                 "49b9da98-b884-47eb-b236-13d75a96c9de",

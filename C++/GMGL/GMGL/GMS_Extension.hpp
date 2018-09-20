@@ -1,6 +1,7 @@
 #pragma once
 #if defined(WIN32)
 #define GMS_DLL extern "C" __declspec(dllexport)
+#define GMS_DLL_DEPRECATED GMS_DLL
 #elif defined(GNUC)
 #define GMS_DLL extern "C" __attribute__ ((visibility("default"))) 
 #else

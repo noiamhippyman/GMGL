@@ -13,7 +13,8 @@
         "2b390323-eafb-484d-825e-bb8acad62abb",
         "08fabfba-9d79-4fe1-8998-03c0cca97f83",
         "5f232399-9232-4bc0-ad26-db7db756781d",
-        "9161a85e-9ee9-4107-975d-937e45ea8728"
+        "9161a85e-9ee9-4107-975d-937e45ea8728",
+        "8b1aa25b-842e-4de4-998c-bc37f1c94831"
     ],
     "filterType": "GMObject",
     "folderName": "GMGL Examples",

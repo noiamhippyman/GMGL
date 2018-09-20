@@ -272,37 +272,37 @@ GMS_DLL double gmgl_get_image_channel_num(double image) {
 	return _image->nrChannels;
 }
 
-#pragma region User Input
+#pragma region User Input (deprecated functions)
 
-GMS_DLL double gmgl_key_press(double key) {
+GMS_DLL_DEPRECATED double gmgl_key_press(double key) {
 	if (glfwGetKey(__gmgl_window, key) == GLFW_PRESS) return GMS_TRUE;
 
 	return GMS_FALSE;
 }
 
-GMS_DLL double gmgl_mouse_x() {
+GMS_DLL_DEPRECATED double gmgl_mouse_x() {
 	return __gmgl_mouse.x;
 }
 
-GMS_DLL double gmgl_mouse_y() {
+GMS_DLL_DEPRECATED double gmgl_mouse_y() {
 	return __gmgl_mouse.y;
 }
 
-GMS_DLL double gmgl_mouse_press(double button) {
+GMS_DLL_DEPRECATED double gmgl_mouse_press(double button) {
 	if (glfwGetMouseButton(__gmgl_window, button) == GLFW_PRESS) return GMS_TRUE;
 
 	return GMS_FALSE;
 }
 
-GMS_DLL void gmgl_mouse_lock() {
+GMS_DLL_DEPRECATED void gmgl_mouse_lock() {
 	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
-GMS_DLL void gmgl_mouse_hide() {
+GMS_DLL_DEPRECATED void gmgl_mouse_hide() {
 	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 }
 
-GMS_DLL void gmgl_mouse_normal() {
+GMS_DLL_DEPRECATED void gmgl_mouse_normal() {
 	glfwSetInputMode(__gmgl_window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 }
 
@@ -409,6 +409,26 @@ GMS_DLL void glfw_window_hint(double hint, double value) {
 
 GMS_DLL void glfw_set_window_pos(double x, double y) {
 	glfwSetWindowPos(__gmgl_window, x, y);
+}
+
+#pragma endregion
+
+#pragma region Input Functions
+
+GMS_DLL void glfw_set_input_mode(double mode, double value) {
+	glfwSetInputMode(__gmgl_window, mode, value);
+}
+
+GMS_DLL double glfw_get_input_mode(double mode) {
+	return glfwGetInputMode(__gmgl_window, mode);
+}
+
+GMS_DLL double glfw_get_key(double key) {
+	return glfwGetKey(__gmgl_window, key);
+}
+
+GMS_DLL double glfw_get_mouse_button(double button) {
+	return glfwGetMouseButton(__gmgl_window, button);
 }
 
 #pragma endregion
