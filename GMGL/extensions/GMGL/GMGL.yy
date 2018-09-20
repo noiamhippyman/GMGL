@@ -1615,6 +1615,21 @@
                     "kind": 1,
                     "name": "gl_viewport",
                     "returnType": 2
+                },
+                {
+                    "id": "2f935932-0086-44ba-a086-a4f1e46afd07",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_post_empty_event",
+                    "help": "glfw_post_empty_event();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_post_empty_event",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -1640,6 +1655,7 @@
                 "bc1dd10f-4fef-4725-8f18-41dc664b07bd",
                 "bada81d2-9e68-4cf2-b5a4-06dfbb7d6f80",
                 "4929c990-85d1-4c11-970f-9e5c0c93d58f",
+                "2f935932-0086-44ba-a086-a4f1e46afd07",
                 "370af6e2-359c-49aa-8412-a5d4680ee099",
                 "71835f1d-aa8a-4221-af4e-c0c3d73c61fe",
                 "70232ba1-5523-46f9-84d2-f66dd8542174",

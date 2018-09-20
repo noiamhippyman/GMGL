@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "14d510da-979e-49c4-b648-fcb39c1a2619",
+            "Value": {
+                "id": "1def9d10-9ef0-4bb3-8524-cf14440b3fbe",
+                "resourcePath": "views\\14d510da-979e-49c4-b648-fcb39c1a2619.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1c5018a7-55d9-4f11-a7f3-cdf4eaf89243",
             "Value": {
                 "id": "fa6f645f-5d3b-4439-95fc-ff99a5c595d7",
@@ -259,6 +267,14 @@
             "Value": {
                 "id": "2734427c-cb11-4bac-be76-571fb2f93d8c",
                 "resourcePath": "scripts\\vertex_shader_light_casters\\vertex_shader_light_casters.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
+            "Value": {
+                "id": "35b0447c-9781-43f0-8887-7742e79174de",
+                "resourcePath": "scripts\\gmgl_process_events\\gmgl_process_events.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1007,6 +1023,14 @@
             }
         },
         {
+            "Key": "dbeae384-a9fb-48df-877c-b6092e5ebddb",
+            "Value": {
+                "id": "55168566-6eef-4a7f-a2e0-889a2f73b351",
+                "resourcePath": "views\\dbeae384-a9fb-48df-877c-b6092e5ebddb.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "df176d88-65ba-4103-a850-72befab5eefc",
             "Value": {
                 "id": "af255510-1b0f-4f62-a0c6-d2dde5cefdb0",
@@ -1209,14 +1233,6 @@
     ],
     "script_order": [
         "a3516a97-3d6c-46a6-899a-02a2a72f276c",
-        "656ed7b0-7c1f-45cb-a875-fb8b42c985e3",
-        "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
-        "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
-        "fb66a798-9c6f-4507-855c-b99229da27e2",
-        "60bfad88-a672-42d3-aff0-024133194e80",
-        "eefec06a-84db-4790-b319-ea62cdd7f251",
-        "d556f32d-bd01-496d-8b28-11a85388535a",
-        "686f4d49-a812-4beb-9e4f-008c8ca5b682",
         "80bb6de9-3bd8-4314-9d2e-4b4f14c2844e",
         "d4ed9d2c-5d97-42ec-a9ef-91dc1ee5c822",
         "b6f2525b-fb49-4d5f-aa62-75ff26cd0c4f",
@@ -1231,6 +1247,15 @@
         "a0898e24-955a-44bd-8aa0-f1426dbc405d",
         "86854a4d-81ab-4d0f-8198-9cfdc377d492",
         "13f44556-55d1-44b2-813f-4ef47b3f0858",
+        "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
+        "656ed7b0-7c1f-45cb-a875-fb8b42c985e3",
+        "94f5b931-4b06-4e7b-b859-92e3ddb8b595",
+        "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
+        "fb66a798-9c6f-4507-855c-b99229da27e2",
+        "60bfad88-a672-42d3-aff0-024133194e80",
+        "eefec06a-84db-4790-b319-ea62cdd7f251",
+        "d556f32d-bd01-496d-8b28-11a85388535a",
+        "686f4d49-a812-4beb-9e4f-008c8ca5b682",
         "08657c6e-3b49-4254-86c3-2050739338ff",
         "01e3e791-6d2a-4bc5-8929-c04d956a9ca4",
         "bbf7bc06-c8ca-4754-b353-5b25304c50ba",

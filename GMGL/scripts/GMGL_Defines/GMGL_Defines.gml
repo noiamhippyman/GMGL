@@ -6,9 +6,20 @@
 
 enum eGMGLevent {
 	Error,
-	FramebufferSize,
+	WindowPos,
+	WindowResize,
 	WindowClose,
-	MousePos
+	WindowRefresh,
+	WindowFocus,
+	WindowIconify,
+	FramebufferSize,
+	Key,
+	Mouse,
+	Joystick,
+	CursorPos,
+	CursorEnter,
+	Scroll,
+	Drop
 }
 
 #region GLFW Constants

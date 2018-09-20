@@ -37,9 +37,20 @@ struct GMGLmouse {
 
 enum eGMGLevent {
 	Error,
-	FramebufferSize,
+	WindowPos,
+	WindowResize,
 	WindowClose,
-	MousePos
+	WindowRefresh,
+	WindowFocus,
+	WindowIconify,
+	FramebufferSize,
+	Key,
+	Mouse,
+	Joystick,
+	CursorPos,
+	CursorEnter,
+	Scroll,
+	Drop
 };
 
 class GMGLevent {
@@ -116,8 +127,17 @@ void gmgl_callback_error(int error, const char* description) {
 	e.add_var("description", (char*)description);
 	e.trigger();
 }
-void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
-	GMGLevent e(eGMGLevent::FramebufferSize);
+
+# pragma region Window Callbacks
+
+void gmgl_callback_window_pos(GLFWwindow* window, int xpos, int ypos) {
+	GMGLevent e(eGMGLevent::WindowPos);
+	e.add_var("xpos", xpos);
+	e.add_var("ypos", ypos);
+	e.trigger();
+}
+void gmgl_callback_window_size(GLFWwindow* window, int width, int height) {
+	GMGLevent e(eGMGLevent::WindowResize);
 	e.add_var("width", width);
 	e.add_var("height", height);
 	e.trigger();
@@ -126,12 +146,80 @@ void gmgl_callback_window_close(GLFWwindow* window) {
 	GMGLevent e(eGMGLevent::WindowClose);
 	e.trigger();
 }
-void gmgl_callback_mouse_pos(GLFWwindow* window, double xpos, double ypos) {
-	GMGLevent e(eGMGLevent::MousePos);
+void gmgl_callback_window_refresh(GLFWwindow* window) {
+	GMGLevent e(eGMGLevent::WindowRefresh);
+	e.trigger();
+}
+void gmgl_callback_window_focus(GLFWwindow* window, int focused) {
+	GMGLevent e(eGMGLevent::WindowFocus);
+	e.add_var("focused", focused);
+	e.trigger();
+}
+void gmgl_callback_window_iconify(GLFWwindow* window, int iconified) {
+	GMGLevent e(eGMGLevent::WindowIconify);
+	e.add_var("iconified", iconified);
+	e.trigger();
+}
+void gmgl_callback_framebuffer_size(GLFWwindow* window, int width, int height) {
+	GMGLevent e(eGMGLevent::FramebufferSize);
+	e.add_var("width", width);
+	e.add_var("height", height);
+	e.trigger();
+}
+
+#pragma endregion
+
+#pragma region Input Callbacks
+
+void gmgl_callback_key(GLFWwindow* window, int key, int scancode, int action, int mods) {
+	GMGLevent e(eGMGLevent::Key);
+	e.add_var("key", key);
+	e.add_var("scancode", scancode);
+	e.add_var("action", action);
+	e.add_var("mods", mods);
+	e.trigger();
+}
+void gmgl_callback_mouse(GLFWwindow* window, int button, int action, int mods) {
+	GMGLevent e(eGMGLevent::Mouse);
+	e.add_var("button", button);
+	e.add_var("action", action);
+	e.add_var("mods", mods);
+	e.trigger();
+}
+void gmgl_callback_joystick(int joy, int event) {
+	GMGLevent e(eGMGLevent::Joystick);
+	e.add_var("joy", joy);
+	e.add_var("action", event);
+	e.trigger();
+}
+void gmgl_callback_cursor_pos(GLFWwindow* window, double xpos, double ypos) {
+	GMGLevent e(eGMGLevent::CursorPos);
 	e.add_var("xpos", xpos);
 	e.add_var("ypos", ypos);
 	e.trigger();
 }
+void gmgl_callback_cursor_enter(GLFWwindow* window, int entered) {
+	GMGLevent e(eGMGLevent::CursorEnter);
+	e.add_var("entered", entered);
+	e.trigger();
+}
+void gmgl_callback_scroll(GLFWwindow* window, double xoffset, double yoffset) {
+	GMGLevent e(eGMGLevent::Scroll);
+	e.add_var("xoffset", xoffset);
+	e.add_var("yoffset", yoffset);
+	e.trigger();
+}
+void gmgl_callback_drop(GLFWwindow* window, int count, const char** paths) {
+	GMGLevent e(eGMGLevent::Drop);
+	e.add_var("count", count);
+	for (int i = 0; i < count; ++i) {
+		std::string id = "paths[" + std::to_string(i) + "]";
+		e.add_var((char*)id.c_str(), (char*)paths[i]);
+	}
+	e.trigger();
+}
+
+#pragma endregion
 
 #pragma endregion
 
@@ -256,6 +344,10 @@ GMS_DLL void glfw_wait_events_timeout(double timeout) {
 	glfwWaitEventsTimeout(timeout);
 }
 
+GMS_DLL void glfw_post_empty_event() {
+	glfwPostEmptyEvent();
+}
+
 GMS_DLL void glfw_swap_buffers() {
 	glfwSwapBuffers(__gmgl_window);
 }
@@ -279,9 +371,23 @@ GMS_DLL double glfw_create_window(double width, double height, const char* title
 
 	//Set callbacks
 	glfwSetErrorCallback(gmgl_callback_error);
-	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
+	
+	glfwSetWindowPosCallback(__gmgl_window, gmgl_callback_window_pos);
+	glfwSetWindowSizeCallback(__gmgl_window, gmgl_callback_window_size);
 	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
-	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_mouse_pos);
+	glfwSetWindowRefreshCallback(__gmgl_window, gmgl_callback_window_refresh);
+	glfwSetWindowFocusCallback(__gmgl_window, gmgl_callback_window_focus);
+	glfwSetWindowIconifyCallback(__gmgl_window, gmgl_callback_window_iconify);
+	glfwSetFramebufferSizeCallback(__gmgl_window, gmgl_callback_framebuffer_size);
+
+	glfwSetKeyCallback(__gmgl_window, gmgl_callback_key);
+	glfwSetMouseButtonCallback(__gmgl_window, gmgl_callback_mouse);
+	glfwSetJoystickCallback(gmgl_callback_joystick);
+	glfwSetCursorPosCallback(__gmgl_window, gmgl_callback_cursor_pos);
+	glfwSetCursorEnterCallback(__gmgl_window, gmgl_callback_cursor_enter);
+	glfwSetScrollCallback(__gmgl_window, gmgl_callback_scroll);
+
+	glfwSetDropCallback(__gmgl_window, gmgl_callback_drop);
 
 	//Initialize GLEW
 	if (glewInit() != GLEW_OK) {
