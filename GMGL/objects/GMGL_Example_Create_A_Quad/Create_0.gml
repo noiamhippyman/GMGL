@@ -45,6 +45,7 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	Open it to see how to create a window and center it with GLFW functions.
 */
 gmgl_create_window_centered(800,600,"Example - Create a Quad with Element Buffers");
+glfw_set_window_icon("GMGL/gmglicon.png");
 
 /*
 	Create shaders

@@ -1,13 +1,12 @@
 #pragma once
 #if defined(WIN32)
 #define GMS_DLL extern "C" __declspec(dllexport)
-#define GMS_DLL_DEPRECATED GMS_DLL
 #elif defined(GNUC)
 #define GMS_DLL extern "C" __attribute__ ((visibility("default"))) 
 #else
 #define GMS_DLL extern "C"
 #endif
-
+#define GMS_DLL_DEPRECATED GMS_DLL
 
 #define GMS_NOONE -4
 
@@ -16,6 +15,8 @@
 
 #define GMS_TRUE 1
 #define GMS_FALSE 0
+
+
 
 const int EVENT_OTHER_SOCIAL = 70;
 

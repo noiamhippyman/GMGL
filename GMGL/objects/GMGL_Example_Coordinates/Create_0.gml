@@ -44,7 +44,7 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
-gmgl_create_window_centered(800,600,"Example - Vertex Attributes");
+gmgl_create_window_centered(800,600,"Example - Coordinate Systems");
 glfw_set_window_icon("GMGL/gmglicon.png");
 
 /*
@@ -64,8 +64,8 @@ glfw_set_window_icon("GMGL/gmglicon.png");
 	
 	If it fails the function returns GMGL_FAIL otherwise it returns the shader ID.
 */
-var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_attrib_vs());
-var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_attrib_fs());
+var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_coordinates_vs());
+var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_coordinates_fs());
 
 /*
 	Create shader program
@@ -90,13 +90,11 @@ gl_delete_shader(fragShader);
 
 // Create three vertices
 var vertices = [
-	// First thing we need to do is add more attibutes to the vertex data
-	// Since we already had a position, we'll add a color as well for each vertex
-	//position			//color
-	 0.5,  0.5, 0.0,	1.0, 0.0, 0.0,
-	 0.5, -0.5, 0.0,	0.0, 1.0, 0.0,
-	-0.5, -0.5, 0.0,	0.0, 0.0, 1.0,
-	-0.5,  0.5, 0.0, 	1.0, 1.0, 0.0
+	//Positions			//Colors		//TexCoords
+	 0.5,  0.5, 0.0,	1.0, 0.0, 0.0,	1.0, 1.0,
+	 0.5, -0.5, 0.0,	0.0, 1.0, 0.0,	1.0, 0.0,
+	-0.5, -0.5, 0.0,	0.0, 0.0, 1.0,	0.0, 0.0,
+	-0.5,  0.5, 0.0,	1.0, 1.0, 0.0,	0.0, 1.0
 ];
 
 // Create indices for each triangle
@@ -164,78 +162,127 @@ gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(vbuff), buffer_get_address(vbuff
 gl_bind_buffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 gl_buffer_data(GL_ELEMENT_ARRAY_BUFFER, buffer_get_size(ibuff), buffer_get_address(ibuff), GL_STATIC_DRAW);
 
-/*
-	Next we need to setup this vertex array's vertex attributes
-	You've already seen this in the last three examples but lets add 
-	another attribute to see how each argument works
-*/
-gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,6,0);
+// Next we need to setup this vertex array's vertex attributes
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8,0);
 
 // Don't forget to enable the attribute also
 gl_enable_vertex_attrib_array(0);
 
-/*
-	Here we will setup the color vertex attribute
-	
-	gl_vertex_attrib_pointer(index, size, type, normalized?, stride, offset);
-	
-	"index" is the index in the vertex attribute array. Remember in the 
-	previous vertex shaders the layout location line?
-	layout (location = 0) in vec3 aPos; <--- The location is the index
-	
-	
-	"size" is the number of values used for this attribute
-	In the case of the position it's 3 since the position 
-	is a 3D vector.	If you were adding UV coordinates, the 
-	attribute size would be 2, since UVs are only 2D vectors.
-	
-	
-	"type" at the moment will only accept GL_FLOAT, GL_INT and
-	GL_UNSIGNED_INT. If you put anything else it will just default
-	to GL_FLOAT.
-	
-	
-	"normalized?" is asking whether or not the values stored
-	should be mapped to -1,1 if signed and 0,1 if unsigned.
-	
-	
-	"stride" is the sum of all the attribute sizes. So if you're
-	only using position coordinates the stride is 3.
-	Since this has two 3D vectors (position,color) the stride is 6.
-	If you have position, color and UV coordinates the stride is 8.
-	
-	
-	"offset" is the the starting index of this attribute. You can get the offset
-	by adding the last attributes offset + size.
-	
-	var vertices = [
-		 |-position:index 0 |-color:index 1
-		 |---size 3---|     |---size 3---|
-		 |------------stride 6-----------|	 
-		 |<--offset 0       |<--offset 3
-		 0.5,  0.5, 0.0,	1.0, 0.0, 0.0,
-		 0.5, -0.5, 0.0,	0.0, 1.0, 0.0,
-		-0.5, -0.5, 0.0,	0.0, 0.0, 1.0,
-		-0.5,  0.5, 0.0 	1.0, 1.0, 0.0,
-	];
-
-
-	So after reading all that it should be clear how this next call works.
-	Color is the second attribute so it's index will be 1.
-	It is a 3D vector so it's size is 3.
-	The variables are floats so GL_FLOAT is the type
-	Since they're already values between 0-1 there is no need to normalize so GMGL_FALSE
-	The stride of each vertex is the position size + color size (3d vector + 3d vector) which equals 6
-	Since it's the second attribute and the first attribute's size is 3 and it's offset is 0 so the offset is 3.
-	Hopefully that clears up how setting vertex attributes works.
-	Check out shader_example_attrib_vs/shader_example_attrib_fs if you want to see how to use the attributes
-*/
-gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,6,3);
+//Color attribute
+gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,8,3);
 gl_enable_vertex_attrib_array(1);
 
+//UV attribute
+gl_vertex_attrib_pointer(2,2,GL_FLOAT,GMGL_FALSE,8,6);
+gl_enable_vertex_attrib_array(2);
+
+/*
+	You're done with the quad but now you need to load in your texture(s)
+	First generate and bind a texture similarly to how we did with the vao, vbo and ebo
+*/
+texture1 = gl_gen_texture();
+gl_bind_texture(GL_TEXTURE_2D,texture1);
+
+/*
+	Texture Wrapping
+	GL_TEXTURE_WRAP_S/GL_TEXTURE_WRAP_T are the wrap
+	modes for the S and T axis. Why is it S and T axis? ¯\_(ツ)_/¯
+	
+	Texture coordinates usually range from (0,0) to (1,1) but what happens if we 
+	specify coordinates outside this range? The default behavior of OpenGL is to 
+	repeat the texture images (we basically ignore the integer part of the floating 
+	point texture coordinate), but there are more options OpenGL offers:
+
+	GL_REPEAT: The default behavior for textures. Repeats the texture image.
+	
+	GL_MIRRORED_REPEAT: Same as GL_REPEAT but mirrors the image with each repeat.
+	
+	GL_CLAMP_TO_EDGE: Clamps the coordinates between 0 and 1. The result is that 
+	higher coordinates become clamped to the edge, resulting in a stretched edge pattern.
+	
+	GL_CLAMP_TO_BORDER: Coordinates outside the range are now given a user-specified border color.
+*/
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+/*
+	Texture filtering can be set for magnifying and minifying operations (when scaling up or downwards) 
+	so you could for example use nearest neighbor filtering when textures are scaled downwards and linear 
+	filtering for upscaled textures. We thus have to specify the filtering method for both options via 
+	glTexParameter*. The code should look similar to setting the wrapping method:
+*/
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+//Next we need to load the image data into memory
+var img = gmgl_load_image("GMGL/container.jpg");
+
+/*
+	Now that we finally have a bound texture and some image data
+	we can copy the image data into the bound texture
+*/
+gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, GL_RGB, GL_UNSIGNED_BYTE, img);
+
+/*
+	If you want to use mipmaps you need to generate those as well
+*/
+gl_generate_mipmap(GL_TEXTURE_2D);
+
+// Now that the image is loaded into a texture you no longer need it so free it from memory
+gmgl_free_image(img);
+
+/*
+	I know that seems like a whole bunch of things but it's not that bad with no comments.
+	Here is the second texture setup in 10 lines
+*/
+texture2 = gl_gen_texture();
+gl_bind_texture(GL_TEXTURE_2D, texture2);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+img = gmgl_load_image("GMGL/awesomeface.png");
+gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
+gl_generate_mipmap(GL_TEXTURE_2D);
+gmgl_free_image(img);
+
+
+
 /* 
-	That all! Your quad is all setup. It's not a requirement but it's good practice
+	That all! Your quad is all setup with textures. It's not a requirement but it's good practice
 	to unbind your vertex array so you don't accidentally change something down the line
 	and cause a hard to find bug.
 */
 gl_bind_vertex_array(0);
+
+/*
+	Tell opengl what texture unit belongs to which sampler index
+*/
+gl_use_program(shaderProgram);
+gl_uniform1i(gl_get_uniform_location(shaderProgram, "texture1"), 0);
+gl_uniform1i(gl_get_uniform_location(shaderProgram, "texture2"), 1);
+
+/*
+	I'm not going to get into the details of this since it doesn't really pertain
+	to OpenGL as much as it does to just 3D graphics in general.
+	
+	Check out this link for a very in depth tutorial
+	https://learnopengl.com/Getting-started/Coordinate-Systems
+	
+	Follow along with that and things should make sense here.
+*/
+modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+
+var view = matrix_build(0,0,3, 0,0,0, 1,1,1);
+viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+buffer_seek(viewMatrixBuffer,buffer_seek_start,0);
+for (var i = 0; i < 16; ++i) {
+	buffer_write(viewMatrixBuffer,buffer_f32,view[i]);
+}
+
+var proj = matrix_build_projection_perspective_fov(45,800/600,0.1,100.0);
+projMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+buffer_seek(projMatrixBuffer,buffer_seek_start,0);
+for (var i = 0; i < 16; ++i) {
+	buffer_write(projMatrixBuffer,buffer_f32,proj[i]);
+}

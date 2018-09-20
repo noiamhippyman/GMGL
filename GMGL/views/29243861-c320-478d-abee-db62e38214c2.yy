@@ -4,11 +4,7 @@
     "mvc": "1.1",
     "name": "29243861-c320-478d-abee-db62e38214c2",
     "children": [
-        "883f5d88-a2a3-4bec-b778-8f7ccc3cc37a",
-        "1e0d1883-bc2b-42a4-a15f-b3ca05ccba40",
-        "a1423f71-39ce-4947-925f-21b707b3f1d2",
-        "bdf75cac-d755-4cde-abeb-7722698a446f",
-        "fc1d33be-6617-428e-850f-996f5e6d976c"
+        "47f572c9-613e-4a0f-a247-38754bfbb551"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "datafiles",

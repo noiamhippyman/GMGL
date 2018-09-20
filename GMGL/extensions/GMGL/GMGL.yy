@@ -17,7 +17,7 @@
     "androidsourcedir": "",
     "author": "",
     "classname": "",
-    "copyToTargets": -1,
+    "copyToTargets": 194,
     "date": "2018-32-11 04:09:42",
     "description": "",
     "extensionName": "",
@@ -32,7 +32,7 @@
             "constants": [
                 
             ],
-            "copyToTargets": -1,
+            "copyToTargets": 64,
             "filename": "GMGL.dll",
             "final": "",
             "functions": [
@@ -94,111 +94,6 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gmgl_free_image",
-                    "returnType": 2
-                },
-                {
-                    "id": "ea62e899-1f7e-472a-84cb-17039ec0a8f1",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_key_press",
-                    "help": "gmgl_key_press(key)",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_key_press",
-                    "returnType": 2
-                },
-                {
-                    "id": "a4c60b14-8122-4417-8d1a-d81e613504a8",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_mouse_x",
-                    "help": "gmgl_mouse_x();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_x",
-                    "returnType": 2
-                },
-                {
-                    "id": "2d5b8295-cd65-4cfc-990c-73191127bf6d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_mouse_y",
-                    "help": "gmgl_mouse_y",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_y",
-                    "returnType": 2
-                },
-                {
-                    "id": "1a355e46-a395-43b9-bfc5-388aa17170e6",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        2
-                    ],
-                    "externalName": "gmgl_mouse_press",
-                    "help": "gmgl_mouse_press(button);",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_press",
-                    "returnType": 2
-                },
-                {
-                    "id": "47d906f0-0943-4d23-b9f2-693f6d530742",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_mouse_lock",
-                    "help": "gmgl_mouse_lock();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_lock",
-                    "returnType": 2
-                },
-                {
-                    "id": "fd90642e-5849-4836-ab17-5b5ff2032199",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_mouse_hide",
-                    "help": "gmgl_mouse_hide();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_hide",
-                    "returnType": 2
-                },
-                {
-                    "id": "9407e61a-5921-4ce0-9d0e-b657b1c6265d",
-                    "modelName": "GMExtensionFunction",
-                    "mvc": "1.0",
-                    "argCount": 0,
-                    "args": [
-                        
-                    ],
-                    "externalName": "gmgl_mouse_normal",
-                    "help": "gmgl_mouse_normal();",
-                    "hidden": false,
-                    "kind": 1,
-                    "name": "gmgl_mouse_normal",
                     "returnType": 2
                 },
                 {
@@ -2088,6 +1983,255 @@
                     "kind": 1,
                     "name": "glfw_set_time",
                     "returnType": 2
+                },
+                {
+                    "id": "5da829d4-79f5-4759-8f24-2c9ea0a19348",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_depth_mask",
+                    "help": "gl_depth_mask(flag);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_depth_mask",
+                    "returnType": 2
+                },
+                {
+                    "id": "de89dec6-de03-4fc2-b3fd-9090d6c960c4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_depth_func",
+                    "help": "gl_depth_func(func);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_depth_func",
+                    "returnType": 2
+                },
+                {
+                    "id": "883c0d15-c276-4b67-b545-6966cc4b73a5",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_stencil_mask",
+                    "help": "gl_stencil_mask(mask);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_stencil_mask",
+                    "returnType": 2
+                },
+                {
+                    "id": "ec5d63ef-b110-4eaf-8d65-58b8fa62c7c3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_stencil_func",
+                    "help": "gl_stencil_func(func, ref, mask);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_stencil_func",
+                    "returnType": 2
+                },
+                {
+                    "id": "2bfc68ee-c1e4-4204-8259-6598434fc0ca",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_stencil_op",
+                    "help": "gl_stencil_op(fail, zfail, zpass);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_stencil_op",
+                    "returnType": 2
+                },
+                {
+                    "id": "83a7c829-506b-4c91-946e-9a607c3abd62",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_blend_func",
+                    "help": "gl_blend_func(sfactor, dfactor);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_blend_func",
+                    "returnType": 2
+                },
+                {
+                    "id": "c918e0c0-46a8-4266-a5a2-96ec0e0ebcfb",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_blend_func_separate",
+                    "help": "gl_blend_func_separate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_blend_func_separate",
+                    "returnType": 2
+                },
+                {
+                    "id": "e5d07bc9-e1ad-4f07-8b70-9f46c549fc4d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_blend_equation",
+                    "help": "gl_blend_equation(mode);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_blend_equation",
+                    "returnType": 2
+                },
+                {
+                    "id": "10b6e840-eda3-460a-923c-dadfee3b2626",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_cull_face",
+                    "help": "gl_cull_face(mode);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_cull_face",
+                    "returnType": 2
+                },
+                {
+                    "id": "17ee9b79-89ee-4557-a129-26cb2cb8a62e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_front_face",
+                    "help": "gl_front_face(mode);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_front_face",
+                    "returnType": 2
+                },
+                {
+                    "id": "6c2f8d6d-dea5-4f5d-8f16-3dbec2334b5b",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_delete_buffer",
+                    "help": "gl_delete_buffer(buffer);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_delete_buffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "8b60215b-c31d-4aa9-854f-d4abc80feae3",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_delete_vertex_array",
+                    "help": "gl_delete_vertex_array(varray);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_delete_vertex_array",
+                    "returnType": 2
+                },
+                {
+                    "id": "782b2ddc-0831-4a61-94f2-9ac3f1c0f2f7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_delete_texture",
+                    "help": "gl_delete_texture(texture);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_delete_texture",
+                    "returnType": 2
+                },
+                {
+                    "id": "d0b24e9c-6b19-4e17-8807-8139aad37d35",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_gen_framebuffer",
+                    "help": "gl_gen_framebuffer();",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_gen_framebuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "bc929ebd-a8ca-4990-976b-9f7022ad8a54",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_bind_framebuffer",
+                    "help": "gl_bind_framebuffer(target, framebuffer);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_framebuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "fb0d4454-0290-4a6c-8994-a75f6b032d78",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_delete_framebuffer",
+                    "help": "gl_delete_framebuffer(framebuffer);",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_delete_framebuffer",
+                    "returnType": 2
                 }
             ],
             "init": "",
@@ -2100,13 +2244,6 @@
                 "0c1929c1-e910-444a-a7d0-31a55f79f1d2",
                 "869a6a67-44e2-4160-bab2-3771c431bc75",
                 "85a6675f-5055-4136-af07-ec13aabc7575",
-                "ea62e899-1f7e-472a-84cb-17039ec0a8f1",
-                "1a355e46-a395-43b9-bfc5-388aa17170e6",
-                "a4c60b14-8122-4417-8d1a-d81e613504a8",
-                "2d5b8295-cd65-4cfc-990c-73191127bf6d",
-                "47d906f0-0943-4d23-b9f2-693f6d530742",
-                "fd90642e-5849-4836-ab17-5b5ff2032199",
-                "9407e61a-5921-4ce0-9d0e-b657b1c6265d",
                 "6e2269eb-671d-4a66-9ea6-70c2406185ee",
                 "e859faa9-147b-4307-a575-840d0c0a3daa",
                 "39df4c0e-a307-4d46-ab8e-418f526ea065",
@@ -2152,22 +2289,38 @@
                 "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
                 "00b4708e-dcdf-40a1-af7b-66a5728094eb",
                 "49b9da98-b884-47eb-b236-13d75a96c9de",
+                "5da829d4-79f5-4759-8f24-2c9ea0a19348",
+                "de89dec6-de03-4fc2-b3fd-9090d6c960c4",
+                "883c0d15-c276-4b67-b545-6966cc4b73a5",
+                "ec5d63ef-b110-4eaf-8d65-58b8fa62c7c3",
+                "2bfc68ee-c1e4-4204-8259-6598434fc0ca",
+                "83a7c829-506b-4c91-946e-9a607c3abd62",
+                "c918e0c0-46a8-4266-a5a2-96ec0e0ebcfb",
+                "e5d07bc9-e1ad-4f07-8b70-9f46c549fc4d",
+                "10b6e840-eda3-460a-923c-dadfee3b2626",
+                "17ee9b79-89ee-4557-a129-26cb2cb8a62e",
                 "99e0b78c-3d11-4e63-a617-8e8c98dc5011",
                 "7fbe19d0-1996-48d0-98c1-6ba407ad7705",
                 "fb80c6de-1f0e-4758-b488-923a92bb0e7a",
                 "8f1982f2-e1b8-43b9-b4da-38720444e03b",
                 "39a618f6-3617-4784-9be9-ce899665b510",
                 "af0b8e01-b0db-4c52-be8b-5bfaf777bf76",
+                "6c2f8d6d-dea5-4f5d-8f16-3dbec2334b5b",
                 "a4aac722-987b-4509-912f-849c884c5b1c",
                 "a22ad940-e06c-47f3-a24e-4cad3527fdb2",
                 "60450512-bebb-492c-9c02-355825db6a85",
+                "8b60215b-c31d-4aa9-854f-d4abc80feae3",
                 "97c1955e-068e-45d0-968f-8660979c8cbc",
                 "45066c2e-b5fa-4713-824c-2f8680043fad",
                 "d91dd5e9-62d2-4425-ba33-3c07fb397b4e",
                 "89a549a2-2324-47a0-9928-52eebd8b0bcc",
+                "782b2ddc-0831-4a61-94f2-9ac3f1c0f2f7",
                 "351330fc-2520-46b1-b132-100517bbd67c",
                 "f204a943-8e17-46be-a357-9598e45f130d",
                 "70732e48-3559-46b8-a52d-746a6a438fb0",
+                "d0b24e9c-6b19-4e17-8807-8139aad37d35",
+                "bc929ebd-a8ca-4990-976b-9f7022ad8a54",
+                "fb0d4454-0290-4a6c-8994-a75f6b032d78",
                 "9bffbed4-e534-4a6b-ba23-b1748d736eb3",
                 "0cec0e31-d5f9-4eac-9caf-c64a1751f072",
                 "19d799e3-0e26-4206-ab46-178003548dae",

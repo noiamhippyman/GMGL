@@ -2,6 +2,7 @@
 	Disabling the draw event basically turns off the GM window
 	If you don't run this you'll have two windows open
 */
+global.gmgl_mouse_pos = [0,0];
 draw_enable_drawevent(false);
 
 // Call this to initialize GLFW
@@ -44,8 +45,10 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
-gmgl_create_window_centered(800,600,"Example - Textures");
+gmgl_create_window_centered(800,600,"Example - Camera and User Input ( W-A-S-D to move | Hold LMB to look around )");
 glfw_set_window_icon("GMGL/gmglicon.png");
+
+gl_enable(GL_DEPTH_TEST);
 
 /*
 	Create shaders
@@ -64,8 +67,8 @@ glfw_set_window_icon("GMGL/gmglicon.png");
 	
 	If it fails the function returns GMGL_FAIL otherwise it returns the shader ID.
 */
-var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_textures_vs());
-var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_textures_fs());
+var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_cube_vs());
+var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_cube_fs());
 
 /*
 	Create shader program
@@ -90,17 +93,48 @@ gl_delete_shader(fragShader);
 
 // Create three vertices
 var vertices = [
-	//Positions			//Colors		//TexCoords
-	 0.5,  0.5, 0.0,	1.0, 0.0, 0.0,	1.0, 1.0,
-	 0.5, -0.5, 0.0,	0.0, 1.0, 0.0,	1.0, 0.0,
-	-0.5, -0.5, 0.0,	0.0, 0.0, 1.0,	0.0, 0.0,
-	-0.5,  0.5, 0.0,	1.0, 1.0, 0.0,	0.0, 1.0
-];
+	//Positions			//UV
+	-0.5, -0.5, -0.5,  0.0, 0.0,
+	 0.5, -0.5, -0.5,  1.0, 0.0,
+	 0.5,  0.5, -0.5,  1.0, 1.0,
+	 0.5,  0.5, -0.5,  1.0, 1.0,
+	-0.5,  0.5, -0.5,  0.0, 1.0,
+	-0.5, -0.5, -0.5,  0.0, 0.0,
 
-// Create indices for each triangle
-var indices = [
-	0,1,3,//first triangle
-	1,2,3 //second triangle
+	-0.5, -0.5,  0.5,  0.0, 0.0,
+	 0.5, -0.5,  0.5,  1.0, 0.0,
+	 0.5,  0.5,  0.5,  1.0, 1.0,
+	 0.5,  0.5,  0.5,  1.0, 1.0,
+	-0.5,  0.5,  0.5,  0.0, 1.0,
+	-0.5, -0.5,  0.5,  0.0, 0.0,
+
+	-0.5,  0.5,  0.5,  1.0, 0.0,
+	-0.5,  0.5, -0.5,  1.0, 1.0,
+	-0.5, -0.5, -0.5,  0.0, 1.0,
+	-0.5, -0.5, -0.5,  0.0, 1.0,
+	-0.5, -0.5,  0.5,  0.0, 0.0,
+	-0.5,  0.5,  0.5,  1.0, 0.0,
+
+	 0.5,  0.5,  0.5,  1.0, 0.0,
+	 0.5,  0.5, -0.5,  1.0, 1.0,
+	 0.5, -0.5, -0.5,  0.0, 1.0,
+	 0.5, -0.5, -0.5,  0.0, 1.0,
+	 0.5, -0.5,  0.5,  0.0, 0.0,
+	 0.5,  0.5,  0.5,  1.0, 0.0,
+
+	-0.5, -0.5, -0.5,  0.0, 1.0,
+	 0.5, -0.5, -0.5,  1.0, 1.0,
+	 0.5, -0.5,  0.5,  1.0, 0.0,
+	 0.5, -0.5,  0.5,  1.0, 0.0,
+	-0.5, -0.5,  0.5,  0.0, 0.0,
+	-0.5, -0.5, -0.5,  0.0, 1.0,
+
+	-0.5,  0.5, -0.5,  0.0, 1.0,
+	 0.5,  0.5, -0.5,  1.0, 1.0,
+	 0.5,  0.5,  0.5,  1.0, 0.0,
+	 0.5,  0.5,  0.5,  1.0, 0.0,
+	-0.5,  0.5,  0.5,  0.0, 0.0,
+	-0.5,  0.5, -0.5,  0.0, 1.0
 ];
 
 /*
@@ -116,12 +150,6 @@ for (var i = 0; i < vcount; ++i) {
 	buffer_write(vbuff,buffer_f32,vertices[i]);
 }
 
-var icount = array_length_1d(indices);
-ibuff = buffer_create(icount*buffer_sizeof(buffer_u32),buffer_fixed,4);
-for (var i = 0; i < icount; ++i) {
-	buffer_write(ibuff,buffer_u32,indices[i]);
-}
-
 
 /*
 	Generate vertex array, vertex buffer object and element buffer object
@@ -132,12 +160,9 @@ for (var i = 0; i < icount; ++i) {
 	
 	A vertex buffer object (VBO) is the actual vertex data.
 	Each vertex could be just a position or position, color and texture coordinates, etc.
-	
-	An element buffer object (EBO) is an array of indices that point to which vertex to use in the VBO.
 */
 vao = gl_gen_vertex_array();
 vbo = gl_gen_buffer();
-ebo = gl_gen_buffer();
 
 /*
 	First you need to bind the vertex array so OpenGL knows which one you're modifying/using.
@@ -155,26 +180,15 @@ gl_bind_buffer(GL_ARRAY_BUFFER, vbo);
 */
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(vbuff), buffer_get_address(vbuff), GL_STATIC_DRAW);
 
-/*
-	Next you need to do the same thing with the ebo as you did with the vbo
-	except instead of the array buffer you need to bind it to the element array buffer
-*/
-gl_bind_buffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-gl_buffer_data(GL_ELEMENT_ARRAY_BUFFER, buffer_get_size(ibuff), buffer_get_address(ibuff), GL_STATIC_DRAW);
-
 // Next we need to setup this vertex array's vertex attributes
-gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,5,0);
 
 // Don't forget to enable the attribute also
 gl_enable_vertex_attrib_array(0);
 
-//Color attribute
-gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,8,3);
-gl_enable_vertex_attrib_array(1);
-
 //UV attribute
-gl_vertex_attrib_pointer(2,2,GL_FLOAT,GMGL_FALSE,8,6);
-gl_enable_vertex_attrib_array(2);
+gl_vertex_attrib_pointer(1,2,GL_FLOAT,GMGL_FALSE,5,3);
+gl_enable_vertex_attrib_array(1);
 
 /*
 	You're done with the quad but now you need to load in your texture(s)
@@ -261,3 +275,32 @@ gl_bind_vertex_array(0);
 gl_use_program(shaderProgram);
 gl_uniform1i(gl_get_uniform_location(shaderProgram, "texture1"), 0);
 gl_uniform1i(gl_get_uniform_location(shaderProgram, "texture2"), 1);
+
+
+/*
+	I'm not going to get into the details of this since it doesn't really pertain
+	to OpenGL as much as it does to just 3D graphics in general.
+	
+	Check out this link for a very in depth tutorial
+	https://learnopengl.com/Getting-started/Coordinate-Systems
+	
+	Follow along with that and things should make sense here.
+*/
+modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+projMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
+
+// Let's make a camera to control with some user input
+cameraPos = [0,0,-3];//x, y, z
+cameraRot = [90,0,0];//yaw, pitch, roll
+cameraFront = vector_normalize([
+	dcos(cameraRot[0]) * dcos(cameraRot[1]),
+	dsin(cameraRot[1]),
+	dsin(cameraRot[0]) * dcos(cameraRot[1])
+]);
+cameraUp = [0,1,0];
+cameraSpeed = 2.5;
+cameraLastX = 400;
+cameraLastY = 300;
+cameraFirstMouse = true;
+cameraFOV = 45;

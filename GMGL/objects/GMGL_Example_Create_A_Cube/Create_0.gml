@@ -45,6 +45,7 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	Open it to see how to create a window and center it with GLFW functions.
 */
 gmgl_create_window_centered(800,600,"Example - Create a Cube");
+glfw_set_window_icon("GMGL/gmglicon.png");
 
 gl_enable(GL_DEPTH_TEST);
 
@@ -227,7 +228,7 @@ gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR)
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 //Next we need to load the image data into memory
-var img = gmgl_load_image("container.jpg");
+var img = gmgl_load_image("GMGL/container.jpg");
 
 /*
 	Now that we finally have a bound texture and some image data
@@ -253,7 +254,7 @@ gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-img = gmgl_load_image("awesomeface.png");
+img = gmgl_load_image("GMGL/awesomeface.png");
 gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
 gl_generate_mipmap(GL_TEXTURE_2D);
 gmgl_free_image(img);
