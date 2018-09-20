@@ -14,12 +14,11 @@
 I don't know much about OpenGL or 3D really in general.
 
 ### Reasons to go away and not use this
-* For starters, it is very much a WIP. I highly recommend you don't use this for anything serious.
+* For starters, it is very much a WIP. I highly recommend you don't use 
+  this for any serious projects yet.
 * You're using a different window than the actual GM window which 
   is only hidden when you disable the draw event. This is demonstrated in the demos.
-* A few of the built-in variables and functions don't work with this extension.
-* It's far from complete. I'm trying to make it as complete as possible but there 
-  will inevitably be some abstraction to make things work correctly with GMS.
+* A few of the built-in GML variables and functions don't work with this extension.
 * You can't create more than one window. I just don't see a purpose for it since 
   this is for game dev and not software dev. It could be added in the future though.
 * If you're going to take a look at the C++ source code, I'm sorry. I'm inexperienced
