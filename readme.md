@@ -28,7 +28,5 @@ I don't know much about OpenGL or 3D really in general.
 ### Program directly with OpenGL using GML
 ![alt text](https://i.imgur.com/86lTGtw.png,"")
 ---
-### Screenshots & GIFs
-![alt text](https://i.imgur.com/K4kS50U.png,"")
-![alt text](https://i.imgur.com/esI2D2H.gif,"")
-![alt text](https://i.imgur.com/NtrpRoR.gif,"")
+### Check out the demos to learn the basics
+![alt text](https://i.imgur.com/zLmWihP.gif,"")
