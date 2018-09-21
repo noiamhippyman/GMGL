@@ -28,9 +28,7 @@ I don't know much about OpenGL or 3D really in general.
 * It says for Gamemaker Studio 2 because I'm creating the extension in Gamemaker Studio 2.
   I don't see why you couldn't use this in Gamemaker Studio 1.4.9999, but you'll have to set up
   the extension yourself. I won't be making one. You have to move on guys. ;)
----
-### Program directly with OpenGL using GML
-![alt text](https://i.imgur.com/86lTGtw.png,"")
+
 ---
 ### Check out the demos to learn the basics
 ![alt text](https://i.imgur.com/zLmWihP.gif,"")
