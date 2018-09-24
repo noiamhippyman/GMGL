@@ -1,5 +1,5 @@
 # GMGL
-## GLFW wrapper for Gamemaker Studio 2
+## GLFW wrapper for Gamemaker Studio
 
 ---
 
@@ -26,9 +26,10 @@ I don't know much about OpenGL or 3D really in general.
 * If you're going to take a look at the C++ source code, I'm sorry. I'm inexperienced
   and probably have a ton of amateur mistakes riddled throughout the project. I'm open
   to advice though.
-* It says for Gamemaker Studio 2 because I'm creating the extension in Gamemaker Studio 2.
-  I don't see why you couldn't use this in Gamemaker Studio 1.4.9999, but you'll have to set up
-  the extension yourself. I won't be making one. You have to move on guys. ;)
+* There is a project and an extension for both 1.4 and 2 but I highly recommend using 2.
+  I won't be making any math functions for 1.4 so you'll need your own. I created a textured
+  demo to show the basics but you'll need to follow along with learnopengl.com if you want
+  to make the rest of the demos in 1.4.
 
 ---
 ### Check out the demos to learn the basics
