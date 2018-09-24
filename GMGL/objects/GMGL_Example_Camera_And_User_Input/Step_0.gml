@@ -40,11 +40,11 @@ if (glfw_get_mouse_button(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && cameraFirstMo
 		cameraRot[1] = clamp(cameraRot[1] + yoff,-89,89);
 
 		cameraFront = vector_normalize([
-			dcos(cameraRot[0]) * dcos(cameraRot[1]),
-			dsin(cameraRot[1]),
-			dsin(cameraRot[0]) * dcos(cameraRot[1])
+			cos(degtorad(cameraRot[0])) * cos(degtorad(cameraRot[1])),
+			sin(degtorad(cameraRot[1])),
+			sin(degtorad(cameraRot[0])) * cos(degtorad(cameraRot[1]))
 		]);
-
+		
 		if (glfw_get_mouse_button(GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE) {
 			cameraFirstMouse = true;
 			glfw_set_input_mode(GLFW_CURSOR, GLFW_CURSOR_NORMAL);
@@ -75,7 +75,6 @@ gl_active_texture(GL_TEXTURE0);
 gl_bind_texture(GL_TEXTURE_2D, texture1);
 gl_active_texture(GL_TEXTURE1);
 gl_bind_texture(GL_TEXTURE_2D, texture2);
-
 
 //Lets set up our matrices
 var view = gmgl_matrix_build_lookat(cameraPos,vector_add(cameraPos,cameraFront),cameraUp);

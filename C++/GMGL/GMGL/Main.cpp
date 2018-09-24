@@ -131,6 +131,22 @@ double gmgl_new_gl_ref() {
 
 	return index;
 }
+double gmgl_new_gl_ref(unsigned int val) {
+	double index;
+	unsigned int* object = new unsigned int(val);
+
+	if (!__gmgl_gl_ref_slots.empty()) {
+		index = __gmgl_gl_ref_slots.back();
+		__gmgl_gl_ref_slots.pop_back();
+		__gmgl_gl_refs[index] = object;
+	}
+	else {
+		index = __gmgl_gl_refs.size();
+		__gmgl_gl_refs.push_back(object);
+	}
+
+	return index;
+}
 unsigned int* gmgl_get_gl_ref(double id) {
 	return __gmgl_gl_refs[id];
 }
@@ -338,7 +354,7 @@ GMS_DLL double glfw_create_window(double width, double height, const char* title
 
 	// Set callbacks
 	glfwSetErrorCallback(gmgl_callback_error);
-	
+
 	glfwSetWindowPosCallback(__gmgl_window, gmgl_callback_window_pos);
 	glfwSetWindowSizeCallback(__gmgl_window, gmgl_callback_window_size);
 	glfwSetWindowCloseCallback(__gmgl_window, gmgl_callback_window_close);
@@ -748,22 +764,24 @@ GMS_DLL double gl_create_shader(double type, char* source) {
 		return GMS_FAIL;
 	}
 
-	return shader;
+	return gmgl_new_gl_ref(shader);
 }
 
-GMS_DLL void gl_delete_shader(double shader) {
-	glDeleteShader(shader);
+GMS_DLL void gl_delete_shader(double shaderIndex) {
+	glDeleteShader(*gmgl_get_gl_ref(shaderIndex));
 }
 
 GMS_DLL double gl_create_program() {
-	return glCreateProgram();
+	unsigned int program = glCreateProgram();
+	return gmgl_new_gl_ref(program);
 }
 
-GMS_DLL void gl_attach_shader(double program, double shader) {
-	glAttachShader(program, shader);
+GMS_DLL void gl_attach_shader(double programIndex, double shaderIndex) {
+	glAttachShader(*gmgl_get_gl_ref(programIndex), *gmgl_get_gl_ref(shaderIndex));
 }
 
-GMS_DLL void gl_link_program(double program) {
+GMS_DLL void gl_link_program(double programIndex) {
+	unsigned int program = *gmgl_get_gl_ref(programIndex);
 	glLinkProgram(program);
 
 	int success;
@@ -775,12 +793,12 @@ GMS_DLL void gl_link_program(double program) {
 	}
 }
 
-GMS_DLL void gl_use_program(double program) {
-	glUseProgram(program);
+GMS_DLL void gl_use_program(double programIndex) {
+	glUseProgram(*gmgl_get_gl_ref(programIndex));
 }
 
-GMS_DLL double gl_get_uniform_location(double program, const char* name) {
-	return glGetUniformLocation(program, name);
+GMS_DLL double gl_get_uniform_location(double programIndex, const char* name) {
+	return glGetUniformLocation(*gmgl_get_gl_ref(programIndex), name);
 }
 
 #pragma region Uniform Set Functions
@@ -825,93 +843,72 @@ GMS_DLL void gl_uniform4ui(double location, double x, double y, double z, double
 }
 
 GMS_DLL void gl_uniform1fv(double location, double size, void* value) {
-	GLfloat* val = (GLfloat*)value;
-	glUniform1fv(location, size, val);
+	glUniform1fv(location, size, (GLfloat*)value);
 }
 GMS_DLL void gl_uniform2fv(double location, double size, void* value) {
-	GLfloat* val = (GLfloat*)value;
-	glUniform2fv(location, size, val);
+	glUniform2fv(location, size, (GLfloat*)value);
 }
 GMS_DLL void gl_uniform3fv(double location, double size, void* value) {
-	GLfloat* val = (GLfloat*)value;
-	glUniform3fv(location, size, val);
+	glUniform3fv(location, size, (GLfloat*)value);
 }
 GMS_DLL void gl_uniform4fv(double location, double size, void* value) {
-	GLfloat* val = (GLfloat*)value;
-	glUniform4fv(location, size, val);
+	glUniform4fv(location, size, (GLfloat*)value);
 }
 
 GMS_DLL void gl_uniform1iv(double location, double size, void* value) {
-	GLint* val = (GLint*)value;
-	glUniform1iv(location, size, val);
+	glUniform1iv(location, size, (GLint*)value);
 }
 GMS_DLL void gl_uniform2iv(double location, double size, void* value) {
-	GLint* val = (GLint*)value;
-	glUniform2iv(location, size, val);
+	glUniform2iv(location, size, (GLint*)value);
 }
 GMS_DLL void gl_uniform3iv(double location, double size, void* value) {
-	GLint* val = (GLint*)value;
-	glUniform3iv(location, size, val);
+	glUniform3iv(location, size, (GLint*)value);
 }
 GMS_DLL void gl_uniform4iv(double location, double size, void* value) {
-	GLint* val = (GLint*)value;
-	glUniform4iv(location, size, val);
+	glUniform4iv(location, size, (GLint*)value);
 }
 
 GMS_DLL void gl_uniform1uiv(double location, double size, void* value) {
-	unsigned int* val = (unsigned int*)value;
-	glUniform1uiv(location, size, val);
+	glUniform1uiv(location, size, (GLuint*)value);
 }
 GMS_DLL void gl_uniform2uiv(double location, double size, void* value) {
-	unsigned int* val = (unsigned int*)value;
-	glUniform2uiv(location, size, val);
+	glUniform2uiv(location, size, (GLuint*)value);
 }
 GMS_DLL void gl_uniform3uiv(double location, double size, void* value) {
-	unsigned int* val = (unsigned int*)value;
-	glUniform3uiv(location, size, val);
+	glUniform3uiv(location, size, (GLuint*)value);
 }
 GMS_DLL void gl_uniform4uiv(double location, double size, void* value) {
-	unsigned int* val = (unsigned int*)value;
-	glUniform4uiv(location, size, val);
+	glUniform4uiv(location, size, (GLuint*)value);
 }
 
 GMS_DLL void gl_uniform_mat2fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix2fv(location, count, transpose, fval);
+	glUniformMatrix2fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat3fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix3fv(location, count, transpose, fval);
+	glUniformMatrix3fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat4fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix4fv(location, count, transpose, fval);
+	glUniformMatrix4fv(location, count, transpose, (float*)value);
 }
 
 GMS_DLL void gl_uniform_mat2x3fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix2x3fv(location, count, transpose, fval);
+	glUniformMatrix2x3fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat3x2fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix3x2fv(location, count, transpose, fval);
+	glUniformMatrix3x2fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat2x4fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix2x4fv(location, count, transpose, fval);
+	glUniformMatrix2x4fv(location, count, transpose, (float*)value);
 }
 
 GMS_DLL void gl_uniform_mat4x2fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix4x2fv(location, count, transpose, fval);
+	glUniformMatrix4x2fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat3x4fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix3x4fv(location, count, transpose, fval);
+	glUniformMatrix3x4fv(location, count, transpose, (float*)value);
 }
 GMS_DLL void gl_uniform_mat4x3fv(double location, double count, double transpose, void* value) {
-	float* fval = (float*)value;
-	glUniformMatrix4x3fv(location, count, transpose, fval);
+	glUniformMatrix4x3fv(location, count, transpose, (float*)value);
 }
 
 #pragma endregion
@@ -926,45 +923,37 @@ GMS_DLL void gl_tex_parameterf(double target, double pname, double param) {
 GMS_DLL void gl_tex_parameteri(double target, double pname, double param) {
 	glTexParameteri(target, pname, param);
 }
-GMS_DLL void gl_texture_parameterf(double target, double pname, double param) {
-	glTextureParameterf(target, pname, param);
+GMS_DLL void gl_texture_parameterf(double textureIndex, double pname, double param) {
+	glTextureParameterf(*gmgl_get_gl_ref(textureIndex), pname, param);
 }
-GMS_DLL void gl_texture_parameteri(double target, double pname, double param) {
-	glTextureParameteri(target, pname, param);
+GMS_DLL void gl_texture_parameteri(double textureIndex, double pname, double param) {
+	glTextureParameteri(*gmgl_get_gl_ref(textureIndex), pname, param);
 }
 
 GMS_DLL void gl_tex_parameterfv(double target, double pname, void* param) {
-	const GLfloat* _param;
-	glTexParameterfv(target, pname, _param);
+	glTexParameterfv(target, pname, (const GLfloat*)param);
 }
 GMS_DLL void gl_tex_parameteriv(double target, double pname, void* param) {
-	const GLint* _param;
-	glTexParameteriv(target, pname, _param);
+	glTexParameteriv(target, pname, (const GLint*)param);
 }
-GMS_DLL void gl_texture_parameterfv(double target, double pname, void* param) {
-	const GLfloat* _param;
-	glTextureParameterfv(target, pname, _param);
+GMS_DLL void gl_texture_parameterfv(double textureIndex, double pname, void* param) {
+	glTextureParameterfv(*gmgl_get_gl_ref(textureIndex), pname, (const GLfloat*)param);
 }
-GMS_DLL void gl_texture_parameteriv(double target, double pname, void* param) {
-	const GLint* _param;
-	glTextureParameteriv(target, pname, _param);
+GMS_DLL void gl_texture_parameteriv(double textureIndex, double pname, void* param) {
+	glTextureParameteriv(*gmgl_get_gl_ref(textureIndex), pname, (const GLint*)param);
 }
 
 GMS_DLL void gl_tex_parameterIiv(double target, double pname, void* param) {
-	const GLint* _param;
-	glTexParameterIiv(target, pname, _param);
+	glTexParameterIiv(target, pname, (const GLint*)param);
 }
 GMS_DLL void gl_tex_parameterIuiv(double target, double pname, void* param) {
-	const unsigned int* _param;
-	glTexParameterIuiv(target, pname, _param);
+	glTexParameterIuiv(target, pname, (const GLuint*)param);
 }
-GMS_DLL void gl_texture_parameterIiv(double target, double pname, void* param) {
-	const GLint* _param;
-	glTextureParameterIiv(target, pname, _param);
+GMS_DLL void gl_texture_parameterIiv(double textureIndex, double pname, void* param) {
+	glTextureParameterIiv(*gmgl_get_gl_ref(textureIndex), pname, (const GLint*)param);
 }
-GMS_DLL void gl_texture_parameterIuiv(double target, double pname, void* param) {
-	const unsigned int* _param;
-	glTextureParameterIuiv(target, pname, _param);
+GMS_DLL void gl_texture_parameterIuiv(double textureIndex, double pname, void* param) {
+	glTextureParameterIuiv(*gmgl_get_gl_ref(textureIndex), pname, (const GLuint*)param);
 }
 
 #pragma endregion

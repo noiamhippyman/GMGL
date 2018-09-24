@@ -16,6 +16,7 @@ I don't know much about OpenGL or 3D really in general.
 ### Reasons to go away and not use this
 * For starters, it is very much a WIP. I highly recommend you don't use 
   this for any serious projects yet.
+* Might be difficult to debug. There are tools available but I haven't tested anything yet.
 * Not sure if it's just me but it feels a bit choppy.
 * You're using a different window than the actual GM window which 
   is only hidden when you disable the draw event. This is demonstrated in the demos.
