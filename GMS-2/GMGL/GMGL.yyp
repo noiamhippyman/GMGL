@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "0da2f1c7-e1b9-45b1-b5e0-20687bf991cf",
+            "Value": {
+                "id": "cd53ee42-ba1e-4f25-9cfa-a2581642264b",
+                "resourcePath": "rooms\\rmGMGL_Example_Basic_Lighting\\rmGMGL_Example_Basic_Lighting.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "0ea47e8f-87cf-47b7-8edd-7b3545c57269",
             "Value": {
                 "id": "6684263a-76f8-4066-92e5-bf34217a54c5",
@@ -124,6 +132,14 @@
                 "id": "24e9da7f-7c45-4feb-8e96-51f7d50638ff",
                 "resourcePath": "views\\181e3540-dea5-49ed-8d01-b8473b24119f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "21ab2041-a351-46cc-b2c4-6a01d2b48185",
+            "Value": {
+                "id": "77bbb590-f418-4888-8bd3-292fd3a04fd6",
+                "resourcePath": "scripts\\shader_example_lamp_fs\\shader_example_lamp_fs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -319,6 +335,14 @@
             }
         },
         {
+            "Key": "7749079a-3091-4a4e-ab93-3f81f8df800f",
+            "Value": {
+                "id": "266153c1-ede9-4efe-8412-d85ad147a2e4",
+                "resourcePath": "scripts\\shader_example_basic_lighting_vs\\shader_example_basic_lighting_vs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "79f04771-a129-415c-a889-931f3d6ca8b0",
             "Value": {
                 "id": "517ff61e-84e4-4360-af46-a1b68bc59527",
@@ -348,6 +372,14 @@
                 "id": "6b4c3c55-8b48-4cf0-88f8-b27844808cbf",
                 "resourcePath": "scripts\\shader_example_basic_vs\\shader_example_basic_vs.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "81574830-0efe-480c-a554-dc72a12a3bf6",
+            "Value": {
+                "id": "8e036501-71ec-492d-8c15-18b739dadb5e",
+                "resourcePath": "sprites\\spr_adslighting\\spr_adslighting.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -396,6 +428,14 @@
                 "id": "f02ed789-6c55-4d45-b363-c47fb3b6f7d5",
                 "resourcePath": "views\\8c6989ae-744b-453b-b934-9879a2c6f6a6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8db56251-1e5c-4d49-9ee5-9711ae5db7a3",
+            "Value": {
+                "id": "9022a83e-a458-4613-80e5-14a72d42ba93",
+                "resourcePath": "scripts\\shader_example_basic_lighting_fs\\shader_example_basic_lighting_fs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -743,6 +783,14 @@
             }
         },
         {
+            "Key": "e93e64d7-84eb-43c5-9a83-7ce6c1f0875f",
+            "Value": {
+                "id": "fcdf98f1-d77d-4fa7-bb6b-4b263825f64a",
+                "resourcePath": "objects\\GMGL_Example_Basic_Lighting\\GMGL_Example_Basic_Lighting.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "eaf46c0c-71ce-4f85-9f4b-ce888b0f1c7c",
             "Value": {
                 "id": "2beeeb01-c5b9-43b4-b9f8-5695d3bfd12d",
@@ -764,6 +812,14 @@
                 "id": "5f122fd7-d8eb-4a3a-9f88-3a477dd04fb5",
                 "resourcePath": "views\\f3a4096c-a305-4223-9e95-039a28f0d60a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f3ce8bd6-d984-4fbc-b280-3b835ea11290",
+            "Value": {
+                "id": "59d4b33d-f1af-456b-9dcc-42540eeb39f8",
+                "resourcePath": "scripts\\shader_example_lamp_vs\\shader_example_lamp_vs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -839,6 +895,10 @@
         "a0898e24-955a-44bd-8aa0-f1426dbc405d",
         "86854a4d-81ab-4d0f-8198-9cfdc377d492",
         "13f44556-55d1-44b2-813f-4ef47b3f0858",
+        "7749079a-3091-4a4e-ab93-3f81f8df800f",
+        "8db56251-1e5c-4d49-9ee5-9711ae5db7a3",
+        "f3ce8bd6-d984-4fbc-b280-3b835ea11290",
+        "21ab2041-a351-46cc-b2c4-6a01d2b48185",
         "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
         "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
         "eefec06a-84db-4790-b319-ea62cdd7f251",

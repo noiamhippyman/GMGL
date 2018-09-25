@@ -13,7 +13,8 @@
         "657f2f0c-20c5-4fb5-8c08-9106ff8c06d7",
         "e01c2d1a-0414-4f0a-9bb6-e4cfed88a0d2",
         "f60d66ca-0b7a-4663-9ceb-f3b1d98f806b",
-        "35435fd2-a8f9-4ca0-928c-8122113db74a"
+        "35435fd2-a8f9-4ca0-928c-8122113db74a",
+        "0da2f1c7-e1b9-45b1-b5e0-20687bf991cf"
     ],
     "filterType": "GMRoom",
     "folderName": "Examples",
