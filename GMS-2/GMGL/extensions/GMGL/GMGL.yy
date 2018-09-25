@@ -63,9 +63,9 @@
                         
                     ],
                     "externalName": "gmgl_is_active",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_is_active()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_is_active",
                     "returnType": 2
                 },
@@ -78,9 +78,9 @@
                         1
                     ],
                     "externalName": "gmgl_load_image",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_load_image(path)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_load_image",
                     "returnType": 2
                 },
@@ -93,9 +93,9 @@
                         2
                     ],
                     "externalName": "gmgl_free_image",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_free_image(imageIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_free_image",
                     "returnType": 2
                 },
@@ -108,9 +108,9 @@
                         2
                     ],
                     "externalName": "gmgl_get_image_width",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_get_image_width(image)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_get_image_width",
                     "returnType": 2
                 },
@@ -123,9 +123,9 @@
                         2
                     ],
                     "externalName": "gmgl_get_image_height",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_get_image_height(image)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_get_image_height",
                     "returnType": 2
                 },
@@ -138,9 +138,9 @@
                         2
                     ],
                     "externalName": "gmgl_get_image_channel_num",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gmgl_get_image_channel_num(image)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gmgl_get_image_channel_num",
                     "returnType": 2
                 },
@@ -153,9 +153,9 @@
                         
                     ],
                     "externalName": "glfw_init",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_init()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_init",
                     "returnType": 2
                 },
@@ -168,9 +168,9 @@
                         
                     ],
                     "externalName": "glfw_update",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_update()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_update",
                     "returnType": 2
                 },
@@ -183,9 +183,9 @@
                         
                     ],
                     "externalName": "glfw_terminate",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_terminate()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_terminate",
                     "returnType": 2
                 },
@@ -200,9 +200,9 @@
                         1
                     ],
                     "externalName": "glfw_create_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_create_window(width, height, title)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_create_window",
                     "returnType": 2
                 },
@@ -215,9 +215,9 @@
                         
                     ],
                     "externalName": "glfw_default_window_hints",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_default_window_hints()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_default_window_hints",
                     "returnType": 2
                 },
@@ -231,9 +231,9 @@
                         2
                     ],
                     "externalName": "glfw_window_hint",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_window_hint(hint, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_window_hint",
                     "returnType": 2
                 },
@@ -246,9 +246,9 @@
                         1
                     ],
                     "externalName": "glfw_set_window_title",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_title(title)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_title",
                     "returnType": 2
                 },
@@ -261,9 +261,9 @@
                         1
                     ],
                     "externalName": "glfw_set_window_icon",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_icon(path)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_icon",
                     "returnType": 2
                 },
@@ -276,9 +276,9 @@
                         
                     ],
                     "externalName": "glfw_get_window_x",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_window_x()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_window_x",
                     "returnType": 2
                 },
@@ -291,9 +291,9 @@
                         
                     ],
                     "externalName": "glfw_get_window_y",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_window_y()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_window_y",
                     "returnType": 2
                 },
@@ -307,9 +307,9 @@
                         2
                     ],
                     "externalName": "glfw_set_window_pos",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_pos(x, y)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_pos",
                     "returnType": 2
                 },
@@ -322,9 +322,9 @@
                         
                     ],
                     "externalName": "glfw_get_window_width",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_window_width()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_window_width",
                     "returnType": 2
                 },
@@ -337,9 +337,9 @@
                         
                     ],
                     "externalName": "glfw_get_window_height",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_window_height()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_window_height",
                     "returnType": 2
                 },
@@ -355,9 +355,9 @@
                         2
                     ],
                     "externalName": "glfw_set_window_size_limits",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_size_limits(minwidth, minheight, maxwidth, maxheight)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_size_limits",
                     "returnType": 2
                 },
@@ -371,9 +371,9 @@
                         2
                     ],
                     "externalName": "glfw_set_window_aspect_ratio",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_aspect_ratio(numer, denom)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_aspect_ratio",
                     "returnType": 2
                 },
@@ -387,9 +387,9 @@
                         2
                     ],
                     "externalName": "glfw_set_window_size",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_window_size(width, height)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_window_size",
                     "returnType": 2
                 },
@@ -402,9 +402,9 @@
                         
                     ],
                     "externalName": "glfw_get_framebuffer_width",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_framebuffer_width()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_framebuffer_width",
                     "returnType": 2
                 },
@@ -417,9 +417,9 @@
                         
                     ],
                     "externalName": "glfw_get_framebuffer_height",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_framebuffer_height()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_framebuffer_height",
                     "returnType": 2
                 },
@@ -432,9 +432,9 @@
                         
                     ],
                     "externalName": "glfw_iconify_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_iconify_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_iconify_window",
                     "returnType": 2
                 },
@@ -447,9 +447,9 @@
                         
                     ],
                     "externalName": "glfw_restore_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_restore_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_restore_window",
                     "returnType": 2
                 },
@@ -462,9 +462,9 @@
                         
                     ],
                     "externalName": "glfw_maximize_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_maximize_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_maximize_window",
                     "returnType": 2
                 },
@@ -477,9 +477,9 @@
                         
                     ],
                     "externalName": "glfw_show_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_show_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_show_window",
                     "returnType": 2
                 },
@@ -492,9 +492,9 @@
                         
                     ],
                     "externalName": "glfw_hide_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_hide_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_hide_window",
                     "returnType": 2
                 },
@@ -507,9 +507,9 @@
                         
                     ],
                     "externalName": "glfw_focus_window",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_focus_window()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_focus_window",
                     "returnType": 2
                 },
@@ -522,9 +522,9 @@
                         2
                     ],
                     "externalName": "glfw_get_window_attrib",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_window_attrib(attrib)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_window_attrib",
                     "returnType": 2
                 },
@@ -537,9 +537,9 @@
                         
                     ],
                     "externalName": "glfw_poll_events",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_poll_events()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_poll_events",
                     "returnType": 2
                 },
@@ -552,9 +552,9 @@
                         
                     ],
                     "externalName": "glfw_wait_events",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_wait_events()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_wait_events",
                     "returnType": 2
                 },
@@ -567,9 +567,9 @@
                         2
                     ],
                     "externalName": "glfw_wait_events_timeout",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_wait_events_timeout(timeout)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_wait_events_timeout",
                     "returnType": 2
                 },
@@ -582,9 +582,9 @@
                         
                     ],
                     "externalName": "glfw_post_empty_event",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_post_empty_event()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_post_empty_event",
                     "returnType": 2
                 },
@@ -597,9 +597,9 @@
                         
                     ],
                     "externalName": "glfw_swap_buffers",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_swap_buffers()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_swap_buffers",
                     "returnType": 2
                 },
@@ -613,9 +613,9 @@
                         2
                     ],
                     "externalName": "glfw_set_input_mode",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_input_mode(mode, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_input_mode",
                     "returnType": 2
                 },
@@ -628,9 +628,9 @@
                         2
                     ],
                     "externalName": "glfw_get_input_mode",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_input_mode(mode)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_input_mode",
                     "returnType": 2
                 },
@@ -643,9 +643,9 @@
                         2
                     ],
                     "externalName": "glfw_get_key",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_key(key)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_key",
                     "returnType": 2
                 },
@@ -658,9 +658,9 @@
                         2
                     ],
                     "externalName": "glfw_get_mouse_button",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_mouse_button(button)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_mouse_button",
                     "returnType": 2
                 },
@@ -673,9 +673,9 @@
                         
                     ],
                     "externalName": "glfw_get_mouse_x",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_mouse_x()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_mouse_x",
                     "returnType": 2
                 },
@@ -688,9 +688,9 @@
                         
                     ],
                     "externalName": "glfw_get_mouse_y",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_mouse_y()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_mouse_y",
                     "returnType": 2
                 },
@@ -704,9 +704,9 @@
                         2
                     ],
                     "externalName": "glfw_set_mouse_pos",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_mouse_pos(x, y)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_mouse_pos",
                     "returnType": 2
                 },
@@ -719,9 +719,9 @@
                         1
                     ],
                     "externalName": "glfw_set_clipboard_string",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_clipboard_string(string)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_clipboard_string",
                     "returnType": 2
                 },
@@ -734,9 +734,9 @@
                         
                     ],
                     "externalName": "glfw_get_time",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_get_time()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_get_time",
                     "returnType": 2
                 },
@@ -749,9 +749,9 @@
                         2
                     ],
                     "externalName": "glfw_set_time",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "glfw_set_time(time)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "glfw_set_time",
                     "returnType": 2
                 },
@@ -767,9 +767,9 @@
                         2
                     ],
                     "externalName": "gl_viewport",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_viewport(x, y, width, height)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_viewport",
                     "returnType": 2
                 },
@@ -782,9 +782,9 @@
                         2
                     ],
                     "externalName": "gl_enable",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_enable(cap)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_enable",
                     "returnType": 2
                 },
@@ -797,9 +797,9 @@
                         2
                     ],
                     "externalName": "gl_disable",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_disable(cap)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_disable",
                     "returnType": 2
                 },
@@ -812,9 +812,9 @@
                         2
                     ],
                     "externalName": "gl_depth_mask",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_depth_mask(flag)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_depth_mask",
                     "returnType": 2
                 },
@@ -827,9 +827,9 @@
                         2
                     ],
                     "externalName": "gl_depth_func",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_depth_func(func)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_depth_func",
                     "returnType": 2
                 },
@@ -842,9 +842,9 @@
                         2
                     ],
                     "externalName": "gl_stencil_mask",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_stencil_mask(mask)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_stencil_mask",
                     "returnType": 2
                 },
@@ -859,9 +859,9 @@
                         2
                     ],
                     "externalName": "gl_stencil_func",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_stencil_func(func, ref, mask)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_stencil_func",
                     "returnType": 2
                 },
@@ -876,9 +876,9 @@
                         2
                     ],
                     "externalName": "gl_stencil_op",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_stencil_op(fail, zfail, zpass)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_stencil_op",
                     "returnType": 2
                 },
@@ -892,9 +892,9 @@
                         2
                     ],
                     "externalName": "gl_blend_func",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_blend_func(sfactor, dfactor)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_blend_func",
                     "returnType": 2
                 },
@@ -910,9 +910,9 @@
                         2
                     ],
                     "externalName": "gl_blend_func_separate",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_blend_func_separate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_blend_func_separate",
                     "returnType": 2
                 },
@@ -925,9 +925,9 @@
                         2
                     ],
                     "externalName": "gl_blend_equation",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_blend_equation(mode)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_blend_equation",
                     "returnType": 2
                 },
@@ -940,9 +940,9 @@
                         2
                     ],
                     "externalName": "gl_cull_face",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_cull_face(mode)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_cull_face",
                     "returnType": 2
                 },
@@ -955,9 +955,9 @@
                         2
                     ],
                     "externalName": "gl_front_face",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_front_face(mode)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_front_face",
                     "returnType": 2
                 },
@@ -973,9 +973,9 @@
                         2
                     ],
                     "externalName": "gl_clear_color",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_clear_color(r, g, b, a)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_clear_color",
                     "returnType": 2
                 },
@@ -988,9 +988,9 @@
                         2
                     ],
                     "externalName": "gl_clear",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_clear(mask)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_clear",
                     "returnType": 2
                 },
@@ -1005,9 +1005,9 @@
                         2
                     ],
                     "externalName": "gl_draw_arrays",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_draw_arrays(mode, first, count)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_draw_arrays",
                     "returnType": 2
                 },
@@ -1021,9 +1021,9 @@
                         2
                     ],
                     "externalName": "gl_draw_elements",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_draw_elements(mode, count)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_draw_elements",
                     "returnType": 2
                 },
@@ -1036,9 +1036,9 @@
                         
                     ],
                     "externalName": "gl_gen_buffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_gen_buffer()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_gen_buffer",
                     "returnType": 2
                 },
@@ -1052,9 +1052,9 @@
                         2
                     ],
                     "externalName": "gl_bind_buffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_bind_buffer(target, bufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_bind_buffer",
                     "returnType": 2
                 },
@@ -1067,9 +1067,9 @@
                         2
                     ],
                     "externalName": "gl_delete_buffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_delete_buffer(bufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_delete_buffer",
                     "returnType": 2
                 },
@@ -1085,9 +1085,9 @@
                         2
                     ],
                     "externalName": "gl_buffer_data",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_buffer_data(target, size, vertices, usage)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_buffer_data",
                     "returnType": 2
                 },
@@ -1100,9 +1100,9 @@
                         
                     ],
                     "externalName": "gl_gen_vertex_array",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_gen_vertex_array()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_gen_vertex_array",
                     "returnType": 2
                 },
@@ -1115,9 +1115,9 @@
                         2
                     ],
                     "externalName": "gl_bind_vertex_array",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_bind_vertex_array(varrayIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_bind_vertex_array",
                     "returnType": 2
                 },
@@ -1130,9 +1130,9 @@
                         2
                     ],
                     "externalName": "gl_delete_vertex_array",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_delete_vertex_array(varrayIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_delete_vertex_array",
                     "returnType": 2
                 },
@@ -1150,9 +1150,9 @@
                         2
                     ],
                     "externalName": "gl_vertex_attrib_pointer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_vertex_attrib_pointer(index, size, type, normalized, stride, offset)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_vertex_attrib_pointer",
                     "returnType": 2
                 },
@@ -1165,9 +1165,9 @@
                         2
                     ],
                     "externalName": "gl_enable_vertex_attrib_array",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_enable_vertex_attrib_array(index)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_enable_vertex_attrib_array",
                     "returnType": 2
                 },
@@ -1180,9 +1180,9 @@
                         
                     ],
                     "externalName": "gl_gen_texture",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_gen_texture()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_gen_texture",
                     "returnType": 2
                 },
@@ -1196,9 +1196,9 @@
                         2
                     ],
                     "externalName": "gl_bind_texture",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_bind_texture(target, textureIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_bind_texture",
                     "returnType": 2
                 },
@@ -1211,9 +1211,9 @@
                         2
                     ],
                     "externalName": "gl_delete_texture",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_delete_texture(textureIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_delete_texture",
                     "returnType": 2
                 },
@@ -1226,9 +1226,9 @@
                         2
                     ],
                     "externalName": "gl_active_texture",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_active_texture(unit)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_active_texture",
                     "returnType": 2
                 },
@@ -1247,9 +1247,9 @@
                         2
                     ],
                     "externalName": "gl_texImage2D",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texImage2D(target, level, internalformat, border, format, type, imageIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texImage2D",
                     "returnType": 2
                 },
@@ -1262,9 +1262,9 @@
                         2
                     ],
                     "externalName": "gl_generate_mipmap",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_generate_mipmap(target)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_generate_mipmap",
                     "returnType": 2
                 },
@@ -1277,9 +1277,9 @@
                         
                     ],
                     "externalName": "gl_gen_framebuffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_gen_framebuffer()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_gen_framebuffer",
                     "returnType": 2
                 },
@@ -1293,9 +1293,9 @@
                         2
                     ],
                     "externalName": "gl_bind_framebuffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_bind_framebuffer(target, framebufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_bind_framebuffer",
                     "returnType": 2
                 },
@@ -1308,9 +1308,9 @@
                         2
                     ],
                     "externalName": "gl_delete_framebuffer",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_delete_framebuffer(framebufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_delete_framebuffer",
                     "returnType": 2
                 },
@@ -1324,9 +1324,9 @@
                         1
                     ],
                     "externalName": "gl_create_shader",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_create_shader(type, source)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_create_shader",
                     "returnType": 2
                 },
@@ -1339,9 +1339,9 @@
                         2
                     ],
                     "externalName": "gl_delete_shader",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_delete_shader(shaderIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_delete_shader",
                     "returnType": 2
                 },
@@ -1354,9 +1354,9 @@
                         
                     ],
                     "externalName": "gl_create_program",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_create_program()",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_create_program",
                     "returnType": 2
                 },
@@ -1370,9 +1370,9 @@
                         2
                     ],
                     "externalName": "gl_attach_shader",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_attach_shader(programIndex, shaderIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_attach_shader",
                     "returnType": 2
                 },
@@ -1385,9 +1385,9 @@
                         2
                     ],
                     "externalName": "gl_link_program",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_link_program(programIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_link_program",
                     "returnType": 2
                 },
@@ -1400,9 +1400,9 @@
                         2
                     ],
                     "externalName": "gl_use_program",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_use_program(programIndex)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_use_program",
                     "returnType": 2
                 },
@@ -1416,9 +1416,9 @@
                         1
                     ],
                     "externalName": "gl_get_uniform_location",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_get_uniform_location(programIndex, name)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_get_uniform_location",
                     "returnType": 2
                 },
@@ -1432,9 +1432,9 @@
                         2
                     ],
                     "externalName": "gl_uniform1f",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1f(location, x)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1f",
                     "returnType": 2
                 },
@@ -1449,9 +1449,9 @@
                         2
                     ],
                     "externalName": "gl_uniform2f",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2f(location, x, y)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2f",
                     "returnType": 2
                 },
@@ -1467,9 +1467,9 @@
                         2
                     ],
                     "externalName": "gl_uniform3f",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3f(location, x, y, z)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3f",
                     "returnType": 2
                 },
@@ -1486,9 +1486,9 @@
                         2
                     ],
                     "externalName": "gl_uniform4f",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4f(location, x, y, z, w)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4f",
                     "returnType": 2
                 },
@@ -1502,9 +1502,9 @@
                         2
                     ],
                     "externalName": "gl_uniform1i",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1i(location, x)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1i",
                     "returnType": 2
                 },
@@ -1519,9 +1519,9 @@
                         2
                     ],
                     "externalName": "gl_uniform2i",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2i(location, x, y)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2i",
                     "returnType": 2
                 },
@@ -1537,9 +1537,9 @@
                         2
                     ],
                     "externalName": "gl_uniform3i",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3i(location, x, y, z)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3i",
                     "returnType": 2
                 },
@@ -1556,9 +1556,9 @@
                         2
                     ],
                     "externalName": "gl_uniform4i",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4i(location, x, y, z, w)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4i",
                     "returnType": 2
                 },
@@ -1572,9 +1572,9 @@
                         2
                     ],
                     "externalName": "gl_uniform1ui",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1ui(location, x)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1ui",
                     "returnType": 2
                 },
@@ -1589,9 +1589,9 @@
                         2
                     ],
                     "externalName": "gl_uniform2ui",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2ui(location, x, y)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2ui",
                     "returnType": 2
                 },
@@ -1607,9 +1607,9 @@
                         2
                     ],
                     "externalName": "gl_uniform3ui",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3ui(location, x, y, z)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3ui",
                     "returnType": 2
                 },
@@ -1626,9 +1626,9 @@
                         2
                     ],
                     "externalName": "gl_uniform4ui",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4ui(location, x, y, z, w)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4ui",
                     "returnType": 2
                 },
@@ -1643,9 +1643,9 @@
                         1
                     ],
                     "externalName": "gl_uniform1fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1fv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1fv",
                     "returnType": 2
                 },
@@ -1660,9 +1660,9 @@
                         1
                     ],
                     "externalName": "gl_uniform2fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2fv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2fv",
                     "returnType": 2
                 },
@@ -1677,9 +1677,9 @@
                         1
                     ],
                     "externalName": "gl_uniform3fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3fv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3fv",
                     "returnType": 2
                 },
@@ -1694,9 +1694,9 @@
                         1
                     ],
                     "externalName": "gl_uniform4fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4fv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4fv",
                     "returnType": 2
                 },
@@ -1711,9 +1711,9 @@
                         1
                     ],
                     "externalName": "gl_uniform1iv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1iv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1iv",
                     "returnType": 2
                 },
@@ -1728,9 +1728,9 @@
                         1
                     ],
                     "externalName": "gl_uniform2iv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2iv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2iv",
                     "returnType": 2
                 },
@@ -1745,9 +1745,9 @@
                         1
                     ],
                     "externalName": "gl_uniform3iv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3iv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3iv",
                     "returnType": 2
                 },
@@ -1762,9 +1762,9 @@
                         1
                     ],
                     "externalName": "gl_uniform4iv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4iv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4iv",
                     "returnType": 2
                 },
@@ -1779,9 +1779,9 @@
                         1
                     ],
                     "externalName": "gl_uniform1uiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform1uiv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform1uiv",
                     "returnType": 2
                 },
@@ -1796,9 +1796,9 @@
                         1
                     ],
                     "externalName": "gl_uniform2uiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform2uiv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform2uiv",
                     "returnType": 2
                 },
@@ -1813,9 +1813,9 @@
                         1
                     ],
                     "externalName": "gl_uniform3uiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform3uiv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform3uiv",
                     "returnType": 2
                 },
@@ -1830,9 +1830,9 @@
                         1
                     ],
                     "externalName": "gl_uniform4uiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform4uiv(location, size, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform4uiv",
                     "returnType": 2
                 },
@@ -1848,9 +1848,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat2fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat2fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat2fv",
                     "returnType": 2
                 },
@@ -1866,9 +1866,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat3fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat3fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat3fv",
                     "returnType": 2
                 },
@@ -1884,9 +1884,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat4fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat4fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat4fv",
                     "returnType": 2
                 },
@@ -1902,9 +1902,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat2x3fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat2x3fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat2x3fv",
                     "returnType": 2
                 },
@@ -1920,9 +1920,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat3x2fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat3x2fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat3x2fv",
                     "returnType": 2
                 },
@@ -1938,9 +1938,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat2x4fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat2x4fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat2x4fv",
                     "returnType": 2
                 },
@@ -1956,9 +1956,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat4x2fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat4x2fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat4x2fv",
                     "returnType": 2
                 },
@@ -1974,9 +1974,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat3x4fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat3x4fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat3x4fv",
                     "returnType": 2
                 },
@@ -1992,9 +1992,9 @@
                         1
                     ],
                     "externalName": "gl_uniform_mat4x3fv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_uniform_mat4x3fv(location, count, transpose, value)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_uniform_mat4x3fv",
                     "returnType": 2
                 },
@@ -2009,9 +2009,9 @@
                         2
                     ],
                     "externalName": "gl_tex_parameterf",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameterf(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameterf",
                     "returnType": 2
                 },
@@ -2026,9 +2026,9 @@
                         2
                     ],
                     "externalName": "gl_tex_parameteri",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameteri(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameteri",
                     "returnType": 2
                 },
@@ -2043,9 +2043,9 @@
                         2
                     ],
                     "externalName": "gl_texture_parameterf",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameterf(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameterf",
                     "returnType": 2
                 },
@@ -2060,9 +2060,9 @@
                         2
                     ],
                     "externalName": "gl_texture_parameteri",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameteri(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameteri",
                     "returnType": 2
                 },
@@ -2077,9 +2077,9 @@
                         1
                     ],
                     "externalName": "gl_tex_parameterfv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameterfv(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameterfv",
                     "returnType": 2
                 },
@@ -2094,9 +2094,9 @@
                         1
                     ],
                     "externalName": "gl_tex_parameteriv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameteriv(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameteriv",
                     "returnType": 2
                 },
@@ -2111,9 +2111,9 @@
                         1
                     ],
                     "externalName": "gl_texture_parameterfv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameterfv(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameterfv",
                     "returnType": 2
                 },
@@ -2128,9 +2128,9 @@
                         1
                     ],
                     "externalName": "gl_texture_parameteriv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameteriv(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameteriv",
                     "returnType": 2
                 },
@@ -2145,9 +2145,9 @@
                         1
                     ],
                     "externalName": "gl_tex_parameterIiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameterIiv(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameterIiv",
                     "returnType": 2
                 },
@@ -2162,9 +2162,9 @@
                         1
                     ],
                     "externalName": "gl_tex_parameterIuiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_tex_parameterIuiv(target, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_tex_parameterIuiv",
                     "returnType": 2
                 },
@@ -2179,9 +2179,9 @@
                         1
                     ],
                     "externalName": "gl_texture_parameterIiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameterIiv(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameterIiv",
                     "returnType": 2
                 },
@@ -2196,9 +2196,9 @@
                         1
                     ],
                     "externalName": "gl_texture_parameterIuiv",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
+                    "help": "gl_texture_parameterIuiv(textureIndex, pname, param)",
+                    "hidden": false,
+                    "kind": 1,
                     "name": "gl_texture_parameterIuiv",
                     "returnType": 2
                 }
