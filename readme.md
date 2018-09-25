@@ -33,4 +33,4 @@ I don't know much about OpenGL or 3D really in general.
 
 ---
 ### Check out the demos to learn the basics
-![alt text](https://i.imgur.com/zLmWihP.gif,"")
+![alt text](https://i.imgur.com/OQ5IcSP.gif,"")
