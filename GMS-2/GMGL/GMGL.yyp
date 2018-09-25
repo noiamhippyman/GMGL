@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "07fb08d3-3a12-4799-9707-80243d4a1988",
+            "Value": {
+                "id": "0c58a4ae-fdb4-47c4-9043-6a0a63e33773",
+                "resourcePath": "scripts\\shader_example_stencil_test_fs\\shader_example_stencil_test_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "08657c6e-3b49-4254-86c3-2050739338ff",
             "Value": {
                 "id": "45f6d2b8-59ed-4671-9439-7294a8941043",
@@ -127,6 +135,22 @@
             }
         },
         {
+            "Key": "171cc292-b29a-4aed-aa0f-fe7bbb40c3df",
+            "Value": {
+                "id": "59c9a71c-b686-46b0-8ca7-91e61b33d995",
+                "resourcePath": "sprites\\spr_multiplelights\\spr_multiplelights.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "17b65c36-a8dd-4177-97b3-c33d1c98e719",
+            "Value": {
+                "id": "f9a2b718-e25c-49ef-ad82-6659857f5b1f",
+                "resourcePath": "rooms\\rmGMGL_Example_Lighting_Maps\\rmGMGL_Example_Lighting_Maps.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "181e3540-dea5-49ed-8d01-b8473b24119f",
             "Value": {
                 "id": "24e9da7f-7c45-4feb-8e96-51f7d50638ff",
@@ -143,11 +167,27 @@
             }
         },
         {
+            "Key": "2358110e-207a-4665-b0ab-b43020c3e807",
+            "Value": {
+                "id": "ca6c289d-79ab-43d8-85ec-197a62ff9526",
+                "resourcePath": "sprites\\spr_depthtest\\spr_depthtest.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "29243861-c320-478d-abee-db62e38214c2",
             "Value": {
                 "id": "65daf8f6-0fac-4ac4-add4-85dfd2e9830c",
                 "resourcePath": "views\\29243861-c320-478d-abee-db62e38214c2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "294d6fda-ca6c-4d45-9908-9034c43666da",
+            "Value": {
+                "id": "ad889f3f-0c2f-4d14-82ce-b128841ea704",
+                "resourcePath": "objects\\GMGL_Example_Multiple_Lights\\GMGL_Example_Multiple_Lights.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -172,6 +212,14 @@
                 "id": "5c49e330-d41e-4147-9d6c-edb9e762e398",
                 "resourcePath": "views\\2e6887cc-e4d5-43cf-8d99-8774554f127e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2f2fbb1f-74f5-46ff-bb7a-5371bd007fb3",
+            "Value": {
+                "id": "29eefdc6-eaa3-4df2-a8b9-e2a9c88b1a84",
+                "resourcePath": "scripts\\shader_example_lighting_maps_vs\\shader_example_lighting_maps_vs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -211,6 +259,14 @@
             "Value": {
                 "id": "35b0447c-9781-43f0-8887-7742e79174de",
                 "resourcePath": "scripts\\gmgl_process_events\\gmgl_process_events.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3d6501b0-1717-4733-9966-58abd06a171d",
+            "Value": {
+                "id": "15854068-c0bb-484d-be55-dbd068afdee4",
+                "resourcePath": "scripts\\shader_example_stencil_color_fs\\shader_example_stencil_color_fs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -268,6 +324,14 @@
                 "id": "3eee9f14-5456-4a6a-b967-0c8df1ee8b66",
                 "resourcePath": "views\\54c6a39e-02d3-48b7-9fc2-d0f21c26bda0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "583ada16-afe0-4278-9311-1a6135919dfb",
+            "Value": {
+                "id": "87ee1f51-f2d1-47af-9b34-3ffeb66a3035",
+                "resourcePath": "objects\\GMGL_Example_Stencil_Testing\\GMGL_Example_Stencil_Testing.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -335,6 +399,14 @@
             }
         },
         {
+            "Key": "75bd2d37-bc76-4c70-a30d-9d6656942ed2",
+            "Value": {
+                "id": "eec8f785-b451-4d66-9ffd-6c62b7676738",
+                "resourcePath": "datafiles_yy\\GMGL\\container2_specular.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "7749079a-3091-4a4e-ab93-3f81f8df800f",
             "Value": {
                 "id": "266153c1-ede9-4efe-8412-d85ad147a2e4",
@@ -364,6 +436,14 @@
                 "id": "6a6c6693-e810-4cf5-8ae5-8802307684a9",
                 "resourcePath": "objects\\GMGL_Example_Shader_Uniforms\\GMGL_Example_Shader_Uniforms.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7eab4a89-b4a6-4e1f-88ed-3610a56ef048",
+            "Value": {
+                "id": "62effdcd-4de7-4cc7-8c59-0422416dcd88",
+                "resourcePath": "rooms\\rmGMGL_Example_Multiple_Lights\\rmGMGL_Example_Multiple_Lights.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -436,6 +516,14 @@
                 "id": "9022a83e-a458-4613-80e5-14a72d42ba93",
                 "resourcePath": "scripts\\shader_example_basic_lighting_fs\\shader_example_basic_lighting_fs.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8ed0304b-6050-4c9d-b53d-f66f9d0d3b8f",
+            "Value": {
+                "id": "33152018-a71d-4e35-a678-150378f2ed40",
+                "resourcePath": "datafiles_yy\\GMGL\\container2.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -543,6 +631,14 @@
             }
         },
         {
+            "Key": "ae550095-b14e-428d-aaba-30fab379de83",
+            "Value": {
+                "id": "5f108cf8-e5e3-4fcf-817d-b2304c4410ad",
+                "resourcePath": "rooms\\rmGMGL_Example_Stencil_Testing\\rmGMGL_Example_Stencil_Testing.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "afd11593-0485-45d9-aeaa-29ef469b8bcd",
             "Value": {
                 "id": "851cf948-7ecf-48e9-8ed7-6778572f905a",
@@ -559,11 +655,43 @@
             }
         },
         {
+            "Key": "b173545c-cd0a-4254-aed5-d3f9c95386eb",
+            "Value": {
+                "id": "40fff0ba-feec-4bdc-952d-1fd85afceaa0",
+                "resourcePath": "sprites\\spr_stenciltest\\spr_stenciltest.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b4049847-0172-491e-9e9b-a7dbb2bbf841",
+            "Value": {
+                "id": "5888514c-9b18-4f8b-85c5-9ae7204c9aa2",
+                "resourcePath": "scripts\\shader_example_lighting_maps_fs\\shader_example_lighting_maps_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b46964ba-511a-4ab2-b27f-73ef612bdef0",
             "Value": {
                 "id": "7726264d-7e5f-4c61-9efe-6fc1102ca43a",
                 "resourcePath": "views\\b46964ba-511a-4ab2-b27f-73ef612bdef0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b531be88-d87e-404d-8446-49a0797b0d74",
+            "Value": {
+                "id": "55d33912-8b61-4d29-b9e0-a06df6295840",
+                "resourcePath": "scripts\\shader_example_depth_test_fs\\shader_example_depth_test_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b664a412-2632-4384-ab7c-3626597c157c",
+            "Value": {
+                "id": "ca5fb5df-062f-4944-bb2a-f862960ec39a",
+                "resourcePath": "objects\\GMGL_Example_Lighting_Maps\\GMGL_Example_Lighting_Maps.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -620,6 +748,14 @@
                 "id": "c9f8013a-936c-4424-a43f-7c712fb59139",
                 "resourcePath": "views\\c7495f98-a1d2-4806-b17d-ef0989b4e229.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c8b2af86-5767-4f5f-b5d0-dc005a156ba5",
+            "Value": {
+                "id": "aa7cd284-c4c4-4a33-846e-fd538bd121df",
+                "resourcePath": "scripts\\shader_example_multiple_lights_fs\\shader_example_multiple_lights_fs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -711,6 +847,14 @@
             }
         },
         {
+            "Key": "d8e3cf2d-fc4d-4be4-9c1d-7ffec610adce",
+            "Value": {
+                "id": "f754a09d-0235-4a76-bfe4-a96237dd6a57",
+                "resourcePath": "objects\\MainMenu_Scroller\\MainMenu_Scroller.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "daad6e63-9c42-4932-b730-6e6814cc44ce",
             "Value": {
                 "id": "a8d4037c-9050-4d4a-a3c6-0b927033b94b",
@@ -724,6 +868,14 @@
                 "id": "55168566-6eef-4a7f-a2e0-889a2f73b351",
                 "resourcePath": "views\\dbeae384-a9fb-48df-877c-b6092e5ebddb.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "dcd5fec3-3195-453e-b973-713419e5d42d",
+            "Value": {
+                "id": "7d8cf932-ba9f-48c4-a656-39ee8277e136",
+                "resourcePath": "sprites\\spr_lightmaps\\spr_lightmaps.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -751,11 +903,27 @@
             }
         },
         {
+            "Key": "e18dbc3f-0cb8-4074-ae3c-9558b76ef05e",
+            "Value": {
+                "id": "ce1861e3-8aa1-4f33-91f8-089c7063c32a",
+                "resourcePath": "scripts\\shader_example_stencil_test_vs\\shader_example_stencil_test_vs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e1c82849-7565-49e4-94f4-1bc2a84fed66",
             "Value": {
                 "id": "ba42fa6c-1fd6-4da5-9831-f169c0a78b47",
                 "resourcePath": "views\\e1c82849-7565-49e4-94f4-1bc2a84fed66.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e48f1c31-e145-4144-bb6f-52de1ca035b3",
+            "Value": {
+                "id": "96749d22-719c-4316-b059-873724f687ef",
+                "resourcePath": "rooms\\rmGMGL_Example_Depth_Testing\\rmGMGL_Example_Depth_Testing.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -791,6 +959,14 @@
             }
         },
         {
+            "Key": "ea13c962-33bc-4d31-9d3b-15d57be69499",
+            "Value": {
+                "id": "fe7906fd-48a8-4898-89e6-bfc9d3f2126c",
+                "resourcePath": "objects\\GMGL_Example_Depth_Testing\\GMGL_Example_Depth_Testing.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "eaf46c0c-71ce-4f85-9f4b-ce888b0f1c7c",
             "Value": {
                 "id": "2beeeb01-c5b9-43b4-b9f8-5695d3bfd12d",
@@ -803,6 +979,14 @@
             "Value": {
                 "id": "70241f1e-14e8-4474-b1c4-4b50fb1554e0",
                 "resourcePath": "scripts\\gmgl_shader_set_int\\gmgl_shader_set_int.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ef5754a1-172c-444a-b4a6-3f3e18cdb510",
+            "Value": {
+                "id": "27e37053-b2f5-499a-ae19-361e94b0c13c",
+                "resourcePath": "scripts\\shader_example_depth_test_vs\\shader_example_depth_test_vs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -877,6 +1061,14 @@
                 "resourcePath": "views\\ffcee3db-5acc-43e4-8ac0-a29f3a046f7f.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "ffed7f8c-5d7e-45ec-8b97-7d60e373240f",
+            "Value": {
+                "id": "70b9c9c0-d673-4e9b-b17e-ef6b61d50869",
+                "resourcePath": "scripts\\shader_example_multiple_lights_vs\\shader_example_multiple_lights_vs.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "script_order": [
@@ -899,6 +1091,15 @@
         "8db56251-1e5c-4d49-9ee5-9711ae5db7a3",
         "f3ce8bd6-d984-4fbc-b280-3b835ea11290",
         "21ab2041-a351-46cc-b2c4-6a01d2b48185",
+        "2f2fbb1f-74f5-46ff-bb7a-5371bd007fb3",
+        "b4049847-0172-491e-9e9b-a7dbb2bbf841",
+        "ffed7f8c-5d7e-45ec-8b97-7d60e373240f",
+        "c8b2af86-5767-4f5f-b5d0-dc005a156ba5",
+        "ef5754a1-172c-444a-b4a6-3f3e18cdb510",
+        "b531be88-d87e-404d-8446-49a0797b0d74",
+        "e18dbc3f-0cb8-4074-ae3c-9558b76ef05e",
+        "07fb08d3-3a12-4799-9707-80243d4a1988",
+        "3d6501b0-1717-4733-9966-58abd06a171d",
         "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
         "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
         "eefec06a-84db-4790-b319-ea62cdd7f251",

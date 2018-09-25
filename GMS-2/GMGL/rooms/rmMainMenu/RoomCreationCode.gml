@@ -1,1 +1,1 @@
-window_set_caption("GMGL Demos");
+window_set_caption("GMGL Demos - Scroll: Mouse Wheel & Up/Down Keys");

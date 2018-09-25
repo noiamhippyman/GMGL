@@ -14,7 +14,11 @@
         "e01c2d1a-0414-4f0a-9bb6-e4cfed88a0d2",
         "f60d66ca-0b7a-4663-9ceb-f3b1d98f806b",
         "35435fd2-a8f9-4ca0-928c-8122113db74a",
-        "0da2f1c7-e1b9-45b1-b5e0-20687bf991cf"
+        "0da2f1c7-e1b9-45b1-b5e0-20687bf991cf",
+        "17b65c36-a8dd-4177-97b3-c33d1c98e719",
+        "7eab4a89-b4a6-4e1f-88ed-3610a56ef048",
+        "e48f1c31-e145-4144-bb6f-52de1ca035b3",
+        "ae550095-b14e-428d-aaba-30fab379de83"
     ],
     "filterType": "GMRoom",
     "folderName": "Examples",

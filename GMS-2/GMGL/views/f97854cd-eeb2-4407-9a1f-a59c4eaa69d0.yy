@@ -21,7 +21,16 @@
         "7749079a-3091-4a4e-ab93-3f81f8df800f",
         "8db56251-1e5c-4d49-9ee5-9711ae5db7a3",
         "f3ce8bd6-d984-4fbc-b280-3b835ea11290",
-        "21ab2041-a351-46cc-b2c4-6a01d2b48185"
+        "21ab2041-a351-46cc-b2c4-6a01d2b48185",
+        "2f2fbb1f-74f5-46ff-bb7a-5371bd007fb3",
+        "b4049847-0172-491e-9e9b-a7dbb2bbf841",
+        "ffed7f8c-5d7e-45ec-8b97-7d60e373240f",
+        "c8b2af86-5767-4f5f-b5d0-dc005a156ba5",
+        "ef5754a1-172c-444a-b4a6-3f3e18cdb510",
+        "b531be88-d87e-404d-8446-49a0797b0d74",
+        "e18dbc3f-0cb8-4074-ae3c-9558b76ef05e",
+        "07fb08d3-3a12-4799-9707-80243d4a1988",
+        "3d6501b0-1717-4733-9966-58abd06a171d"
     ],
     "filterType": "GMScript",
     "folderName": "Example Shaders",
