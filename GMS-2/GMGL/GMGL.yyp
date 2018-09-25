@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "058f0689-5fb7-4128-a8be-8d219ed3c2bf",
+            "Value": {
+                "id": "64a01c6e-e938-4750-bd30-15e61f229e3c",
+                "resourcePath": "objects\\GMGL_Example_Blending\\GMGL_Example_Blending.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "07fb08d3-3a12-4799-9707-80243d4a1988",
             "Value": {
                 "id": "0c58a4ae-fdb4-47c4-9043-6a0a63e33773",
@@ -255,6 +263,14 @@
             }
         },
         {
+            "Key": "3b15cb95-1e70-4f6c-876a-6cd412e0378e",
+            "Value": {
+                "id": "14cd86c2-7f73-4a2a-bd84-0a162555987e",
+                "resourcePath": "datafiles_yy\\GMGL\\grass.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
             "Value": {
                 "id": "35b0447c-9781-43f0-8887-7742e79174de",
@@ -371,6 +387,14 @@
             "Value": {
                 "id": "85854cb9-a08d-471a-9ccc-af019860d72d",
                 "resourcePath": "scripts\\gmgl_create_window_centered\\gmgl_create_window_centered.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6974bdd9-e1bf-4b66-a54c-079d6a87423a",
+            "Value": {
+                "id": "da97ed33-8af9-4530-8bff-d3098bc9edfa",
+                "resourcePath": "scripts\\shader_example_blending_vs\\shader_example_blending_vs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -679,6 +703,14 @@
             }
         },
         {
+            "Key": "b474464e-a8cd-421b-a0a2-1a56f569b78f",
+            "Value": {
+                "id": "b4183b8b-0b0f-46cb-b17f-e8d627bb0f70",
+                "resourcePath": "datafiles_yy\\GMGL\\blending_transparent_window.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "b531be88-d87e-404d-8446-49a0797b0d74",
             "Value": {
                 "id": "55d33912-8b61-4d29-b9e0-a06df6295840",
@@ -703,10 +735,26 @@
             }
         },
         {
+            "Key": "b72d3aa7-e32d-4d33-809f-5d0a397beb65",
+            "Value": {
+                "id": "490402ce-4d6a-4771-ac37-683153408a12",
+                "resourcePath": "sprites\\spr_blending\\spr_blending.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b9317835-8550-427d-aa14-a84a077d1ccf",
             "Value": {
                 "id": "73cd281b-04ee-4ab4-8815-a367f5a93400",
                 "resourcePath": "scripts\\shader_example_uniforms_fs\\shader_example_uniforms_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ba4cfcf5-9fd9-477d-b407-c0e236d1b7ef",
+            "Value": {
+                "id": "a09d7fbe-3be5-4bdd-a37d-adc0488a0be2",
+                "resourcePath": "scripts\\shader_example_blending_fs\\shader_example_blending_fs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -967,6 +1015,14 @@
             }
         },
         {
+            "Key": "eab7afad-37d1-4e66-9665-ab460db31dce",
+            "Value": {
+                "id": "6db29549-cbaf-4142-a3c6-25777a4a1fca",
+                "resourcePath": "sprites\\spr_userinput\\spr_userinput.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "eaf46c0c-71ce-4f85-9f4b-ce888b0f1c7c",
             "Value": {
                 "id": "2beeeb01-c5b9-43b4-b9f8-5695d3bfd12d",
@@ -1019,6 +1075,14 @@
             "Value": {
                 "id": "55580ab6-cc1f-4f7f-9d65-c2504d96b233",
                 "resourcePath": "rooms\\rmGMGL_Example_Create_A_Cube\\rmGMGL_Example_Create_A_Cube.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "f79cd764-18e6-469a-a0a7-6a26c52aa931",
+            "Value": {
+                "id": "ccc6dbc8-b0a9-4572-880f-8bd461b5ee9e",
+                "resourcePath": "rooms\\rmGMGL_Example_Blending\\rmGMGL_Example_Blending.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1100,6 +1164,8 @@
         "e18dbc3f-0cb8-4074-ae3c-9558b76ef05e",
         "07fb08d3-3a12-4799-9707-80243d4a1988",
         "3d6501b0-1717-4733-9966-58abd06a171d",
+        "6974bdd9-e1bf-4b66-a54c-079d6a87423a",
+        "ba4cfcf5-9fd9-477d-b407-c0e236d1b7ef",
         "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
         "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
         "eefec06a-84db-4790-b319-ea62cdd7f251",

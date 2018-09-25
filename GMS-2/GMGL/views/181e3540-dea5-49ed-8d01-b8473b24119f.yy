@@ -18,7 +18,8 @@
         "b664a412-2632-4384-ab7c-3626597c157c",
         "294d6fda-ca6c-4d45-9908-9034c43666da",
         "ea13c962-33bc-4d31-9d3b-15d57be69499",
-        "583ada16-afe0-4278-9311-1a6135919dfb"
+        "583ada16-afe0-4278-9311-1a6135919dfb",
+        "058f0689-5fb7-4128-a8be-8d219ed3c2bf"
     ],
     "filterType": "GMObject",
     "folderName": "Examples",

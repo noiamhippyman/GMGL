@@ -1,5 +1,5 @@
 /// @desc gmgl_shader_set_int(program,uniform,value);
-/// @arg program,uniform,vector
+/// @arg program,uniform,value
 var program = argument0;
 var uniform = argument1;
 var v = argument2;

@@ -8,7 +8,9 @@
         "ccb1742e-5849-4558-bca9-a3c318a231f9",
         "92285746-dfd7-4f33-ab2a-929e1ad10537",
         "75bd2d37-bc76-4c70-a30d-9d6656942ed2",
-        "8ed0304b-6050-4c9d-b53d-f66f9d0d3b8f"
+        "8ed0304b-6050-4c9d-b53d-f66f9d0d3b8f",
+        "b474464e-a8cd-421b-a0a2-1a56f569b78f",
+        "3b15cb95-1e70-4f6c-876a-6cd412e0378e"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "GMGL",
