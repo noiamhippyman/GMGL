@@ -105,6 +105,7 @@ double gmgl_new_image() {
 	return index;
 }
 GMGLimage* gmgl_get_image(double id) {
+	if (id < 0 || id >= __gmgl_images.size()) return nullptr;
 	return __gmgl_images[id];
 }
 void gmgl_delete_image(double id) {
@@ -148,6 +149,7 @@ double gmgl_new_gl_ref(unsigned int val) {
 	return index;
 }
 unsigned int* gmgl_get_gl_ref(double id) {
+	if (id < 0 || id >= __gmgl_gl_refs.size()) return nullptr;
 	return __gmgl_gl_refs[id];
 }
 void gmgl_delete_gl_ref(double id) {
@@ -292,22 +294,26 @@ GMS_DLL double gmgl_load_image(const char* path) {
 
 GMS_DLL void gmgl_free_image(double imageIndex) {
 	GMGLimage* image = gmgl_get_image(imageIndex);
+	if (!image) return;
 	stbi_image_free(image->data);
 	gmgl_delete_image(imageIndex);
 }
 
 GMS_DLL double gmgl_get_image_width(double image) {
 	GMGLimage* _image = gmgl_get_image(image);
+	if (!_image) return -1;
 	return _image->width;
 }
 
 GMS_DLL double gmgl_get_image_height(double image) {
 	GMGLimage* _image = gmgl_get_image(image);
+	if (!_image) return -1;
 	return _image->height;
 }
 
 GMS_DLL double gmgl_get_image_channel_num(double image) {
 	GMGLimage* _image = gmgl_get_image(image);
+	if (!_image) return -1;
 	return _image->nrChannels;
 }
 
@@ -586,6 +592,10 @@ GMS_DLL void gl_disable(double cap) {
 	glDisable(cap);
 }
 
+GMS_DLL void gl_polygon_mode(double face, double mode) {
+	glPolygonMode(face, mode);
+}
+
 GMS_DLL void gl_depth_mask(double flag) {
 	glDepthMask(flag);
 }
@@ -649,7 +659,8 @@ GMS_DLL double gl_gen_buffer() {
 }
 
 GMS_DLL void gl_bind_buffer(double target, double bufferIndex) {
-	glBindBuffer(target, *gmgl_get_gl_ref(bufferIndex));
+	unsigned int* buffer = gmgl_get_gl_ref(bufferIndex);
+	glBindBuffer(target, buffer ? *buffer : 0);
 }
 
 GMS_DLL void gl_delete_buffer(double bufferIndex) {
@@ -668,7 +679,8 @@ GMS_DLL double gl_gen_vertex_array() {
 }
 
 GMS_DLL void gl_bind_vertex_array(double varrayIndex) {
-	glBindVertexArray(*gmgl_get_gl_ref(varrayIndex));
+	unsigned int* varray = gmgl_get_gl_ref(varrayIndex);
+	glBindVertexArray(varray ? *varray : 0);
 }
 
 GMS_DLL void gl_delete_vertex_array(double varrayIndex) {
@@ -711,7 +723,8 @@ GMS_DLL double gl_gen_texture() {
 }
 
 GMS_DLL void gl_bind_texture(double target, double textureIndex) {
-	glBindTexture(target, *gmgl_get_gl_ref(textureIndex));
+	unsigned int* texture = gmgl_get_gl_ref(textureIndex);
+	glBindTexture(target, texture ? *texture : 0);
 }
 
 GMS_DLL void gl_delete_texture(double textureIndex) {
@@ -723,10 +736,11 @@ GMS_DLL void gl_active_texture(double unit) {
 	glActiveTexture(unit);
 }
 
-GMS_DLL void gl_texImage2D(double target, double level, double internalformat, double border, double format, double type, double imageIndex) {
+GMS_DLL void gl_tex_image2D(double target, double level, double internalformat, double width, double height, double border, double format, double type, double imageIndex) {
 	GMGLimage* image = gmgl_get_image(imageIndex);
-
-	glTexImage2D(target, level, internalformat, image->width, image->height, border, format, type, image->data);
+	unsigned char* pixels = NULL;
+	if (image) pixels = image->data;
+	glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
 }
 
 GMS_DLL void gl_generate_mipmap(double target) {
@@ -740,12 +754,40 @@ GMS_DLL double gl_gen_framebuffer() {
 }
 
 GMS_DLL void gl_bind_framebuffer(double target, double framebufferIndex) {
-	glBindFramebuffer(target, *gmgl_get_gl_ref(framebufferIndex));
+	unsigned int* framebuffer = gmgl_get_gl_ref(framebufferIndex);
+	glBindFramebuffer(target, framebuffer ? *framebuffer : 0);
 }
 
 GMS_DLL void gl_delete_framebuffer(double framebufferIndex) {
 	glDeleteFramebuffers(1, gmgl_get_gl_ref(framebufferIndex));
 	gmgl_delete_gl_ref(framebufferIndex);
+}
+
+GMS_DLL void gl_framebuffer_texture2D(double target, double attachment, double textarget, double textureIndex, double level) {
+	glFramebufferTexture2D(target, attachment, textarget, *gmgl_get_gl_ref(textureIndex), level);
+}
+
+GMS_DLL double gl_gen_renderbuffer() {
+	double rboIndex = gmgl_new_gl_ref();
+	glGenRenderbuffers(1, gmgl_get_gl_ref(rboIndex));
+	return rboIndex;
+}
+
+GMS_DLL void gl_bind_renderbuffer(double target, double renderbufferIndex) {
+	unsigned int* renderbuffer = gmgl_get_gl_ref(renderbufferIndex);
+	glBindRenderbuffer(target, renderbuffer ? *renderbuffer : 0);
+}
+
+GMS_DLL void gl_renderbuffer_storage(double target, double internalFormat, double width, double height) {
+	glRenderbufferStorage(target, internalFormat, width, height);
+}
+
+GMS_DLL void gl_framebuffer_renderbuffer(double target, double attachment, double renderbufferTarget, double renderbufferIndex) {
+	glFramebufferRenderbuffer(target, attachment, renderbufferTarget, *gmgl_get_gl_ref(renderbufferIndex));
+}
+
+GMS_DLL double gl_check_framebuffer_status(double target) {
+	return glCheckFramebufferStatus(target);
 }
 
 #pragma region Shaders

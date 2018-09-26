@@ -44,53 +44,15 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
-gmgl_create_window_centered(800,600,"Example - Blending");
+gmgl_create_window_centered(800,600,"Example - Framebuffers");
 glfw_set_window_icon("GMGL/gmglicon.png");
 
 gl_enable(GL_DEPTH_TEST);
 gl_enable(GL_BLEND);
 gl_blend_func(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-/*
-	Create shaders
-	
-	For simplicity I decided to make this function actually do three things behind the scenes
-	When doing this with C/C++ you would create the shader, set the source and then compile the shader.
-	
-	Creating a vertex shader would look like this:
-	GLuint shader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(shader, 1, &vertexShaderSource, nullptr);
-	glCompileShader(shader);
-	
-	gl_create_shader also does a quick error check to see if the compilation failed.
-	That's an extra five or six lines of code. There's already of ton of code to write
-	so this is just a nice convenience.
-	
-	If it fails the function returns GMGL_FAIL otherwise it returns the shader ID.
-*/
-var vertShader = gl_create_shader(GL_VERTEX_SHADER,shader_example_blending_vs());
-var fragShader = gl_create_shader(GL_FRAGMENT_SHADER,shader_example_blending_fs());
-
-/*
-	Create shader program
-	
-	The shaders by themselves are useless. You still need to create a program.
-	Then attach any shaders you want to the program and finally link the program.
-*/
-shaderProgram = gl_create_program();
-gl_attach_shader(shaderProgram,vertShader);
-gl_attach_shader(shaderProgram,fragShader);
-gl_link_program(shaderProgram);
-
-/*
-	Delete shaders
-	
-	After linking a program you don't need the shaders anymore. 
-	You can delete them when you don't need them anymore.
-*/
-gl_delete_shader(vertShader);
-gl_delete_shader(fragShader);
-
+shaderProgram = gmgl_shader_create(shader_example_framebuffer_vs(),shader_example_framebuffer_fs());
+shaderScreenProgram = gmgl_shader_create(shader_example_framebuffer_screen_vs(), shader_example_framebuffer_screen_fs());
 
 // Create three cubeVertices
 var cubeVertices = [
@@ -175,6 +137,20 @@ for (var i = 0; i < vcount; ++i) {
 	buffer_write(transVbuff, buffer_f32, transparentVertices[i]);
 }
 
+var quadVertices = [
+	-1, -1,  0,  0,
+	 1, -1,  1,  0,
+	 1,  1,  1,  1,
+	 
+	-1, -1,  0,  0,
+	 1,  1,  1,  1,
+	-1,  1,  0,  1,
+];
+vcount = array_length_1d(quadVertices);
+quadVbuff = buffer_create(vcount*buffer_sizeof(buffer_f32), buffer_fixed, 4);
+for (var i = 0; i < vcount; ++i) {
+	buffer_write(quadVbuff, buffer_f32, quadVertices[i]);
+}
 
 //cube vao
 cubeVAO = gl_gen_vertex_array();
@@ -209,10 +185,48 @@ gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5, 0);
 gl_enable_vertex_attrib_array(1);
 gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5, 3);
 
+//quad vao
+quadVAO = gl_gen_vertex_array();
+quadVBO = gl_gen_buffer();
+gl_bind_vertex_array(quadVAO);
+gl_bind_buffer(GL_ARRAY_BUFFER, quadVBO);
+gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(quadVbuff),buffer_get_address(quadVbuff),GL_STATIC_DRAW);
+gl_enable_vertex_attrib_array(0);
+gl_vertex_attrib_pointer(0, 2, GL_FLOAT, GL_FALSE, 4, 0);
+gl_enable_vertex_attrib_array(1);
+gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 4, 2);
+
 cubeTexture = gmgl_load_texture("GMGL/container.jpg");
 planeTexture = gmgl_load_texture("GMGL/container2.png");
 grassTexture = gmgl_load_texture("GMGL/grass.png");
 windowTexture = gmgl_load_texture("GMGL/blending_transparent_window.png");
+
+gl_use_program(shaderProgram);
+gmgl_shader_set_int(shaderProgram, "texture1", 0);
+
+gl_use_program(shaderScreenProgram);
+gmgl_shader_set_int(shaderScreenProgram, "screenTexture", 0);
+
+framebuffer = gl_gen_framebuffer();
+gl_bind_framebuffer(GL_FRAMEBUFFER, framebuffer);
+
+textureColorBuffer = gl_gen_texture();
+gl_bind_texture(GL_TEXTURE_2D, textureColorBuffer);
+gl_tex_image2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, noone);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+gl_framebuffer_texture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureColorBuffer, 0);
+
+renderbuffer = gl_gen_renderbuffer();
+gl_bind_renderbuffer(GL_RENDERBUFFER, renderbuffer);
+gl_renderbuffer_storage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
+gl_framebuffer_renderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, renderbuffer);
+
+gl_bind_framebuffer(GL_FRAMEBUFFER, noone);
+gl_bind_renderbuffer(GL_RENDERBUFFER, noone);
+
+// Uncomment the line below to see the final render is a single quad (two triangles)
+//gl_polygon_mode(GL_FRONT_AND_BACK, GL_LINE);
 
 modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
@@ -247,9 +261,6 @@ blendedObjects = [
 	[-0.3,0,-2.25, windowTexture],
 	[0.5,0,-0.56, windowTexture]
 ];
-
-gl_use_program(shaderProgram);
-gmgl_shader_set_int(shaderProgram, "texture", 0);
 
 // Let's make a camera to control with some user input
 cameraPos = [0,0,3];//x, y, z

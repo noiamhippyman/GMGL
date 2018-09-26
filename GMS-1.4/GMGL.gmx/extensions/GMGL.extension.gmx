@@ -577,6 +577,18 @@
           </args>
         </function>
         <function>
+          <name>gl_polygon_mode</name>
+          <externalName>gl_polygon_mode</externalName>
+          <kind>1</kind>
+          <help>gl_polygon_mode(face, mode)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
           <name>gl_depth_mask</name>
           <externalName>gl_depth_mask</externalName>
           <kind>1</kind>
@@ -892,13 +904,15 @@
           </args>
         </function>
         <function>
-          <name>gl_texImage2D</name>
-          <externalName>gl_texImage2D</externalName>
+          <name>gl_tex_image2D</name>
+          <externalName>gl_tex_image2D</externalName>
           <kind>1</kind>
-          <help>gl_texImage2D(target, level, internalformat, border, format, type, imageIndex)</help>
+          <help>gl_tex_image2D(target, level, internalformat, width, height, border, format, type, imageIndex)</help>
           <returnType>2</returnType>
-          <argCount>7</argCount>
+          <argCount>9</argCount>
           <args>
+            <arg>2</arg>
+            <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
@@ -945,6 +959,81 @@
           <externalName>gl_delete_framebuffer</externalName>
           <kind>1</kind>
           <help>gl_delete_framebuffer(framebufferIndex)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_framebuffer_texture2D</name>
+          <externalName>gl_framebuffer_texture2D</externalName>
+          <kind>1</kind>
+          <help>gl_framebuffer_texture2D(target, attachment, textarget, textureIndex, level)</help>
+          <returnType>2</returnType>
+          <argCount>5</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_gen_renderbuffer</name>
+          <externalName>gl_gen_renderbuffer</externalName>
+          <kind>1</kind>
+          <help>gl_gen_renderbuffer()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
+          <name>gl_bind_renderbuffer</name>
+          <externalName>gl_bind_renderbuffer</externalName>
+          <kind>1</kind>
+          <help>gl_bind_renderbuffer(target, renderbufferIndex)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_renderbuffer_storage</name>
+          <externalName>gl_renderbuffer_storage</externalName>
+          <kind>1</kind>
+          <help>gl_renderbuffer_storage(target, internalFormat, width, height)</help>
+          <returnType>2</returnType>
+          <argCount>4</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_framebuffer_renderbuffer</name>
+          <externalName>gl_framebuffer_renderbuffer</externalName>
+          <kind>1</kind>
+          <help>gl_framebuffer_renderbuffer(target, attachment, renderbufferTarget, renderbufferIndex)</help>
+          <returnType>2</returnType>
+          <argCount>4</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_check_framebuffer_status</name>
+          <externalName>gl_check_framebuffer_status</externalName>
+          <kind>1</kind>
+          <help>gl_check_framebuffer_status(target)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>

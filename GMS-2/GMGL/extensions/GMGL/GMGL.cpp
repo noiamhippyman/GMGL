@@ -154,6 +154,9 @@ dllx double gl_enable(double cap) { ... }
 dllx double gl_disable(double cap) { ... }
 
 /// 
+dllx double gl_polygon_mode(double face, double mode) { ... }
+
+/// 
 dllx double gl_depth_mask(double flag) { ... }
 
 /// 
@@ -235,7 +238,7 @@ dllx double gl_delete_texture(double textureIndex) { ... }
 dllx double gl_active_texture(double unit) { ... }
 
 /// 
-dllx double gl_texImage2D(double target, double level, double internalformat, double border, double format, double type, double imageIndex) { ... }
+dllx double gl_tex_image2D(double target, double level, double internalformat, double width, double height, double border, double format, double type, double imageIndex) { ... }
 
 /// 
 dllx double gl_generate_mipmap(double target) { ... }
@@ -248,6 +251,24 @@ dllx double gl_bind_framebuffer(double target, double framebufferIndex) { ... }
 
 /// 
 dllx double gl_delete_framebuffer(double framebufferIndex) { ... }
+
+/// 
+dllx double gl_framebuffer_texture2D(double target, double attachment, double textarget, double textureIndex, double level) { ... }
+
+/// 
+dllx double gl_gen_renderbuffer() { ... }
+
+/// 
+dllx double gl_bind_renderbuffer(double target, double renderbufferIndex) { ... }
+
+/// 
+dllx double gl_renderbuffer_storage(double target, double internalFormat, double width, double height) { ... }
+
+/// 
+dllx double gl_framebuffer_renderbuffer(double target, double attachment, double renderbufferTarget, double renderbufferIndex) { ... }
+
+/// 
+dllx double gl_check_framebuffer_status(double target) { ... }
 
 /// 
 dllx double gl_create_shader(double type, char* source) { ... }

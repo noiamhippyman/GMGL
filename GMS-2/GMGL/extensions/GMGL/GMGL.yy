@@ -804,6 +804,22 @@
                     "returnType": 2
                 },
                 {
+                    "id": "A6A04532-02F0-2BC4-D6D0-4EE3A60EBC03",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_polygon_mode",
+                    "help": "gl_polygon_mode(face, mode)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_polygon_mode",
+                    "returnType": 2
+                },
+                {
                     "id": "5da829d4-79f5-4759-8f24-2c9ea0a19348",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -1233,11 +1249,13 @@
                     "returnType": 2
                 },
                 {
-                    "id": "f204a943-8e17-46be-a357-9598e45f130d",
+                    "id": "03A26E8C-0047-709A-DF02-C496A89FA643",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
-                    "argCount": 7,
+                    "argCount": 9,
                     "args": [
+                        2,
+                        2,
                         2,
                         2,
                         2,
@@ -1246,11 +1264,11 @@
                         2,
                         2
                     ],
-                    "externalName": "gl_texImage2D",
-                    "help": "gl_texImage2D(target, level, internalformat, border, format, type, imageIndex)",
+                    "externalName": "gl_tex_image2D",
+                    "help": "gl_tex_image2D(target, level, internalformat, width, height, border, format, type, imageIndex)",
                     "hidden": false,
                     "kind": 1,
-                    "name": "gl_texImage2D",
+                    "name": "gl_tex_image2D",
                     "returnType": 2
                 },
                 {
@@ -1312,6 +1330,107 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_delete_framebuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "C37CB75C-1A17-475F-5F69-ED6C866D4464",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 5,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_framebuffer_texture2D",
+                    "help": "gl_framebuffer_texture2D(target, attachment, textarget, textureIndex, level)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_framebuffer_texture2D",
+                    "returnType": 2
+                },
+                {
+                    "id": "1B4F3086-11F9-C7E2-018B-565EDA34087C",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_gen_renderbuffer",
+                    "help": "gl_gen_renderbuffer()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_gen_renderbuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "3C5936B5-708D-ECF1-74C3-BBFA6519C459",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_bind_renderbuffer",
+                    "help": "gl_bind_renderbuffer(target, renderbufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_renderbuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "926015FA-5344-E7F1-B2DC-B408CA2D5283",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 4,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_renderbuffer_storage",
+                    "help": "gl_renderbuffer_storage(target, internalFormat, width, height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_renderbuffer_storage",
+                    "returnType": 2
+                },
+                {
+                    "id": "BF4C5FF2-42E8-6BCF-5FDA-79D41E372242",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 4,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_framebuffer_renderbuffer",
+                    "help": "gl_framebuffer_renderbuffer(target, attachment, renderbufferTarget, renderbufferIndex)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_framebuffer_renderbuffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "B19E23CC-2A89-5811-D375-5DC12FA7B802",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 1,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_check_framebuffer_status",
+                    "help": "gl_check_framebuffer_status(target)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_check_framebuffer_status",
                     "returnType": 2
                 },
                 {

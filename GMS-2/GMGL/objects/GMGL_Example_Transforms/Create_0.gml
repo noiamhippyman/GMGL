@@ -221,7 +221,7 @@ var img = gmgl_load_image("GMGL/container.jpg");
 	Now that we finally have a bound texture and some image data
 	we can copy the image data into the bound texture
 */
-gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, GL_RGB, GL_UNSIGNED_BYTE, img);
+gl_tex_image2D(GL_TEXTURE_2D, 0, GL_RGB, gmgl_get_image_width(img), gmgl_get_image_height(img),  0, GL_RGB, GL_UNSIGNED_BYTE, img);
 
 /*
 	If you want to use mipmaps you need to generate those as well
@@ -242,7 +242,7 @@ gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 img = gmgl_load_image("GMGL/awesomeface.png");
-gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, GL_RGBA, GL_UNSIGNED_BYTE, img);
+gl_tex_image2D(GL_TEXTURE_2D, 0, GL_RGB, gmgl_get_image_width(img), gmgl_get_image_height(img),  0, GL_RGBA, GL_UNSIGNED_BYTE, img);
 gl_generate_mipmap(GL_TEXTURE_2D);
 gmgl_free_image(img);
 

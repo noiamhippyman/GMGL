@@ -16,7 +16,7 @@ var format = GL_RGB;
 if (channelNums == 4) format = GL_RGBA;
 
 gl_bind_texture(GL_TEXTURE_2D,texID);
-gl_texImage2D(GL_TEXTURE_2D,0,format,0,format,GL_UNSIGNED_BYTE,img);
+gl_tex_image2D(GL_TEXTURE_2D,0,format,gmgl_get_image_width(img), gmgl_get_image_height(img),0,format,GL_UNSIGNED_BYTE,img);
 gl_generate_mipmap(GL_TEXTURE_2D);
 
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
