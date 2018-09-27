@@ -83,7 +83,7 @@ void        gl_blend_func_separate(real sfactorRGB, real dfactorRGB, real sfacto
 void        gl_blend_equation(real mode) 
 void        gl_cull_face(real mode) 
 void        gl_front_face(real mode) 
-void        gl_clear_color(real r, real        g, real b, real a) 
+void        gl_clear_color(real r, real g, real b, real a) 
 void        gl_clear(real mask) 
 void        gl_draw_arrays(real mode, real first, real count) 
 void        gl_draw_elements(real mode, real count) 
