@@ -9,7 +9,7 @@ GMS only uses OpenGL ES 2.0 while this will allow you to use any version.
 
 I plan on adding every function but at the moment this only has the functions necessary to follow along with the tutorials found at [learnopengl.com](https://www.learnopengl.com).
 
-This extension is W.I.P. so I don't recommend using this for anything serious. But it's fun to mess around with and I could really use some more experienced OpenGL programmers who can point out the more important functions. Otherwise it's just a matter of me learning about something I need and implmenting it.
+This extension is a W.I.P. so I don't recommend using this for anything serious. But it's fun to mess around with and I could really use some more experienced OpenGL programmers who can point out the more important functions. Otherwise it's just a matter of me learning about something I need and implementing it.
 
 Also if you're familiar with C++ you can check out the source code. It's pretty simple to follow the same pattern I've been going with when wrapping functions.
 
