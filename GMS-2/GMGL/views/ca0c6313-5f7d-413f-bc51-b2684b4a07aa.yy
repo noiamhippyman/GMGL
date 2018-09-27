@@ -20,7 +20,9 @@
         "e48f1c31-e145-4144-bb6f-52de1ca035b3",
         "ae550095-b14e-428d-aaba-30fab379de83",
         "f79cd764-18e6-469a-a0a7-6a26c52aa931",
-        "15024bf0-1d35-48f1-b646-6a0164253e0a"
+        "15024bf0-1d35-48f1-b646-6a0164253e0a",
+        "647e5bcd-153d-4f73-9daf-76f32e358151",
+        "13628bcc-d547-4020-bc57-433a1066ba3f"
     ],
     "filterType": "GMRoom",
     "folderName": "Examples",

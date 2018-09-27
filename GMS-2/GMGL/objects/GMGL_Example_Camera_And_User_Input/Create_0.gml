@@ -228,7 +228,7 @@ gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR)
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 //Next we need to load the image data into memory
-var img = gmgl_load_image("GMGL/container.jpg");
+var img = gmgl_load_image("GMGL/container.jpg", true);
 
 /*
 	Now that we finally have a bound texture and some image data
@@ -254,7 +254,7 @@ gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 gl_tex_parameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-img = gmgl_load_image("GMGL/awesomeface.png");
+img = gmgl_load_image("GMGL/awesomeface.png", true);
 gl_tex_image2D(GL_TEXTURE_2D, 0, GL_RGB, gmgl_get_image_width(img), gmgl_get_image_height(img),  0, GL_RGBA, GL_UNSIGNED_BYTE, img);
 gl_generate_mipmap(GL_TEXTURE_2D);
 gmgl_free_image(img);

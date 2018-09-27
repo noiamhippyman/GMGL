@@ -73,12 +73,13 @@
                     "id": "f2773f76-720d-4d99-8395-17236b181d74",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
-                    "argCount": 1,
+                    "argCount": 2,
                     "args": [
-                        1
+                        1,
+                        2
                     ],
                     "externalName": "gmgl_load_image",
-                    "help": "gmgl_load_image(path)",
+                    "help": "gmgl_load_image(path, flipOnLoad)",
                     "hidden": false,
                     "kind": 1,
                     "name": "gmgl_load_image",

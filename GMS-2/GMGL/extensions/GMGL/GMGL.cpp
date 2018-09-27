@@ -4,7 +4,7 @@ dllx double RegisterCallbacks(char* arg1, char* arg2, char* arg3, char* arg4) { 
 dllx double gmgl_is_active() { ... }
 
 /// 
-dllx double gmgl_load_image(const char* path) { ... }
+dllx double gmgl_load_image(const char* path, double flipOnLoad) { ... }
 
 /// 
 dllx double gmgl_free_image(double imageIndex) { ... }

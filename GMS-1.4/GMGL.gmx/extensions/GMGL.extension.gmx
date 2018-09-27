@@ -84,11 +84,12 @@
           <name>gmgl_load_image</name>
           <externalName>gmgl_load_image</externalName>
           <kind>1</kind>
-          <help>gmgl_load_image(path)</help>
+          <help>gmgl_load_image(path, flipOnLoad)</help>
           <returnType>2</returnType>
-          <argCount>1</argCount>
+          <argCount>2</argCount>
           <args>
             <arg>1</arg>
+            <arg>2</arg>
           </args>
         </function>
         <function>

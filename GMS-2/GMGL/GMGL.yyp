@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "059b6b37-4f05-4f5b-a6e7-874f283276a0",
+            "Value": {
+                "id": "79003bb6-7bb4-4f03-8277-0d789ecf7d65",
+                "resourcePath": "scripts\\gmgl_load_cubemap\\gmgl_load_cubemap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "07fb08d3-3a12-4799-9707-80243d4a1988",
             "Value": {
                 "id": "0c58a4ae-fdb4-47c4-9043-6a0a63e33773",
@@ -127,6 +135,14 @@
             }
         },
         {
+            "Key": "13628bcc-d547-4020-bc57-433a1066ba3f",
+            "Value": {
+                "id": "ad7adfac-777a-401f-b6c3-3a70ce8fa17d",
+                "resourcePath": "rooms\\rmGMGL_Example_Reflections_And_Refractions\\rmGMGL_Example_Reflections_And_Refractions.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "13dbec7d-8d64-48ad-a01c-84ec999fd29f",
             "Value": {
                 "id": "08557ab2-4649-43ec-aa30-21dfda0c5e0d",
@@ -183,6 +199,22 @@
             }
         },
         {
+            "Key": "188efbaa-9642-477b-b2d9-6e5eaebab002",
+            "Value": {
+                "id": "ab92f96d-9c0f-41d4-aa17-2c7fe0e67100",
+                "resourcePath": "views\\188efbaa-9642-477b-b2d9-6e5eaebab002.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1a7b3307-5183-4e5d-aac0-baa4a50629ae",
+            "Value": {
+                "id": "1cc3a112-6b6e-4cd6-9c5a-b2583ca997ca",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\right.jpg.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "21ab2041-a351-46cc-b2c4-6a01d2b48185",
             "Value": {
                 "id": "77bbb590-f418-4888-8bd3-292fd3a04fd6",
@@ -196,6 +228,14 @@
                 "id": "ca6c289d-79ab-43d8-85ec-197a62ff9526",
                 "resourcePath": "sprites\\spr_depthtest\\spr_depthtest.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "26ce27f3-ed10-4d54-9d2c-b8bf6c439d8e",
+            "Value": {
+                "id": "31b46620-5209-4e0e-86c1-d5f86cd3e709",
+                "resourcePath": "objects\\GMGL_Example_Cubemaps\\GMGL_Example_Cubemaps.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -268,6 +308,14 @@
                 "id": "f4e5f58e-b27d-4857-a9b6-979b7638cf74",
                 "resourcePath": "rooms\\rmGMGL_Example_Camera_And_User_Input\\rmGMGL_Example_Camera_And_User_Input.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "35f92816-caab-4360-81b8-f4a9e7964710",
+            "Value": {
+                "id": "bbe7a715-728a-416d-8897-e98d7753bbb6",
+                "resourcePath": "scripts\\shader_example_cubemaps_reflect_refract_vs\\shader_example_cubemaps_reflect_refract_vs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -383,11 +431,27 @@
             }
         },
         {
+            "Key": "5595edbc-2dee-47c7-a099-4a4de337eac1",
+            "Value": {
+                "id": "1e0a6ed4-c728-46fc-b0e1-0c0796362da5",
+                "resourcePath": "objects\\GMGL_Example_Reflections_And_Refractions\\GMGL_Example_Reflections_And_Refractions.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "583ada16-afe0-4278-9311-1a6135919dfb",
             "Value": {
                 "id": "87ee1f51-f2d1-47af-9b34-3ffeb66a3035",
                 "resourcePath": "objects\\GMGL_Example_Stencil_Testing\\GMGL_Example_Stencil_Testing.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5aaa9bcd-441f-44cc-9e2f-64a16d8354f4",
+            "Value": {
+                "id": "7c7c90e0-f006-42b4-a72f-047f9452c209",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\bottom.jpg.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -415,11 +479,27 @@
             }
         },
         {
+            "Key": "647e5bcd-153d-4f73-9daf-76f32e358151",
+            "Value": {
+                "id": "29b5cbdd-58dc-4b0b-b4eb-79cc07011540",
+                "resourcePath": "rooms\\rmGMGL_Example_Cubemaps\\rmGMGL_Example_Cubemaps.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "657f2f0c-20c5-4fb5-8c08-9106ff8c06d7",
             "Value": {
                 "id": "cbb25b7b-f249-4d69-8b0e-223d516bdb47",
                 "resourcePath": "rooms\\rmGMGL_Example_Transforms\\rmGMGL_Example_Transforms.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "67e42dbf-4719-40f3-9acd-6ec32ddf9090",
+            "Value": {
+                "id": "2d0ae1c4-cc38-42c4-a836-0b6bd386fcc5",
+                "resourcePath": "scripts\\shader_example_skybox_vs\\shader_example_skybox_vs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -543,6 +623,14 @@
             }
         },
         {
+            "Key": "85fbc082-d0f5-4e17-b5d6-49b242419d11",
+            "Value": {
+                "id": "4f28dd77-193e-404a-872b-bdb50db1fd80",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\front.jpg.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "86854a4d-81ab-4d0f-8198-9cfdc377d492",
             "Value": {
                 "id": "10473d55-bd06-4ec3-b285-41d7abf20a59",
@@ -639,6 +727,14 @@
             }
         },
         {
+            "Key": "9afa9169-274c-4f67-85d7-c9fcf286fd51",
+            "Value": {
+                "id": "abe3298e-03e5-40e4-96e7-e8df6e85067d",
+                "resourcePath": "scripts\\shader_example_cubemaps_fs\\shader_example_cubemaps_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9b5a55cc-726c-405b-bc35-53163ccd6d7e",
             "Value": {
                 "id": "26dfd252-5a70-4044-abaa-03d4eb8e7c0e",
@@ -679,10 +775,26 @@
             }
         },
         {
+            "Key": "a0e42693-c8d9-497d-97ad-d309da2a221a",
+            "Value": {
+                "id": "009db712-130b-40d1-a433-380dfe20c61f",
+                "resourcePath": "scripts\\shader_example_skybox_fs\\shader_example_skybox_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a130f0a9-212f-4789-9634-b8f7f5529868",
             "Value": {
                 "id": "e58371ae-6286-45fd-a1b3-a8269efd4415",
                 "resourcePath": "scripts\\shader_example_textures_fs\\shader_example_textures_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a16e084c-1ba3-4110-8994-8f93f3791820",
+            "Value": {
+                "id": "24d7c731-4cef-4004-b4e3-fe8960c0abf1",
+                "resourcePath": "scripts\\shader_example_cubemaps_vs\\shader_example_cubemaps_vs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -740,6 +852,14 @@
                 "id": "40fff0ba-feec-4bdc-952d-1fd85afceaa0",
                 "resourcePath": "sprites\\spr_stenciltest\\spr_stenciltest.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b1d79656-a77d-4a50-a142-495641907526",
+            "Value": {
+                "id": "8a3f9135-ed7c-49e7-8fa8-cd40563d0a39",
+                "resourcePath": "scripts\\shader_example_cubemaps_reflect_refract_fs\\shader_example_cubemaps_reflect_refract_fs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -855,6 +975,22 @@
             }
         },
         {
+            "Key": "c418e5d5-4a03-417b-a319-b2c80768d403",
+            "Value": {
+                "id": "19336596-55ff-43df-9717-a7a575bb50b8",
+                "resourcePath": "sprites\\spr_cubemaps\\spr_cubemaps.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c7341d18-6f7f-4db5-b25b-cb0da6cffbfd",
+            "Value": {
+                "id": "e2c1b24a-c243-463b-a2ed-e1e9b20bcc5a",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\top.jpg.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "c7495f98-a1d2-4806-b17d-ef0989b4e229",
             "Value": {
                 "id": "c9f8013a-936c-4424-a43f-7c712fb59139",
@@ -924,6 +1060,14 @@
                 "id": "9416e52e-82c9-4b35-adc6-ecc5272dc6da",
                 "resourcePath": "extensions\\GMGL\\GMGL.yy",
                 "resourceType": "GMExtension"
+            }
+        },
+        {
+            "Key": "d3edda73-a7d7-427d-8cca-63a0f4ae0b2a",
+            "Value": {
+                "id": "6f10fe24-740a-4a30-b3da-c930b1b0c581",
+                "resourcePath": "sprites\\spr_reflections\\spr_reflections.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1039,6 +1183,14 @@
             }
         },
         {
+            "Key": "e3627c64-4ad5-4b7b-878b-a79a1bfac668",
+            "Value": {
+                "id": "776175a0-4c7f-4ed8-8b6d-1b6fc947ec11",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\left.jpg.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "e48f1c31-e145-4144-bb6f-52de1ca035b3",
             "Value": {
                 "id": "96749d22-719c-4316-b059-873724f687ef",
@@ -1143,6 +1295,14 @@
             }
         },
         {
+            "Key": "f44961a0-4493-429a-a302-1536d4b7e6fb",
+            "Value": {
+                "id": "dc2aa01a-8a08-4932-ac36-7a4de70c23a4",
+                "resourcePath": "datafiles_yy\\GMGL\\skybox\\back.jpg.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "f60d66ca-0b7a-4663-9ceb-f3b1d98f806b",
             "Value": {
                 "id": "55580ab6-cc1f-4f7f-9d65-c2504d96b233",
@@ -1180,6 +1340,14 @@
                 "id": "9ab3d5a2-a102-47f9-987b-b9173f9cf0b9",
                 "resourcePath": "scripts\\gmgl_shader_set_vec3\\gmgl_shader_set_vec3.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fc59b5ab-125e-4880-9b76-82f63e8d53f3",
+            "Value": {
+                "id": "78969b24-25c6-4f42-8789-3a89b1963f7c",
+                "resourcePath": "sprites\\spr_framebuffers\\spr_framebuffers.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1242,8 +1410,15 @@
         "390c25be-8358-4d22-8aa4-03e6bb28a292",
         "9b5a55cc-726c-405b-bc35-53163ccd6d7e",
         "c326c54d-c7dc-4680-ba3a-ed727878bc39",
+        "a16e084c-1ba3-4110-8994-8f93f3791820",
+        "9afa9169-274c-4f67-85d7-c9fcf286fd51",
+        "67e42dbf-4719-40f3-9acd-6ec32ddf9090",
+        "a0e42693-c8d9-497d-97ad-d309da2a221a",
+        "35f92816-caab-4360-81b8-f4a9e7964710",
+        "b1d79656-a77d-4a50-a142-495641907526",
         "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
         "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
+        "059b6b37-4f05-4f5b-a6e7-874f283276a0",
         "eefec06a-84db-4790-b319-ea62cdd7f251",
         "60bfad88-a672-42d3-aff0-024133194e80",
         "fb66a798-9c6f-4507-855c-b99229da27e2",

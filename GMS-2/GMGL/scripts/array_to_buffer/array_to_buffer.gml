@@ -8,5 +8,3 @@ buffer_seek(buffer, buffer_seek_start, 0);
 for (var i = 0; i < count; ++i) {
 	buffer_write(buffer, type, array[i]);
 }
-
-show_debug_message("Copied array to buffer");

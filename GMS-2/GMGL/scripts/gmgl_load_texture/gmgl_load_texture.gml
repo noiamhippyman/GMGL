@@ -3,7 +3,7 @@
 var path = argument0;
 var texID = gl_gen_texture();
 
-var img = gmgl_load_image(path);
+var img = gmgl_load_image(path, true);
 if (img == GMGL_FAIL) {
 	show_error("Failed to loaded image: " + string(path),false);
 	return GMGL_FAIL;

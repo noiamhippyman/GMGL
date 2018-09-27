@@ -274,11 +274,11 @@ GMS_DLL double gmgl_is_active() {
 	return GMS_SUCCESS;
 }
 
-GMS_DLL double gmgl_load_image(const char* path) {
+GMS_DLL double gmgl_load_image(const char* path, double flipOnLoad) {
 	double imageIndex = gmgl_new_image();
 	GMGLimage* image = gmgl_get_image(imageIndex);
 
-	stbi_set_flip_vertically_on_load(true);
+	stbi_set_flip_vertically_on_load(flipOnLoad);
 
 	image->data = stbi_load(path, &image->width, &image->height, &image->nrChannels, 0);
 

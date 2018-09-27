@@ -7,5 +7,3 @@ buffer_seek(buffer,buffer_seek_start,0);
 for (var i = 0; i < 16; ++i) {
 	buffer_write(buffer,type,matrix[i]);
 }
-
-show_debug_message("Copied matrix to buffer");
