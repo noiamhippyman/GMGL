@@ -205,10 +205,16 @@ dllx double gl_gen_buffer() { ... }
 dllx double gl_bind_buffer(double target, double bufferIndex) { ... }
 
 /// 
+dllx double gl_bind_buffer_range(double target, double index, double bufferIndex, double offset, double size) { ... }
+
+/// 
 dllx double gl_delete_buffer(double bufferIndex) { ... }
 
 /// 
 dllx double gl_buffer_data(double target, double size, void* vertices, double usage) { ... }
+
+/// 
+dllx double gl_buffer_sub_data(double target, double offset, double size, void* data) { ... }
 
 /// 
 dllx double gl_gen_vertex_array() { ... }
@@ -290,6 +296,12 @@ dllx double gl_use_program(double programIndex) { ... }
 
 /// 
 dllx double gl_get_uniform_location(double programIndex, const char* name) { ... }
+
+/// 
+dllx double gl_get_uniform_block_index(double programIndex, const char* uniformBlockName) { ... }
+
+/// 
+dllx double gl_uniform_block_binding(double programIndex, double uniformBlockIndex, double uniformBlockBinding) { ... }
 
 /// 
 dllx double gl_uniform1f(double location, double x) { ... }

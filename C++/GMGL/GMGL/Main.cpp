@@ -663,13 +663,21 @@ GMS_DLL void gl_bind_buffer(double target, double bufferIndex) {
 	glBindBuffer(target, buffer ? *buffer : 0);
 }
 
+GMS_DLL void gl_bind_buffer_range(double target, double index, double bufferIndex, double offset, double size) {
+	glBindBufferRange(target, index, *gmgl_get_gl_ref(bufferIndex), offset, size);
+}
+
 GMS_DLL void gl_delete_buffer(double bufferIndex) {
 	glDeleteBuffers(1, gmgl_get_gl_ref(bufferIndex));
 	gmgl_delete_gl_ref(bufferIndex);
 }
 
 GMS_DLL void gl_buffer_data(double target, double size, void* vertices, double usage) {
-	glBufferData(target, size, vertices, usage);
+	glBufferData(target, size, (int)vertices == GMS_NOONE ? NULL : vertices, usage);
+}
+
+GMS_DLL void gl_buffer_sub_data(double target, double offset, double size, void* data) {
+	glBufferSubData(target, offset, size, data);
 }
 
 GMS_DLL double gl_gen_vertex_array() {
@@ -841,6 +849,14 @@ GMS_DLL void gl_use_program(double programIndex) {
 
 GMS_DLL double gl_get_uniform_location(double programIndex, const char* name) {
 	return glGetUniformLocation(*gmgl_get_gl_ref(programIndex), name);
+}
+
+GMS_DLL double gl_get_uniform_block_index(double programIndex, const char* uniformBlockName) {
+	return glGetUniformBlockIndex(*gmgl_get_gl_ref(programIndex), uniformBlockName);
+}
+
+GMS_DLL void gl_uniform_block_binding(double programIndex, double uniformBlockIndex, double uniformBlockBinding) {
+	glUniformBlockBinding(*gmgl_get_gl_ref(programIndex), uniformBlockIndex, uniformBlockBinding);
 }
 
 #pragma region Uniform Set Functions

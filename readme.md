@@ -1,9 +1,9 @@
-# GMGL
+# GMLGL
 ## GLFW wrapper for Gamemaker Studio
 
 ---
 
-This is an extension for Gamemaker Studio that wraps GLFW and OpenGL functions.
+GMLGL (Gamemaker Language Graphics Library) is an extension for Gamemaker Studio that wraps GLFW and OpenGL functions.
 
 GMS only uses OpenGL ES 2.0 while this will allow you to use any version.
 

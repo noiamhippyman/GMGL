@@ -1076,6 +1076,25 @@
                     "returnType": 2
                 },
                 {
+                    "id": "56A9B548-223E-B936-4961-984339FCC895",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 5,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_bind_buffer_range",
+                    "help": "gl_bind_buffer_range(target, index, bufferIndex, offset, size)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_bind_buffer_range",
+                    "returnType": 2
+                },
+                {
                     "id": "6c2f8d6d-dea5-4f5d-8f16-3dbec2334b5b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -1106,6 +1125,24 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_buffer_data",
+                    "returnType": 2
+                },
+                {
+                    "id": "7F01A261-C238-158A-EFE1-EE3DB2E533E4",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 4,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_buffer_sub_data",
+                    "help": "gl_buffer_sub_data(target, offset, size, data)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_buffer_sub_data",
                     "returnType": 2
                 },
                 {
@@ -1540,6 +1577,39 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_get_uniform_location",
+                    "returnType": 2
+                },
+                {
+                    "id": "01DFF4EE-120B-AD46-42AA-5D3C275157CA",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        2,
+                        1
+                    ],
+                    "externalName": "gl_get_uniform_block_index",
+                    "help": "gl_get_uniform_block_index(programIndex, uniformBlockName)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_get_uniform_block_index",
+                    "returnType": 2
+                },
+                {
+                    "id": "8DDAB37F-A807-7895-598A-DF02D1D7FD9A",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 3,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_uniform_block_binding",
+                    "help": "gl_uniform_block_binding(programIndex, uniformBlockIndex, uniformBlockBinding)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_uniform_block_binding",
                     "returnType": 2
                 },
                 {

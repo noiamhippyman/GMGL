@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "09ab533a-ecb9-44fa-a430-a15dcb3986bb",
+            "Value": {
+                "id": "fc3a8f0c-5553-4629-b967-ad94baddfc06",
+                "resourcePath": "scripts\\shader_example_advglsl_vs\\shader_example_advglsl_vs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0ae5772a-33e6-40bc-b03e-607c28a10912",
             "Value": {
                 "id": "12cdd0aa-6bcb-481d-8d66-b33a4fe68e7d",
@@ -475,6 +483,14 @@
             "Value": {
                 "id": "36459486-0ce0-4482-b371-c141f7140f9f",
                 "resourcePath": "scripts\\gmgl_shader_set_float\\gmgl_shader_set_float.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6226aa45-d2c1-47cd-ab1e-744f6409056a",
+            "Value": {
+                "id": "a7642455-aaf3-43bd-a067-0cdb1f6d7054",
+                "resourcePath": "scripts\\shader_example_yellow_fs\\shader_example_yellow_fs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -983,6 +999,14 @@
             }
         },
         {
+            "Key": "c5ce1195-d303-4b4f-953f-b49532c37ba6",
+            "Value": {
+                "id": "6aaf93ce-d388-4ac4-af3b-57acb16fc03d",
+                "resourcePath": "scripts\\shader_example_green_fs\\shader_example_green_fs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c7341d18-6f7f-4db5-b25b-cb0da6cffbfd",
             "Value": {
                 "id": "e2c1b24a-c243-463b-a2ed-e1e9b20bcc5a",
@@ -1020,6 +1044,14 @@
                 "id": "b4668786-8bdc-4242-8641-03e94f76fd10",
                 "resourcePath": "views\\cae61ba8-8df7-42c2-8aa4-3d4b44547a97.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cbb57759-9267-4b67-bba4-61fed1415f29",
+            "Value": {
+                "id": "b33c57b9-849b-4a40-acf6-02e6d815472b",
+                "resourcePath": "rooms\\rmGMGL_Example_Uniform_Buffers\\rmGMGL_Example_Uniform_Buffers.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1068,6 +1100,14 @@
                 "id": "6f10fe24-740a-4a30-b3da-c930b1b0c581",
                 "resourcePath": "sprites\\spr_reflections\\spr_reflections.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d45e08c0-9032-46ba-817b-a5340b79a4a1",
+            "Value": {
+                "id": "6ccda3d7-95b1-425d-8e7e-1b81f0245bc8",
+                "resourcePath": "scripts\\shader_example_red_fs\\shader_example_red_fs.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1223,6 +1263,14 @@
             }
         },
         {
+            "Key": "e8c8de46-c6bf-4dc6-871b-1d8041cea57e",
+            "Value": {
+                "id": "cc964422-1d8f-48a4-a318-4789ac83a9c2",
+                "resourcePath": "objects\\GMGL_Example_Uniform_Buffers\\GMGL_Example_Uniform_Buffers.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e93e64d7-84eb-43c5-9a83-7ce6c1f0875f",
             "Value": {
                 "id": "fcdf98f1-d77d-4fa7-bb6b-4b263825f64a",
@@ -1255,6 +1303,14 @@
             }
         },
         {
+            "Key": "eb810390-4917-4a54-a803-cfbc13c51f05",
+            "Value": {
+                "id": "7ccfae1f-7ffe-4f63-82ab-de3c73e570c4",
+                "resourcePath": "sprites\\spr_uniformbuffers\\spr_uniformbuffers.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "eefec06a-84db-4790-b319-ea62cdd7f251",
             "Value": {
                 "id": "70241f1e-14e8-4474-b1c4-4b50fb1554e0",
@@ -1267,6 +1323,14 @@
             "Value": {
                 "id": "27e37053-b2f5-499a-ae19-361e94b0c13c",
                 "resourcePath": "scripts\\shader_example_depth_test_vs\\shader_example_depth_test_vs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f324cadf-77fb-45b7-8976-13ceff31e594",
+            "Value": {
+                "id": "c33f9d77-b556-42f3-97de-d4f46065eb61",
+                "resourcePath": "scripts\\shader_example_blue_fs\\shader_example_blue_fs.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1416,6 +1480,11 @@
         "a0e42693-c8d9-497d-97ad-d309da2a221a",
         "35f92816-caab-4360-81b8-f4a9e7964710",
         "b1d79656-a77d-4a50-a142-495641907526",
+        "09ab533a-ecb9-44fa-a430-a15dcb3986bb",
+        "d45e08c0-9032-46ba-817b-a5340b79a4a1",
+        "c5ce1195-d303-4b4f-953f-b49532c37ba6",
+        "f324cadf-77fb-45b7-8976-13ceff31e594",
+        "6226aa45-d2c1-47cd-ab1e-744f6409056a",
         "3cbe2d1f-07af-4dfa-a413-625dce2e57e8",
         "e5fa74b2-ed4d-414e-9e6e-34625ac9d35d",
         "059b6b37-4f05-4f5b-a6e7-874f283276a0",
