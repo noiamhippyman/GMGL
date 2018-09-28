@@ -648,6 +648,10 @@ GMS_DLL void gl_draw_arrays(double mode, double first, double count) {
 	glDrawArrays(mode, first, count);
 }
 
+GMS_DLL void gl_draw_arrays_instanced(double mode, double first, double count, double primcount) {
+	glDrawArraysInstanced(mode, first, count, primcount);
+}
+
 GMS_DLL void gl_draw_elements(double mode, double count) {
 	glDrawElements(mode, count, GL_UNSIGNED_INT, 0);
 }
@@ -697,27 +701,11 @@ GMS_DLL void gl_delete_vertex_array(double varrayIndex) {
 }
 
 GMS_DLL void gl_vertex_attrib_pointer(double index, double size, double type, double normalized, double stride, double offset) {
-	int _offset = (int)offset * sizeof(float);
+	glVertexAttribPointer(index, size, type, normalized, stride, (void*)(int)offset);
+}
 
-	double typesize;
-
-	switch ((int)type) {
-	case GL_FLOAT:
-		typesize = sizeof(float);
-		break;
-	case GL_UNSIGNED_INT:
-		typesize = sizeof(unsigned int);
-		break;
-	case GL_INT:
-		typesize = sizeof(int);
-		break;
-	default:
-		type = GL_FLOAT;
-		typesize = sizeof(float);
-		break;
-	}
-
-	glVertexAttribPointer(index, size, type, normalized, stride * typesize, (void*)_offset);
+GMS_DLL void gl_vertex_attrib_divisor(double index, double divisor) {
+	glVertexAttribDivisor(index, divisor);
 }
 
 GMS_DLL void gl_enable_vertex_attrib_array(double index) {

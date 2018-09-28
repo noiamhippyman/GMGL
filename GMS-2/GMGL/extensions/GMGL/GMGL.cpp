@@ -196,6 +196,9 @@ dllx double gl_clear(double mask) { ... }
 dllx double gl_draw_arrays(double mode, double first, double count) { ... }
 
 /// 
+dllx double gl_draw_arrays_instanced(double mode, double first, double count, double primcount) { ... }
+
+/// 
 dllx double gl_draw_elements(double mode, double count) { ... }
 
 /// 
@@ -227,6 +230,9 @@ dllx double gl_delete_vertex_array(double varrayIndex) { ... }
 
 /// 
 dllx double gl_vertex_attrib_pointer(double index, double size, double type, double normalized, double stride, double offset) { ... }
+
+/// 
+dllx double gl_vertex_attrib_divisor(double index, double divisor) { ... }
 
 /// 
 dllx double gl_enable_vertex_attrib_array(double index) { ... }

@@ -23,7 +23,10 @@
         "d5138af0-ef5a-4830-a2bc-3fd3b4164c49",
         "26ce27f3-ed10-4d54-9d2c-b8bf6c439d8e",
         "5595edbc-2dee-47c7-a099-4a4de337eac1",
-        "e8c8de46-c6bf-4dc6-871b-1d8041cea57e"
+        "e8c8de46-c6bf-4dc6-871b-1d8041cea57e",
+        "53f149e6-dedf-4f24-81b1-0b1dd046d3bc",
+        "8fee47ae-243b-4555-b11a-c18cf00dd17c",
+        "f9d76edb-cc21-421b-b38a-c3734f5a060a"
     ],
     "filterType": "GMObject",
     "folderName": "Examples",

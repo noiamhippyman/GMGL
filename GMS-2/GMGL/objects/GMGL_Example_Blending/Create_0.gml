@@ -183,9 +183,9 @@ gl_bind_vertex_array(cubeVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, cubeVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(cubeVbuff),buffer_get_address(cubeVbuff),GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(1);
-gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5, 3);
+gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 
 //plane vao
 planeVAO = gl_gen_vertex_array();
@@ -194,9 +194,9 @@ gl_bind_vertex_array(planeVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, planeVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(planeVbuff),buffer_get_address(planeVbuff),GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(1);
-gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5, 3);
+gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 
 //transparent vao
 transVAO = gl_gen_vertex_array();
@@ -205,9 +205,9 @@ gl_bind_vertex_array(transVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, transVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(transVbuff),buffer_get_address(transVbuff),GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(1);
-gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5, 3);
+gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 
 cubeTexture = gmgl_load_texture("GMGL/container.jpg");
 planeTexture = gmgl_load_texture("GMGL/container2.png");

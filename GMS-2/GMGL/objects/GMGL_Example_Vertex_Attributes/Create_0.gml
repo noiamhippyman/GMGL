@@ -169,7 +169,7 @@ gl_buffer_data(GL_ELEMENT_ARRAY_BUFFER, buffer_get_size(ibuff), buffer_get_addre
 	You've already seen this in the last three examples but lets add 
 	another attribute to see how each argument works
 */
-gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,6,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,6 * buffer_sizeof(buffer_f32),0);
 
 // Don't forget to enable the attribute also
 gl_enable_vertex_attrib_array(0);
@@ -230,7 +230,7 @@ gl_enable_vertex_attrib_array(0);
 	Hopefully that clears up how setting vertex attributes works.
 	Check out shader_example_attrib_vs/shader_example_attrib_fs if you want to see how to use the attributes
 */
-gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,6,3);
+gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,6 * buffer_sizeof(buffer_f32),3 * buffer_sizeof(buffer_f32));
 gl_enable_vertex_attrib_array(1);
 
 /* 

@@ -125,14 +125,14 @@ gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(vbuff), buffer_get_address(vbuff
 
 cubeVAO = gl_gen_vertex_array();
 gl_bind_vertex_array(cubeVAO);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(1, 3, GL_FLOAT, GL_FALSE, 6, 3);
+gl_vertex_attrib_pointer(1, 3, GL_FLOAT, GL_FALSE, 6 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 gl_enable_vertex_attrib_array(1);
 
 lampVAO = gl_gen_vertex_array();
 gl_bind_vertex_array(lampVAO);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(0);
 
 modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);

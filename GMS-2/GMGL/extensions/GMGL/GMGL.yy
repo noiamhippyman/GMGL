@@ -1029,6 +1029,24 @@
                     "returnType": 2
                 },
                 {
+                    "id": "ACADA78B-A6BA-CF96-4D84-0F66F33E9DAC",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 4,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_draw_arrays_instanced",
+                    "help": "gl_draw_arrays_instanced(mode, first, count, primcount)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_draw_arrays_instanced",
+                    "returnType": 2
+                },
+                {
                     "id": "8f1982f2-e1b8-43b9-b4da-38720444e03b",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -1208,6 +1226,22 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_vertex_attrib_pointer",
+                    "returnType": 2
+                },
+                {
+                    "id": "737CD419-311C-4E56-2D7E-6F523C792475",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_vertex_attrib_divisor",
+                    "help": "gl_vertex_attrib_divisor(index, divisor)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_vertex_attrib_divisor",
                     "returnType": 2
                 },
                 {

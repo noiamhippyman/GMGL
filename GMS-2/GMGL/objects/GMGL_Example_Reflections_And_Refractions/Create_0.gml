@@ -162,9 +162,9 @@ gl_bind_vertex_array(cubeVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, cubeVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(cubeVbuff), buffer_get_address(cubeVbuff), GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 6 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(1);
-gl_vertex_attrib_pointer(1, 3, GL_FLOAT, GL_FALSE, 6, 3);
+gl_vertex_attrib_pointer(1, 3, GL_FLOAT, GL_FALSE, 6 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 
 //skybox VAO
 skyboxVAO = gl_gen_vertex_array();
@@ -173,7 +173,7 @@ gl_bind_vertex_array(skyboxVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, skyboxVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(skyboxVbuff), buffer_get_address(skyboxVbuff), GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 3, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 3 * buffer_sizeof(buffer_f32), 0);
 
 cubeTexture = gmgl_load_texture("GMGL/container.jpg");
 cubemapTexture = gmgl_load_cubemap([

@@ -23,7 +23,10 @@
         "fc59b5ab-125e-4880-9b76-82f63e8d53f3",
         "c418e5d5-4a03-417b-a319-b2c80768d403",
         "d3edda73-a7d7-427d-8cca-63a0f4ae0b2a",
-        "eb810390-4917-4a54-a803-cfbc13c51f05"
+        "eb810390-4917-4a54-a803-cfbc13c51f05",
+        "411de4cc-95a5-4660-a0fa-597345291208",
+        "3d96295c-4c93-4ee8-ac2a-4f35f0416725",
+        "d5e6f9d0-2315-414c-a2d7-8fe48d6aaeec"
     ],
     "filterType": "GMSprite",
     "folderName": "Main Menu Icons",

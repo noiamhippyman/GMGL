@@ -127,7 +127,7 @@ gl_bind_vertex_array(cubeVAO);
 gl_bind_buffer(GL_ARRAY_BUFFER, cubeVBO);
 gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(cubeVbuff), buffer_get_address(cubeVbuff), GL_STATIC_DRAW);
 gl_enable_vertex_attrib_array(0);
-gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 3, 0);
+gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 3 * buffer_sizeof(buffer_f32), 0);
 
 uniformBlockIndexRed = gl_get_uniform_block_index(shaderRed, "Matrices");
 uniformBlockIndexGreen = gl_get_uniform_block_index(shaderGreen, "Matrices");

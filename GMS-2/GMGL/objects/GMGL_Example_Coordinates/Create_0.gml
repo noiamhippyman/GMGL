@@ -163,17 +163,17 @@ gl_bind_buffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 gl_buffer_data(GL_ELEMENT_ARRAY_BUFFER, buffer_get_size(ibuff), buffer_get_address(ibuff), GL_STATIC_DRAW);
 
 // Next we need to setup this vertex array's vertex attributes
-gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8,0);
+gl_vertex_attrib_pointer(0,3,GL_FLOAT,GMGL_FALSE,8 * buffer_sizeof(buffer_f32),0);
 
 // Don't forget to enable the attribute also
 gl_enable_vertex_attrib_array(0);
 
 //Color attribute
-gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,8,3);
+gl_vertex_attrib_pointer(1,3,GL_FLOAT,GMGL_FALSE,8 * buffer_sizeof(buffer_f32),3 * buffer_sizeof(buffer_f32));
 gl_enable_vertex_attrib_array(1);
 
 //UV attribute
-gl_vertex_attrib_pointer(2,2,GL_FLOAT,GMGL_FALSE,8,6);
+gl_vertex_attrib_pointer(2,2,GL_FLOAT,GMGL_FALSE,8 * buffer_sizeof(buffer_f32),6 * buffer_sizeof(buffer_f32));
 gl_enable_vertex_attrib_array(2);
 
 /*

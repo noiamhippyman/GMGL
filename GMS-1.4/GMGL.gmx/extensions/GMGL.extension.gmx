@@ -746,6 +746,20 @@
           </args>
         </function>
         <function>
+          <name>gl_draw_arrays_instanced</name>
+          <externalName>gl_draw_arrays_instanced</externalName>
+          <kind>1</kind>
+          <help>gl_draw_arrays_instanced(mode, first, count, primcount)</help>
+          <returnType>2</returnType>
+          <argCount>4</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
           <name>gl_draw_elements</name>
           <externalName>gl_draw_elements</externalName>
           <kind>1</kind>
@@ -875,6 +889,18 @@
             <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_vertex_attrib_divisor</name>
+          <externalName>gl_vertex_attrib_divisor</externalName>
+          <kind>1</kind>
+          <help>gl_vertex_attrib_divisor(index, divisor)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
             <arg>2</arg>
             <arg>2</arg>
           </args>
