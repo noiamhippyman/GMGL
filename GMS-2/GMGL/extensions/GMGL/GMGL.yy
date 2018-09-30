@@ -55,6 +55,21 @@
                     "returnType": 2
                 },
                 {
+                    "id": "39df4c0e-a307-4d46-ab8e-418f526ea065",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "glfw_terminate",
+                    "help": "glfw_terminate()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "glfw_terminate",
+                    "returnType": 2
+                },
+                {
                     "id": "3b53333b-c647-461d-9e92-194b8cdb5d9e",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -83,6 +98,22 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gmgl_load_image",
+                    "returnType": 2
+                },
+                {
+                    "id": "d174b583-f4a8-8159-af83-112335fe3c64",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        1,
+                        2
+                    ],
+                    "externalName": "gmgl_load_imagef",
+                    "help": "gmgl_load_imagef(path, flipOnLoad)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gmgl_load_imagef",
                     "returnType": 2
                 },
                 {
@@ -757,6 +788,21 @@
                     "returnType": 2
                 },
                 {
+                    "id": "6101799e-55f0-977b-6816-129341ee0d96",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 0,
+                    "args": [
+                        
+                    ],
+                    "externalName": "gl_get_error",
+                    "help": "gl_get_error()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_get_error",
+                    "returnType": 2
+                },
+                {
                     "id": "65608ea3-ae73-4265-b69c-a6fbcdcb769f",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -805,7 +851,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "A6A04532-02F0-2BC4-D6D0-4EE3A60EBC03",
+                    "id": "a6a04532-02f0-2bc4-d6d0-4ee3a60ebc03",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 2,
@@ -1029,7 +1075,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "ACADA78B-A6BA-CF96-4D84-0F66F33E9DAC",
+                    "id": "acada78b-a6ba-cf96-4d84-0f66f33e9dac",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 4,
@@ -1094,7 +1140,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "56A9B548-223E-B936-4961-984339FCC895",
+                    "id": "56a9b548-223e-b936-4961-984339fcc895",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 5,
@@ -1110,6 +1156,36 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_bind_buffer_range",
+                    "returnType": 2
+                },
+                {
+                    "id": "3f27abe4-58c1-35b4-73d6-94e48dd5bae7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 1,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_draw_buffer",
+                    "help": "gl_draw_buffer(mode)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_draw_buffer",
+                    "returnType": 2
+                },
+                {
+                    "id": "b9ca4f1b-ac09-57fe-697c-f3df0dfdd89a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 1,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "gl_read_buffer",
+                    "help": "gl_read_buffer(mode)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_read_buffer",
                     "returnType": 2
                 },
                 {
@@ -1146,7 +1222,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "7F01A261-C238-158A-EFE1-EE3DB2E533E4",
+                    "id": "7f01a261-c238-158a-efe1-ee3db2e533e4",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 4,
@@ -1229,7 +1305,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "737CD419-311C-4E56-2D7E-6F523C792475",
+                    "id": "737cd419-311c-4e56-2d7e-6f523c792475",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 2,
@@ -1321,7 +1397,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "03A26E8C-0047-709A-DF02-C496A89FA643",
+                    "id": "03a26e8c-0047-709a-df02-c496a89fa643",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 9,
@@ -1341,6 +1417,26 @@
                     "hidden": false,
                     "kind": 1,
                     "name": "gl_tex_image2D",
+                    "returnType": 2
+                },
+                {
+                    "id": "84816f17-3b4d-1a49-3d1e-90aeb8e7f65e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 6,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_tex_image2D_multisample",
+                    "help": "gl_tex_image2D_multisample(target, samples, format, width, height, isSampleLocFixed)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_tex_image2D_multisample",
                     "returnType": 2
                 },
                 {
@@ -1390,6 +1486,30 @@
                     "returnType": 2
                 },
                 {
+                    "id": "49186ff7-a666-2d0c-6064-6d789a5e198d",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 10,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_blit_framebuffer",
+                    "help": "gl_blit_framebuffer(srcX1, srcY1, srcX2, srcY2, dstX1, dstY1, dstX2, dstY2, mask, filter)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_blit_framebuffer",
+                    "returnType": 2
+                },
+                {
                     "id": "fb0d4454-0290-4a6c-8994-a75f6b032d78",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
@@ -1405,7 +1525,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "C37CB75C-1A17-475F-5F69-ED6C866D4464",
+                    "id": "c37cb75c-1a17-475f-5f69-ed6c866d4464",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 5,
@@ -1424,7 +1544,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "1B4F3086-11F9-C7E2-018B-565EDA34087C",
+                    "id": "1b4f3086-11f9-c7e2-018b-565eda34087c",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -1439,7 +1559,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "3C5936B5-708D-ECF1-74C3-BBFA6519C459",
+                    "id": "3c5936b5-708d-ecf1-74c3-bbfa6519c459",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 2,
@@ -1455,7 +1575,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "926015FA-5344-E7F1-B2DC-B408CA2D5283",
+                    "id": "926015fa-5344-e7f1-b2dc-b408ca2d5283",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 4,
@@ -1473,7 +1593,26 @@
                     "returnType": 2
                 },
                 {
-                    "id": "BF4C5FF2-42E8-6BCF-5FDA-79D41E372242",
+                    "id": "65979c34-d932-93be-721f-017628ec9161",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 5,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "gl_renderbuffer_storage_multisample",
+                    "help": "gl_renderbuffer_storage_multisample(target, samples, format, width, height)",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "gl_renderbuffer_storage_multisample",
+                    "returnType": 2
+                },
+                {
+                    "id": "bf4c5ff2-42e8-6bcf-5fda-79d41e372242",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 4,
@@ -1491,7 +1630,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "B19E23CC-2A89-5811-D375-5DC12FA7B802",
+                    "id": "b19e23cc-2a89-5811-d375-5dc12fa7b802",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 1,
@@ -1614,7 +1753,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "01DFF4EE-120B-AD46-42AA-5D3C275157CA",
+                    "id": "01dff4ee-120b-ad46-42aa-5d3c275157ca",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 2,
@@ -1630,7 +1769,7 @@
                     "returnType": 2
                 },
                 {
-                    "id": "8DDAB37F-A807-7895-598A-DF02D1D7FD9A",
+                    "id": "8ddab37f-a807-7895-598a-df02d1d7fd9a",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 3,
@@ -2563,7 +2702,27 @@
                 "0494fe3f-1017-4711-bf9a-3d6c61d6eb36",
                 "80cfcb61-45bb-4eb9-bea8-d1b781bc9065",
                 "3cb94bb5-c5e5-44cd-be37-f5bf8ed1a5fc",
-                "5789d87b-b6aa-4247-a358-5a43435c637e"
+                "5789d87b-b6aa-4247-a358-5a43435c637e",
+                "6101799e-55f0-977b-6816-129341ee0d96",
+                "a6a04532-02f0-2bc4-d6d0-4ee3a60ebc03",
+                "acada78b-a6ba-cf96-4d84-0f66f33e9dac",
+                "56a9b548-223e-b936-4961-984339fcc895",
+                "3f27abe4-58c1-35b4-73d6-94e48dd5bae7",
+                "b9ca4f1b-ac09-57fe-697c-f3df0dfdd89a",
+                "7f01a261-c238-158a-efe1-ee3db2e533e4",
+                "737cd419-311c-4e56-2d7e-6f523c792475",
+                "03a26e8c-0047-709a-df02-c496a89fa643",
+                "84816f17-3b4d-1a49-3d1e-90aeb8e7f65e",
+                "49186ff7-a666-2d0c-6064-6d789a5e198d",
+                "c37cb75c-1a17-475f-5f69-ed6c866d4464",
+                "1b4f3086-11f9-c7e2-018b-565eda34087c",
+                "3c5936b5-708d-ecf1-74c3-bbfa6519c459",
+                "926015fa-5344-e7f1-b2dc-b408ca2d5283",
+                "65979c34-d932-93be-721f-017628ec9161",
+                "bf4c5ff2-42e8-6bcf-5fda-79d41e372242",
+                "b19e23cc-2a89-5811-d375-5dc12fa7b802",
+                "01dff4ee-120b-ad46-42aa-5d3c275157ca",
+                "8ddab37f-a807-7895-598a-df02d1d7fd9a"
             ],
             "origname": "",
             "uncompress": false

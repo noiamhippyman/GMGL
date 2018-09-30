@@ -175,7 +175,7 @@ gl_buffer_data(GL_ARRAY_BUFFER, buffer_get_size(skyboxVbuff), buffer_get_address
 gl_enable_vertex_attrib_array(0);
 gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 3 * buffer_sizeof(buffer_f32), 0);
 
-cubeTexture = gmgl_load_texture("GMGL/container.jpg");
+cubeTexture = gmgl_texture_load("GMGL/container.jpg");
 cubemapTexture = gmgl_load_cubemap([
 	"GMGL/skybox/right.jpg",
 	"GMGL/skybox/left.jpg",

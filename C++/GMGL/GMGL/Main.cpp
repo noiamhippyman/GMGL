@@ -27,6 +27,11 @@ struct GMGLimage {
 	GLsizei height;
 	GLsizei nrChannels;
 	unsigned char* data;
+	float* dataf;
+	GMGLimage() {
+		this->data = nullptr;
+		this->dataf = nullptr;
+	}
 };
 
 enum eGMGLevent {
@@ -292,10 +297,29 @@ GMS_DLL double gmgl_load_image(const char* path, double flipOnLoad) {
 	return imageIndex;
 }
 
+GMS_DLL double gmgl_load_imagef(const char* path, double flipOnLoad) {
+	double imageIndex = gmgl_new_image();
+	GMGLimage* image = gmgl_get_image(imageIndex);
+
+	stbi_set_flip_vertically_on_load(flipOnLoad);
+
+	image->dataf = stbi_loadf(path, &image->width, &image->height, &image->nrChannels, 0);
+
+	if (!image->dataf) {
+		std::cout << "Failed to load texture::" << path << std::endl;
+		stbi_image_free(image->dataf);
+		gmgl_delete_image(imageIndex);
+		return GMS_FAIL;
+	}
+
+	return imageIndex;
+}
+
 GMS_DLL void gmgl_free_image(double imageIndex) {
 	GMGLimage* image = gmgl_get_image(imageIndex);
 	if (!image) return;
-	stbi_image_free(image->data);
+	if (image->data) stbi_image_free(image->data);
+	if (image->dataf) stbi_image_free(image->dataf);
 	gmgl_delete_image(imageIndex);
 }
 
@@ -579,6 +603,9 @@ GMS_DLL void glfw_set_time(double time) {
 #pragma endregion
 
 #pragma region GL Functions
+GMS_DLL double gl_get_error() {
+	return glGetError();
+}
 
 GMS_DLL void gl_viewport(double x, double y, double width, double height) {
 	glViewport(x, y, width, height);
@@ -671,6 +698,14 @@ GMS_DLL void gl_bind_buffer_range(double target, double index, double bufferInde
 	glBindBufferRange(target, index, *gmgl_get_gl_ref(bufferIndex), offset, size);
 }
 
+GMS_DLL void gl_draw_buffer(double mode) {
+	glDrawBuffer(mode);
+}
+
+GMS_DLL void gl_read_buffer(double mode) {
+	glReadBuffer(mode);
+}
+
 GMS_DLL void gl_delete_buffer(double bufferIndex) {
 	glDeleteBuffers(1, gmgl_get_gl_ref(bufferIndex));
 	gmgl_delete_gl_ref(bufferIndex);
@@ -734,9 +769,19 @@ GMS_DLL void gl_active_texture(double unit) {
 
 GMS_DLL void gl_tex_image2D(double target, double level, double internalformat, double width, double height, double border, double format, double type, double imageIndex) {
 	GMGLimage* image = gmgl_get_image(imageIndex);
-	unsigned char* pixels = NULL;
-	if (image) pixels = image->data;
+	void* pixels = NULL;
+	if (image) {
+		if (image->data) {
+			pixels = image->data;
+		} else {
+			pixels = image->dataf;
+		}
+	}
 	glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+}
+
+GMS_DLL void gl_tex_image2D_multisample(double target, double samples, double format, double width, double height, double isSampleLocFixed) {
+	glTexImage2DMultisample(target, samples, format, width, height, isSampleLocFixed);
 }
 
 GMS_DLL void gl_generate_mipmap(double target) {
@@ -752,6 +797,10 @@ GMS_DLL double gl_gen_framebuffer() {
 GMS_DLL void gl_bind_framebuffer(double target, double framebufferIndex) {
 	unsigned int* framebuffer = gmgl_get_gl_ref(framebufferIndex);
 	glBindFramebuffer(target, framebuffer ? *framebuffer : 0);
+}
+
+GMS_DLL void gl_blit_framebuffer(double srcX1, double srcY1, double srcX2, double srcY2, double dstX1, double dstY1, double dstX2, double dstY2, double mask, double filter) {
+	glBlitFramebuffer(srcX1, srcY1, srcX2, srcY2, dstX1, dstY1, dstX2, dstY2, mask, filter);
 }
 
 GMS_DLL void gl_delete_framebuffer(double framebufferIndex) {
@@ -776,6 +825,10 @@ GMS_DLL void gl_bind_renderbuffer(double target, double renderbufferIndex) {
 
 GMS_DLL void gl_renderbuffer_storage(double target, double internalFormat, double width, double height) {
 	glRenderbufferStorage(target, internalFormat, width, height);
+}
+
+GMS_DLL void gl_renderbuffer_storage_multisample(double target, double samples, double format, double width, double height) {
+	glRenderbufferStorageMultisample(target, samples, format, width, height);
 }
 
 GMS_DLL void gl_framebuffer_renderbuffer(double target, double attachment, double renderbufferTarget, double renderbufferIndex) {

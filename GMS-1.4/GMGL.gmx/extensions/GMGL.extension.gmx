@@ -72,6 +72,15 @@
           </args>
         </function>
         <function>
+          <name>glfw_terminate</name>
+          <externalName>glfw_terminate</externalName>
+          <kind>1</kind>
+          <help>glfw_terminate()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
           <name>gmgl_is_active</name>
           <externalName>gmgl_is_active</externalName>
           <kind>1</kind>
@@ -85,6 +94,18 @@
           <externalName>gmgl_load_image</externalName>
           <kind>1</kind>
           <help>gmgl_load_image(path, flipOnLoad)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>1</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gmgl_load_imagef</name>
+          <externalName>gmgl_load_imagef</externalName>
+          <kind>1</kind>
+          <help>gmgl_load_imagef(path, flipOnLoad)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -542,6 +563,15 @@
           </args>
         </function>
         <function>
+          <name>gl_get_error</name>
+          <externalName>gl_get_error</externalName>
+          <kind>1</kind>
+          <help>gl_get_error()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
           <name>gl_viewport</name>
           <externalName>gl_viewport</externalName>
           <kind>1</kind>
@@ -808,6 +838,28 @@
           </args>
         </function>
         <function>
+          <name>gl_draw_buffer</name>
+          <externalName>gl_draw_buffer</externalName>
+          <kind>1</kind>
+          <help>gl_draw_buffer(mode)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_read_buffer</name>
+          <externalName>gl_read_buffer</externalName>
+          <kind>1</kind>
+          <help>gl_read_buffer(mode)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
           <name>gl_delete_buffer</name>
           <externalName>gl_delete_buffer</externalName>
           <kind>1</kind>
@@ -979,6 +1031,22 @@
           </args>
         </function>
         <function>
+          <name>gl_tex_image2D_multisample</name>
+          <externalName>gl_tex_image2D_multisample</externalName>
+          <kind>1</kind>
+          <help>gl_tex_image2D_multisample(target, samples, format, width, height, isSampleLocFixed)</help>
+          <returnType>2</returnType>
+          <argCount>6</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
           <name>gl_generate_mipmap</name>
           <externalName>gl_generate_mipmap</externalName>
           <kind>1</kind>
@@ -1006,6 +1074,26 @@
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_blit_framebuffer</name>
+          <externalName>gl_blit_framebuffer</externalName>
+          <kind>1</kind>
+          <help>gl_blit_framebuffer(srcX1, srcY1, srcX2, srcY2, dstX1, dstY1, dstX2, dstY2, mask, filter)</help>
+          <returnType>2</returnType>
+          <argCount>10</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
           </args>
@@ -1065,6 +1153,21 @@
           <returnType>2</returnType>
           <argCount>4</argCount>
           <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>gl_renderbuffer_storage_multisample</name>
+          <externalName>gl_renderbuffer_storage_multisample</externalName>
+          <kind>1</kind>
+          <help>gl_renderbuffer_storage_multisample(target, samples, format, width, height)</help>
+          <returnType>2</returnType>
+          <argCount>5</argCount>
+          <args>
+            <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>

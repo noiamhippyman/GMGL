@@ -137,8 +137,8 @@ gl_bind_vertex_array(lampVAO);
 gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 8 * buffer_sizeof(buffer_f32), 0);
 gl_enable_vertex_attrib_array(0);
 
-diffuseMap = gmgl_load_texture("GMGL/container2.png");
-specularMap = gmgl_load_texture("GMGL/container2_specular.png");
+diffuseMap = gmgl_texture_load("GMGL/container2.png");
+specularMap = gmgl_texture_load("GMGL/container2_specular.png");
 
 gl_use_program(shaderLighting);
 gmgl_shader_set_int(shaderLighting, "material.diffuse", 0);

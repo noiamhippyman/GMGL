@@ -1,10 +1,16 @@
 dllx double RegisterCallbacks(char* arg1, char* arg2, char* arg3, char* arg4) { ... }
 
 /// 
+dllx double glfw_terminate();
+
+/// 
 dllx double gmgl_is_active() { ... }
 
 /// 
 dllx double gmgl_load_image(const char* path, double flipOnLoad) { ... }
+
+/// 
+dllx double gmgl_load_imagef(const char* path, double flipOnLoad) { ... }
 
 /// 
 dllx double gmgl_free_image(double imageIndex) { ... }
@@ -145,6 +151,9 @@ dllx double glfw_get_time() { ... }
 dllx double glfw_set_time(double time) { ... }
 
 /// 
+dllx double gl_get_error() { ... }
+
+/// 
 dllx double gl_viewport(double x, double y, double width, double height) { ... }
 
 /// 
@@ -211,6 +220,12 @@ dllx double gl_bind_buffer(double target, double bufferIndex) { ... }
 dllx double gl_bind_buffer_range(double target, double index, double bufferIndex, double offset, double size) { ... }
 
 /// 
+dllx double gl_draw_buffer(double mode) { ... }
+
+/// 
+dllx double gl_read_buffer(double mode) { ... }
+
+/// 
 dllx double gl_delete_buffer(double bufferIndex) { ... }
 
 /// 
@@ -253,6 +268,9 @@ dllx double gl_active_texture(double unit) { ... }
 dllx double gl_tex_image2D(double target, double level, double internalformat, double width, double height, double border, double format, double type, double imageIndex) { ... }
 
 /// 
+dllx double gl_tex_image2D_multisample(double target, double samples, double format, double width, double height, double isSampleLocFixed) { ... }
+
+/// 
 dllx double gl_generate_mipmap(double target) { ... }
 
 /// 
@@ -260,6 +278,9 @@ dllx double gl_gen_framebuffer() { ... }
 
 /// 
 dllx double gl_bind_framebuffer(double target, double framebufferIndex) { ... }
+
+/// 
+dllx double gl_blit_framebuffer(double srcX1, double srcY1, double srcX2, double srcY2, double dstX1, double dstY1, double dstX2, double dstY2, double mask, double filter) { ... }
 
 /// 
 dllx double gl_delete_framebuffer(double framebufferIndex) { ... }
@@ -275,6 +296,9 @@ dllx double gl_bind_renderbuffer(double target, double renderbufferIndex) { ... 
 
 /// 
 dllx double gl_renderbuffer_storage(double target, double internalFormat, double width, double height) { ... }
+
+/// 
+dllx double gl_renderbuffer_storage_multisample(double target, double samples, double format, double width, double height) { ... }
 
 /// 
 dllx double gl_framebuffer_renderbuffer(double target, double attachment, double renderbufferTarget, double renderbufferIndex) { ... }

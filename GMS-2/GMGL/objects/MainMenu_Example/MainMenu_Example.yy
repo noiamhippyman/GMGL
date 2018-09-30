@@ -82,7 +82,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "rmMainMenu",
+            "value": "noone",
             "varName": "roomPath",
             "varType": 5
         },
@@ -96,7 +96,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "spr_createwindow",
+            "value": "noone",
             "varName": "roomSprite",
             "varType": 5
         },

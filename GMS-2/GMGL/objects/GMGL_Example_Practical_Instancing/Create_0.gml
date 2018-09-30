@@ -9,7 +9,6 @@ draw_enable_drawevent(false);
 
 // Call this to initialize GLFW
 glfw_init();
-
 /*
 	Set GL version to use with GLFW window hints
 	
@@ -47,10 +46,17 @@ glfw_window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	gmgl_create_window_centered is just a script. 
 	Open it to see how to create a window and center it with GLFW functions.
 */
+
+//AA
+glfw_window_hint(GLFW_SAMPLES, 8);
+
 gmgl_create_window_centered(800,600,"Example - Practical Instancing");
 glfw_set_window_icon("GMGL/gmglicon.png");
 
 gl_enable(GL_DEPTH_TEST);
+
+//AA
+gl_enable(GL_MULTISAMPLE);
 
 asteroidShader = gmgl_shader_create(shader_example_asteroids_vs(),shader_example_asteroids_fs());
 planetShader = gmgl_shader_create(shader_example_planet_vs(),shader_example_planet_fs());
@@ -229,7 +235,7 @@ gl_vertex_attrib_divisor(6, 1);
 
 gl_bind_vertex_array(noone);
 
-texture = gmgl_load_texture("GMGL/container.jpg");
+texture = gmgl_texture_load("GMGL/container.jpg");
 
 gl_use_program(planetShader);
 gmgl_shader_set_int(planetShader, "texture_diffuse1", 0);

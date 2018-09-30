@@ -209,10 +209,10 @@ gl_vertex_attrib_pointer(0, 3, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32)
 gl_enable_vertex_attrib_array(1);
 gl_vertex_attrib_pointer(1, 2, GL_FLOAT, GL_FALSE, 5 * buffer_sizeof(buffer_f32), 3 * buffer_sizeof(buffer_f32));
 
-cubeTexture = gmgl_load_texture("GMGL/container.jpg");
-planeTexture = gmgl_load_texture("GMGL/container2.png");
-grassTexture = gmgl_load_texture("GMGL/grass.png");
-windowTexture = gmgl_load_texture("GMGL/blending_transparent_window.png");
+cubeTexture = gmgl_texture_load("GMGL/container.jpg");
+planeTexture = gmgl_texture_load("GMGL/container2.png");
+grassTexture = gmgl_texture_load("GMGL/grass.png");
+windowTexture = gmgl_texture_load("GMGL/blending_transparent_window.png");
 
 modelMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);
 viewMatrixBuffer = buffer_create(16*buffer_sizeof(buffer_f32),buffer_fixed,4);

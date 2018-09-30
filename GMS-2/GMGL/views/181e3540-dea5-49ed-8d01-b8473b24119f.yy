@@ -26,7 +26,9 @@
         "e8c8de46-c6bf-4dc6-871b-1d8041cea57e",
         "53f149e6-dedf-4f24-81b1-0b1dd046d3bc",
         "8fee47ae-243b-4555-b11a-c18cf00dd17c",
-        "f9d76edb-cc21-421b-b38a-c3734f5a060a"
+        "f9d76edb-cc21-421b-b38a-c3734f5a060a",
+        "0fb2913f-b217-431f-965f-d47da91eadbe",
+        "16463fd6-6f60-4726-84fe-82657271b95a"
     ],
     "filterType": "GMObject",
     "folderName": "Examples",

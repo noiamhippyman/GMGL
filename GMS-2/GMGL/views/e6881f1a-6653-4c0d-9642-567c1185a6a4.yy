@@ -4,8 +4,7 @@
     "mvc": "1.1",
     "name": "e6881f1a-6653-4c0d-9642-567c1185a6a4",
     "children": [
-        "2d2cb295-09b7-4631-a028-a49db1421291",
-        "ca0c6313-5f7d-413f-bc51-b2684b4a07aa"
+        "05f51123-8c2e-46ff-8419-cd744d4b85e1"
     ],
     "filterType": "GMRoom",
     "folderName": "GMGL",
