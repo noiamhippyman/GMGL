@@ -1127,14 +1127,6 @@
             }
         },
         {
-            "Key": "d3f78945-1b33-4b8c-9788-cda4a2ed4e41",
-            "Value": {
-                "id": "5a4712a6-b4eb-4721-a7c2-3fb3ea5a1c1f",
-                "resourcePath": "rooms\\rmGMGL_Example_Geometry_Shaders\\rmGMGL_Example_Geometry_Shaders.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "d45e08c0-9032-46ba-817b-a5340b79a4a1",
             "Value": {
                 "id": "6ccda3d7-95b1-425d-8e7e-1b81f0245bc8",
@@ -1180,14 +1172,6 @@
                 "id": "1badcc29-7299-488f-aa10-64599b4ec7be",
                 "resourcePath": "views\\d65778c9-3056-4129-a944-d58e5f73bdc5.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "d7287531-e295-4ccc-b4eb-d688f124e434",
-            "Value": {
-                "id": "f940c916-018a-4dce-bcfe-944b62658981",
-                "resourcePath": "rooms\\rmGMGL_Example_Create_A_Triangle\\rmGMGL_Example_Create_A_Triangle.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -1247,14 +1231,6 @@
             }
         },
         {
-            "Key": "e01c2d1a-0414-4f0a-9bb6-e4cfed88a0d2",
-            "Value": {
-                "id": "19fbc449-2176-4703-b85e-53592cbf0005",
-                "resourcePath": "rooms\\rmGMGL_Example_Coordinates\\rmGMGL_Example_Coordinates.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "e18dbc3f-0cb8-4074-ae3c-9558b76ef05e",
             "Value": {
                 "id": "ce1861e3-8aa1-4f33-91f8-089c7063c32a",
@@ -1284,14 +1260,6 @@
                 "id": "776175a0-4c7f-4ed8-8b6d-1b6fc947ec11",
                 "resourcePath": "datafiles_yy\\GMGL\\skybox\\left.jpg.yy",
                 "resourceType": "GMIncludedFile"
-            }
-        },
-        {
-            "Key": "e48f1c31-e145-4144-bb6f-52de1ca035b3",
-            "Value": {
-                "id": "96749d22-719c-4316-b059-873724f687ef",
-                "resourcePath": "rooms\\rmGMGL_Example_Depth_Testing\\rmGMGL_Example_Depth_Testing.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -1348,14 +1316,6 @@
                 "id": "fe7906fd-48a8-4898-89e6-bfc9d3f2126c",
                 "resourcePath": "objects\\GMGL_Example_Depth_Testing\\GMGL_Example_Depth_Testing.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "ea500c53-d657-484f-9e6a-6f5f47c68290",
-            "Value": {
-                "id": "54b4f268-7aeb-418d-9a39-9977cc4e439a",
-                "resourcePath": "rooms\\rmGMGL_Example_Blinn_Phong\\rmGMGL_Example_Blinn_Phong.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -1439,27 +1399,11 @@
             }
         },
         {
-            "Key": "f60d66ca-0b7a-4663-9ceb-f3b1d98f806b",
-            "Value": {
-                "id": "55580ab6-cc1f-4f7f-9d65-c2504d96b233",
-                "resourcePath": "rooms\\rmGMGL_Example_Create_A_Cube\\rmGMGL_Example_Create_A_Cube.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "f676e67c-6264-4eb9-9589-c34c257c175a",
             "Value": {
                 "id": "997903be-7137-47cd-b96f-35a1b8d806c7",
                 "resourcePath": "scripts\\shader_example_geomshader_vs\\shader_example_geomshader_vs.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "f79cd764-18e6-469a-a0a7-6a26c52aa931",
-            "Value": {
-                "id": "ccc6dbc8-b0a9-4572-880f-8bd461b5ee9e",
-                "resourcePath": "rooms\\rmGMGL_Example_Blending\\rmGMGL_Example_Blending.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
